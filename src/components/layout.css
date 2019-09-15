@@ -1,0 +1,19 @@
+.container {
+  padding-left: var(--unit);
+  padding-right: var(--unit);
+  max-width: 1350px;
+
+  @media (min-width: 700px) {
+    margin-left: 90px;
+  }
+}
+
+.grid-full {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-column-gap: var(--unit);
+
+  @media (min-width: 700px) {
+    grid-template-columns: repeat(14, 1fr);
+  }
+}

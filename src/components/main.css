@@ -1,0 +1,28 @@
+main {
+  padding-top: calc(5 * var(--unit));
+}
+
+h1 {
+  grid-column: 1 / -1;
+  margin-bottom: var(--unit);
+  font-weight: bold;
+  font-size: 24px;
+  line-height: calc(1.5 * var(--unit));
+  letter-spacing: -0.02em;
+  color: #0D1214;
+
+  @media (min-width: 700px) {
+    grid-column: 3 / -3;
+    margin-bottom: calc(4 * var(--unit));
+    font-size: 60px;
+    line-height: calc(4 * var(--unit));
+  }
+}
+
+p {
+  grid-column: 1 / -1;
+
+  @media (min-width: 700px) {
+    grid-column: 3 / -3;
+  }
+}

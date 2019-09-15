@@ -1,0 +1,18 @@
+.search-wrapper {
+  input[type="search"] {
+    border: 0;
+    background-color: #F1F4F7;
+    margin-left: calc(-1 * var(--unit));
+    margin-right: calc(-1 * var(--unit));
+    margin-bottom: calc(2 * var(--unit));
+    width: calc(100% + 2 * var(--unit));
+    height: calc(3 * var(--unit));
+    padding: calc(2 * var(--unit));
+    font-family: serif;
+    font-size: 16px;
+  }
+
+  @media (min-width: 700px) {
+    display: none;
+  }
+}
