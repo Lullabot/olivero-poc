@@ -65,6 +65,17 @@ a {
   }
 }
 
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  word-wrap: normal;
+}
+
+/* Components */
+
 /* Header */
 
 .site-branding {
@@ -163,6 +174,14 @@ a {
   height: 100%;
   width: 100%;
   background-color: var(--blue);
+}
+
+.header-nav__search-button {
+  -webkit-appearance: none;
+  border: 0;
+  margin-left: calc(2*var(--unit));
+  margin-bottom: calc(2*var(--unit) + 3px);
+  cursor: pointer;
 }
 
 .primary-nav ul {

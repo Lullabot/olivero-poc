@@ -92,3 +92,11 @@
     background-color: var(--blue);
   }
 }
+
+.header-nav__search-button {
+  -webkit-appearance: none;
+  border: 0;
+  margin-left: calc(2 * var(--unit));
+  margin-bottom: calc(2 * var(--unit) + 3px);
+  cursor: pointer;
+}
