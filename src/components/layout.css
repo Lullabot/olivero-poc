@@ -1,6 +1,6 @@
 .container {
-  padding-left: var(--unit);
-  padding-right: var(--unit);
+  padding-left: var(--sp);
+  padding-right: var(--sp);
   max-width: 1350px;
 
   @media (min-width: 700px) {
@@ -11,7 +11,7 @@
 .grid-full {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-column-gap: var(--unit);
+  grid-column-gap: var(--sp);
 
   @media (min-width: 700px) {
     grid-template-columns: repeat(14, 1fr);

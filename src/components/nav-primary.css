@@ -15,38 +15,38 @@
         margin: 0;
 
         &:not(:last-child) {
-          margin-right: calc(2 * var(--unit));
+          margin-right: calc(2 * var(--sp));
         }
       }
 
       a {
         display: flex;
         align-items: center;
-        padding: calc(2 * var(--unit)) 0;
+        padding: calc(2 * var(--sp)) 0;
       }
     }
 
     ul {
       display: none;
-      padding-top: calc(1.5 * var(--unit));
-      padding-left: calc(2.5 * var(--unit));
+      padding-top: calc(1.5 * var(--sp));
+      padding-left: calc(2.5 * var(--sp));
 
       a {
         font-size: 16px;
-        line-height: var(--unit);
+        line-height: var(--sp);
         font-weight: normal;
       }
     }
   }
 
   li {
-    margin-bottom: calc(1.5 * var(--unit));
+    margin-bottom: calc(1.5 * var(--sp));
   }
 
   a {
     font-size: 28px;
     font-weight: bold;
-    line-height: calc(2 * var(--unit));
+    line-height: calc(2 * var(--sp));
     letter-spacing: -1px;
     color: var(--black-1);
 

@@ -1,9 +1,9 @@
 .secondary-nav {
 
   @media (min-width: 700px) {
-    margin-left: calc(2* var(--unit));
-    margin-bottom: calc(2 * var(--unit));
-    padding-left: calc(2* var(--unit));
+    margin-left: calc(2* var(--sp));
+    margin-bottom: calc(2 * var(--sp));
+    padding-left: calc(2* var(--sp));
     border-left: solid 2px #D7E1E8;
   }
 
@@ -17,18 +17,18 @@
 
   .button--primary {
     display: inline-block;
-    padding: 0 var(--unit);
+    padding: 0 var(--sp);
     background-color: var(--blue);
     color: white;
     letter-spacing: 0.07em;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 14px;
-    line-height: calc(2 * var(--unit));
+    line-height: calc(2 * var(--sp));
     white-space: nowrap;
   }
 
   li:not(:last-child) {
-    margin-right: calc(1.5 * var(--unit));
+    margin-right: calc(1.5 * var(--sp));
   }
 }

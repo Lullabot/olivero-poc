@@ -1,24 +1,24 @@
 .social-container {
   @media (min-width: 700px) {
     position: absolute;
-    top: calc(10 * var(--unit));
+    top: calc(10 * var(--sp));
     left: 0;
     width: 90px;
-    height: calc(100vh - (10 * var(--unit)));
-    padding: calc(8 * var(--unit)) 0;
+    height: calc(100vh - (10 * var(--sp)));
+    padding: calc(8 * var(--sp)) 0;
     background-color: #F7F9FA;
 
     .rotate {
       display: flex;
       width: 100%;
-      margin: var(--unit) auto;
+      margin: var(--sp) auto;
       align-items: center;
       writing-mode: vertical-lr;
       transform: rotate(180deg);
     }
 
     .social-label {
-      margin-bottom: calc(2 * var(--unit));
+      margin-bottom: calc(2 * var(--sp));
       font-size: 12px;
       letter-spacing: 4px;
       text-transform: uppercase;

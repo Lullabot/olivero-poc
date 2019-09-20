@@ -7,10 +7,14 @@
 
 :root {
   --font-sans: 'metropolis';
+
+  /* Layout */
+  --sp: 18px;
+
+  /* Named colors. */
   --blue-light: #53B0EB;
   --blue: #2393DA;
   --gray-light: #F7F9FA;
   --gray: #DFE7ED;
-  --unit: 18px;
   --black-1: #0D1214;
 }
