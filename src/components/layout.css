@@ -17,3 +17,10 @@
     grid-template-columns: repeat(14, 1fr);
   }
 }
+
+.content {
+  @media (--nav) {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}

@@ -69,6 +69,13 @@ a {
   }
 }
 
+@media (min-width: 700px) {
+  .content {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+
 .visually-hidden {
   position: absolute !important;
   clip: rect(1px, 1px, 1px, 1px);
@@ -303,26 +310,28 @@ a {
 
 @media (min-width: 700px) {
   .social-container {
-    position: absolute;
-    top: calc(10*var(--sp));
+    position: sticky;
+    top: 0;
     left: 0;
     width: 90px;
-    height: calc(100vh - 10*var(--sp));
+    height: 100vh;
+    flex-shrink: 0;
     padding: calc(8*var(--sp)) 0;
     background-color: #f7f9fa;
   }
 
   .social-container .rotate {
     display: flex;
+    align-items: center;
     width: 100%;
     margin: var(--sp) auto;
-    align-items: center;
-    writing-mode: vertical-lr;
-    transform: rotate(180deg);
+    transform: rotate(-90deg);
+    white-space: nowrap;
   }
 
   .social-container .social-label {
-    margin-bottom: calc(2*var(--sp));
+    margin-right: var(--sp);
+    margin-top: -2px;
     font-size: 12px;
     letter-spacing: 4px;
     text-transform: uppercase;
