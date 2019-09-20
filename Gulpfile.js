@@ -10,14 +10,14 @@ gulp.task('css', () => {
   const calc = require('postcss-calc');
   const atImport = require('postcss-import');
   const perfectionist = require('perfectionist');
-  const mediaVariables = require('postcss-media-variables')
+  const postcssCustomMedia = require('postcss-custom-media');
 
    return gulp.src('./src/style.css')
     .pipe(sourcemaps.init())
     .pipe(postcss([
       atImport(),       // Import all @import statements.
       nested(),         // Process nested media queries and selectors.
-      mediaVariables(),
+      postcssCustomMedia(),
       calc(),           // Combine similar units that are referenced in the CSS calc() function.
       perfectionist({   // Format CSS so it's easier to understand and troubleshoot.
         indentSize: 2

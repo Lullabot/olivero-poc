@@ -16,6 +16,8 @@
          url('/fonts/metropolis/Metropolis-Bold.woff') format('woff');
 }
 
+/* Media query breakpoints */
+
 :root {
   --font-sans: 'metropolis';
   --blue-light: #53b0eb;
@@ -81,11 +83,17 @@ a {
 .site-branding {
   grid-column: span 3;
   padding: var(--unit);
-  background-color: var(--blue);
+  background-image: linear-gradient(161.85deg, #2494db 0%, #0d7ab8 78.66%);
   color: white;
   font-size: 18px;
   font-weight: bold;
   box-shadow: calc(-1*var(--unit)) 0 0 var(--blue-light);
+}
+
+@media (min-width: var(--min-width)) {
+  .site-branding {
+    background: red !important;
+  }
 }
 
 @media (min-width: 700px) {

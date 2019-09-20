@@ -1,3 +1,10 @@
+/* Media query breakpoints */
+@custom-media --sm (min-width: 500px);
+@custom-media --md (min-width: 700px);
+@custom-media --lg (min-width: 1000px);
+@custom-media --xl (min-width: 1300px);
+@custom-media --nav (min-width: 700px);
+
 :root {
   --font-sans: 'metropolis';
   --blue-light: #53B0EB;

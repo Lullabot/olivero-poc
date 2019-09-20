@@ -3,13 +3,17 @@
 .site-branding {
   grid-column: span 3;
   padding: var(--unit);
-  background-color: var(--blue);
+  background-image: linear-gradient(161.85deg, #2494DB 0%, #0D7AB8 78.66%);
   color: white;
   font-size: 18px;
   font-weight: bold;
   box-shadow: calc(-1 * var(--unit)) 0 0 var(--blue-light);
 
-  @media (min-width: 700px) {
+  @media (min-width: var(--min-width)) {
+    background: red !important;
+  }
+
+  @media (--nav) {
     padding-top: calc(6 * var(--unit));
     padding-bottom: calc(2 * var(--unit));
     font-size: 32px;
@@ -30,7 +34,7 @@
   max-width: 500px;
   background-color: white;
 
-  @media (min-width: 700px) {
+  @media (--nav) {
     position: static;
     grid-column: 4 / -1;
     height: auto;
