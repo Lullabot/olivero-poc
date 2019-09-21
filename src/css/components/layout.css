@@ -1,11 +1,8 @@
 .container {
   padding-left: var(--sp);
   padding-right: var(--sp);
+  width: 100%;
   max-width: 1350px;
-
-  @media (min-width: 700px) {
-    margin-left: 90px;
-  }
 }
 
 .grid-full {
@@ -13,7 +10,7 @@
   grid-template-columns: repeat(6, 1fr);
   grid-column-gap: var(--sp);
 
-  @media (min-width: 700px) {
+  @media (--md) {
     grid-template-columns: repeat(14, 1fr);
   }
 }
@@ -22,5 +19,11 @@
   @media (--nav) {
     display: flex;
     flex-direction: row-reverse;
+  }
+}
+
+main {
+  @media (--nav) {
+    margin-right: auto;
   }
 }

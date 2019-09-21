@@ -1,10 +1,10 @@
 .social-container {
   @media (--nav) {
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 90px;
-    height: 100vh;
+    /* We'll handle this with JS to get better control.  */
+    /* position: sticky;
+    top: calc(6 * var(--sp));
+    left: 0; */
+    width: var(--content-left);
     flex-shrink: 0;
     padding: calc(8 * var(--sp)) 0;
     background-color: #F7F9FA;

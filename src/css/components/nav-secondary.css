@@ -1,8 +1,21 @@
-.secondary-nav {
+.secondary-nav__wrapper {
+  display: flex;
+  justify-content: flex-end;
+  order: -1;
+  flex-basis: 100%;
+  margin-top: calc(2 * var(--sp));
 
-  @media (min-width: 700px) {
-    margin-left: calc(2* var(--sp));
+  @media (--nav-2) {
+    order: 0;
+    flex-basis: auto;
+    margin-top: 0;
     margin-bottom: calc(2 * var(--sp));
+  }
+}
+
+.secondary-nav {
+  @media (--nav) {
+    margin-left: calc(2* var(--sp));
     padding-left: calc(2* var(--sp));
     border-left: solid 2px #D7E1E8;
   }
@@ -31,4 +44,11 @@
   li:not(:last-child) {
     margin-right: calc(1.5 * var(--sp));
   }
+}
+
+.header-nav__search-button {
+  -webkit-appearance: none;
+  border: 0;
+  margin-left: calc(2 * var(--sp));
+  cursor: pointer;
 }

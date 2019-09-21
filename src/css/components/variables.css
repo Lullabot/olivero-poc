@@ -1,19 +1,21 @@
 /* Media query breakpoints */
 @custom-media --sm (min-width: 500px);
-@custom-media --md (min-width: 700px);
+@custom-media --md (min-width: 800px);
 @custom-media --lg (min-width: 1000px);
 @custom-media --xl (min-width: 1300px);
-@custom-media --nav (min-width: 700px);
+@custom-media --nav (min-width: 800px);
+@custom-media --nav-2 (min-width: 1150px);
 
 :root {
   --font-sans: 'metropolis';
 
   /* Layout */
   --sp: 18px;
+  --content-left: 90px;
 
   /* Named colors. */
   --blue-light: #53B0EB;
-  --blue: #2393DA;
+  --blue: #2494DB;
   --gray-light: #F7F9FA;
   --gray: #DFE7ED;
   --black-1: #0D1214;

@@ -1,0 +1,1 @@
+{"version":3,"sources":["scripts.js"],"names":["hey","console","log"],"mappings":";;AAAA,CAAC,YAAW;AACV,MAAMA,GAAG,GAAG,MAAZ;AACAC,EAAAA,OAAO,CAACC,GAAR,CAAYF,GAAZ;AACD,CAHD","sourcesContent":["(function() {\n  const hey = \"hey!\"\n  console.log(hey);\n})();\n"],"file":"scripts.js"}
