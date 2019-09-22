@@ -1,7 +1,5 @@
 (function() {
-  // document.querySelector('.nav-primary__button').addEventListener('click', e => {
-  //   e.target.classList.toggle('js-active');
-  // });
+
 
   const fixables = document.querySelectorAll('.fixable')
 
@@ -41,5 +39,28 @@
   }
 
   monitorNavPosition();
+
+
+  // Toggle desktop nav visibility when scrolled down.
+
+  const wideNavButton = document.querySelector('.nav-primary__button');
+  const siteHeaderInner = document.querySelector('.site-header__inner');
+
+  function wideNavIsOpen() {
+    return wideNavButton.getAttribute('aria-pressed') === 'true';
+  }
+
+  wideNavButton.addEventListener('click', e => {
+
+    if (!wideNavIsOpen()) {
+      wideNavButton.setAttribute('aria-pressed', 'true');
+      siteHeaderInner.setAttribute('aria-expanded', 'true');
+    }
+    else {
+      wideNavButton.setAttribute('aria-pressed', 'false');
+      siteHeaderInner.setAttribute('aria-expanded', 'false');
+    }
+
+  });
 
 })();

@@ -1,6 +1,7 @@
 /* Header */
 .site-header {
-  @media (--nav-2) {
+  @media (--nav) {
+    /* Necessary to keep the content from jumping up when header transitions to fixed. */
     min-height: calc(10 * var(--sp));
   }
 }
@@ -9,13 +10,15 @@
   display: flex;
   align-items: flex-end;
 
-
-
   &.js-fixed {
     position: fixed;
     top: -72px;
     width: 100%;
 
+
+  }
+
+  &.js-fixed:not([aria-expanded="true"]) {
     .container {
       transform: translatex(-100vw);
     }
@@ -78,55 +81,5 @@
     align-items: center;
     justify-content: flex-end;
     transition: transform 0.2s;
-  }
-}
-
-
-/* Mobile */
-.header-nav__button {
-  align-self: center;
-  grid-column-end: -1;
-  display: flex;
-  align-items: center;
-  -webkit-appearance: none;
-  position: relative;
-  width: calc(2 * var(--sp));
-  height: calc(2 * var(--sp));
-  margin-left: auto;
-  border: none;
-  cursor: pointer;
-
-  @media (--nav) {
-    display: none;
-  }
-}
-
-.header-nav__icon {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 100%;
-  height: 3px;
-  background-color: var(--blue);
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: var(--blue);
-  }
-
-  &:after {
-    content: '';
-    position: absolute;
-    top: auto;
-    left: 0;
-    bottom: -8px;
-    height: 100%;
-    width: 100%;
-    background-color: var(--blue);
   }
 }

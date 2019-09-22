@@ -1,9 +1,6 @@
 "use strict";
 
 (function () {
-  // document.querySelector('.nav-primary__button').addEventListener('click', e => {
-  //   e.target.classList.toggle('js-active');
-  // });
   var fixables = document.querySelectorAll('.fixable');
 
   function monitorNavPosition() {
@@ -39,6 +36,23 @@
     return window.getComputedStyle(navButton).getPropertyValue('display') === 'none';
   }
 
-  monitorNavPosition();
+  monitorNavPosition(); // Toggle desktop nav visibility when scrolled down.
+
+  var wideNavButton = document.querySelector('.nav-primary__button');
+  var siteHeaderInner = document.querySelector('.site-header__inner');
+
+  function wideNavIsOpen() {
+    return wideNavButton.getAttribute('aria-pressed') === 'true';
+  }
+
+  wideNavButton.addEventListener('click', function (e) {
+    if (!wideNavIsOpen()) {
+      wideNavButton.setAttribute('aria-pressed', 'true');
+      siteHeaderInner.setAttribute('aria-expanded', 'true');
+    } else {
+      wideNavButton.setAttribute('aria-pressed', 'false');
+      siteHeaderInner.setAttribute('aria-expanded', 'false');
+    }
+  });
 })();
 //# sourceMappingURL=scripts.js.map
