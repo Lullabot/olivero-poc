@@ -4,13 +4,16 @@
 @custom-media --lg (min-width: 1000px);
 @custom-media --xl (min-width: 1300px);
 @custom-media --nav (min-width: 1200px);
+@custom-media --nav-lg (min-width: 1200px);
 
 :root {
   --font-sans: 'metropolis';
 
   /* Layout */
+  --max-width: 1350px;
   --sp: 18px;
   --content-left: 90px;
+  --grid-width: calc(var(--max-width)  / 14);
 
   /* Named colors. */
   --blue-light: #53B0EB;

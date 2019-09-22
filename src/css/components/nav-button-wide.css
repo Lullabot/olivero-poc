@@ -5,6 +5,7 @@
   display: none;
 
   @media (--nav) {
+    visibility: hidden;
     display: flex;
     flex-shrink: 0;
     align-items: center;
@@ -12,10 +13,13 @@
     width: var(--content-left);
     height: calc(6 * var(--sp));
     border: 0;
-
     cursor: pointer;
     background-color: var(--blue);
     outline: 0;
+
+    .js-fixed & {
+      visibility: visible;
+    }
   }
 }
 

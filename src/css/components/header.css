@@ -6,30 +6,30 @@
   }
 }
 
-.site-header__inner {
+.site-header__fixable {
   display: flex;
   align-items: flex-end;
+  transition: all 0.5s;
 
   &.js-fixed {
     position: fixed;
     top: -72px;
     width: 100%;
-
-    .container {
-      box-shadow: 0px 1px 36px rgba(0, 0, 0, 0.08);
-    }
   }
+}
 
-  &.js-fixed:not([aria-expanded="true"]) {
-    .container {
-      transform: translatex(-101%);
-      opacity: 0;
-    }
-  }
+.site-header__inner {
+  width: 100%;
+  transition: all 0.5s;
 
-  .container {
-    transition: all 0.5s;
+  .js-fixed & {
     background: white;
+    box-shadow: -36px 1px 36px rgba(0, 0, 0, 0.08);
+  }
+
+  .site-header__fixable.js-fixed:not([aria-expanded="true"]) & {
+    transform: translatex(-101%);
+    opacity: 0;
   }
 }
 

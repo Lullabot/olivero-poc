@@ -29,15 +29,18 @@
 }
 
 .social-container__inner {
-  position: relative;
-  width: var(--content-left);
-  background-color: #F7F9FA;
-  padding: calc(8 * var(--sp)) 0;
+  @media (--nav) {
+    position: relative;
+    width: var(--content-left);
+    background-color: #F7F9FA;
+    padding: calc(8 * var(--sp)) 0;
 
-  &.js-fixed {
-    position: fixed;
-    top: calc(6 * var(--sp));
-    left: 0;
-    height: calc(100vh - 6 * var(--sp))
+
+    &.js-fixed {
+      position: fixed;
+      top: calc(6 * var(--sp));
+      left: 0;
+      height: calc(100vh - 6 * var(--sp))
+    }
   }
 }
