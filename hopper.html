@@ -9,51 +9,58 @@
   <script defer src="dist/scripts.js"></script>
 </head>
 <body>
+
   <header class="site-header">
-    <button class="nav-primary__button" aria-label="Toggle navigation">
-      <span class="nav-primary__icon"></span>
-    </button>
-    <div class="container">
-      <div class="grid-full">
-        <div class="site-branding">
-          <a href="">drupal</a>
-        </div>
-        <button class="header-nav__button">
-          <div class="header-nav__icon"></div>
+    <div class="site-header__inner fixable">
+      <div class="header__left">
+        <button class="nav-primary__button" aria-label="Toggle navigation">
+          <span class="nav-primary__icon"></span>
         </button>
-        <div class="header-nav">
-          <div class="search-wrapper">
-            <form action="">
-              <input type="search" placeholder="Search by keyword or phrase.">
-            </form>
+      </div>
+      <div class="container">
+        <div class="grid-full">
+          <div class="site-branding">
+            <div class="site-branding__inner">
+              <a href="">drupal</a>
+            </div>
           </div>
-          <nav class="primary-nav">
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li>
-                <a href="#">Products</a>
-                <ul>
-                  <li><a href="#">Black & White Photos</a></li>
-                  <li><a href="#">Stone Statues</a></li>
-                  <li><a href="#">Antiques & Artifacts</a></li>
-                  <li><a href="#">Replicas</a></li>
-                </ul>
-              </li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </nav>
-          <div class="secondary-nav__wrapper">
-            <button class="header-nav__search-button" aria-label="Toggle Search Form">
-              <img src="images/search.svg" alt="Toggle Search Form">
-            </button>
-            <nav class="secondary-nav">
+          <button class="header-nav__button">
+            <div class="header-nav__icon"></div>
+          </button>
+          <div class="header-nav">
+            <div class="search-wrapper">
+              <form action="">
+                <input type="search" placeholder="Search by keyword or phrase.">
+              </form>
+            </div>
+            <nav class="primary-nav">
               <ul>
-                <li><a class="button--primary" href="#">Sign Up</a></li>
-                <li><a href="#">Login</a></li>
+                <li><a href="#">Home</a></li>
+                <li>
+                  <a href="#">Products</a>
+                  <ul>
+                    <li><a href="#">Black & White Photos</a></li>
+                    <li><a href="#">Stone Statues</a></li>
+                    <li><a href="#">Antiques & Artifacts</a></li>
+                    <li><a href="#">Replicas</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
               </ul>
             </nav>
+            <div class="secondary-nav__wrapper">
+              <button class="header-nav__search-button" aria-label="Toggle Search Form">
+                <img src="images/search.svg" alt="Toggle Search Form">
+              </button>
+              <nav class="secondary-nav">
+                <ul>
+                  <li><a class="button--primary" href="#">Sign Up</a></li>
+                  <li><a href="#">Login</a></li>
+                </ul>
+              </nav>
+            </div>
           </div>
         </div>
       </div>
@@ -81,11 +88,14 @@
       </div>
     </main>
     <aside class="social-container">
-      <div class="rotate">
-        <span class="social-label">RSS Feed</span>
-        <img src="images/rss.svg" alt="RSS">
+      <div class="social-container__inner fixable">
+        <div class="rotate">
+          <span class="social-label">RSS Feed</span>
+          <img src="images/rss.svg" alt="RSS">
+        </div>
       </div>
     </aside>
   </div>
+
 </body>
 </html>

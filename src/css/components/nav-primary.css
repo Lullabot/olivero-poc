@@ -26,6 +26,7 @@
       }
     }
 
+    /* Secondary nav */
     ul {
       display: none;
       padding-top: calc(1.5 * var(--sp));
@@ -57,6 +58,18 @@
   }
 }
 
+
+.header__left {
+  position: relative;
+  z-index: 2;
+  align-self: stretch;
+  display: flex;
+  align-items: flex-end;
+  background-color: var(--blue);
+}
+
+/* Desktop */
+
 .nav-primary__button {
   display: none;
 
@@ -68,6 +81,10 @@
     width: var(--content-left);
     height: calc(6 * var(--sp));
     border: 0;
+
+    cursor: pointer;
+    background-color: var(--blue);
+    outline: 0;
   }
 }
 
@@ -77,6 +94,14 @@
   height: 3px;
   background-color: white;
   pointer-events: none;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  opacity: 0;
+  transition: opacity 0.2s;
+
+  .js-fixed & {
+    opacity: 1;
+  }
 
   &:before {
     content: '';

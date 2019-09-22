@@ -1,16 +1,7 @@
 .secondary-nav__wrapper {
   display: flex;
   justify-content: flex-end;
-  order: -1;
-  flex-basis: 100%;
-  margin-top: calc(2 * var(--sp));
-
-  @media (--nav-2) {
-    order: 0;
-    flex-basis: auto;
-    margin-top: 0;
-    margin-bottom: calc(2 * var(--sp));
-  }
+  margin-bottom: 0;
 }
 
 .secondary-nav {

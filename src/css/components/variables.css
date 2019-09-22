@@ -3,8 +3,7 @@
 @custom-media --md (min-width: 800px);
 @custom-media --lg (min-width: 1000px);
 @custom-media --xl (min-width: 1300px);
-@custom-media --nav (min-width: 800px);
-@custom-media --nav-2 (min-width: 1150px);
+@custom-media --nav (min-width: 1200px);
 
 :root {
   --font-sans: 'metropolis';

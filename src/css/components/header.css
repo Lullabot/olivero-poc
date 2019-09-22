@@ -1,10 +1,30 @@
 /* Header */
 .site-header {
-  /* position: sticky;
-  top: calc(-4 * var(--sp)); */
+  @media (--nav-2) {
+    min-height: calc(10 * var(--sp));
+  }
+}
+
+.site-header__inner {
   display: flex;
   align-items: flex-end;
-  background: white;
+
+
+
+  &.js-fixed {
+    position: fixed;
+    top: -72px;
+    width: 100%;
+
+    .container {
+      transform: translatex(-100vw);
+    }
+  }
+
+  .container {
+    transition: transform 0.5s;
+    background: white;
+  }
 }
 
 .site-branding {
@@ -20,11 +40,17 @@
     width: calc(100% + 2 * var(--sp));
     margin-left: calc(-1 * var(--sp));
     margin-right: calc(-1 * var(--sp));
-    padding-top: calc(6 * var(--sp));
-    padding-bottom: calc(2 * var(--sp));
+    padding-top: calc(4 * var(--sp));
+    padding-bottom: 0;
     font-size: 32px;
     line-height: calc(2 * var(--sp));
     box-shadow: calc(-1 * var(--content-left)) 0 0 var(--blue);
+
+    .site-branding__inner {
+      display: flex;
+      align-items: center;
+      height: calc(6 * var(--sp));
+    }
   }
 }
 
@@ -43,21 +69,20 @@
   @media (--nav) {
     position: static;
     grid-column: 4 / -1;
-    height: auto;
+    height: calc(6 * var(--sp));
     max-width: none;
     padding: 0;
     overflow: visible;
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
+    align-self: flex-end; /* necessary for intersection observer to detect when to transition to fixed. */
+    align-items: center;
     justify-content: flex-end;
-  }
-
-  @media (--nav-2) {
-    flex-wrap: nowrap;
+    transition: transform 0.2s;
   }
 }
 
+
+/* Mobile */
 .header-nav__button {
   align-self: center;
   grid-column-end: -1;
