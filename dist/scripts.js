@@ -26,7 +26,7 @@
       } else {
         fixables.forEach(function (el) {
           return el.classList.remove('js-fixed');
-        });
+        }); // resetWideNavButton();
       }
     });
   }
@@ -39,7 +39,7 @@
   monitorNavPosition(); // Toggle desktop nav visibility when scrolled down.
 
   var wideNavButton = document.querySelector('.nav-primary__button');
-  var siteHeaderInner = document.querySelector('.site-header__inner');
+  var siteHeaderToggleElement = document.querySelector('.site-header__fixable');
 
   function wideNavIsOpen() {
     return wideNavButton.getAttribute('aria-pressed') === 'true';
@@ -48,11 +48,15 @@
   wideNavButton.addEventListener('click', function (e) {
     if (!wideNavIsOpen()) {
       wideNavButton.setAttribute('aria-pressed', 'true');
-      siteHeaderInner.setAttribute('aria-expanded', 'true');
+      siteHeaderToggleElement.setAttribute('aria-expanded', 'true');
     } else {
-      wideNavButton.setAttribute('aria-pressed', 'false');
-      siteHeaderInner.setAttribute('aria-expanded', 'false');
+      resetWideNavButton();
     }
-  });
+  }); // Resets the wide nav button to be closed (it's default state).
+
+  function resetWideNavButton() {
+    wideNavButton.setAttribute('aria-pressed', 'false');
+    siteHeaderToggleElement.setAttribute('aria-expanded', 'false');
+  }
 })();
 //# sourceMappingURL=scripts.js.map

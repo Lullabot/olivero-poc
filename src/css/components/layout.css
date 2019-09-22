@@ -2,7 +2,7 @@
   padding-left: var(--sp);
   padding-right: var(--sp);
   width: 100%;
-  max-width: 1350px;
+  max-width: var(--max-width);
 }
 
 .grid-full {

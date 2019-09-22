@@ -3,7 +3,6 @@ main {
 }
 
 h1 {
-  grid-column: 1 / -1;
   margin-bottom: var(--sp);
   font-weight: bold;
   font-size: 24px;
@@ -12,17 +11,28 @@ h1 {
   color: #0D1214;
 
   @media (--md) {
-    grid-column: 3 / -3;
     margin-bottom: calc(4 * var(--sp));
     font-size: 60px;
     line-height: calc(4 * var(--sp));
   }
 }
 
-p {
+.text-content {
   grid-column: 1 / -1;
+  line-height: calc(1.5 * var(--sp));
 
   @media (--md) {
     grid-column: 3 / -3;
+  }
+
+  img {
+    @media (--md) {
+      margin-top: calc(3 * var(--sp));
+      margin-bottom: calc(3 * var(--sp));
+      margin-left: calc(-1 * var(--grid-width));
+      /* margin-right: calc(-1 * (var(--sp) + var(--grid-width))); */
+      width: calc(100% + (2 * var(--grid-width)));
+      max-width: none;
+    }
   }
 }

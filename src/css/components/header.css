@@ -9,6 +9,7 @@
 .site-header__fixable {
   display: flex;
   align-items: flex-end;
+  transition: all 0.5s;
 
   &.js-fixed {
     position: fixed;
@@ -26,7 +27,7 @@
     box-shadow: -36px 1px 36px rgba(0, 0, 0, 0.08);
   }
 
-  .site-header__fixable.js-fixed &:not([aria-expanded="true"]){
+  .site-header__fixable.js-fixed:not([aria-expanded="true"]) & {
     transform: translatex(-101%);
     opacity: 0;
   }
