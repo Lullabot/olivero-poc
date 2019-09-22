@@ -1,0 +1,11 @@
+.mobile-search-button {
+  display: none;
+  -webkit-appearance: none;
+  padding: 0 var(--sp);
+  border: 0;
+  cursor: pointer;
+
+  @media (--nav-md) {
+    display: block;
+  }
+}

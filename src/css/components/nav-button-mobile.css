@@ -1,8 +1,7 @@
 
 /* Mobile */
-.mobile-nav__button {
+.mobile-nav-button {
   align-self: center;
-  grid-column-end: -1;
   display: flex;
   align-items: center;
   -webkit-appearance: none;
@@ -19,13 +18,9 @@
     width: auto;
     padding-left: var(--sp);
   }
-
-  @media (--nav) {
-    display: none;
-  }
 }
 
-.mobile-nav__label {
+.mobile-nav-button__label {
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
   overflow: hidden;
@@ -47,7 +42,7 @@
   }
 }
 
-.mobile-nav__icon {
+.mobile-nav-button__icon {
   position: relative;
   width: calc(2 * var(--sp));
   height: 3px;

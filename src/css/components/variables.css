@@ -3,6 +3,7 @@
 @custom-media --md (min-width: 700px);
 @custom-media --lg (min-width: 1000px);
 @custom-media --xl (min-width: 1300px);
+@custom-media --nav-md (min-width: 500px);
 @custom-media --nav (min-width: 1200px);
 @custom-media --nav-lg (min-width: 1200px);
 

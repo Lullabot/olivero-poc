@@ -1,3 +1,31 @@
+.mobile-buttons {
+  grid-column-start: span 3;
+  grid-column-end: -1;
+  margin-left: auto;
+  display: flex;
+
+  @media (--sm) {
+    align-self: end;
+  }
+
+  @media (--md) {
+    grid-column-start: span 5;
+  }
+
+  @media (--nav) {
+    display: none;
+  }
+}
+
+.mobile-buttons__divider {
+  display: none;
+  width: 2px;
+  background-color: #D7E1E8;
+
+  @media (--nav-md) {
+    display: block;
+  }
+}
 
 .primary-nav {
   ul {

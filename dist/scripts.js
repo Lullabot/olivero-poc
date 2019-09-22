@@ -32,8 +32,8 @@
   }
 
   function isDesktopNav() {
-    var navButton = document.querySelector('.header-nav__button');
-    return window.getComputedStyle(navButton).getPropertyValue('display') === 'none';
+    var navButtons = document.querySelector('.mobile-buttons');
+    return window.getComputedStyle(navButtons).getPropertyValue('display') === 'none';
   }
 
   monitorNavPosition(); // Toggle desktop nav visibility when scrolled down.

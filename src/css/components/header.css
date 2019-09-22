@@ -42,7 +42,18 @@
   font-weight: bold;
   box-shadow: calc(-1 * var(--sp)) 0 0 var(--blue);
 
+  @media (--sm) {
+    padding-top: calc(2 * var(--sp));
+  }
+
+  @media (--md) {
+    grid-column: span 5;
+    padding-top: calc(3 * var(--sp));
+    font-size: 28px;
+  }
+
   @media (--nav) {
+    grid-column: span 3;
     width: calc(100% + 2 * var(--sp));
     margin-left: calc(-1 * var(--sp));
     margin-right: calc(-1 * var(--sp));

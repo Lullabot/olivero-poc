@@ -35,8 +35,8 @@
 
 
   function isDesktopNav() {
-    const navButton = document.querySelector('.header-nav__button');
-    return window.getComputedStyle(navButton).getPropertyValue('display') === 'none';
+    const navButtons = document.querySelector('.mobile-buttons');
+    return window.getComputedStyle(navButtons).getPropertyValue('display') === 'none';
   }
 
   monitorNavPosition();
