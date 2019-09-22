@@ -98,29 +98,30 @@ a {
   }
 }
 
-.site-header__inner {
+.site-header__fixable {
   display: flex;
   align-items: flex-end;
 }
 
-.site-header__inner.js-fixed {
+.site-header__fixable.js-fixed {
   position: fixed;
   top: -72px;
   width: 100%;
 }
 
-.site-header__inner.js-fixed .container {
-  box-shadow: 0 1px 36px rgba(0, 0, 0, .08);
+.site-header__inner {
+  width: 100%;
+  transition: all .5s;
 }
 
-.site-header__inner.js-fixed:not([aria-expanded="true"]) .container {
+.js-fixed .site-header__inner {
+  background: white;
+  box-shadow: -36px 1px 36px rgba(0, 0, 0, .08);
+}
+
+.site-header__fixable.js-fixed .site-header__inner:not([aria-expanded="true"]) {
   transform: translatex(-101%);
   opacity: 0;
-}
-
-.site-header__inner .container {
-  transition: all .5s;
-  background: white;
 }
 
 .site-branding {
