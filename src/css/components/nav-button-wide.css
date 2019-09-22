@@ -28,10 +28,24 @@
   transform-style: preserve-3d;
   transition: transform 1s;
   opacity: 0;
-  transition: opacity 0.2s;
+  transition: all 0.2s;
 
   .js-fixed & {
     opacity: 1;
+  }
+
+  [aria-pressed="true"] & {
+    background-color: transparent;
+
+    &:before {
+      top: 0;
+      transform: rotate(-45deg);
+    }
+
+    &:after {
+      top: 0;
+      transform: rotate(45deg);
+    }
   }
 
   &:before {
@@ -42,6 +56,7 @@
     height: 100%;
     width: 100%;
     background-color: white;
+    transition: all 0.2s;
   }
 
   &:after {
@@ -53,5 +68,6 @@
     height: 100%;
     width: 100%;
     background-color: white;
+    transition: all 0.2s;
   }
 }
