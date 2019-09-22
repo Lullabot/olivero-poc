@@ -110,7 +110,7 @@ a {
 }
 
 .site-header__inner.js-fixed .container {
-  box-shadow: -36px 1px 36px rgba(0, 0, 0, .08);
+  box-shadow: 0 1px 36px rgba(0, 0, 0, .08);
 }
 
 .site-header__inner.js-fixed:not([aria-expanded="true"]) .container {
