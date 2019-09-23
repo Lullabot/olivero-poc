@@ -151,7 +151,7 @@ img {
 @media (min-width: 700px) {
   .site-branding {
     grid-column: span 5;
-    padding-top: calc(3*var(--sp));
+    padding-top: calc(4*var(--sp));
     font-size: 28px;
   }
 }
@@ -394,6 +394,7 @@ img {
 @media (min-width: 500px) {
   .mobile-buttons__divider {
     display: block;
+    margin-left: calc(0.5*var(--sp));
   }
 }
 

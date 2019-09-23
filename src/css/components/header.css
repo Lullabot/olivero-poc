@@ -48,7 +48,7 @@
 
   @media (--md) {
     grid-column: span 5;
-    padding-top: calc(3 * var(--sp));
+    padding-top: calc(4 * var(--sp));
     font-size: 28px;
   }
 
