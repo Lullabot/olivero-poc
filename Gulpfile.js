@@ -53,5 +53,7 @@ function watchFiles() {
 
 const css = gulp.series(['css']);
 const js = gulp.series(['js']);
+const build = gulp.series(gulp.parallel(css, js));
 
-exports.watch = gulp.series(watchFiles);;
+exports.watch = gulp.series(watchFiles);
+exports.build = build;
