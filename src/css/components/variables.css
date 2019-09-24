@@ -19,6 +19,17 @@ Processed by postcss/postcss-custom-media.
   --content-left: 90px;
   --grid-width: calc(var(--max-width)  / 14);
 
+  /* Layout helpers */
+  --sp2: calc(2 * var(--sp));
+  --sp3: calc(3 * var(--sp));
+  --sp4: calc(4 * var(--sp));
+  --sp5: calc(5 * var(--sp));
+  --sp6: calc(6 * var(--sp));
+  --sp7: calc(7 * var(--sp));
+  --sp8: calc(8 * var(--sp));
+  --sp9: calc(9 * var(--sp));
+  --sp10: calc(10 * var(--sp));
+
   /* Named colors. */
   --blue-light: #53B0EB;
   --blue: #2494DB;

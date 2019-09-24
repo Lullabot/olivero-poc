@@ -47,7 +47,7 @@
         margin: 0;
 
         &:not(:last-child) {
-          margin-right: calc(2 * var(--sp));
+          margin-right: var(--sp2);
         }
 
         &:hover,
@@ -75,7 +75,7 @@
         position: relative;
         display: flex;
         align-items: center;
-        padding: calc(2 * var(--sp)) 0;
+        padding: var(--sp2) 0;
 
         &:after {
           content: '';
@@ -113,7 +113,7 @@
         transform: translate(-50%, -20px);
         display: block;
         visibility: hidden;
-        padding: calc(3 * var(--sp)) calc(2 * var(--sp));
+        padding: calc(3 * var(--sp)) var(--sp2);
         background: white;
         border-top: solid var(--blue) calc(0.5 * var(--sp));
         border-radius: 0px 0px 2px 2px;
@@ -167,7 +167,7 @@
   a {
     font-size: 28px;
     font-weight: bold;
-    line-height: calc(2 * var(--sp));
+    line-height: var(--sp2);
     letter-spacing: -1px;
     color: var(--black-1);
 

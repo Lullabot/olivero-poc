@@ -25,7 +25,7 @@
 
 .nav-primary__icon {
   position: relative;
-  width: calc(2 * var(--sp));
+  width: var(--sp2);
   height: 3px;
   background-color: white;
   pointer-events: none;

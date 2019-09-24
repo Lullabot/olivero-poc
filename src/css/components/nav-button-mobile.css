@@ -8,8 +8,8 @@
   align-items: center;
   -webkit-appearance: none;
   position: relative;
-  width: calc(2 * var(--sp));
-  height: calc(2 * var(--sp));
+  width: var(--sp2);
+  height: var(--sp2);
   margin-left: auto;
   padding: 0;
   border: none;
@@ -48,7 +48,7 @@
 
 .mobile-nav-button__icon {
   position: relative;
-  width: calc(2 * var(--sp));
+  width: var(--sp2);
   height: 3px;
   background-color: var(--blue);
 

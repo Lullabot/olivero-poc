@@ -28,6 +28,16 @@ Processed by postcss/postcss-custom-media.
   --sp: 18px;
   --content-left: 90px;
   --grid-width: calc(var(--max-width)/14);
+  /* Layout helpers */
+  --sp2: calc(2*var(--sp));
+  --sp3: calc(3*var(--sp));
+  --sp4: calc(4*var(--sp));
+  --sp5: calc(5*var(--sp));
+  --sp6: calc(6*var(--sp));
+  --sp7: calc(7*var(--sp));
+  --sp8: calc(8*var(--sp));
+  --sp9: calc(9*var(--sp));
+  --sp10: calc(10*var(--sp));
   /* Named colors. */
   --blue-light: #53b0eb;
   --blue: #2494db;
@@ -126,7 +136,7 @@ img {
 @media (min-width: 1200px) {
   .site-header {
     /* Necessary to keep the content from jumping up when header transitions to fixed. */
-    min-height: calc(10*var(--sp));
+    min-height: var(--sp10);
   }
 }
 
@@ -138,7 +148,7 @@ img {
 
 .site-header__fixable.js-fixed {
   position: fixed;
-  top: -72px;
+  top: calc(-1*var(--sp4));
   width: 100%;
 }
 
@@ -169,14 +179,14 @@ img {
 
 @media (min-width: 500px) {
   .site-branding {
-    padding-top: calc(2*var(--sp));
+    padding-top: var(--sp2);
   }
 }
 
 @media (min-width: 700px) {
   .site-branding {
     grid-column: span 5;
-    padding-top: calc(4*var(--sp));
+    padding-top: var(--sp4);
     font-size: 28px;
   }
 }
@@ -184,13 +194,13 @@ img {
 @media (min-width: 1200px) {
   .site-branding {
     grid-column: span 3;
-    width: calc(100% + 2*var(--sp));
+    width: calc(100% + var(--sp2));
     margin-left: calc(-1*var(--sp));
     margin-right: calc(-1*var(--sp));
-    padding-top: calc(4*var(--sp));
+    padding-top: var(--sp4);
     padding-bottom: 0;
     font-size: 32px;
-    line-height: calc(2*var(--sp));
+    line-height: var(--sp2);
     box-shadow: calc(-1*var(--content-left)) 0 0 var(--blue);
   }
 
@@ -212,11 +222,23 @@ img {
   width: 100%;
   height: 100%;
   padding: var(--sp);
-  padding-top: calc(3*var(--sp));
+  padding-top: var(--sp3);
   overflow: auto;
   max-width: 500px;
   background-color: white;
   transition: all .2s;
+}
+
+@media (min-width: 500px) {
+  .header-nav {
+    padding-top: var(--sp5);
+  }
+}
+
+@media (min-width: 700px) {
+  .header-nav {
+    padding-top: var(--sp7);
+  }
 }
 
 @media (min-width: 1200px) {
@@ -252,8 +274,8 @@ img {
   align-items: center;
   -webkit-appearance: none;
   position: relative;
-  width: calc(2*var(--sp));
-  height: calc(2*var(--sp));
+  width: var(--sp2);
+  height: var(--sp2);
   margin-left: auto;
   padding: 0;
   border: none;
@@ -294,7 +316,7 @@ img {
 
 .mobile-nav-button__icon {
   position: relative;
-  width: calc(2*var(--sp));
+  width: var(--sp2);
   height: 3px;
   background-color: var(--blue);
 }
@@ -364,7 +386,7 @@ img {
 
 .nav-primary__icon {
   position: relative;
-  width: calc(2*var(--sp));
+  width: var(--sp2);
   height: 3px;
   background-color: white;
   pointer-events: none;
@@ -473,7 +495,7 @@ img {
   }
 
   .primary-nav .primary-nav--level-1 > li:not(:last-child) {
-    margin-right: calc(2*var(--sp));
+    margin-right: var(--sp2);
   }
 
   .primary-nav .primary-nav--level-1 > li:hover .primary-nav--level-2,
@@ -495,7 +517,7 @@ img {
     position: relative;
     display: flex;
     align-items: center;
-    padding: calc(2*var(--sp)) 0;
+    padding: var(--sp2) 0;
   }
 
   .primary-nav .primary-nav--level-1 a:after {
@@ -537,7 +559,7 @@ img {
     transform: translate(-50%, -20px);
     display: block;
     visibility: hidden;
-    padding: calc(3*var(--sp)) calc(2*var(--sp));
+    padding: calc(3*var(--sp)) var(--sp2);
     background: white;
     border-top: solid var(--blue) calc(0.5*var(--sp));
     border-radius: 0 0 2px 2px;
@@ -591,7 +613,7 @@ img {
 .primary-nav a {
   font-size: 28px;
   font-weight: bold;
-  line-height: calc(2*var(--sp));
+  line-height: var(--sp2);
   letter-spacing: -1px;
   color: var(--black-1);
 }
@@ -614,14 +636,20 @@ img {
 
 .secondary-nav__wrapper {
   display: flex;
-  justify-content: flex-end;
-  margin-bottom: 0;
+  margin: var(--sp2) 0;
+}
+
+@media (min-width: 1200px) {
+  .secondary-nav__wrapper {
+    justify-content: flex-end;
+    margin: 0;
+  }
 }
 
 @media (min-width: 1200px) {
   .secondary-nav {
-    margin-left: calc(2*var(--sp));
-    padding-left: calc(2*var(--sp));
+    margin-left: var(--sp2);
+    padding-left: var(--sp2);
     border-left: solid 2px #d7e1e8;
   }
 }
@@ -643,7 +671,7 @@ img {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 14px;
-  line-height: calc(2*var(--sp));
+  line-height: var(--sp2);
   white-space: nowrap;
 }
 
@@ -652,10 +680,18 @@ img {
 }
 
 .header-nav__search-button {
+  display: none;
   -webkit-appearance: none;
   border: 0;
-  margin-left: calc(2*var(--sp));
+  background: transparent;
+  margin-left: var(--sp2);
   cursor: pointer;
+}
+
+@media (min-width: 1200px) {
+  .header-nav__search-button {
+    display: block;
+  }
 }
 
 .search-wrapper input[type="search"] {
@@ -663,10 +699,10 @@ img {
   background-color: #f1f4f7;
   margin-left: calc(-1*var(--sp));
   margin-right: calc(-1*var(--sp));
-  margin-bottom: calc(2*var(--sp));
+  margin-bottom: var(--sp2);
   width: calc(100% + 2*var(--sp));
   height: calc(3*var(--sp));
-  padding: calc(2*var(--sp));
+  padding: var(--sp2);
   font-family: serif;
   font-size: 16px;
 }
@@ -679,9 +715,6 @@ img {
 
 @media (min-width: 1200px) {
   .social-container {
-    /* We'll handle this with JS to get better control.  *//* position: sticky;
-    top: calc(6 * var(--sp));
-    left: 0; */
     width: var(--content-left);
     flex-shrink: 0;
     background-color: #f7f9fa;
@@ -711,12 +744,12 @@ img {
     position: relative;
     width: var(--content-left);
     background-color: #f7f9fa;
-    padding: calc(8*var(--sp)) 0;
+    padding: var(--sp8) 0;
   }
 
   .social-container__inner.js-fixed {
     position: fixed;
-    top: calc(6*var(--sp));
+    top: var(--sp6);
     left: 0;
     height: calc(100vh - 6*var(--sp));
   }
@@ -751,9 +784,9 @@ h1 {
 
 @media (min-width: 700px) {
   h1 {
-    margin-bottom: calc(4*var(--sp));
+    margin-bottom: var(--sp4);
     font-size: 60px;
-    line-height: calc(4*var(--sp));
+    line-height: var(--sp4);
   }
 }
 
@@ -770,8 +803,8 @@ h1 {
 
 @media (min-width: 700px) {
   .text-content img {
-    margin-top: calc(3*var(--sp));
-    margin-bottom: calc(3*var(--sp));
+    margin-top: var(--sp3);
+    margin-bottom: var(--sp3);
     margin-left: calc(-1*var(--grid-width));
     /* margin-right: calc(-1 * (var(--sp) + var(--grid-width))); */
     max-width: calc(100% + 2*var(--grid-width));

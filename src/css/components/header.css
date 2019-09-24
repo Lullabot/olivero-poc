@@ -2,7 +2,7 @@
 .site-header {
   @media (--nav) {
     /* Necessary to keep the content from jumping up when header transitions to fixed. */
-    min-height: calc(10 * var(--sp));
+    min-height: var(--sp10);
   }
 }
 
@@ -13,7 +13,7 @@
 
   &.js-fixed {
     position: fixed;
-    top: -72px;
+    top: calc(-1 * var(--sp4));
     width: 100%;
   }
 }
@@ -43,24 +43,24 @@
   box-shadow: calc(-1 * var(--sp)) 0 0 var(--blue);
 
   @media (--sm) {
-    padding-top: calc(2 * var(--sp));
+    padding-top: var(--sp2);
   }
 
   @media (--md) {
     grid-column: span 5;
-    padding-top: calc(4 * var(--sp));
+    padding-top: var(--sp4);
     font-size: 28px;
   }
 
   @media (--nav) {
     grid-column: span 3;
-    width: calc(100% + 2 * var(--sp));
+    width: calc(100% + var(--sp2));
     margin-left: calc(-1 * var(--sp));
     margin-right: calc(-1 * var(--sp));
-    padding-top: calc(4 * var(--sp));
+    padding-top: var(--sp4);
     padding-bottom: 0;
     font-size: 32px;
-    line-height: calc(2 * var(--sp));
+    line-height: var(--sp2);
     box-shadow: calc(-1 * var(--content-left)) 0 0 var(--blue);
 
     .site-branding__inner {
@@ -82,11 +82,19 @@
   width: 100%;
   height: 100%;
   padding: var(--sp);
-  padding-top: calc(3 * var(--sp));
+  padding-top: var(--sp3);
   overflow: auto;
   max-width: 500px;
   background-color: white;
   transition: all 0.2s;
+
+  @media (--sm) {
+    padding-top: var(--sp5);
+  }
+
+  @media (--md) {
+    padding-top: var(--sp7);
+  }
 
   @media (--nav) {
     visibility: visible;

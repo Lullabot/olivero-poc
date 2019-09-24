@@ -11,9 +11,9 @@ h1 {
   color: #0D1214;
 
   @media (--md) {
-    margin-bottom: calc(4 * var(--sp));
+    margin-bottom: var(--sp4);
     font-size: 60px;
-    line-height: calc(4 * var(--sp));
+    line-height: var(--sp4);
   }
 }
 
@@ -27,8 +27,8 @@ h1 {
 
   img {
     @media (--md) {
-      margin-top: calc(3 * var(--sp));
-      margin-bottom: calc(3 * var(--sp));
+      margin-top: var(--sp3);
+      margin-bottom: var(--sp3);
       margin-left: calc(-1 * var(--grid-width));
       /* margin-right: calc(-1 * (var(--sp) + var(--grid-width))); */
       max-width: calc(100% + (2 * var(--grid-width)));
