@@ -49,9 +49,31 @@
       }
 
       a {
+        position: relative;
         display: flex;
         align-items: center;
         padding: calc(2 * var(--sp)) 0;
+
+        &:after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: calc(0.5 * var(--sp));
+          transform: scalex(0);
+          background: var(--blue);
+          transition: transform 0.2s;
+        }
+
+        &:hover,
+        &:focus {
+          outline: 0;
+
+          &:after {
+            transform: scalex(1);
+          }
+        }
       }
     }
 

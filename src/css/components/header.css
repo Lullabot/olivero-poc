@@ -27,7 +27,7 @@
     box-shadow: -36px 1px 36px rgba(0, 0, 0, 0.08);
   }
 
-  .site-header__fixable.js-fixed:not([aria-expanded="true"]) & {
+  .site-header__fixable.js-fixed &:not([aria-expanded="true"]) {
     transform: translatex(-101%);
     opacity: 0;
   }

@@ -28,9 +28,7 @@
         fixables.forEach(el => el.classList.remove('js-fixed'));
         // resetWideNavButton();
       }
-    })
-
-
+    });
   }
 
 
@@ -45,23 +43,27 @@
   // Toggle desktop nav visibility when scrolled down.
 
   const wideNavButton = document.querySelector('.nav-primary__button');
-  const siteHeaderToggleElement = document.querySelector('.site-header__fixable');
+  const siteHeaderToggleElement = document.querySelector('.site-header__inner');
 
   function wideNavIsOpen() {
     return wideNavButton.getAttribute('aria-pressed') === 'true';
   }
 
-  wideNavButton.addEventListener('click', e => {
-
+  wideNavButton.addEventListener('click', () => {
     if (!wideNavIsOpen()) {
-      wideNavButton.setAttribute('aria-pressed', 'true');
-      siteHeaderToggleElement.setAttribute('aria-expanded', 'true');
+      showDesktopNav();
     }
     else {
       resetWideNavButton();
     }
-
   });
+
+  siteHeaderToggleElement.addEventListener('focusin', showDesktopNav);
+
+  function showDesktopNav() {
+    wideNavButton.setAttribute('aria-pressed', 'true');
+    siteHeaderToggleElement.setAttribute('aria-expanded', 'true');
+  }
 
   // Resets the wide nav button to be closed (it's default state).
   function resetWideNavButton() {

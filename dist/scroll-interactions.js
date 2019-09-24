@@ -3,6 +3,11 @@
 (function () {
   var fixables = document.querySelectorAll('.fixable');
 
+  function isDesktopNav() {
+    var navButtons = document.querySelector('.mobile-buttons');
+    return window.getComputedStyle(navButtons).getPropertyValue('display') === 'none';
+  }
+
   function monitorNavPosition() {
     var primaryNav = document.querySelector('.site-header');
     var options = {
@@ -26,18 +31,12 @@
       } else {
         fixables.forEach(function (el) {
           return el.classList.remove('js-fixed');
-        }); // resetWideNavButton();
+        });
       }
     });
   }
 
-  function isDesktopNav() {
-    var navButtons = document.querySelector('.mobile-buttons');
-    return window.getComputedStyle(navButtons).getPropertyValue('display') === 'none';
-  }
-
-  monitorNavPosition(); // Toggle desktop nav visibility when scrolled down.
-
+  monitorNavPosition();
   var wideNavButton = document.querySelector('.nav-primary__button');
   var siteHeaderToggleElement = document.querySelector('.site-header__inner');
 
@@ -65,4 +64,4 @@
     siteHeaderToggleElement.setAttribute('aria-expanded', 'false');
   }
 })();
-//# sourceMappingURL=scripts.js.map
+//# sourceMappingURL=scroll-interactions.js.map
