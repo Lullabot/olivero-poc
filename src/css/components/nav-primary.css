@@ -100,6 +100,11 @@
   border-left: solid var(--sp) var(--blue);
   margin-left: calc(-1 * var(--sp));
 
+  @media (--md) {
+    margin-left: calc(-1 * var(--sp3));
+    padding-left: var(--sp3);
+  }
+
   @media (--nav) {
     position: absolute;
     top: calc(100% - (0.5 * var(--sp)));

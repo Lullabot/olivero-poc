@@ -31,7 +31,7 @@
   width: 100%;
   transition: all 0.5s;
 
-  .js-fixed & {
+  .site-header__fixable.js-fixed & {
     background: white;
     box-shadow: -36px 1px 36px rgba(0, 0, 0, 0.08);
   }

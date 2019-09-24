@@ -166,7 +166,7 @@ img {
   transition: all .5s;
 }
 
-.js-fixed .site-header__inner {
+.site-header__fixable.js-fixed .site-header__inner {
   background: white;
   box-shadow: -36px 1px 36px rgba(0, 0, 0, .08);
 }
@@ -546,6 +546,13 @@ img {
   padding-left: calc(2.5*var(--sp));
   border-left: solid var(--sp) var(--blue);
   margin-left: calc(-1*var(--sp));
+}
+
+@media (min-width: 700px) {
+  .primary-nav--level-2 {
+    margin-left: calc(-1*var(--sp3));
+    padding-left: var(--sp3);
+  }
 }
 
 @media (min-width: 1200px) {
