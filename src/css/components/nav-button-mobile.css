@@ -20,10 +20,9 @@
     width: auto;
     padding-left: var(--sp);
   }
-
-
 }
 
+/* Text that says "menu" */
 .mobile-nav-button__label {
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);

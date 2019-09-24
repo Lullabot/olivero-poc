@@ -1,5 +1,5 @@
 main {
-  padding-top: calc(5 * var(--sp));
+  padding-top: var(--sp5);
 }
 
 h1 {

@@ -1,158 +1,7 @@
-.mobile-buttons {
-  grid-column-start: span 3;
-  grid-column-end: -1;
-  margin-left: auto;
-  display: flex;
-
-  @media (--sm) {
-    align-self: end;
-  }
-
-  @media (--md) {
-    grid-column-start: span 5;
-  }
-
-  @media (--nav) {
-    display: none;
-  }
-}
-
-.mobile-buttons__divider {
-  display: none;
-  width: 2px;
-  background-color: #D7E1E8;
-
-  @media (--nav-md) {
-    display: block;
-    margin-left: calc(0.5 * var(--sp));
-  }
-}
-
 .primary-nav {
   ul {
     list-style: none;
     margin: 0;
-    padding: 0;
-  }
-
-  .primary-nav--level-1 {
-    @media (--nav) {
-      display: flex;
-      align-items: center;
-
-      > li {
-        position: relative; /* Anchor secondary menu */
-        display: flex;
-        align-items: center;
-        margin: 0;
-
-        &:not(:last-child) {
-          margin-right: var(--sp2);
-        }
-
-        &:hover,
-        &:focus-within {
-          .primary-nav--level-2 {
-            visibility: visible;
-            opacity: 1;
-            transform: translate(-50%, 0);
-          }
-        }
-
-        /*
-
-        If the list item has a submenu, the hover effect, is super noticable,
-        so we remove it.
-        */
-        &.has-children {
-          > a:after {
-            content: none;
-          }
-        }
-      }
-
-      a {
-        position: relative;
-        display: flex;
-        align-items: center;
-        padding: var(--sp2) 0;
-
-        &:after {
-          content: '';
-          position: absolute;
-          left: 0;
-          bottom: 0;
-          width: 100%;
-          height: calc(0.5 * var(--sp));
-          transform: scalex(0);
-          background: var(--blue);
-          transition: transform 0.2s;
-        }
-
-        &:hover,
-        &:focus {
-          outline: 0;
-
-          &:after {
-            transform: scalex(1);
-          }
-        }
-      }
-    }
-
-    /* Secondary nav */
-    .primary-nav--level-2 {
-      display: none;
-      padding-top: calc(1.5 * var(--sp));
-      padding-left: calc(2.5 * var(--sp));
-
-      @media (--nav) {
-        position: absolute;
-        top: calc(100% - (0.5 * var(--sp)));
-        left: 50%;
-        transform: translate(-50%, -20px);
-        display: block;
-        visibility: hidden;
-        padding: calc(3 * var(--sp)) var(--sp2);
-        background: white;
-        border-top: solid var(--blue) calc(0.5 * var(--sp));
-        border-radius: 0px 0px 2px 2px;
-        width: 250px;
-        box-shadow: 0 1px 36px rgba(0, 0, 0, 0.08);
-        opacity: 0;
-        transition: all 0.2s;
-
-        /* Arrow */
-        &:after {
-          content: '';
-          position: absolute;
-          bottom: calc(100% + (0.5 * var(--sp)));
-          left: 50%;
-          transform: translatex(-50%);
-          height: 0;
-          width: 0;
-          border-left: solid 10px transparent;
-          border-right: solid 10px transparent;
-          border-bottom: solid 10px var(--blue);
-        }
-      }
-
-      a {
-        font-size: 16px;
-        line-height: var(--sp);
-        font-weight: normal;
-
-        @media (--nav) {
-          display: block;
-          padding: calc(0.5 * var(--sp)) 0;
-
-          &:after {
-            transform-origin: left;
-            height: 3px;
-          }
-        }
-      }
-    }
   }
 
   li {
@@ -161,7 +10,6 @@
     &:last-child {
       margin-bottom: 0;
     }
-
   }
 
   a {
@@ -178,12 +26,123 @@
   }
 }
 
+.primary-nav--level-1 {
+  padding: 0;
 
-.header__left {
-  position: relative;
-  z-index: 2;
-  align-self: stretch;
-  display: flex;
-  align-items: flex-end;
-  background-color: var(--blue);
+  @media (--nav) {
+    display: flex;
+    align-items: center;
+
+    > li {
+      position: relative; /* Anchor secondary menu */
+      display: flex;
+      align-items: center;
+      margin: 0;
+
+      &:not(:last-child) {
+        margin-right: var(--sp2);
+      }
+
+      &:hover,
+      &:focus-within {
+        .primary-nav--level-2 {
+          visibility: visible;
+          opacity: 1;
+          transform: translate(-50%, 0);
+        }
+      }
+
+      /*
+        If the list item has a submenu, the hover effect, is super noticable,
+        so we remove it.
+      */
+      &.has-children {
+        > a:after {
+          content: none;
+        }
+      }
+    }
+
+    a {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: var(--sp2) 0;
+
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: calc(0.5 * var(--sp));
+        transform: scalex(0);
+        background: var(--blue);
+        transition: transform 0.2s;
+      }
+
+      &:hover,
+      &:focus {
+        outline: 0;
+
+        &:after {
+          transform: scalex(1);
+        }
+      }
+    }
+  }
+}
+
+/* Dropdown nav */
+.primary-nav--level-2 {
+  display: none;
+  padding-top: calc(1.5 * var(--sp));
+  padding-left: calc(2.5 * var(--sp));
+
+  @media (--nav) {
+    position: absolute;
+    top: calc(100% - (0.5 * var(--sp)));
+    left: 50%;
+    transform: translate(-50%, -20px);
+    display: block;
+    visibility: hidden;
+    padding: calc(3 * var(--sp)) var(--sp2);
+    background: white;
+    border-top: solid var(--blue) calc(0.5 * var(--sp));
+    border-radius: 0px 0px 2px 2px;
+    width: 250px;
+    box-shadow: 0 1px 36px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    transition: all 0.2s;
+
+    /* Arrow */
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: calc(100% + (0.5 * var(--sp)));
+      left: 50%;
+      transform: translatex(-50%);
+      height: 0;
+      width: 0;
+      border-left: solid 10px transparent;
+      border-right: solid 10px transparent;
+      border-bottom: solid 10px var(--blue);
+    }
+  }
+
+  a {
+    font-size: 16px;
+    line-height: var(--sp);
+    font-weight: normal;
+
+    @media (--nav) {
+      display: block;
+      padding: calc(0.5 * var(--sp)) 0;
+
+      &:after {
+        transform-origin: left;
+        height: 3px;
+      }
+    }
+  }
 }
