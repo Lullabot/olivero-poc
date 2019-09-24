@@ -1,5 +1,8 @@
 (function() {
 
+  // Set up drupalSettings and olivero global namespaces.
+  window.drupalSettings = {};
+  window.drupalSettings.olivero = {};
 
   const fixables = document.querySelectorAll('.fixable')
 
@@ -36,6 +39,8 @@
     const navButtons = document.querySelector('.mobile-buttons');
     return window.getComputedStyle(navButtons).getPropertyValue('display') === 'none';
   }
+
+  drupalSettings.olivero.isDesktopNav = isDesktopNav;
 
   monitorNavPosition();
 

@@ -1,6 +1,9 @@
 "use strict";
 
 (function () {
+  // Set up drupalSettings and olivero global namespaces.
+  window.drupalSettings = {};
+  window.drupalSettings.olivero = {};
   var fixables = document.querySelectorAll('.fixable');
 
   function monitorNavPosition() {
@@ -36,6 +39,7 @@
     return window.getComputedStyle(navButtons).getPropertyValue('display') === 'none';
   }
 
+  drupalSettings.olivero.isDesktopNav = isDesktopNav;
   monitorNavPosition(); // Toggle desktop nav visibility when scrolled down.
 
   var wideNavButton = document.querySelector('.nav-primary__button');

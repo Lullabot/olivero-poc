@@ -43,6 +43,11 @@ body {
   line-height: var(--sp);
 }
 
+body.js-fixed {
+  position: fixed;
+  overflow: hidden;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -51,6 +56,21 @@ a {
 img {
   display: block;
   max-width: 100%;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #0e6ba6;
+  opacity: .2;
+}
+
+.js-overlay-active .overlay {
+  display: block;
 }
 
 .container {
@@ -177,23 +197,30 @@ img {
 }
 
 .header-nav {
-  display: none;
+  visibility: hidden;
   position: fixed;
   right: 0;
   top: 0;
-  width: calc(100% - 2*var(--sp));
+  z-index: 5; /* appear above overlay */
+  transform: translatex(101%);
+  /* width: calc(100% - (2 * var(--sp))); */
+  width: 100%;
   height: 100%;
   padding: var(--sp);
+  padding-top: calc(3*var(--sp));
   overflow: auto;
   max-width: 500px;
   background-color: white;
+  transition: all .2s;
 }
 
 @media (min-width: 1200px) {
   .header-nav {
+    visibility: visible;
     position: static;
     grid-column: 4 / -1;
     height: calc(6*var(--sp));
+    transform: none;
     max-width: none;
     padding: 0;
     overflow: visible;
@@ -205,9 +232,16 @@ img {
   }
 }
 
+.header-nav[aria-expanded="true"] {
+  visibility: visible;
+  transform: translatex(0);
+}
+
 /* Mobile */
 
 .mobile-nav-button {
+  position: relative;
+  z-index: 10; /* appear above mobile nav */
   align-self: center;
   display: flex;
   align-items: center;
