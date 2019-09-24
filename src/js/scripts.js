@@ -51,24 +51,32 @@
 
   wideNavButton.addEventListener('click', () => {
     if (!wideNavIsOpen()) {
-      showDesktopNav();
+      showWideNav();
     }
     else {
-      resetWideNavButton();
+      hideWideNav();
     }
   });
 
-  siteHeaderToggleElement.addEventListener('focusin', showDesktopNav);
 
-  function showDesktopNav() {
+
+  function showWideNav() {
     wideNavButton.setAttribute('aria-pressed', 'true');
     siteHeaderToggleElement.setAttribute('aria-expanded', 'true');
   }
 
   // Resets the wide nav button to be closed (it's default state).
-  function resetWideNavButton() {
+  function hideWideNav() {
     wideNavButton.setAttribute('aria-pressed', 'false');
     siteHeaderToggleElement.setAttribute('aria-expanded', 'false');
   }
+
+  siteHeaderToggleElement.addEventListener('focusin', showWideNav);
+
+  document.addEventListener('keyup', e => {
+    if (e.keyCode === 27) {
+      hideWideNav();
+    }
+  });
 
 })();
