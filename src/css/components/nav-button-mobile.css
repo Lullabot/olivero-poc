@@ -20,6 +20,8 @@
     width: auto;
     padding-left: var(--sp);
   }
+
+
 }
 
 .mobile-nav-button__label {
@@ -58,6 +60,7 @@
     height: 3px;
     width: 100%;
     background-color: var(--blue);
+    transition: all 0.2s;
   }
 
   &:after {
@@ -69,5 +72,20 @@
     height: 3px;
     width: 100%;
     background-color: var(--blue);
+    transition: all 0.2s;
+  }
+
+  .mobile-nav-button[aria-pressed="true"] & {
+    background-color: transparent;
+
+    &:before {
+      top: 0;
+      transform: rotate(-45deg);
+    }
+
+    &:after {
+      top: 0;
+      transform: rotate(45deg);
+    }
   }
 }

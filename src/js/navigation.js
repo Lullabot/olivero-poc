@@ -5,6 +5,7 @@
   const mobileNavButton = document.querySelector('.mobile-nav-button');
   const mobileNavWrapper = document.querySelector('.header-nav');
   const body = document.querySelector('body');
+  const overlay = document.querySelector('.overlay');
 
   if (!isDesktopNav()) {
 
@@ -17,6 +18,7 @@
   function toggleMobileNav(state) {
     const value = state ? 'true' : 'false';
     mobileNavWrapper.setAttribute('aria-expanded', value);
+    mobileNavButton.setAttribute('aria-pressed', value);
 
     // Overlay
     if (state) {
@@ -29,5 +31,19 @@
 
   mobileNavButton.addEventListener('click', () => {
     toggleMobileNav(!isMobileNavOpen());
+  });
+
+  document.addEventListener('keyup', e => {
+    if (e.keyCode === 27) {
+      toggleMobileNav(false);
+    }
+  });
+
+  overlay.addEventListener('click', () => {
+    toggleMobileNav(false);
+  });
+
+  overlay.addEventListener('touchstart', () => {
+    toggleMobileNav(false);
   });
 })()

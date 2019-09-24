@@ -55,6 +55,18 @@
           .primary-nav--level-2 {
             visibility: visible;
             opacity: 1;
+            transform: translate(-50%, 0);
+          }
+        }
+
+        /*
+
+        If the list item has a submenu, the hover effect, is super noticable,
+        so we remove it.
+        */
+        &.has-children {
+          > a:after {
+            content: none;
           }
         }
       }
@@ -98,7 +110,7 @@
         position: absolute;
         top: calc(100% - (0.5 * var(--sp)));
         left: 50%;
-        transform: translatex(-50%);
+        transform: translate(-50%, -20px);
         display: block;
         visibility: hidden;
         padding: calc(3 * var(--sp)) calc(2 * var(--sp));

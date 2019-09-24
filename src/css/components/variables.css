@@ -1,4 +1,7 @@
-/* Media query breakpoints */
+/*
+Media query breakpoints.
+Processed by postcss/postcss-custom-media.
+*/
 @custom-media --sm (min-width: 500px);
 @custom-media --md (min-width: 700px);
 @custom-media --lg (min-width: 1000px);
@@ -22,4 +25,7 @@
   --gray-light: #F7F9FA;
   --gray: #DFE7ED;
   --black-1: #0D1214;
+
+  /* Header */
+  --header-height-wide-when-fixed: calc(6 * var(--sp));
 }

@@ -16,7 +16,10 @@
          url('/fonts/metropolis/Metropolis-Bold.woff') format('woff');
 }
 
-/* Media query breakpoints */
+/*
+Media query breakpoints.
+Processed by postcss/postcss-custom-media.
+*/
 
 :root {
   --font-sans: 'metropolis';
@@ -31,6 +34,8 @@
   --gray-light: #f7f9fa;
   --gray: #dfe7ed;
   --black-1: #0d1214;
+  /* Header */
+  --header-height-wide-when-fixed: calc(6*var(--sp));
 }
 
 *, *:before, *:after {
@@ -192,7 +197,7 @@ img {
   .site-branding .site-branding__inner {
     display: flex;
     align-items: center;
-    height: calc(6*var(--sp));
+    height: var(--header-height-wide-when-fixed);
   }
 }
 
@@ -219,7 +224,7 @@ img {
     visibility: visible;
     position: static;
     grid-column: 4 / -1;
-    height: calc(6*var(--sp));
+    height: var(--header-height-wide-when-fixed);
     transform: none;
     max-width: none;
     padding: 0;
@@ -302,6 +307,7 @@ img {
   height: 3px;
   width: 100%;
   background-color: var(--blue);
+  transition: all .2s;
 }
 
 .mobile-nav-button__icon:after {
@@ -313,6 +319,21 @@ img {
   height: 3px;
   width: 100%;
   background-color: var(--blue);
+  transition: all .2s;
+}
+
+.mobile-nav-button[aria-pressed="true"] .mobile-nav-button__icon {
+  background-color: transparent;
+}
+
+.mobile-nav-button[aria-pressed="true"] .mobile-nav-button__icon:before {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+.mobile-nav-button[aria-pressed="true"] .mobile-nav-button__icon:after {
+  top: 0;
+  transform: rotate(45deg);
 }
 
 /* Desktop */
@@ -459,6 +480,15 @@ img {
   .primary-nav .primary-nav--level-1 > li:focus-within .primary-nav--level-2 {
     visibility: visible;
     opacity: 1;
+    transform: translate(-50%, 0);
+  }/*
+
+        If the list item has a submenu, the hover effect, is super noticable,
+        so we remove it.
+        */
+
+  .primary-nav .primary-nav--level-1 > li.has-children > a:after {
+    content: none;
   }
 
   .primary-nav .primary-nav--level-1 a {
@@ -504,7 +534,7 @@ img {
     position: absolute;
     top: calc(100% - 0.5*var(--sp));
     left: 50%;
-    transform: translatex(-50%);
+    transform: translate(-50%, -20px);
     display: block;
     visibility: hidden;
     padding: calc(3*var(--sp)) calc(2*var(--sp));

@@ -66,7 +66,7 @@
     .site-branding__inner {
       display: flex;
       align-items: center;
-      height: calc(6 * var(--sp));
+      height: var(--header-height-wide-when-fixed);
     }
   }
 }
@@ -92,7 +92,7 @@
     visibility: visible;
     position: static;
     grid-column: 4 / -1;
-    height: calc(6 * var(--sp));
+    height: var(--header-height-wide-when-fixed);
     transform: none;
     max-width: none;
     padding: 0;
