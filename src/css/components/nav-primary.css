@@ -33,18 +33,29 @@
     list-style: none;
     margin: 0;
     padding: 0;
+  }
 
+  .primary-nav--level-1 {
     @media (--nav) {
       display: flex;
       align-items: center;
 
-      li {
+      > li {
+        position: relative; /* Anchor secondary menu */
         display: flex;
         align-items: center;
         margin: 0;
 
         &:not(:last-child) {
           margin-right: calc(2 * var(--sp));
+        }
+
+        &:hover,
+        &:focus-within {
+          .primary-nav--level-2 {
+            visibility: visible;
+            opacity: 1;
+          }
         }
       }
 
@@ -78,21 +89,67 @@
     }
 
     /* Secondary nav */
-    ul {
+    .primary-nav--level-2 {
       display: none;
       padding-top: calc(1.5 * var(--sp));
       padding-left: calc(2.5 * var(--sp));
+
+      @media (--nav) {
+        position: absolute;
+        top: calc(100% - (0.5 * var(--sp)));
+        left: 50%;
+        transform: translatex(-50%);
+        display: block;
+        visibility: hidden;
+        padding: calc(3 * var(--sp)) calc(2 * var(--sp));
+        background: white;
+        border-top: solid var(--blue) calc(0.5 * var(--sp));
+        border-radius: 0px 0px 2px 2px;
+        width: 250px;
+        box-shadow: 0 1px 36px rgba(0, 0, 0, 0.08);
+        opacity: 0;
+        transition: all 0.2s;
+
+        /* Arrow */
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: calc(100% + (0.5 * var(--sp)));
+          left: 50%;
+          transform: translatex(-50%);
+          height: 0;
+          width: 0;
+          border-left: solid 10px transparent;
+          border-right: solid 10px transparent;
+          border-bottom: solid 10px var(--blue);
+        }
+      }
 
       a {
         font-size: 16px;
         line-height: var(--sp);
         font-weight: normal;
+
+        @media (--nav) {
+          display: block;
+          padding: calc(0.5 * var(--sp)) 0;
+
+          &:after {
+            transform-origin: left;
+            height: 3px;
+          }
+        }
       }
     }
   }
 
   li {
     margin-bottom: calc(1.5 * var(--sp));
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
   }
 
   a {
