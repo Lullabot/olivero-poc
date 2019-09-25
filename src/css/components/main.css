@@ -23,6 +23,8 @@ h1 {
 
   @media (--md) {
     grid-column: 3 / -3;
+    font-size: 18px;
+    line-height: var(--sp2);
   }
 
   img {

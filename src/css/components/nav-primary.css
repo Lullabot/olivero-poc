@@ -126,6 +126,7 @@
     background: white;
     border-top: solid var(--blue) calc(0.5 * var(--sp));
     border-left: 0;
+    margin-top: 0;
     margin-left: 0;
     border-radius: 0px 0px 2px 2px;
     width: 250px;
