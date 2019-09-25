@@ -1,5 +1,6 @@
 .search-wrapper {
   input[type="search"] {
+    -webkit-appearance: none;
     border: 0;
     background-color: #F1F4F7;
     margin-left: calc(-1 * var(--sp));

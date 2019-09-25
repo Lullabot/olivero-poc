@@ -136,7 +136,6 @@
     box-shadow: 0 1px 36px rgba(0, 0, 0, 0.08);
     opacity: 0;
     transition: all 0.2s;
-    opacity: 1;
     max-height: none;
     overflow: visible;
 
@@ -155,6 +154,7 @@
     }
   }
 
+  &:focus-within,
   &[aria-expanded="true"] {
     margin-top: calc(1.5 * var(--sp));
     max-height: none;

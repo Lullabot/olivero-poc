@@ -1,6 +1,7 @@
 .mobile-search-button {
   display: none;
   -webkit-appearance: none;
+  background: transparent;
   padding: 0 var(--sp);
   border: 0;
   cursor: pointer;
