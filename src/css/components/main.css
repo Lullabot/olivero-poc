@@ -5,6 +5,7 @@ main {
 .text-content {
   grid-column: 1 / -1;
   line-height: calc(1.5 * var(--sp));
+  color: #313637;
 
   @media (--md) {
     grid-column: 3 / -3;
@@ -16,15 +17,7 @@ main {
     grid-column: 3 / -5;
   }
 
-  img {
-    @media (--md) {
-      margin-top: var(--sp3);
-      margin-bottom: var(--sp3);
-      margin-left: calc(-1 * var(--grid-width));
-      /* margin-right: calc(-1 * (var(--sp) + var(--grid-width))); */
-      max-width: calc(100% + (2 * var(--grid-width)));
-    }
-  }
+
 
   .lead {
     font-family: var(--font-serif);
@@ -32,6 +25,24 @@ main {
     color: #0D1214;
     letter-spacing: -0.01em;
     line-height: calc(2.5 * var(--sp));
-    font-size: 24px;
+
+    @media (--md) {
+      font-size: 24px;
+    }
+  }
+
+  h2 {
+    margin: var(--sp2) 0 calc(1.5 * var(--sp));
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    line-height: calc(1.5 * var(--sp));
+    font-size: 16px;
+    color: black;
+
+    @media (--md) {
+      margin: var(--sp3) 0 var(--sp2);
+      font-size: 21px;
+      letter-spacing: 0.09em;
+    }
   }
 }

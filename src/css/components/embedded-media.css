@@ -1,0 +1,31 @@
+figure {
+  background: #F1F5F8;
+
+  &.pull-right {
+    margin: var(--sp3) 0;
+    max-width: 100%;
+
+    @media (--md) {
+      float: right;
+      width: 50%;
+      margin: var(--sp) calc(-1 * var(--grid-width)) var(--sp) var(--sp);
+    }
+
+    @media (--lg) {
+      margin-right: calc(-2 * var(--grid-width));
+    }
+  }
+}
+
+figcaption {
+  padding: calc(0.5 * var(--sp));
+  font-family: var(--serif);
+  font-size: 14px;
+  font-style: italic;;
+  line-height: var(--sp);
+  color: #455057;
+
+  @media (--sm) {
+    padding: var(--sp);
+  }
+}
