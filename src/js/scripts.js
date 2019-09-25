@@ -10,7 +10,7 @@
     const primaryNav = document.querySelector('.site-header');
     const options = {
       rootMargin: '72px',
-      threshold: [0.999, 1]
+      threshold: 1
     }
 
     const observer = new IntersectionObserver(toggleDesktopNavVisibility, options);
@@ -21,10 +21,7 @@
     if (!isDesktopNav()) return;
 
     entries.forEach(entry => {
-      // Every pixel is visible at 1.
-      console.log(entry.intersectionRatio);
-
-      if (entry.intersectionRatio < 1) {
+      if (!entry.isIntersecting) {
         fixables.forEach(el => el.classList.add('js-fixed'));
       }
       else {

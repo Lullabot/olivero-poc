@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Olivero Navigation Proof of Concept</title>
+  <title>Olivero Proof of Concept</title>
   <link rel="stylesheet" href="dist/style.css">
   <script defer src="dist/scripts.js"></script>
   <script defer src="dist/navigation.js"></script>
@@ -44,8 +44,9 @@
             </div>
             <div class="header-nav">
               <div class="search-wrapper">
-                <form action="">
-                  <input type="search" placeholder="Search by keyword or phrase.">
+                <form role="search" action="">
+                  <label class="visually-hidden" for="search-input">Search</label>
+                  <input id="search-input" type="search" placeholder="Search by keyword or phrase.">
                 </form>
               </div>
               <nav class="primary-nav">
