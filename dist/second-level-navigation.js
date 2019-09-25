@@ -12,12 +12,15 @@
   });
 
   function expandSubNav(e) {
-    console.log(e);
+    var button = e.target;
+    var subMenu = button.parentNode.querySelector('.primary-nav--level-2');
 
-    if (!isButtonPressed(e.target)) {
-      e.target.setAttribute('aria-pressed', 'true');
+    if (!isButtonPressed(button)) {
+      button.setAttribute('aria-pressed', 'true');
+      subMenu.setAttribute('aria-expanded', 'true');
     } else {
-      e.target.setAttribute('aria-pressed', 'false');
+      button.setAttribute('aria-pressed', 'false');
+      subMenu.setAttribute('aria-expanded', 'false');
     }
   }
 

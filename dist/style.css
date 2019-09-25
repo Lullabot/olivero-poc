@@ -559,10 +559,13 @@ img {
 
 .primary-nav--level-2 {
   flex-basis: 100%;
-  margin-top: calc(1.5*var(--sp));
   padding-left: calc(2.5*var(--sp));
   border-left: solid var(--sp) var(--blue);
   margin-left: calc(-1*var(--sp));
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity .2s;
 }
 
 @media (min-width: 700px) {
@@ -590,6 +593,9 @@ img {
     box-shadow: 0 1px 36px rgba(0, 0, 0, .08);
     opacity: 0;
     transition: all .2s;
+    opacity: 1;
+    max-height: none;
+    overflow: visible;
     /* Arrow */
   }
 
@@ -605,6 +611,12 @@ img {
     border-right: solid 10px transparent;
     border-bottom: solid 10px var(--blue);
   }
+}
+
+.primary-nav--level-2[aria-expanded="true"] {
+  margin-top: calc(1.5*var(--sp));
+  max-height: none;
+  opacity: 1;
 }
 
 .primary-nav--level-2 a {
