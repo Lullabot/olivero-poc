@@ -625,6 +625,13 @@ img {
   opacity: 1;
 }
 
+@media (min-width: 1200px) {
+  .primary-nav--level-2:focus-within,
+  .primary-nav--level-2[aria-expanded="true"] {
+    margin-top: 0;
+  }
+}
+
 .primary-nav--level-2 a {
   font-size: 16px;
   line-height: var(--sp);
