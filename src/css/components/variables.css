@@ -12,6 +12,7 @@ Processed by postcss/postcss-custom-media.
 
 :root {
   --font-sans: 'metropolis';
+  --font-serif: 'georgia', 'serif';
 
   /* Layout */
   --max-width: 1350px;

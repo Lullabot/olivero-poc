@@ -2,21 +2,6 @@ main {
   padding-top: var(--sp5);
 }
 
-h1 {
-  margin-bottom: var(--sp);
-  font-weight: bold;
-  font-size: 24px;
-  line-height: calc(1.5 * var(--sp));
-  letter-spacing: -0.02em;
-  color: #0D1214;
-
-  @media (--md) {
-    margin-bottom: var(--sp4);
-    font-size: 60px;
-    line-height: var(--sp4);
-  }
-}
-
 .text-content {
   grid-column: 1 / -1;
   line-height: calc(1.5 * var(--sp));
@@ -27,6 +12,10 @@ h1 {
     line-height: var(--sp2);
   }
 
+  @media (--lg) {
+    grid-column: 3 / -5;
+  }
+
   img {
     @media (--md) {
       margin-top: var(--sp3);
@@ -35,5 +24,14 @@ h1 {
       /* margin-right: calc(-1 * (var(--sp) + var(--grid-width))); */
       max-width: calc(100% + (2 * var(--grid-width)));
     }
+  }
+
+  .lead {
+    font-family: var(--font-serif);
+    font-weight: bold;
+    color: #0D1214;
+    letter-spacing: -0.01em;
+    line-height: calc(2.5 * var(--sp));
+    font-size: 24px;
   }
 }

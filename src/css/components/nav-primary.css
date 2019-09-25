@@ -77,6 +77,15 @@
       position: relative;
       display: flex;
 
+      &:hover,
+      &:focus {
+        outline: 0;
+
+        span:after {
+          transform: scalex(1);
+        }
+      }
+
       span {
         position: relative;
         display: inline-flex;
@@ -93,15 +102,6 @@
           transform: scalex(0);
           background: var(--blue);
           transition: transform 0.2s;
-        }
-
-        &:hover,
-        &:focus {
-          outline: 0;
-
-          &:after {
-            transform: scalex(1);
-          }
         }
       }
     }

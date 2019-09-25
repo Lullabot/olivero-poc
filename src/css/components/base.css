@@ -23,6 +23,23 @@ img {
   max-width: 100%;
 }
 
+h1 {
+  margin-top: var(--sp);
+  margin-bottom: var(--sp);
+  font-weight: bold;
+  font-size: 24px;
+  line-height: calc(1.5 * var(--sp));
+  letter-spacing: -0.02em;
+  color: #0D1214;
+
+  @media (--md) {
+    margin-top: var(--sp2);
+    margin-bottom: var(--sp2);
+    font-size: 60px;
+    line-height: var(--sp4);
+  }
+}
+
 .overlay {
   display: none;
   position: fixed;

@@ -1,0 +1,16 @@
+.breadcrumb {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 14px;
+  line-height: var(--sp);
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  a {
+    color: #2494DB;
+  }
+}

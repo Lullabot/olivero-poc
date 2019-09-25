@@ -29,7 +29,7 @@
 
 .site-header__inner {
   width: 100%;
-  transition: all 0.5s;
+  transition: all 0.3s;
 
   .site-header__fixable.js-fixed & {
     background: white;

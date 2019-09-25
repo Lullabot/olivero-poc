@@ -1,0 +1,16 @@
+.hero {
+  grid-column: 1 / -1;
+
+  @media (--md) {
+    grid-column: 3 / -3;
+  }
+
+  img {
+    @media (--md) {
+      margin-top: var(--sp3);
+      margin-bottom: var(--sp3);
+      margin-left: calc(-1 * var(--grid-width));
+      max-width: calc(100% + (2 * var(--grid-width)));
+    }
+  }
+}
