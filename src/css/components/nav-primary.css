@@ -9,6 +9,26 @@
     &:last-child {
       margin-bottom: 0;
     }
+
+    &.has-children {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      @media (--nav) {
+        /*
+          If the list item has a submenu, the hover effect, is super noticable,
+          so we remove it.
+        */
+        > a {
+          display: block;
+
+          &:after {
+            content: none;
+          }
+        }
+      }
+    }
   }
 
   a {
@@ -51,16 +71,6 @@
           transform: translate(-50%, 0);
         }
       }
-
-      /*
-        If the list item has a submenu, the hover effect, is super noticable,
-        so we remove it.
-      */
-      &.has-children {
-        > a:after {
-          content: none;
-        }
-      }
     }
 
     a {
@@ -95,6 +105,7 @@
 
 /* Dropdown nav */
 .primary-nav--level-2 {
+  flex-basis: 100%;
   margin-top: calc(1.5 * var(--sp));
   padding-left: calc(2.5 * var(--sp));
   border-left: solid var(--sp) var(--blue);
@@ -150,6 +161,49 @@
         transform-origin: left;
         height: 3px;
       }
+    }
+  }
+}
+
+/*
+  Is inserted via JavaScript.
+  Expands second level nav at mobile
+*/
+.primary-nav__button-expand {
+  -webkit-appearance: none;
+  border: 0;
+  background: transparent;
+  position: relative;
+  width: var(--sp2);
+  height: var(--sp2);
+  text-indent: -999px;
+  overflow: hidden;
+  cursor: pointer;
+
+  @media (--nav) {
+    display: none;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--sp);
+    height: 3px;
+    background: var(--blue);
+  }
+
+  &:after {
+    transform: translate(-50%, -50%) rotate(90deg);
+    transition: opacity 0.2s;
+  }
+
+  &[aria-pressed="true"] {
+    &:after {
+      opacity: 0;
     }
   }
 }

@@ -460,6 +460,29 @@ img {
   margin-bottom: 0;
 }
 
+.primary-nav li.has-children {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@media (min-width: 1200px) {
+  .primary-nav li.has-children {
+    /*
+          If the list item has a submenu, the hover effect, is super noticable,
+          so we remove it.
+        */
+  }
+
+  .primary-nav li.has-children > a {
+    display: block;
+  }
+
+  .primary-nav li.has-children > a:after {
+    content: none;
+  }
+}
+
 .primary-nav a {
   font-size: 28px;
   font-weight: bold;
@@ -502,13 +525,6 @@ img {
     visibility: visible;
     opacity: 1;
     transform: translate(-50%, 0);
-  }/*
-        If the list item has a submenu, the hover effect, is super noticable,
-        so we remove it.
-      */
-
-  .primary-nav--level-1 > li.has-children > a:after {
-    content: none;
   }
 
   .primary-nav--level-1 a {
@@ -542,6 +558,7 @@ img {
 /* Dropdown nav */
 
 .primary-nav--level-2 {
+  flex-basis: 100%;
   margin-top: calc(1.5*var(--sp));
   padding-left: calc(2.5*var(--sp));
   border-left: solid var(--sp) var(--blue);
@@ -605,6 +622,49 @@ img {
     transform-origin: left;
     height: 3px;
   }
+}
+
+/*
+  Is inserted via JavaScript.
+  Expands second level nav at mobile
+*/
+
+.primary-nav__button-expand {
+  -webkit-appearance: none;
+  border: 0;
+  background: transparent;
+  position: relative;
+  width: var(--sp2);
+  height: var(--sp2);
+  text-indent: -999px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+@media (min-width: 1200px) {
+  .primary-nav__button-expand {
+    display: none;
+  }
+}
+
+.primary-nav__button-expand:before, .primary-nav__button-expand:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--sp);
+  height: 3px;
+  background: var(--blue);
+}
+
+.primary-nav__button-expand:after {
+  transform: translate(-50%, -50%) rotate(90deg);
+  transition: opacity .2s;
+}
+
+.primary-nav__button-expand[aria-pressed="true"]:after {
+  opacity: 0;
 }
 
 .secondary-nav__wrapper {
