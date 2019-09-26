@@ -22,6 +22,7 @@
 
   &.js-fixed {
     position: fixed;
+    z-index: 2; /* Appear above body content that is position: relative */
     top: calc(-1 * var(--sp4));
     width: 100%;
   }
