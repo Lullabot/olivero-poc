@@ -1038,4 +1038,68 @@ main {
   }
 }
 
+.text-content blockquote {
+  position: relative;
+  margin: var(--sp2) 0;
+  padding-left: var(--sp2);
+  font-family: var(--font-serif);
+  font-size: 21px;
+  line-height: var(--sp2);
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 700px) {
+  .text-content blockquote {
+    margin: var(--sp3) calc(-1*var(--grid-width)) var(--sp3) 0;
+    padding: 0;
+    width: calc(100% + var(--grid-width));
+    font-size: 32px;
+    line-height: var(--sp3);
+  }
+}
+
+@media (min-width: 1000px) {
+  .text-content blockquote {
+    margin-right: calc(-2*var(--grid-width));
+    width: calc(100% + 2*var(--grid-width));
+    font-size: 48px;
+    line-height: var(--sp4);
+  }
+}
+
+.text-content blockquote:before {
+  content: '“';
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #53b0eb;
+  font-size: 54px;
+}
+
+@media (min-width: 700px) {
+  .text-content blockquote:before {
+    left: calc(-1*var(--grid-width));
+  }
+}
+
+.text-content blockquote:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #f7f9fa;
+  width: calc(0.5*var(--sp));
+  height: calc(100% - 30px);
+  margin-left: 4px;
+}
+
+@media (min-width: 700px) {
+  .text-content blockquote:after {
+    left: calc(-1*var(--grid-width));
+    width: var(--sp);
+    height: calc(100% - 45px);
+    margin-left: 2px;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

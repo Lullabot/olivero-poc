@@ -45,4 +45,60 @@ main {
       letter-spacing: 0.09em;
     }
   }
+
+  blockquote {
+    position: relative;
+    margin: var(--sp2) 0;
+    padding-left: var(--sp2);
+    font-family: var(--font-serif);
+    font-size: 21px;
+    line-height: var(--sp2);
+    letter-spacing: -0.01em;
+
+    @media (--md) {
+      margin: var(--sp3) calc(-1 * var(--grid-width)) var(--sp3) 0;
+      padding: 0;
+      width: calc(100% + var(--grid-width));
+      font-size: 32px;
+      line-height: var(--sp3);
+    }
+
+    @media (--lg) {
+      margin-right: calc(-2 * var(--grid-width));
+      width: calc(100% + (2 * var(--grid-width)));
+      font-size: 48px;
+      line-height: var(--sp4);
+    }
+
+    &:before {
+      content: '“';
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #53B0EB;
+      font-size: 54px;
+
+      @media (--md) {
+        left: calc(-1 * var(--grid-width));
+      }
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background: #F7F9FA;
+      width: calc(0.5 * var(--sp));
+      height: calc(100% - 30px);
+      margin-left: 4px;
+
+      @media (--md) {
+        left: calc(-1 * var(--grid-width));
+        width: var(--sp);
+        height: calc(100% - 45px);
+        margin-left: 2px;
+      }
+    }
+  }
 }
