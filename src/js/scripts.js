@@ -1,95 +1,85 @@
-if (window.NodeList && !NodeList.prototype.forEach) {
-  NodeList.prototype.forEach = function (callback, thisArg) {
-    thisArg = thisArg || window;
-    for (var i = 0; i < this.length; i++) {
-      callback.call(thisArg, this[i], i, this);
-    }
-  };
-}
 
 (function() {
   window.drupalSettings = {};
   window.drupalSettings.olivero = {};
+
+  // Only enable scroll effects if the browser supports Intersection Observer.
+  // @see https://github.com/w3c/IntersectionObserver/blob/master/polyfill/intersection-observer.js#L19-L21
   if ('IntersectionObserver' in window &&
     'IntersectionObserverEntry' in window &&
     'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
 
+    const fixables = document.querySelectorAll('.fixable')
 
+    function monitorNavPosition() {
+      const primaryNav = document.querySelector('.site-header');
+      const options = {
+        rootMargin: '72px',
+        threshold: [0.999, 1]
+      }
 
-
-
-
-  const fixables = document.querySelectorAll('.fixable')
-
-  function monitorNavPosition() {
-    const primaryNav = document.querySelector('.site-header');
-    const options = {
-      rootMargin: '72px',
-      threshold: [0.999, 1]
+      const observer = new IntersectionObserver(toggleDesktopNavVisibility, options);
+      observer.observe(primaryNav);
     }
 
-    const observer = new IntersectionObserver(toggleDesktopNavVisibility, options);
-    observer.observe(primaryNav);
-  }
+    function toggleDesktopNavVisibility(entries) {
+      if (!isDesktopNav()) return;
 
-  function toggleDesktopNavVisibility(entries) {
-    if (!isDesktopNav()) return;
+      entries.forEach(entry => {
+        // FF doesn't seem to support entry.isIntersecting properly,
+        // so we check the intersectionRatio.
+        if (entry.intersectionRatio < 1) {
+          fixables.forEach(el => el.classList.add('js-fixed'));
+        }
+        else {
+          fixables.forEach(el => el.classList.remove('js-fixed'));
+        }
+      });
+    }
 
-    entries.forEach(entry => {
-      // FF doesn't seem to support entry.isIntersecting properly,
-      // so we check the intersectionRatio.
-      if (entry.intersectionRatio < 1) {
-        fixables.forEach(el => el.classList.add('js-fixed'));
+    function isDesktopNav() {
+      const navButtons = document.querySelector('.mobile-buttons');
+      return window.getComputedStyle(navButtons).getPropertyValue('display') === 'none';
+    }
+
+    drupalSettings.olivero.isDesktopNav = isDesktopNav;
+
+    monitorNavPosition();
+
+    // Toggle desktop nav visibility when scrolled down.
+    const wideNavButton = document.querySelector('.nav-primary__button');
+    const siteHeaderToggleElement = document.querySelector('.site-header__inner');
+
+    function wideNavIsOpen() {
+      return wideNavButton.getAttribute('aria-pressed') === 'true';
+    }
+
+    wideNavButton.addEventListener('click', () => {
+      if (!wideNavIsOpen()) {
+        showWideNav();
       }
       else {
-        fixables.forEach(el => el.classList.remove('js-fixed'));
+        hideWideNav();
+      }
+    });
+
+    function showWideNav() {
+      wideNavButton.setAttribute('aria-pressed', 'true');
+      siteHeaderToggleElement.setAttribute('aria-expanded', 'true');
+    }
+
+    // Resets the wide nav button to be closed (it's default state).
+    function hideWideNav() {
+      wideNavButton.setAttribute('aria-pressed', 'false');
+      siteHeaderToggleElement.setAttribute('aria-expanded', 'false');
+    }
+
+    siteHeaderToggleElement.addEventListener('focusin', showWideNav);
+
+    document.addEventListener('keyup', e => {
+      if (e.keyCode === 27) {
+        hideWideNav();
       }
     });
   }
-
-  function isDesktopNav() {
-    const navButtons = document.querySelector('.mobile-buttons');
-    return window.getComputedStyle(navButtons).getPropertyValue('display') === 'none';
-  }
-
-  drupalSettings.olivero.isDesktopNav = isDesktopNav;
-
-  monitorNavPosition();
-
-  // Toggle desktop nav visibility when scrolled down.
-  const wideNavButton = document.querySelector('.nav-primary__button');
-  const siteHeaderToggleElement = document.querySelector('.site-header__inner');
-
-  function wideNavIsOpen() {
-    return wideNavButton.getAttribute('aria-pressed') === 'true';
-  }
-
-  wideNavButton.addEventListener('click', () => {
-    if (!wideNavIsOpen()) {
-      showWideNav();
-    }
-    else {
-      hideWideNav();
-    }
-  });
-
-  function showWideNav() {
-    wideNavButton.setAttribute('aria-pressed', 'true');
-    siteHeaderToggleElement.setAttribute('aria-expanded', 'true');
-  }
-
-  // Resets the wide nav button to be closed (it's default state).
-  function hideWideNav() {
-    wideNavButton.setAttribute('aria-pressed', 'false');
-    siteHeaderToggleElement.setAttribute('aria-expanded', 'false');
-  }
-
-  siteHeaderToggleElement.addEventListener('focusin', showWideNav);
-
-  document.addEventListener('keyup', e => {
-    if (e.keyCode === 27) {
-      hideWideNav();
-    }
-  });
-}
 })();

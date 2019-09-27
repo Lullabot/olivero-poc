@@ -37,15 +37,17 @@ gulp.task('css', () => {
    return gulp.src('./src/css/style.css')
     .pipe(sourcemaps.init())
     .pipe(postcss([
-      atImport(),       // Import all @import statements.
-      nested(),         // Process nested media queries and selectors.
+      atImport(),
+      nested(),
       postcssCustomMedia(),
-      postcssCustomProperties(),
-      calc(),           // Combine similar units that are referenced in the CSS calc() function.
-      autoprefixer({
-        grid: 'autoplace' // This is making things worse, but hopefully we can get things working properly.
+      postcssCustomProperties({
+        preserve: false
       }),
-      perfectionist({   // Format CSS so it's easier to understand and troubleshoot.
+      calc(),
+      autoprefixer({
+        grid: 'autoplace'
+      }),
+      perfectionist({
         indentSize: 2
       })
     ]))

@@ -1,18 +1,9 @@
 "use strict";
 
-if (window.NodeList && !NodeList.prototype.forEach) {
-  NodeList.prototype.forEach = function (callback, thisArg) {
-    thisArg = thisArg || window;
-
-    for (var i = 0; i < this.length; i++) {
-      callback.call(thisArg, this[i], i, this);
-    }
-  };
-}
-
 (function () {
   window.drupalSettings = {};
-  window.drupalSettings.olivero = {};
+  window.drupalSettings.olivero = {}; // Only enable scroll effects if the browser supports Intersection Observer.
+  // @see https://github.com/w3c/IntersectionObserver/blob/master/polyfill/intersection-observer.js#L19-L21
 
   if ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
     var monitorNavPosition = function monitorNavPosition() {
