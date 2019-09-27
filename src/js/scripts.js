@@ -1,6 +1,4 @@
 (function() {
-
-  // Set up drupalSettings and olivero global namespaces.
   window.drupalSettings = {};
   window.drupalSettings.olivero = {};
 
@@ -10,7 +8,7 @@
     const primaryNav = document.querySelector('.site-header');
     const options = {
       rootMargin: '72px',
-      threshold: 1
+      threshold: [0.999, 1]
     }
 
     const observer = new IntersectionObserver(toggleDesktopNavVisibility, options);
@@ -21,16 +19,16 @@
     if (!isDesktopNav()) return;
 
     entries.forEach(entry => {
-      if (!entry.isIntersecting) {
+      // FF doesn't seem to support entry.isIntersecting properly,
+      // so we check the intersectionRatio.
+      if (entry.intersectionRatio < 1) {
         fixables.forEach(el => el.classList.add('js-fixed'));
       }
       else {
         fixables.forEach(el => el.classList.remove('js-fixed'));
-        // resetWideNavButton();
       }
     });
   }
-
 
   function isDesktopNav() {
     const navButtons = document.querySelector('.mobile-buttons');
@@ -41,9 +39,7 @@
 
   monitorNavPosition();
 
-
   // Toggle desktop nav visibility when scrolled down.
-
   const wideNavButton = document.querySelector('.nav-primary__button');
   const siteHeaderToggleElement = document.querySelector('.site-header__inner');
 
@@ -59,8 +55,6 @@
       hideWideNav();
     }
   });
-
-
 
   function showWideNav() {
     wideNavButton.setAttribute('aria-pressed', 'true');
@@ -80,5 +74,4 @@
       hideWideNav();
     }
   });
-
 })();

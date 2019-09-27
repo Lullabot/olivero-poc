@@ -1,6 +1,8 @@
 (function() {
   const secondLevelNavMenus = document.querySelectorAll('.has-children');
 
+  // Insert a button after the <a> element that will control the visibility
+  // of the second-level navigation.
   secondLevelNavMenus.forEach(el => {
     const button = document.createElement('button');
     const subMenu = el.querySelector('.primary-nav--level-2');
@@ -23,7 +25,6 @@
       button.setAttribute('aria-pressed', 'false');
       subMenu.setAttribute('aria-expanded', 'false');
     }
-
   }
 
   function isButtonPressed(el) {
