@@ -24,12 +24,15 @@ gulp.task('js', () => {
  * CSS Compilation
  */
 gulp.task('css', () => {
+  const autoprefixer = require('autoprefixer')
   const postcss = require('gulp-postcss');
   const nested = require('postcss-nested');
   const calc = require('postcss-calc');
   const atImport = require('postcss-import');
   const perfectionist = require('perfectionist');
   const postcssCustomMedia = require('postcss-custom-media');
+  const postcssCustomProperties = require('postcss-custom-properties');
+
 
    return gulp.src('./src/css/style.css')
     .pipe(sourcemaps.init())
@@ -37,7 +40,11 @@ gulp.task('css', () => {
       atImport(),       // Import all @import statements.
       nested(),         // Process nested media queries and selectors.
       postcssCustomMedia(),
+      postcssCustomProperties(),
       calc(),           // Combine similar units that are referenced in the CSS calc() function.
+      autoprefixer({
+        grid: 'autoplace' // This is making things worse, but hopefully we can get things working properly.
+      }),
       perfectionist({   // Format CSS so it's easier to understand and troubleshoot.
         indentSize: 2
       })

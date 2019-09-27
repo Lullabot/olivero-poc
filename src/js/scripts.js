@@ -1,6 +1,23 @@
+if (window.NodeList && !NodeList.prototype.forEach) {
+  NodeList.prototype.forEach = function (callback, thisArg) {
+    thisArg = thisArg || window;
+    for (var i = 0; i < this.length; i++) {
+      callback.call(thisArg, this[i], i, this);
+    }
+  };
+}
+
 (function() {
   window.drupalSettings = {};
   window.drupalSettings.olivero = {};
+  if ('IntersectionObserver' in window &&
+    'IntersectionObserverEntry' in window &&
+    'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
+
+
+
+
+
 
   const fixables = document.querySelectorAll('.fixable')
 
@@ -74,4 +91,5 @@
       hideWideNav();
     }
   });
+}
 })();

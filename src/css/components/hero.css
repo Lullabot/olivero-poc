@@ -1,8 +1,8 @@
 .hero {
-  grid-column: 1 / -1;
+  grid-column: 1 / 6;
 
   @media (--md) {
-    grid-column: 3 / -3;
+    grid-column: 3 / 11;
   }
 
   img {

@@ -3,18 +3,18 @@ main {
 }
 
 .text-content {
-  grid-column: 1 / -1;
+  grid-column: 1 / 6;
   line-height: calc(1.5 * var(--sp));
   color: #313637;
 
   @media (--md) {
-    grid-column: 3 / -3;
+    grid-column: 3 / 11;
     font-size: 18px;
     line-height: var(--sp2);
   }
 
   @media (--lg) {
-    grid-column: 3 / -5;
+    grid-column: 3 / 9;
   }
 
 

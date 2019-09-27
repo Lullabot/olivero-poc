@@ -46,7 +46,7 @@
 .site-branding {
   grid-column: span 3;
   padding: var(--sp);
-  background-image: linear-gradient(161.85deg, var(--blue) 0%, #0D7AB8 78.66%);
+  background-image: linear-gradient(160deg, var(--blue) 0%, #0D7AB8 78.66%);
   color: white;
   font-size: 18px;
   font-weight: bold;
@@ -108,7 +108,7 @@
   @media (--nav) {
     visibility: visible;
     position: static;
-    grid-column: 4 / -1;
+    grid-column: 4 / 14;
     height: var(--header-height-wide-when-fixed);
     transform: none;
     max-width: none;

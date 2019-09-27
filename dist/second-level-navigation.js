@@ -1,7 +1,9 @@
 "use strict";
 
 (function () {
-  var secondLevelNavMenus = document.querySelectorAll('.has-children');
+  var secondLevelNavMenus = document.querySelectorAll('.has-children'); // Insert a button after the <a> element that will control the visibility
+  // of the second-level navigation.
+
   secondLevelNavMenus.forEach(function (el) {
     var button = document.createElement('button');
     var subMenu = el.querySelector('.primary-nav--level-2');

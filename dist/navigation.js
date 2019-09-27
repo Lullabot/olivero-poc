@@ -7,8 +7,6 @@
   var body = document.querySelector('body');
   var overlay = document.querySelector('.overlay');
 
-  if (!isDesktopNav()) {}
-
   function isMobileNavOpen() {
     return mobileNavWrapper.getAttribute('aria-expanded') === 'true';
   }
