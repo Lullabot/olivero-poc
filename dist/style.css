@@ -21,6 +21,10 @@ Media query breakpoints.
 Processed by postcss/postcss-custom-media.
 */
 
+/* Navigation related breakpoints */
+
+/* Grid related breakpoints */
+
 :root {
   /* Layout *//* Layout helpers *//* Named colors. *//* Header */
 }
@@ -94,41 +98,11 @@ h1 {
 .grid-full {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 18px 1fr 18px 1fr 18px 1fr 18px 1fr 18px 1fr;
+  -ms-grid-columns: (1fr)[6];
   grid-template-columns: repeat(6, 1fr);
   -ms-grid-rows: 1fr;
   grid-template-rows: 1fr;
   grid-column-gap: 18px;
-}
-
-.grid-full > *:nth-child(1) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-}
-
-.grid-full > *:nth-child(2) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 3;
-}
-
-.grid-full > *:nth-child(3) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 5;
-}
-
-.grid-full > *:nth-child(4) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 7;
-}
-
-.grid-full > *:nth-child(5) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 9;
-}
-
-.grid-full > *:nth-child(6) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 11;
 }
 
 @media (min-width: 700px) {
@@ -361,16 +335,16 @@ figcaption {
   .header-nav {
     visibility: visible;
     position: static;
-    -ms-grid-column: 4;
+    -ms-grid-column: 5;
     -ms-grid-column-span: 10;
-        grid-column: 4 / 14;
+        grid-column: 5 / 15;
     height: 108px;
     transform: none;
     max-width: none;
     padding: 0;
     overflow: visible;
     display: flex;
-    align-self: flex-end; /* necessary for intersection observer to detect when to transition to fixed. */
+    margin-top: auto;
     align-items: center;
     justify-content: flex-end;
     transition: transform .2s;
@@ -392,6 +366,14 @@ figcaption {
 @media (min-width: 700px) {
   .hero {
     -ms-grid-column: 3;
+    -ms-grid-column-span: 10;
+        grid-column: 3 / 13;
+  }
+}
+
+@media (min-width: 1000px) {
+  .hero {
+    -ms-grid-column: 3;
     -ms-grid-column-span: 8;
         grid-column: 3 / 11;
   }
@@ -402,7 +384,14 @@ figcaption {
     margin-top: 54px;
     margin-bottom: 54px;
     margin-left: -96.42857px;
-    max-width: calc(100% + 192.85714px);
+    width: calc(100% + 192.85714px);
+    max-width: none;
+  }
+}
+
+@media (min-width: 1000px) {
+  .hero img {
+    width: calc(100% + 385.71428px);
   }
 }
 
@@ -860,7 +849,7 @@ figcaption {
 .secondary-nav .button--primary {
   display: inline-block;
   padding: 0 18px;
-  background-color: #2494db;
+  background-color: #0d7ab8;
   color: white;
   letter-spacing: .07em;
   text-transform: uppercase;
@@ -1013,6 +1002,7 @@ main {
 }
 
 .text-content {
+  -ms-grid-row: 2; /* IE11 will overlay the content above the hero without this. */
   -ms-grid-column: 1;
   -ms-grid-column-span: 5;
       grid-column: 1 / 6;
@@ -1023,8 +1013,8 @@ main {
 @media (min-width: 700px) {
   .text-content {
     -ms-grid-column: 3;
-    -ms-grid-column-span: 8;
-        grid-column: 3 / 11;
+    -ms-grid-column-span: 10;
+        grid-column: 3 / 13;
     font-size: 18px;
     line-height: 36px;
   }
@@ -1033,8 +1023,8 @@ main {
 @media (min-width: 1000px) {
   .text-content {
     -ms-grid-column: 3;
-    -ms-grid-column-span: 6;
-        grid-column: 3 / 9;
+    -ms-grid-column-span: 8;
+        grid-column: 3 / 11;
   }
 }
 

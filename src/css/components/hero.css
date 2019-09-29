@@ -1,16 +1,25 @@
 .hero {
   grid-column: 1 / 6;
 
-  @media (--md) {
+  @media (--grid-lg) {
+    grid-column: 3 / 13;
+  }
+
+  @media (--lg) {
     grid-column: 3 / 11;
   }
 
   img {
-    @media (--md) {
+    @media (--grid-lg) {
       margin-top: var(--sp3);
       margin-bottom: var(--sp3);
       margin-left: calc(-1 * var(--grid-width));
-      max-width: calc(100% + (2 * var(--grid-width)));
+      width: calc(100% + (2 * var(--grid-width)));
+      max-width: none;
+    }
+
+    @media (--lg) {
+      width: calc(100% + (4 * var(--grid-width)));
     }
   }
 }

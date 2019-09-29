@@ -108,14 +108,14 @@
   @media (--nav) {
     visibility: visible;
     position: static;
-    grid-column: 4 / 14;
+    grid-column: 5 / 15;
     height: var(--header-height-wide-when-fixed);
     transform: none;
     max-width: none;
     padding: 0;
     overflow: visible;
     display: flex;
-    align-self: flex-end; /* necessary for intersection observer to detect when to transition to fixed. */
+    margin-top: auto;
     align-items: center;
     justify-content: flex-end;
     transition: transform 0.2s;

@@ -6,9 +6,14 @@ Processed by postcss/postcss-custom-media.
 @custom-media --md (min-width: 700px);
 @custom-media --lg (min-width: 1000px);
 @custom-media --xl (min-width: 1300px);
+
+/* Navigation related breakpoints */
 @custom-media --nav-md (min-width: 500px);
 @custom-media --nav (min-width: 1200px);
 @custom-media --nav-lg (min-width: 1200px);
+
+/* Grid related breakpoints */
+@custom-media --grid-lg (min-width: 700px);
 
 :root {
   --font-sans: 'metropolis';
@@ -34,6 +39,7 @@ Processed by postcss/postcss-custom-media.
   /* Named colors. */
   --blue-light: #53B0EB;
   --blue: #2494DB;
+  --blue-dark: #0D7AB8;
   --gray-light: #F7F9FA;
   --gray: #DFE7ED;
   --black-1: #0D1214;

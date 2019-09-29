@@ -3,21 +3,20 @@ main {
 }
 
 .text-content {
+  -ms-grid-row: 2; /* IE11 will overlay the content above the hero without this. */
   grid-column: 1 / 6;
   line-height: calc(1.5 * var(--sp));
   color: #313637;
 
-  @media (--md) {
-    grid-column: 3 / 11;
+  @media (--grid-lg) {
+    grid-column: 3 / 13;
     font-size: 18px;
     line-height: var(--sp2);
   }
 
   @media (--lg) {
-    grid-column: 3 / 9;
+    grid-column: 3 / 11;
   }
-
-
 
   .lead {
     font-family: var(--font-serif);

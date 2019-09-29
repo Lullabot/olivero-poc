@@ -45,7 +45,7 @@ gulp.task('css', () => {
       }),
       calc(),
       autoprefixer({
-        grid: 'autoplace'
+        grid: 'no-autoplace'
       }),
       perfectionist({
         indentSize: 2

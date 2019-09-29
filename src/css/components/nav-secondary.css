@@ -26,7 +26,7 @@
   .button--primary {
     display: inline-block;
     padding: 0 var(--sp);
-    background-color: var(--blue);
+    background-color: var(--blue-dark);
     color: white;
     letter-spacing: 0.07em;
     text-transform: uppercase;
