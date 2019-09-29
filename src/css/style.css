@@ -1,8 +1,8 @@
-@import 'components/fonts.css';
-@import 'components/variables.css';
-@import 'components/base.css';
-@import 'components/layout.css';
-@import 'components/utility.css';
+@import 'base/fonts.css';
+@import 'base/variables.css';
+@import 'base/base.css';
+@import 'base/layout.css';
+@import 'base/utility.css';
 
 /* Components */
 @import 'components/breadcrumb.css';
