@@ -1,5 +1,5 @@
 .hero {
-  grid-column: 1 / 6;
+  grid-column: 1 / 7;
 
   @media (--grid-lg) {
     grid-column: 3 / 13;

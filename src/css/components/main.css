@@ -4,7 +4,7 @@ main {
 
 .text-content {
   -ms-grid-row: 2; /* IE11 will overlay the content above the hero without this. */
-  grid-column: 1 / 6;
+  grid-column: 1 / 7;
   line-height: calc(1.5 * var(--sp));
   color: #313637;
 
@@ -23,10 +23,11 @@ main {
     font-weight: bold;
     color: #0D1214;
     letter-spacing: -0.01em;
-    line-height: calc(2.5 * var(--sp));
+    line-height: calc(1.5 * var(--sp));
 
     @media (--md) {
       font-size: 24px;
+      line-height: calc(2.5 * var(--sp));
     }
   }
 

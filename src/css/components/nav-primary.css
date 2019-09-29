@@ -63,7 +63,18 @@
         margin-right: var(--sp2);
       }
 
-      &:hover,
+      &:hover {
+        .primary-nav--level-2 {
+          visibility: visible;
+          opacity: 1;
+          transform: translate(-50%, 0);
+        }
+      }
+
+      /*
+        Cannot combine the focus-within pseudoselector with other selectors,
+        because it will break IE11 and MS Edge.
+      */
       &:focus-within {
         .primary-nav--level-2 {
           visibility: visible;
@@ -159,7 +170,20 @@
     }
   }
 
-  &:focus-within,
+  /*
+    Cannot combine the focus-within pseudoselector with other selectors,
+    because it will break IE11 and MS Edge.
+  */
+  &:focus-within {
+    margin-top: calc(1.5 * var(--sp));
+    max-height: none;
+    opacity: 1;
+
+    @media (--nav) {
+      margin-top: 0;
+    }
+  }
+
   &[aria-expanded="true"] {
     margin-top: calc(1.5 * var(--sp));
     max-height: none;

@@ -196,7 +196,7 @@ figure.pull-right {
 
 figcaption {
   padding: 9px;
-  font-family: var(--serif);
+  font-family: 'georgia', 'serif';
   font-size: 14px;
   font-style: italic;
   line-height: 18px;
@@ -359,8 +359,8 @@ figcaption {
 
 .hero {
   -ms-grid-column: 1;
-  -ms-grid-column-span: 5;
-      grid-column: 1 / 6;
+  -ms-grid-column-span: 6;
+      grid-column: 1 / 7;
 }
 
 @media (min-width: 700px) {
@@ -643,7 +643,15 @@ figcaption {
     margin-right: 36px;
   }
 
-  .primary-nav--level-1 > li:hover .primary-nav--level-2,
+  .primary-nav--level-1 > li:hover .primary-nav--level-2 {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }/*
+        Cannot combine the focus-within pseudoselector with other selectors,
+        because it will break IE11 and MS Edge.
+      */
+
   .primary-nav--level-1 > li:focus-within .primary-nav--level-2 {
     visibility: visible;
     opacity: 1;
@@ -741,14 +749,30 @@ figcaption {
   }
 }
 
-.primary-nav--level-2:focus-within, .primary-nav--level-2[aria-expanded="true"] {
+/*
+    Cannot combine the focus-within pseudoselector with other selectors,
+    because it will break IE11 and MS Edge.
+  */
+
+.primary-nav--level-2:focus-within {
   margin-top: 27px;
   max-height: none;
   opacity: 1;
 }
 
 @media (min-width: 1200px) {
-  .primary-nav--level-2:focus-within,
+  .primary-nav--level-2:focus-within {
+    margin-top: 0;
+  }
+}
+
+.primary-nav--level-2[aria-expanded="true"] {
+  margin-top: 27px;
+  max-height: none;
+  opacity: 1;
+}
+
+@media (min-width: 1200px) {
   .primary-nav--level-2[aria-expanded="true"] {
     margin-top: 0;
   }
@@ -1005,8 +1029,8 @@ main {
 .text-content {
   -ms-grid-row: 2; /* IE11 will overlay the content above the hero without this. */
   -ms-grid-column: 1;
-  -ms-grid-column-span: 5;
-      grid-column: 1 / 6;
+  -ms-grid-column-span: 6;
+      grid-column: 1 / 7;
   line-height: 27px;
   color: #313637;
 }
@@ -1034,12 +1058,13 @@ main {
   font-weight: bold;
   color: #0d1214;
   letter-spacing: -0.01em;
-  line-height: 45px;
+  line-height: 27px;
 }
 
 @media (min-width: 700px) {
   .text-content .lead {
     font-size: 24px;
+    line-height: 45px;
   }
 }
 
