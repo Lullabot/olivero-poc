@@ -37,7 +37,7 @@
   }
 
   li:not(:last-child) {
-    margin-right: calc(1.5 * var(--sp));
+    margin-right: var(--sp1-5);
   }
 }
 

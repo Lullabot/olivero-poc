@@ -1,6 +1,6 @@
 /*
-Media query breakpoints.
-Processed by postcss/postcss-custom-media.
+  Media query breakpoints.
+  Processed by postcss/postcss-custom-media.
 */
 @custom-media --sm (min-width: 500px);
 @custom-media --md (min-width: 700px);
@@ -26,7 +26,10 @@ Processed by postcss/postcss-custom-media.
   --grid-width: calc(var(--max-width)  / 14);
 
   /* Layout helpers */
+  --sp0-5: calc(0.5 * var(--sp));
+  --sp1-5: calc(1.5 * var(--sp));
   --sp2: calc(2 * var(--sp));
+  --sp2-5: calc(2.5 * var(--sp));
   --sp3: calc(3 * var(--sp));
   --sp4: calc(4 * var(--sp));
   --sp5: calc(5 * var(--sp));

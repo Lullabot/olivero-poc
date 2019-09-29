@@ -18,7 +18,7 @@ figure {
 }
 
 figcaption {
-  padding: calc(0.5 * var(--sp));
+  padding: var(--sp0-5);
   font-family: var(--font-serif);
   font-size: 14px;
   font-style: italic;;

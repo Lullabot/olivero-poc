@@ -4,7 +4,7 @@
   }
 
   li {
-    margin-bottom: calc(1.5 * var(--sp));
+    margin-bottom: var(--sp1-5);
 
     &:last-child {
       margin-bottom: 0;
@@ -109,7 +109,7 @@
           left: 0;
           bottom: 0;
           width: 100%;
-          height: calc(0.5 * var(--sp));
+          height: var(--sp0-5);
           transform: scalex(0);
           background: var(--blue);
           transition: transform 0.2s;
@@ -122,7 +122,7 @@
 /* Dropdown nav */
 .primary-nav--level-2 {
   flex-basis: 100%;
-  padding-left: calc(2.5 * var(--sp));
+  padding-left: var(--sp2-5);
   border-left: solid var(--sp) var(--blue);
   margin-left: calc(-1 * var(--sp));
   max-height: 0;
@@ -143,7 +143,7 @@
     visibility: hidden;
     padding: calc(3 * var(--sp)) var(--sp2);
     background: white;
-    border-top: solid var(--blue) calc(0.5 * var(--sp));
+    border-top: solid var(--blue) var(--sp0-5);
     border-left: 0;
     margin-top: 0;
     margin-left: 0;
@@ -175,7 +175,7 @@
     because it will break IE11 and MS Edge.
   */
   &:focus-within {
-    margin-top: calc(1.5 * var(--sp));
+    margin-top: var(--sp1-5);
     max-height: none;
     opacity: 1;
 
@@ -185,7 +185,7 @@
   }
 
   &[aria-expanded="true"] {
-    margin-top: calc(1.5 * var(--sp));
+    margin-top: var(--sp1-5);
     max-height: none;
     opacity: 1;
 
@@ -203,7 +203,7 @@
       display: block;
 
       span {
-        padding: calc(0.5 * var(--sp)) 0;
+        padding: var(--sp0-5) 0;
 
         &:after {
           transform-origin: left;

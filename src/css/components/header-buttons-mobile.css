@@ -24,6 +24,6 @@
 
   @media (--nav-md) {
     display: block;
-    margin-left: calc(0.5 * var(--sp));
+    margin-left: var(--sp0-5);
   }
 }
