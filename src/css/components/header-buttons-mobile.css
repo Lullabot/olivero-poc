@@ -1,6 +1,6 @@
 .mobile-buttons {
-  grid-column-start: span 3;
-  grid-column-end: -1;
+  grid-column: 4 / 7;
+  -ms-grid-column-align: end;
   margin-left: auto;
   display: flex;
 
@@ -8,8 +8,8 @@
     align-self: end;
   }
 
-  @media (--md) {
-    grid-column-start: span 5;
+  @media (--grid-lg) {
+    grid-column: 12 / 15;
   }
 
   @media (--nav) {

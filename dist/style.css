@@ -879,10 +879,10 @@ figcaption {
 }
 
 .mobile-buttons {
-  -ms-grid-column: span 3;
-  grid-column-start: span 3;
-  -ms-grid-column-span: NaN;
-  grid-column-end: -1;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 3;
+      grid-column: 4 / 7;
+  -ms-grid-column-align: end;
   margin-left: auto;
   display: flex;
 }
@@ -896,8 +896,9 @@ figcaption {
 
 @media (min-width: 700px) {
   .mobile-buttons {
-    -ms-grid-column: span 5;
-    grid-column-start: span 5;
+    -ms-grid-column: 12;
+    -ms-grid-column-span: 3;
+        grid-column: 12 / 15;
   }
 }
 
