@@ -9,7 +9,7 @@
   }
 
   @media (--grid-lg) {
-    grid-column: 12 / 15;
+    grid-column: 11 / 15;
   }
 
   @media (--nav) {

@@ -920,9 +920,9 @@ figcaption {
 
 @media (min-width: 700px) {
   .mobile-buttons {
-    -ms-grid-column: 12;
-    -ms-grid-column-span: 3;
-        grid-column: 12 / 15;
+    -ms-grid-column: 11;
+    -ms-grid-column-span: 4;
+        grid-column: 11 / 15;
   }
 }
 
