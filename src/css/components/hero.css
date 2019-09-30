@@ -16,10 +16,18 @@
       max-width: none;
     }
 
-    @media (--lg) {
-      margin-left: calc(-2 * (var(--grid-width) + var(--grid-gap)));
-      width: calc(14 * var(--grid-width) + 13 * var(--grid-gap));
-      /* margin-left: calc(-2 * (70.422px + 18px)); */
+    /* @media (--lg) {
+      margin-left: calc(-2 * (var(--grid-width--lg) + var(--grid-gap)));
+      width: calc(var(--grid-col-count--lg) * var(--grid-width--lg) + var(--grid-gap-count--lg) * var(--grid-gap));
+    }
+    @media (--nav-lg) {
+      margin-left: calc(-2 * (var(--grid-width--lg) + var(--grid-gap)));
+      width: calc(var(--grid-width--lg) * var(--grid-width--max) + var(--grid-gap-count--lg) * var(--grid-gap));
+    } */
+
+    @media (--grid-max) {
+      margin-left: calc(-2 * (var(--grid-width--max) + var(--grid-gap)));
+      width: calc(var(--grid-width--max) * var(--grid-col-count--lg) + var(--grid-gap-count--lg) * var(--grid-gap));
     }
   }
 

@@ -11,6 +11,7 @@ figure {
 
     @media (--lg) {
       margin-right: calc(-2 * var(--grid-width));
+
     }
   }
 }

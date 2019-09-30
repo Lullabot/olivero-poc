@@ -7,9 +7,13 @@
 
 .grid-full {
   display: grid;
-  grid-template-columns: repeat(var(--grid-row-count), 1fr);
+  grid-template-columns: repeat(var(--grid-col-count), 1fr);
   grid-template-rows: 1fr;
   grid-column-gap: var(--grid-gap);
+
+  @media (--grid-lg) {
+    grid-template-columns: repeat(var(--grid-col-count--lg), 1fr);
+  }
 }
 
 .page-wrapper {

@@ -29,25 +29,31 @@
   /* grid helpers */
   --scrollbar-width: 15px;
   --grid-gap: var(--sp);
-  --grid-row-count: 6;
-  --grid-gap-count: calc(var(--grid-row-count) - 1);
+
+  --grid-col-count: 6;
+  --grid-col-count--lg: 14;
+
+  --grid-gap-count: calc(var(--grid-col-count) - 1);
+  --grid-gap-count--lg: calc(var(--grid-col-count--lg) - 1);
+
   --grid-full-width: calc(100vw - var(--scrollbar-width) - var(--sp2));
+  --grid-full-width--lg: calc(100vw - var(--scrollbar-width) - var(--content-left) - var(--sp2));
+  --grid-full-width--max: calc(var(--max-width) - var(--sp2));
 
-  @media (--grid-lg) {
-    --grid-row-count: 14;
-  }
+  --grid-width: calc((var(--grid-full-width) - (var(--grid-gap-count) * var(--grid-gap))) / var(--grid-col-count));
+  --grid-width--lg: calc((var(--grid-full-width--lg) - (var(--grid-gap-count--lg) * var(--grid-gap))) / var(--grid-col-count--lg));
 
-  @media (--nav-lg) {
-    --grid-full-width: calc(100vw - var(--scrollbar-width) - var(--content-left) - var(--sp2));
-  }
-
-  @media (--grid-max) {
-    --grid-full-width: calc(var(--max-width) - var(--sp2));
-  }
-
-  --grid-width: calc((var(--grid-full-width) - (var(--grid-gap-count) * var(--grid-gap))) / var(--grid-row-count));
+  /* Use at 1440px */
+  --grid-width--max: calc((var(--grid-full-width--max) - (var(--grid-gap-count--lg) * var(--grid-gap))) / var(--grid-col-count--lg));
 
 
+  /* calc((calc(1350px - calc(2 * 18px)) - (calc(6 - 1) * 18px)) / 14) + 18px) */
+
+
+
+  /* --grid-width: calc((var(--grid-full-width) - (var(--grid-gap-count) * var(--grid-gap))) / var(--grid-col-count)); */
+
+/* calc((100vw - 285px)/14) */
 
 
 
