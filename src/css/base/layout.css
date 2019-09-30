@@ -7,13 +7,15 @@
 
 .grid-full {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(var(--grid-row-count), 1fr);
   grid-template-rows: 1fr;
-  grid-column-gap: var(--sp);
+  grid-column-gap: var(--grid-gap);
+}
 
-  @media (--grid-lg) {
-    grid-template-columns: repeat(14, 1fr);
-  }
+.page-wrapper {
+  max-width: var(--max-bg-color);
+  background: white;
+
 }
 
 .content {

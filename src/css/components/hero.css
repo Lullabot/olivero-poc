@@ -13,13 +13,14 @@
     @media (--grid-lg) {
       margin-top: var(--sp3);
       margin-bottom: var(--sp3);
-      margin-left: calc(-1 * var(--grid-width));
-      width: calc(100% + (2 * var(--grid-width)));
       max-width: none;
     }
 
     @media (--lg) {
-      width: calc(100% + (4 * var(--grid-width)));
+      margin-left: calc(-2 * (var(--grid-width) + var(--grid-gap)));
+      width: calc(14 * var(--grid-width) + 13 * var(--grid-gap));
+      /* margin-left: calc(-2 * (70.422px + 18px)); */
     }
   }
+
 }

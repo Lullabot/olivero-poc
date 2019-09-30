@@ -14,6 +14,7 @@
 
 /* Grid related breakpoints */
 @custom-media --grid-lg (min-width: 700px);
+@custom-media --grid-max (min-width: 1440px); /* When the grid reaches its max size */
 
 :root {
   --font-sans: 'metropolis';
@@ -21,9 +22,34 @@
 
   /* Layout */
   --max-width: 1350px;
+  --max-bg-color: 1570px;
   --sp: 18px;
   --content-left: 90px;
-  --grid-width: calc(var(--max-width)  / 14);
+
+  /* grid helpers */
+  --scrollbar-width: 15px;
+  --grid-gap: var(--sp);
+  --grid-row-count: 6;
+  --grid-gap-count: calc(var(--grid-row-count) - 1);
+  --grid-full-width: calc(100vw - var(--scrollbar-width) - var(--sp2));
+
+  @media (--grid-lg) {
+    --grid-row-count: 14;
+  }
+
+  @media (--nav-lg) {
+    --grid-full-width: calc(100vw - var(--scrollbar-width) - var(--content-left) - var(--sp2));
+  }
+
+  @media (--grid-max) {
+    --grid-full-width: calc(var(--max-width) - var(--sp2));
+  }
+
+  --grid-width: calc((var(--grid-full-width) - (var(--grid-gap-count) * var(--grid-gap))) / var(--grid-row-count));
+
+
+
+
 
   /* Layout helpers */
   --sp0-5: calc(0.5 * var(--sp));

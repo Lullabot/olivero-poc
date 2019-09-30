@@ -6,6 +6,9 @@ body {
   margin: 0;
   font-family: var(--font-sans);
   line-height: var(--sp);
+  background-color: #F7F9FA;
+  background-image: url('/images/background.svg');
+  background-position: top left;
 
   &.js-fixed {
     position: fixed;

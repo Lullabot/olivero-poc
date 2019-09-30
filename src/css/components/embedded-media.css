@@ -7,8 +7,6 @@ figure {
 
     @media (--md) {
       float: right;
-      width: 50%;
-      margin: var(--sp) calc(-1 * var(--grid-width)) var(--sp) var(--sp);
     }
 
     @media (--lg) {
