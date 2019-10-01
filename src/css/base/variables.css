@@ -73,6 +73,10 @@
   --grid-col-width--nav:    calc((var(--grid-full-width--nav) - (var(--grid-gap-count--nav) * var(--grid-gap))) / var(--grid-col-count--nav));
   --grid-col-width--max:    calc((var(--grid-full-width--max) - (var(--grid-gap-count--max) * var(--grid-gap))) / var(--grid-col-count--max));
 
+  /*
+(var(--grid-col-width--lg) + var(--grid-gap))
+
+  */
 
   /* Layout helpers */
   --sp0-5: calc(0.5 * var(--sp));
