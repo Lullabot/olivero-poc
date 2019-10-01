@@ -40,10 +40,10 @@ gulp.task('css', () => {
       atImport(),
       nested(),
       postcssCustomMedia(),
-      // postcssCustomProperties({
-      //   preserve: false
-      // }),
-      // calc(),
+      postcssCustomProperties({
+        preserve: false
+      }),
+      calc(),
       autoprefixer({
         grid: 'no-autoplace'
       }),
