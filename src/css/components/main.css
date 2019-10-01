@@ -58,7 +58,10 @@ main {
     letter-spacing: -0.01em;
 
     @media (--grid-md) {
-      margin: var(--sp3) 0;
+      margin-top: var(--sp3);
+      margin-bottom: var(--sp3);
+      /* Negative margin-right's are necessary for FF to not stretch the grid. */
+      margin-right: calc(-5 * (var(--grid-col-width--lg) + var(--grid-gap)));
       width: calc(10 * var(--grid-col-width--md) + 9 * var(--grid-gap));
       padding: 0;
       font-size: 32px;
@@ -67,6 +70,7 @@ main {
 
     @media (--lg) {
       width: calc(10 * var(--grid-col-width--lg) + 9 * var(--grid-gap));
+      margin-right: calc(-5 * (var(--grid-col-width--lg) + var(--grid-gap)));
       font-size: 48px;
       line-height: var(--sp4);
     }

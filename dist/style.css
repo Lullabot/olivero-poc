@@ -1163,7 +1163,10 @@ main {
 
 @media (min-width: 700px) {
   .text-content blockquote {
-    margin: 54px 0;
+    margin-top: 54px;
+    margin-bottom: 54px;
+    /* Negative margin-right's are necessary for FF to not stretch the grid. */
+    margin-right: calc(-5*((100vw - 285px)/14 + 18px));
     width: calc(10*(100vw - 270px)/14 + 162px);
     padding: 0;
     font-size: 32px;
@@ -1174,6 +1177,7 @@ main {
 @media (min-width: 1000px) {
   .text-content blockquote {
     width: calc(10*(100vw - 285px)/14 + 162px);
+    margin-right: calc(-5*((100vw - 285px)/14 + 18px));
     font-size: 48px;
     line-height: 72px;
   }
