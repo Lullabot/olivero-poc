@@ -1218,9 +1218,9 @@ main {
 
 @media (min-width: 700px) {
   .text-content blockquote {
-    margin: var(--sp3) calc(-1 * var(--grid-width)) var(--sp3) 0;
+    margin: var(--sp3) 0;
+    width: calc(10 * var(--grid-col-width--md) + 9 * var(--grid-gap));
     padding: 0;
-    width: calc(100% + var(--grid-width));
     font-size: 32px;
     line-height: var(--sp3);
   }
@@ -1228,10 +1228,21 @@ main {
 
 @media (min-width: 1000px) {
   .text-content blockquote {
-    margin-right: calc(-2 * var(--grid-width));
-    width: calc(100% + (2 * var(--grid-width)));
+    width: calc(10 * var(--grid-col-width--lg) + 9 * var(--grid-gap));
     font-size: 48px;
     line-height: var(--sp4);
+  }
+}
+
+@media (min-width: 1200px) {
+  .text-content blockquote {
+    width: calc(10 * var(--grid-col-width--nav) + 9 * var(--grid-gap));
+  }
+}
+
+@media (min-width: 1440px) {
+  .text-content blockquote {
+    width: calc(10 * var(--grid-col-width--max) + 9 * var(--grid-gap));
   }
 }
 
@@ -1246,7 +1257,25 @@ main {
 
 @media (min-width: 700px) {
   .text-content blockquote:before {
-    left: calc(-1 * var(--grid-width));
+    left: calc(-1 * (var(--grid-col-width--md) + var(--grid-gap)));
+  }
+}
+
+@media (min-width: 1000px) {
+  .text-content blockquote:before {
+    left: calc(-1 * (var(--grid-col-width--lg) + var(--grid-gap)));
+  }
+}
+
+@media (min-width: 1200px) {
+  .text-content blockquote:before {
+    left: calc(-1 * (var(--grid-col-width--nav) + var(--grid-gap)));
+  }
+}
+
+@media (min-width: 1440px) {
+  .text-content blockquote:before {
+    left: calc(-1 * (var(--grid-col-width--max) + var(--grid-gap)));
   }
 }
 
@@ -1263,10 +1292,28 @@ main {
 
 @media (min-width: 700px) {
   .text-content blockquote:after {
-    left: calc(-1 * var(--grid-width));
+    left: calc(-1 * (var(--grid-col-width--md) + var(--grid-gap)));
     width: var(--sp);
     height: calc(100% - 45px);
     margin-left: 2px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .text-content blockquote:after {
+    left: calc(-1 * (var(--grid-col-width--lg) + var(--grid-gap)));
+  }
+}
+
+@media (min-width: 1200px) {
+  .text-content blockquote:after {
+    left: calc(-1 * (var(--grid-col-width--nav) + var(--grid-gap)));
+  }
+}
+
+@media (min-width: 1440px) {
+  .text-content blockquote:after {
+    left: calc(-1 * (var(--grid-col-width--max) + var(--grid-gap)));
   }
 }
 
