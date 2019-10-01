@@ -33,5 +33,4 @@
       width: calc(var(--grid-col-width--max) * var(--grid-col-count--max) + var(--grid-gap-count--max) * var(--grid-gap));
     }
   }
-
 }
