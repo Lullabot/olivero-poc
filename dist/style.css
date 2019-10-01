@@ -25,10 +25,18 @@
 
 /* Grid related breakpoints */
 
-/* When the width of the entire grid maxes out. */
+/* Grid shifts from 6 to 14 columns. */
+
+/* Width of the entire grid maxes out. */
+
+/*
+  Custom CSS properties.
+
+  These are "compiled" by postcss/postcss-custom-properties for IE11 compatibility.
+*/
 
 :root {
-  --font-sans: 'metropolis';
+  --font-sans: 'metropolis', 'sans-serif';
   --font-serif: 'georgia', 'serif';
   /* Layout */
   --max-width: 1350px;
@@ -36,11 +44,18 @@
   --sp: 18px;
   --content-left: 90px;
   /*
-  grid helpers
+    Grid helpers.
+
+    These variables help authors apply negative margins to break items out of the grid,
+    while still conforming to the larger grid system.
+
+    Note we cannot change the values of these custom properties within breakpoints,
+    as they are processed by postcss/postcss-custom-properties, which does not support
+    that functionality.
   */
   --scrollbar-width: 15px; /* Approximate width of a scrollbar. Doesn't have to be perfect. */
   --grid-gap: var(--sp);
-  /* Column count at various breakpoints. */
+  /* Column counts at various breakpoints. */
   --grid-col-count: 6;
   --grid-col-count--md: 14;
   --grid-col-count--lg: var(--grid-col-count--md);

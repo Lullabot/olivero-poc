@@ -2,6 +2,7 @@
   Media query breakpoints.
   Processed by postcss/postcss-custom-media.
 */
+
 @custom-media --sm (min-width: 500px);
 @custom-media --md (min-width: 700px);
 @custom-media --lg (min-width: 1000px);
@@ -12,11 +13,16 @@
 @custom-media --nav (min-width: 1200px);
 
 /* Grid related breakpoints */
-@custom-media --grid-md (min-width: 700px);
-@custom-media --grid-max (min-width: 1440px); /* When the width of the entire grid maxes out. */
+@custom-media --grid-md (min-width: 700px);   /* Grid shifts from 6 to 14 columns. */
+@custom-media --grid-max (min-width: 1440px); /* Width of the entire grid maxes out. */
 
+/*
+  Custom CSS properties.
+
+  These are "compiled" by postcss/postcss-custom-properties for IE11 compatibility.
+*/
 :root {
-  --font-sans: 'metropolis';
+  --font-sans: 'metropolis', 'sans-serif';
   --font-serif: 'georgia', 'serif';
 
   /* Layout */
@@ -26,38 +32,46 @@
   --content-left: 90px;
 
   /*
-  grid helpers
+    Grid helpers.
+
+    These variables help authors apply negative margins to break items out of the grid,
+    while still conforming to the larger grid system.
+
+    Note we cannot change the values of these custom properties within breakpoints,
+    as they are processed by postcss/postcss-custom-properties, which does not support
+    that functionality.
   */
+
   --scrollbar-width: 15px; /* Approximate width of a scrollbar. Doesn't have to be perfect. */
   --grid-gap: var(--sp);
 
-  /* Column count at various breakpoints. */
-  --grid-col-count:       6;
-  --grid-col-count--md:   14;
-  --grid-col-count--lg:   var(--grid-col-count--md);
-  --grid-col-count--nav:  var(--grid-col-count--md);
-  --grid-col-count--max:  var(--grid-col-count--md);
+  /* Column counts at various breakpoints. */
+  --grid-col-count:         6;
+  --grid-col-count--md:     14;
+  --grid-col-count--lg:     var(--grid-col-count--md);
+  --grid-col-count--nav:    var(--grid-col-count--md);
+  --grid-col-count--max:    var(--grid-col-count--md);
 
   /* Count of grid-gaps at various breakpoints. */
-  --grid-gap-count:       calc(var(--grid-col-count) - 1);
-  --grid-gap-count--md:   calc(var(--grid-col-count--md) - 1);
-  --grid-gap-count--lg:   calc(var(--grid-col-count--lg) - 1);
-  --grid-gap-count--nav:  var(--grid-gap-count--lg);
-  --grid-gap-count--max:  var(--grid-gap-count--lg);
+  --grid-gap-count:         calc(var(--grid-col-count) - 1);
+  --grid-gap-count--md:     calc(var(--grid-col-count--md) - 1);
+  --grid-gap-count--lg:     calc(var(--grid-col-count--lg) - 1);
+  --grid-gap-count--nav:    var(--grid-gap-count--lg);
+  --grid-gap-count--max:    var(--grid-gap-count--lg);
 
   /* Width of the entire grid at various breakpoints. */
-  --grid-full-width:      calc(100vw - var(--sp2));
-  --grid-full-width--md:  var(--grid-full-width);
-  --grid-full-width--lg:  calc(var(--grid-full-width) - var(--scrollbar-width));
-  --grid-full-width--nav: calc(100vw - var(--scrollbar-width) - var(--content-left) - var(--sp2));
-  --grid-full-width--max: calc(var(--max-width) - var(--sp2));
+  --grid-full-width:        calc(100vw - var(--sp2));
+  --grid-full-width--md:    var(--grid-full-width);
+  --grid-full-width--lg:    calc(var(--grid-full-width) - var(--scrollbar-width));
+  --grid-full-width--nav:   calc(100vw - var(--scrollbar-width) - var(--content-left) - var(--sp2));
+  --grid-full-width--max:   calc(var(--max-width) - var(--sp2));
 
   /* Width of a grid column at various breakpoints */
-  --grid-col-width:           calc((var(--grid-full-width) - (var(--grid-gap-count) * var(--grid-gap))) / var(--grid-col-count));
-  --grid-col-width--md:       calc((var(--grid-full-width--md) - (var(--grid-gap-count--md) * var(--grid-gap))) / var(--grid-col-count--md));
-  --grid-col-width--lg:       calc((var(--grid-full-width--lg) - (var(--grid-gap-count--lg) * var(--grid-gap))) / var(--grid-col-count--lg));
-  --grid-col-width--nav:      calc((var(--grid-full-width--nav) - (var(--grid-gap-count--nav) * var(--grid-gap))) / var(--grid-col-count--nav));
-  --grid-col-width--max:      calc((var(--grid-full-width--max) - (var(--grid-gap-count--max) * var(--grid-gap))) / var(--grid-col-count--max));
+  --grid-col-width:         calc((var(--grid-full-width) - (var(--grid-gap-count) * var(--grid-gap))) / var(--grid-col-count));
+  --grid-col-width--md:     calc((var(--grid-full-width--md) - (var(--grid-gap-count--md) * var(--grid-gap))) / var(--grid-col-count--md));
+  --grid-col-width--lg:     calc((var(--grid-full-width--lg) - (var(--grid-gap-count--lg) * var(--grid-gap))) / var(--grid-col-count--lg));
+  --grid-col-width--nav:    calc((var(--grid-full-width--nav) - (var(--grid-gap-count--nav) * var(--grid-gap))) / var(--grid-col-count--nav));
+  --grid-col-width--max:    calc((var(--grid-full-width--max) - (var(--grid-gap-count--max) * var(--grid-gap))) / var(--grid-col-count--max));
 
 
   /* Layout helpers */
