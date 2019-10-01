@@ -25,7 +25,7 @@
 
 /* Grid related breakpoints */
 
-/* When the grid reaches its max size */
+/* When the width of the entire grid maxes out. */
 
 :root {
   --font-sans: 'metropolis';
@@ -35,21 +35,36 @@
   --max-bg-color: 1570px;
   --sp: 18px;
   --content-left: 90px;
-  /* grid helpers */
-  --scrollbar-width: 15px;
+  /*
+  grid helpers
+  */
+  --scrollbar-width: 15px; /* Approximate width of a scrollbar. Doesn't have to be perfect. */
   --grid-gap: var(--sp);
+  /* Column count at various breakpoints. */
   --grid-col-count: 6;
-  --grid-col-count--lg: 14;
+  --grid-col-count--md: 14;
+  --grid-col-count--lg: var(--grid-col-count--md);
+  --grid-col-count--nav: var(--grid-col-count--md);
+  --grid-col-count--max: var(--grid-col-count--md);
+  /* Count of grid-gaps at various breakpoints. */
   --grid-gap-count: calc(var(--grid-col-count) - 1);
+  --grid-gap-count--md: calc(var(--grid-col-count--md) - 1);
   --grid-gap-count--lg: calc(var(--grid-col-count--lg) - 1);
-  --grid-full-width: calc(100vw - var(--scrollbar-width) - var(--sp2));
-  --grid-full-width--lg: calc(100vw - var(--scrollbar-width) - var(--content-left) - var(--sp2));
+  --grid-gap-count--nav: var(--grid-gap-count--lg);
+  --grid-gap-count--max: var(--grid-gap-count--lg);
+  /* Width of the entire grid at various breakpoints. */
+  --grid-full-width: calc(100vw - var(--sp2));
+  --grid-full-width--md: var(--grid-full-width);
+  --grid-full-width--lg: calc(var(--grid-full-width) - var(--scrollbar-width));
+  --grid-full-width--nav: calc(100vw - var(--scrollbar-width) - var(--content-left) - var(--sp2));
   --grid-full-width--max: calc(var(--max-width) - var(--sp2));
-  --grid-width: calc((var(--grid-full-width) - (var(--grid-gap-count) * var(--grid-gap))) / var(--grid-col-count));
-  --grid-width--lg: calc((var(--grid-full-width--lg) - (var(--grid-gap-count--lg) * var(--grid-gap))) / var(--grid-col-count--lg));
-  /* Use at 1440px */
-  --grid-width--max: calc((var(--grid-full-width--max) - (var(--grid-gap-count--lg) * var(--grid-gap))) / var(--grid-col-count--lg));
-  /* calc((calc(1350px - calc(2 * 18px)) - (calc(6 - 1) * 18px)) / 14) + 18px) *//* --grid-width: calc((var(--grid-full-width) - (var(--grid-gap-count) * var(--grid-gap))) / var(--grid-col-count)); *//* calc((100vw - 285px)/14) *//* Layout helpers */
+  /* Width of a grid column at various breakpoints */
+  --grid-col-width: calc((var(--grid-full-width) - (var(--grid-gap-count) * var(--grid-gap))) / var(--grid-col-count));
+  --grid-col-width--md: calc((var(--grid-full-width--md) - (var(--grid-gap-count--md) * var(--grid-gap))) / var(--grid-col-count--md));
+  --grid-col-width--lg: calc((var(--grid-full-width--lg) - (var(--grid-gap-count--lg) * var(--grid-gap))) / var(--grid-col-count--lg));
+  --grid-col-width--nav: calc((var(--grid-full-width--nav) - (var(--grid-gap-count--nav) * var(--grid-gap))) / var(--grid-col-count--nav));
+  --grid-col-width--max: calc((var(--grid-full-width--max) - (var(--grid-gap-count--max) * var(--grid-gap))) / var(--grid-col-count--max));
+  /* Layout helpers */
   --sp0-5: calc(.5 * var(--sp));
   --sp1-5: calc(1.5 * var(--sp));
   --sp2: calc(2 * var(--sp));
@@ -419,6 +434,7 @@ figcaption {
 
 @media (min-width: 700px) {
   .hero {
+    /* 700px */
     -ms-grid-column: 3;
     -ms-grid-column-span: 10;
         grid-column: 3 / 13;
@@ -437,23 +453,30 @@ figcaption {
   .hero img {
     margin-top: var(--sp3);
     margin-bottom: var(--sp3);
+    margin-left: calc(-2 * (var(--grid-col-width--md) + var(--grid-gap)));
+    width: var(--grid-full-width--md);
     max-width: none;
   }
 }
 
-/* @media (--lg) {
-      margin-left: calc(-2 * (var(--grid-width--lg) + var(--grid-gap)));
-      width: calc(var(--grid-col-count--lg) * var(--grid-width--lg) + var(--grid-gap-count--lg) * var(--grid-gap));
-    }
-    @media (--nav-lg) {
-      margin-left: calc(-2 * (var(--grid-width--lg) + var(--grid-gap)));
-      width: calc(var(--grid-width--lg) * var(--grid-width--max) + var(--grid-gap-count--lg) * var(--grid-gap));
-    } */
+@media (min-width: 1000px) {
+  .hero img {
+    margin-left: calc(-2 * (var(--grid-col-width--lg) + var(--grid-gap)));
+    width: var(--grid-full-width--lg);
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero img {
+    margin-left: calc(-2 * (var(--grid-col-width--nav) + var(--grid-gap)));
+    width: calc(var(--grid-col-width--nav) * var(--grid-col-count--nav) + var(--grid-gap-count--nav) * var(--grid-gap));
+  }
+}
 
 @media (min-width: 1440px) {
   .hero img {
-    margin-left: calc(-2 * (var(--grid-width--max) + var(--grid-gap)));
-    width: calc(var(--grid-width--max) * var(--grid-col-count--lg) + var(--grid-gap-count--lg) * var(--grid-gap));
+    margin-left: calc(-2 * (var(--grid-col-width--max) + var(--grid-gap)));
+    width: calc(var(--grid-col-width--max) * var(--grid-col-count--max) + var(--grid-gap-count--max) * var(--grid-gap));
   }
 }
 

@@ -11,7 +11,7 @@
   grid-template-rows: 1fr;
   grid-column-gap: var(--grid-gap);
 
-  @media (--grid-lg) {
+  @media (--grid-md) {
     grid-template-columns: repeat(var(--grid-col-count--lg), 1fr);
   }
 }

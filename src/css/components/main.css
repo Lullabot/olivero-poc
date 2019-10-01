@@ -10,7 +10,7 @@ main {
   line-height: var(--sp1-5);
   color: #313637;
 
-  @media (--grid-lg) {
+  @media (--grid-md) {
     grid-column: 3 / 13;
     font-size: 18px;
     line-height: var(--sp2);
