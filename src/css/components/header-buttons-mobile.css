@@ -8,7 +8,7 @@
     align-self: end;
   }
 
-  @media (--grid-lg) {
+  @media (--grid-md) {
     grid-column: 11 / 15;
   }
 

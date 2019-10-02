@@ -25,8 +25,27 @@
 
 /* Grid related breakpoints */
 
+/* Grid shifts from 6 to 14 columns. */
+
+/* Width of the entire grid maxes out. */
+
+/*
+  Custom CSS properties.
+
+  These are "compiled" by postcss/postcss-custom-properties for IE11 compatibility.
+*/
+
 :root {
-  /* Layout *//* Layout helpers *//* Named colors. *//* Header */
+  /* Layout *//*
+    Grid helpers.
+
+    These variables help authors apply negative margins to break items out of the grid,
+    while still conforming to the larger grid system.
+
+    Note we cannot change the values of these custom properties within breakpoints,
+    as they are processed by postcss/postcss-custom-properties, which does not support
+    that functionality.
+  *//* Approximate width of a scrollbar. Doesn't have to be perfect. *//* Column counts at various breakpoints. *//* Count of grid-gaps at various breakpoints. *//* Width of the entire grid at various breakpoints. *//* Width of a grid column at various breakpoints *//* Layout helpers *//* Named colors. *//* Header */
 }
 
 *, *:before, *:after {
@@ -35,8 +54,11 @@
 
 body {
   margin: 0;
-  font-family: 'metropolis';
+  font-family: 'metropolis', 'sans-serif';
   line-height: 18px;
+  background-color: #f7f9fa;
+  background-image: url('/images/background.svg');
+  background-position: top left;
 }
 
 body.js-fixed {
@@ -112,6 +134,11 @@ h1 {
   }
 }
 
+.page-wrapper {
+  max-width: 1570px;
+  background: white;
+}
+
 @media (min-width: 1200px) {
   .content {
     display: flex;
@@ -183,14 +210,30 @@ figure.pull-right {
 @media (min-width: 700px) {
   figure.pull-right {
     float: right;
-    width: 50%;
-    margin: 18px -96.42857px 18px 18px;
+    width: calc(5*(100vw - 270px)/14 + 72px);
+    margin-right: calc(-2*((100vw - 270px)/14 + 18px));
+    margin-left: 18px;
   }
 }
 
 @media (min-width: 1000px) {
   figure.pull-right {
-    margin-right: -192.85714px;
+    width: calc(5*(100vw - 285px)/14 + 72px);
+    margin-right: calc(-2*((100vw - 285px)/14 + 18px));
+  }
+}
+
+@media (min-width: 1200px) {
+  figure.pull-right {
+    width: calc(5*(100vw - 375px)/14 + 72px);
+    margin-right: calc(-3*((100vw - 375px)/14 + 18px));
+  }
+}
+
+@media (min-width: 1440px) {
+  figure.pull-right {
+    width: 457.7143px;
+    margin-right: -285.42858px;
   }
 }
 
@@ -210,6 +253,10 @@ figcaption {
 }
 
 /* Header */
+
+.site-header {
+  position: relative;
+}
 
 @media (min-width: 1200px) {
   .site-header {
@@ -365,6 +412,7 @@ figcaption {
 
 @media (min-width: 700px) {
   .hero {
+    /* 700px */
     -ms-grid-column: 3;
     -ms-grid-column-span: 10;
         grid-column: 3 / 13;
@@ -383,15 +431,30 @@ figcaption {
   .hero img {
     margin-top: 54px;
     margin-bottom: 54px;
-    margin-left: -96.42857px;
-    width: calc(100% + 192.85714px);
+    margin-left: calc(-2*((100vw - 270px)/14 + 18px));
+    width: calc(100vw - 36px);
     max-width: none;
   }
 }
 
 @media (min-width: 1000px) {
   .hero img {
-    width: calc(100% + 385.71428px);
+    margin-left: calc(-2*((100vw - 285px)/14 + 18px));
+    width: calc(100vw - 51px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero img {
+    margin-left: calc(-2*((100vw - 375px)/14 + 18px));
+    width: calc((100vw - 375px)/14*14 + 234px);
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero img {
+    margin-left: -190.28572px;
+    width: 1314.00004px;
   }
 }
 
@@ -1097,9 +1160,12 @@ main {
 
 @media (min-width: 700px) {
   .text-content blockquote {
-    margin: 54px -96.42857px 54px 0;
+    margin-top: 54px;
+    margin-bottom: 54px;
+    /* Negative margin-right's are necessary for FF to not stretch the grid. */
+    margin-right: calc(-5*((100vw - 285px)/14 + 18px));
+    width: calc(10*(100vw - 270px)/14 + 162px);
     padding: 0;
-    width: calc(100% + 96.42857px);
     font-size: 32px;
     line-height: 54px;
   }
@@ -1107,10 +1173,22 @@ main {
 
 @media (min-width: 1000px) {
   .text-content blockquote {
-    margin-right: -192.85714px;
-    width: calc(100% + 192.85714px);
+    width: calc(10*(100vw - 285px)/14 + 162px);
+    margin-right: calc(-5*((100vw - 285px)/14 + 18px));
     font-size: 48px;
     line-height: 72px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .text-content blockquote {
+    width: calc(10*(100vw - 375px)/14 + 162px);
+  }
+}
+
+@media (min-width: 1440px) {
+  .text-content blockquote {
+    width: 933.4286px;
   }
 }
 
@@ -1125,7 +1203,25 @@ main {
 
 @media (min-width: 700px) {
   .text-content blockquote:before {
-    left: -96.42857px;
+    left: calc(-1*((100vw - 270px)/14 + 18px));
+  }
+}
+
+@media (min-width: 1000px) {
+  .text-content blockquote:before {
+    left: calc(-1*((100vw - 285px)/14 + 18px));
+  }
+}
+
+@media (min-width: 1200px) {
+  .text-content blockquote:before {
+    left: calc(-1*((100vw - 375px)/14 + 18px));
+  }
+}
+
+@media (min-width: 1440px) {
+  .text-content blockquote:before {
+    left: -95.14286px;
   }
 }
 
@@ -1142,10 +1238,28 @@ main {
 
 @media (min-width: 700px) {
   .text-content blockquote:after {
-    left: -96.42857px;
+    left: calc(-1*((100vw - 270px)/14 + 18px));
     width: 18px;
     height: calc(100% - 45px);
     margin-left: 2px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .text-content blockquote:after {
+    left: calc(-1*((100vw - 285px)/14 + 18px));
+  }
+}
+
+@media (min-width: 1200px) {
+  .text-content blockquote:after {
+    left: calc(-1*((100vw - 375px)/14 + 18px));
+  }
+}
+
+@media (min-width: 1440px) {
+  .text-content blockquote:after {
+    left: -95.14286px;
   }
 }
 

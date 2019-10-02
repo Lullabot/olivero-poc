@@ -1,5 +1,7 @@
 /* Header */
 .site-header {
+  position: relative;
+
   @media (--nav) {
     /* Necessary to keep the content from jumping up when header transitions to fixed. */
     min-height: var(--sp10);

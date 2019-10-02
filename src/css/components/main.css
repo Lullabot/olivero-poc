@@ -8,7 +8,7 @@ main {
   line-height: var(--sp1-5);
   color: #313637;
 
-  @media (--grid-lg) {
+  @media (--grid-md) {
     grid-column: 3 / 13;
     font-size: 18px;
     line-height: var(--sp2);
@@ -55,19 +55,30 @@ main {
     line-height: var(--sp2);
     letter-spacing: -0.01em;
 
-    @media (--md) {
-      margin: var(--sp3) calc(-1 * var(--grid-width)) var(--sp3) 0;
+    @media (--grid-md) {
+      margin-top: var(--sp3);
+      margin-bottom: var(--sp3);
+      /* Negative margin-right's are necessary for FF to not stretch the grid. */
+      margin-right: calc(-5 * (var(--grid-col-width--lg) + var(--grid-gap)));
+      width: calc(10 * var(--grid-col-width--md) + 9 * var(--grid-gap));
       padding: 0;
-      width: calc(100% + var(--grid-width));
       font-size: 32px;
       line-height: var(--sp3);
     }
 
     @media (--lg) {
-      margin-right: calc(-2 * var(--grid-width));
-      width: calc(100% + (2 * var(--grid-width)));
+      width: calc(10 * var(--grid-col-width--lg) + 9 * var(--grid-gap));
+      margin-right: calc(-5 * (var(--grid-col-width--lg) + var(--grid-gap)));
       font-size: 48px;
       line-height: var(--sp4);
+    }
+
+    @media (--nav) {
+      width: calc(10 * var(--grid-col-width--nav) + 9 * var(--grid-gap));
+    }
+
+    @media (--grid-max) {
+      width: calc(10 * var(--grid-col-width--max) + 9 * var(--grid-gap));
     }
 
     &:before {
@@ -78,8 +89,20 @@ main {
       color: #53B0EB;
       font-size: 54px;
 
-      @media (--md) {
-        left: calc(-1 * var(--grid-width));
+      @media (--grid-md) {
+        left: calc(-1 * (var(--grid-col-width--md) + var(--grid-gap)));
+      }
+
+      @media (--lg) {
+        left: calc(-1 * (var(--grid-col-width--lg) + var(--grid-gap)));
+      }
+
+      @media (--nav) {
+        left: calc(-1 * (var(--grid-col-width--nav) + var(--grid-gap)));
+      }
+
+      @media (--grid-max) {
+        left: calc(-1 * (var(--grid-col-width--max) + var(--grid-gap)));
       }
     }
 
@@ -93,11 +116,23 @@ main {
       height: calc(100% - 30px);
       margin-left: 4px;
 
-      @media (--md) {
-        left: calc(-1 * var(--grid-width));
+      @media (--grid-md) {
+        left: calc(-1 * (var(--grid-col-width--md) + var(--grid-gap)));
         width: var(--sp);
         height: calc(100% - 45px);
         margin-left: 2px;
+      }
+
+      @media (--lg) {
+        left: calc(-1 * (var(--grid-col-width--lg) + var(--grid-gap)));
+      }
+
+      @media (--nav) {
+        left: calc(-1 * (var(--grid-col-width--nav) + var(--grid-gap)));
+      }
+
+      @media (--grid-max) {
+        left: calc(-1 * (var(--grid-col-width--max) + var(--grid-gap)));
       }
     }
   }
