@@ -45,10 +45,7 @@
     Note we cannot change the values of these custom properties within breakpoints,
     as they are processed by postcss/postcss-custom-properties, which does not support
     that functionality.
-  *//* Approximate width of a scrollbar. Doesn't have to be perfect. *//* Column counts at various breakpoints. *//* Count of grid-gaps at various breakpoints. *//* Width of the entire grid at various breakpoints. *//* Width of a grid column at various breakpoints *//*
-(var(--grid-col-width--lg) + var(--grid-gap))
-
-  *//* Layout helpers *//* Named colors. *//* Header */
+  *//* Approximate width of a scrollbar. Doesn't have to be perfect. *//* Column counts at various breakpoints. *//* Count of grid-gaps at various breakpoints. *//* Width of the entire grid at various breakpoints. *//* Width of a grid column at various breakpoints *//* Layout helpers *//* Named colors. *//* Header */
 }
 
 *, *:before, *:after {
