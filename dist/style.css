@@ -153,12 +153,41 @@ h1 {
 }
 
 .visually-hidden {
-  position: absolute !important;
+  position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
   overflow: hidden;
   height: 1px;
   width: 1px;
   word-wrap: normal;
+}
+
+.visually-hidden.focusable:focus {
+  clip: auto;
+  overflow: visible;
+  height: auto;
+  width: auto;
+  word-wrap: normal;
+}
+
+.skip-link {
+  z-index: 1; /* Appear above header */
+  outline: 0;
+}
+
+@media (min-width: 1200px) {
+  .skip-link {
+    margin-left: 90px;
+    padding: 18px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+
+.skip-link:after {
+  content: '➔';
+  margin-left: 5px;
+  transition: .2s;
 }
 
 /* Components */

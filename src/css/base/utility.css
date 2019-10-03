@@ -1,8 +1,37 @@
 .visually-hidden {
-  position: absolute !important;
+  position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
   overflow: hidden;
   height: 1px;
   width: 1px;
   word-wrap: normal;
+
+  &.focusable {
+    &:focus {
+      clip: auto;
+      overflow: visible;
+      height: auto;
+      width: auto;
+      word-wrap: normal;
+    }
+  }
+}
+
+.skip-link {
+  z-index: 1; /* Appear above header */
+  outline: 0;
+
+  @media (--nav) {
+    margin-left: var(--content-left);
+    padding: var(--sp);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  &:after {
+    content: '➔';
+    margin-left: 5px;
+    transition: 0.2s;
+  }
 }
