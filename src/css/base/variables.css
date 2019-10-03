@@ -37,7 +37,7 @@
     These variables help authors apply negative margins to break items out of the grid,
     while still conforming to the larger grid system.
 
-    Note we cannot change the values of these custom properties within breakpoints,
+    Note we cannot change the values of these custom properties within media queries,
     as they are processed by postcss/postcss-custom-properties, which does not support
     that functionality.
   */

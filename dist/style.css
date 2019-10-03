@@ -42,7 +42,7 @@
     These variables help authors apply negative margins to break items out of the grid,
     while still conforming to the larger grid system.
 
-    Note we cannot change the values of these custom properties within breakpoints,
+    Note we cannot change the values of these custom properties within media queries,
     as they are processed by postcss/postcss-custom-properties, which does not support
     that functionality.
   *//* Approximate width of a scrollbar. Doesn't have to be perfect. *//* Column counts at various breakpoints. *//* Count of grid-gaps at various breakpoints. *//* Width of the entire grid at various breakpoints. *//* Width of a grid column at various breakpoints *//* Layout helpers *//* Named colors. *//* Header */
@@ -456,6 +456,58 @@ figcaption {
     margin-left: -190.28572px;
     width: 1314.00004px;
   }
+}
+
+.site-footer {
+  position: relative; /* stack above left social bar */
+  background: black;
+}
+
+@media (min-width: 1200px) {
+  .site-footer {
+    padding-left: 90px;
+  }
+}
+
+.site-footer__inner {
+  padding: 36px 0;
+  background: linear-gradient(180deg, #0c0d0e 0%, #171e23 100%);
+}
+
+@media (min-width: 1200px) {
+  .site-footer__inner {
+    padding-top: 72px;
+    padding-bottom: 234px;
+  }
+}
+
+.powered-by {
+  grid-column: 1 / -1;
+  color: #8497a4;
+  letter-spacing: .02em;
+  line-height: 18px;
+  font-size: 14px;
+}
+
+@media (min-width: 1200px) {
+  .powered-by {
+    -ms-grid-column: 3;
+    grid-column-start: 3;
+  }
+}
+
+.powered-by a {
+  color: white;
+  text-decoration: underline;
+}
+
+.powered-by a:hover, .powered-by a:focus {
+  text-decoration: none;
+}
+
+.powered-by img {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 /* Mobile */
