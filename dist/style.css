@@ -1034,31 +1034,42 @@ figcaption {
     flex-shrink: 0;
     background-color: #f7f9fa;
   }
+}
 
-  .social-container .rotate {
-    display: flex;
-    align-items: center;
+.rotate {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+@media (min-width: 1200px) {
+  .rotate {
+    justify-content: flex-start;
     width: 100%;
     margin: 18px auto;
     transform: rotate(-90deg);
     white-space: nowrap;
   }
+}
 
-  .social-container .social-label {
-    margin-right: 18px;
-    margin-top: -2px;
-    font-size: 12px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: #98abb9;
-  }
+.social-label {
+  margin-right: 18px;
+  margin-top: -2px;
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #98abb9;
+}
+
+.social-container__inner {
+  padding: 9px 18px;
+  background-color: #f7f9fa;
 }
 
 @media (min-width: 1200px) {
   .social-container__inner {
     position: relative;
     width: 90px;
-    background-color: #f7f9fa;
     padding: 144px 0;
   }
 
@@ -1094,6 +1105,7 @@ main {
   -ms-grid-column: 1;
   -ms-grid-column-span: 6;
       grid-column: 1 / 7;
+  padding-bottom: 54px;
   line-height: 27px;
   color: #313637;
 }

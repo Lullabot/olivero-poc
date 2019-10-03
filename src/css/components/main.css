@@ -5,6 +5,7 @@ main {
 .text-content {
   -ms-grid-row: 2; /* IE11 will overlay the content above the hero without this. */
   grid-column: 1 / 7;
+  padding-bottom: var(--sp3);
   line-height: var(--sp1-5);
   color: #313637;
 
