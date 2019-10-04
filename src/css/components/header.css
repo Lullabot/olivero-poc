@@ -124,6 +124,10 @@
     box-shadow: none;
   }
 
+  @media (--lg) {
+    grid-column: 5 / 14;
+  }
+
   &[aria-expanded="true"] {
     visibility: visible;
     transform: translatex(0);

@@ -448,6 +448,14 @@ figcaption {
   }
 }
 
+@media (min-width: 1000px) {
+  .header-nav {
+    -ms-grid-column: 5;
+    -ms-grid-column-span: 9;
+        grid-column: 5 / 14;
+  }
+}
+
 .header-nav[aria-expanded="true"] {
   visibility: visible;
   transform: translatex(0);
