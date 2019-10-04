@@ -193,10 +193,30 @@ h1 {
 /* Components */
 
 .breadcrumb {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+      grid-column: 1 / 7;
   text-transform: uppercase;
   letter-spacing: .2em;
   font-size: 14px;
   line-height: 18px;
+}
+
+@media (min-width: 700px) {
+  .breadcrumb {
+    /* 700px */
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 10;
+        grid-column: 3 / 13;
+  }
+}
+
+@media (min-width: 1000px) {
+  .breadcrumb {
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 8;
+        grid-column: 4 / 12;
+  }
 }
 
 .breadcrumb ul {
@@ -433,14 +453,14 @@ figcaption {
   transform: translatex(0);
 }
 
-.hero {
+.hero__content {
   -ms-grid-column: 1;
   -ms-grid-column-span: 6;
       grid-column: 1 / 7;
 }
 
 @media (min-width: 700px) {
-  .hero {
+  .hero__content {
     /* 700px */
     -ms-grid-column: 3;
     -ms-grid-column-span: 10;
@@ -449,42 +469,45 @@ figcaption {
 }
 
 @media (min-width: 1000px) {
-  .hero {
+  .hero__content {
     -ms-grid-column: 4;
     -ms-grid-column-span: 8;
         grid-column: 4 / 12;
   }
 }
 
+.hero__img {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+      grid-column: 1 / 7;
+  margin: 18px 0;
+}
+
+@media (min-width: 500px) {
+  .hero__img {
+    margin: 36px 0;
+  }
+}
+
 @media (min-width: 700px) {
-  .hero img {
-    margin-top: 54px;
-    margin-bottom: 54px;
-    margin-left: calc(-2*((100vw - 270px)/14 + 18px));
-    width: calc(100vw - 36px);
-    max-width: none;
+  .hero__img {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 14;
+        grid-column: 1 / 15;
+    margin: 54px 0;
   }
 }
 
 @media (min-width: 1000px) {
-  .hero img {
-    margin-left: calc(-2*((100vw - 285px)/14 + 18px));
-    width: calc(100vw - 51px);
+  .hero__img {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 12;
+        grid-column: 2 / 14;
   }
 }
 
-@media (min-width: 1200px) {
-  .hero img {
-    margin-left: calc(-2*((100vw - 375px)/14 + 18px));
-    width: calc(12*(100vw - 375px)/14 + 198px);
-  }
-}
-
-@media (min-width: 1440px) {
-  .hero img {
-    margin-left: -190.28572px;
-    width: 1123.71432px;
-  }
+.hero__img img {
+  width: 100%;
 }
 
 .site-footer {

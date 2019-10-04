@@ -1,8 +1,17 @@
 .breadcrumb {
+  grid-column: 1 / 7;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   font-size: 14px;
   line-height: var(--sp);
+
+  @media (--grid-md) { /* 700px */
+    grid-column: 3 / 13;
+  }
+
+  @media (--lg) {
+    grid-column: 4 / 12;
+  }
 
   ul {
     margin: 0;
