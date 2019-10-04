@@ -1045,6 +1045,12 @@ figcaption {
   align-items: center;
 }
 
+@media (min-width: 1200px) {
+  .secondary-nav ul {
+    flex-direction: row-reverse;
+  }
+}
+
 .secondary-nav .button--primary {
   display: inline-block;
   padding: 0 18px;
@@ -1060,6 +1066,13 @@ figcaption {
 
 .secondary-nav li:not(:last-child) {
   margin-right: 27px;
+}
+
+@media (min-width: 1200px) {
+  .secondary-nav li:not(:last-child) {
+    margin-right: 0;
+    margin-left: 27px;
+  }
 }
 
 .header-nav__search-button {
