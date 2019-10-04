@@ -3,9 +3,14 @@
 (function () {
   var isDesktopNav = drupalSettings.olivero.isDesktopNav;
   var mobileNavButton = document.querySelector('.mobile-nav-button');
-  var mobileNavWrapper = document.querySelector('.header-nav');
+  var mobileNavWrapperId = 'header-nav';
+  var mobileNavWrapper = document.getElementById(mobileNavWrapperId);
   var body = document.querySelector('body');
   var overlay = document.querySelector('.overlay');
+
+  function init() {
+    mobileNavButton.setAttribute('aria-controls', mobileNavWrapperId);
+  }
 
   function isMobileNavOpen() {
     return mobileNavWrapper.getAttribute('aria-expanded') === 'true';
@@ -21,8 +26,10 @@
     } else {
       body.classList.remove('js-overlay-active', 'js-fixed');
     }
-  }
+  } // Initialize everything.
 
+
+  init();
   mobileNavButton.addEventListener('click', function () {
     toggleMobileNav(!isMobileNavOpen());
   });

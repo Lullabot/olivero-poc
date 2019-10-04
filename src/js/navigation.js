@@ -3,9 +3,14 @@
   const isDesktopNav = drupalSettings.olivero.isDesktopNav;
 
   const mobileNavButton = document.querySelector('.mobile-nav-button');
-  const mobileNavWrapper = document.querySelector('.header-nav');
+  const mobileNavWrapperId = 'header-nav';
+  const mobileNavWrapper = document.getElementById(mobileNavWrapperId);
   const body = document.querySelector('body');
   const overlay = document.querySelector('.overlay');
+
+  function init() {
+    mobileNavButton.setAttribute('aria-controls', mobileNavWrapperId);
+  }
 
   function isMobileNavOpen() {
     return mobileNavWrapper.getAttribute('aria-expanded') === 'true';
@@ -24,6 +29,10 @@
       body.classList.remove('js-overlay-active', 'js-fixed');
     }
   }
+
+  // Initialize everything.
+
+  init();
 
   mobileNavButton.addEventListener('click', () => {
     toggleMobileNav(!isMobileNavOpen());

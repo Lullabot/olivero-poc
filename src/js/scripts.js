@@ -64,14 +64,18 @@
     });
 
     function showWideNav() {
-      wideNavButton.setAttribute('aria-pressed', 'true');
-      siteHeaderToggleElement.setAttribute('aria-expanded', 'true');
+      if (isDesktopNav()) {
+        wideNavButton.setAttribute('aria-pressed', 'true');
+        siteHeaderToggleElement.setAttribute('aria-expanded', 'true');
+      }
     }
 
     // Resets the wide nav button to be closed (it's default state).
     function hideWideNav() {
-      wideNavButton.setAttribute('aria-pressed', 'false');
-      siteHeaderToggleElement.setAttribute('aria-expanded', 'false');
+      if (isDesktopNav()) {
+        wideNavButton.setAttribute('aria-pressed', 'false');
+        siteHeaderToggleElement.setAttribute('aria-expanded', 'false');
+      }
     }
 
     siteHeaderToggleElement.addEventListener('focusin', showWideNav);
