@@ -450,9 +450,9 @@ figcaption {
 
 @media (min-width: 1000px) {
   .hero {
-    -ms-grid-column: 3;
+    -ms-grid-column: 4;
     -ms-grid-column-span: 8;
-        grid-column: 3 / 11;
+        grid-column: 4 / 12;
   }
 }
 
@@ -476,14 +476,14 @@ figcaption {
 @media (min-width: 1200px) {
   .hero img {
     margin-left: calc(-2*((100vw - 375px)/14 + 18px));
-    width: calc((100vw - 375px)/14*14 + 234px);
+    width: calc(12*(100vw - 375px)/14 + 198px);
   }
 }
 
 @media (min-width: 1440px) {
   .hero img {
     margin-left: -190.28572px;
-    width: 1314.00004px;
+    width: 1123.71432px;
   }
 }
 
@@ -1203,9 +1203,9 @@ main {
 
 @media (min-width: 1000px) {
   .text-content {
-    -ms-grid-column: 3;
+    -ms-grid-column: 4;
     -ms-grid-column-span: 8;
-        grid-column: 3 / 11;
+        grid-column: 4 / 12;
   }
 }
 

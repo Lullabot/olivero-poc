@@ -16,7 +16,7 @@ main {
   }
 
   @media (--lg) {
-    grid-column: 3 / 11;
+    grid-column: 4 / 12;
   }
 
   .lead {
