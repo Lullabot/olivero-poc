@@ -252,9 +252,9 @@ h1 {
 
 @media (min-width: 1000px) {
   .breadcrumb {
-    -ms-grid-column: 4;
+    -ms-grid-column: 3;
     -ms-grid-column-span: 8;
-        grid-column: 4 / 12;
+        grid-column: 3 / 11;
   }
 }
 
@@ -307,14 +307,14 @@ figure.pull-right {
 @media (min-width: 1200px) {
   figure.pull-right {
     width: calc(4*(100vw - 375px)/14 + 54px);
-    margin-right: calc(-2*((100vw - 375px)/14 + 18px));
+    margin-right: calc(-3*((100vw - 375px)/14 + 18px));
   }
 }
 
 @media (min-width: 1440px) {
   figure.pull-right {
     width: 362.57144px;
-    margin-right: -190.28572px;
+    margin-right: -285.42858px;
   }
 }
 
@@ -402,8 +402,8 @@ figcaption {
 
 @media (min-width: 700px) {
   .site-branding {
-    -ms-grid-column-span: 5;
-    grid-column: span 5;
+    -ms-grid-column-span: 4;
+    grid-column: span 4;
     padding-top: 72px;
     font-size: 28px;
   }
@@ -411,8 +411,8 @@ figcaption {
 
 @media (min-width: 1200px) {
   .site-branding {
-    -ms-grid-column-span: 3;
-    grid-column: span 3;
+    -ms-grid-column-span: 2;
+    grid-column: span 2;
     width: calc(100% + 36px);
     margin-left: -18px;
     margin-right: -18px;
@@ -510,9 +510,9 @@ figcaption {
 
 @media (min-width: 1000px) {
   .hero__content {
-    -ms-grid-column: 4;
+    -ms-grid-column: 3;
     -ms-grid-column-span: 8;
-        grid-column: 4 / 12;
+        grid-column: 3 / 11;
   }
 }
 
@@ -1280,9 +1280,9 @@ main {
 
 @media (min-width: 1000px) {
   .text-content {
-    -ms-grid-column: 4;
+    -ms-grid-column: 3;
     -ms-grid-column-span: 8;
-        grid-column: 4 / 12;
+        grid-column: 3 / 11;
   }
 }
 

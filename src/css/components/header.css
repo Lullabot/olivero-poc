@@ -59,13 +59,13 @@
   }
 
   @media (--md) {
-    grid-column: span 5;
+    grid-column: span 4;
     padding-top: var(--sp4);
     font-size: 28px;
   }
 
   @media (--nav) {
-    grid-column: span 3;
+    grid-column: span 2;
     width: calc(100% + var(--sp2));
     margin-left: calc(-1 * var(--sp));
     margin-right: calc(-1 * var(--sp));

@@ -10,7 +10,7 @@
   }
 
   @media (--lg) {
-    grid-column: 4 / 12;
+    grid-column: 3 / 11;
   }
 
   ul {

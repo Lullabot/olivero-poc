@@ -19,12 +19,12 @@ figure {
 
     @media (--nav) {
       width: calc(4 * var(--grid-col-width--nav) + 3 * var(--grid-gap));
-      margin-right: calc(-2 * ((var(--grid-col-width--nav) + var(--grid-gap))));
+      margin-right: calc(-3 * ((var(--grid-col-width--nav) + var(--grid-gap))));
     }
 
     @media (--grid-max) {
       width: calc(4 * var(--grid-col-width--max) + 3 * var(--grid-gap));
-      margin-right: calc(-2 * ((var(--grid-col-width--max) + var(--grid-gap))));
+      margin-right: calc(-3 * ((var(--grid-col-width--max) + var(--grid-gap))));
     }
   }
 }
