@@ -274,15 +274,15 @@ figure.pull-right {
 
 @media (min-width: 1200px) {
   figure.pull-right {
-    width: calc(5*(100vw - 375px)/14 + 72px);
-    margin-right: calc(-3*((100vw - 375px)/14 + 18px));
+    width: calc(4*(100vw - 375px)/14 + 54px);
+    margin-right: calc(-2*((100vw - 375px)/14 + 18px));
   }
 }
 
 @media (min-width: 1440px) {
   figure.pull-right {
-    width: 457.7143px;
-    margin-right: -285.42858px;
+    width: 362.57144px;
+    margin-right: -190.28572px;
   }
 }
 
