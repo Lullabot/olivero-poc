@@ -16,3 +16,34 @@
   src: url('/fonts/metropolis/Metropolis-Bold.woff2') format('woff2'),
        url('/fonts/metropolis/Metropolis-Bold.woff') format('woff');
 }
+
+/* lora-regular - latin */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'),
+       url('/fonts/lora/lora-v14-latin-regular.woff2') format('woff2'),
+       url('/fonts/lora/lora-v14-latin-regular.woff') format('woff');
+}
+/* lora-italic - latin */
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'),
+       url('/fonts/lora/lora-v14-latin-italic.woff2') format('woff2'),
+       url('/fonts/lora/lora-v14-latin-italic.woff') format('woff');
+}
+/* lora-700 - latin */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'),
+       url('/fonts/lora/lora-v14-latin-700.woff2') format('woff2'),
+       url('/fonts/lora/lora-v14-latin-700.woff') format('woff');
+}

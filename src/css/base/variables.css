@@ -23,7 +23,7 @@
 */
 :root {
   --font-sans: 'metropolis', 'sans-serif';
-  --font-serif: 'georgia', 'serif';
+  --font-serif: 'Lora', 'georgia', 'serif';
 
   /* Layout */
   --max-width: 1350px;

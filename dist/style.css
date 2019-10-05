@@ -16,6 +16,45 @@
          url('/fonts/metropolis/Metropolis-Bold.woff') format('woff');
 }
 
+/* lora-regular - latin */
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'),
+         local('Lora-Regular'),
+         url('/fonts/lora/lora-v14-latin-regular.woff2') format('woff2'),
+         url('/fonts/lora/lora-v14-latin-regular.woff') format('woff');
+}
+
+/* lora-italic - latin */
+
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'),
+         local('Lora-Italic'),
+         url('/fonts/lora/lora-v14-latin-italic.woff2') format('woff2'),
+         url('/fonts/lora/lora-v14-latin-italic.woff') format('woff');
+}
+
+/* lora-700 - latin */
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'),
+         local('Lora-Bold'),
+         url('/fonts/lora/lora-v14-latin-700.woff2') format('woff2'),
+         url('/fonts/lora/lora-v14-latin-700.woff') format('woff');
+}
+
 /*
   Media query breakpoints.
   Processed by postcss/postcss-custom-media.
@@ -229,7 +268,7 @@ h1 {
   color: #2494db;
 }
 
-.byline {
+.hero__byline {
   margin-bottom: 36px;
   color: #6e7172;
   font-size: 14px;
@@ -237,12 +276,12 @@ h1 {
 }
 
 @media (min-width: 700px) {
-  .byline {
+  .hero__byline {
     margin-bottom: 72px;
   }
 }
 
-.byline a {
+.hero__byline a {
   font-weight: bold;
   text-decoration: underline;
 }
@@ -288,7 +327,7 @@ figure.pull-right {
 
 figcaption {
   padding: 9px;
-  font-family: 'georgia', 'serif';
+  font-family: 'Lora', 'georgia', 'serif';
   font-size: 14px;
   font-style: italic;
   line-height: 18px;
@@ -1232,6 +1271,7 @@ main {
       grid-column: 1 / 7;
   padding-bottom: 54px;
   line-height: 27px;
+  font-family: 'Lora', 'georgia', 'serif';
   color: #313637;
 }
 
@@ -1254,7 +1294,6 @@ main {
 }
 
 .text-content .lead {
-  font-family: 'georgia', 'serif';
   font-weight: bold;
   color: #0d1214;
   letter-spacing: -0.01em;
@@ -1273,6 +1312,7 @@ main {
   letter-spacing: .12em;
   text-transform: uppercase;
   line-height: 27px;
+  font-family: 'metropolis', 'sans-serif';
   font-size: 16px;
   color: black;
 }
@@ -1289,7 +1329,7 @@ main {
   position: relative;
   margin: 36px 0;
   padding-left: 36px;
-  font-family: 'georgia', 'serif';
+  font-family: 'Lora', 'georgia', 'serif';
   font-size: 21px;
   line-height: 36px;
   letter-spacing: -0.01em;
