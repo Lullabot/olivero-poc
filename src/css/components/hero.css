@@ -12,15 +12,15 @@
 
 .hero__img {
   grid-column: 1 / 7;
-  margin: var(--sp) 0;
+  margin: var(--sp2) 0;
 
   @media (--sm) {
-    margin: var(--sp2) 0;
+    margin: var(--sp3) 0;
   }
 
   @media (--grid-md) {
     grid-column: 1 / 15;
-    margin: var(--sp3) 0;
+    margin: var(--sp4) 0;
   }
 
   @media (--lg) {

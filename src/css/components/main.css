@@ -48,6 +48,22 @@ main {
     }
   }
 
+  p {
+    margin: var(--sp) 0;
+
+    @media (--md) {
+      margin: var(--sp2) 0;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
   blockquote {
     position: relative;
     margin: var(--sp2) 0;

@@ -269,16 +269,9 @@ h1 {
 }
 
 .hero__byline {
-  margin-bottom: 36px;
   color: #6e7172;
   font-size: 14px;
   line-height: 18px;
-}
-
-@media (min-width: 700px) {
-  .hero__byline {
-    margin-bottom: 72px;
-  }
 }
 
 .hero__byline a {
@@ -527,12 +520,12 @@ figcaption {
   -ms-grid-column: 1;
   -ms-grid-column-span: 6;
       grid-column: 1 / 7;
-  margin: 18px 0;
+  margin: 36px 0;
 }
 
 @media (min-width: 500px) {
   .hero__img {
-    margin: 36px 0;
+    margin: 54px 0;
   }
 }
 
@@ -541,7 +534,7 @@ figcaption {
     -ms-grid-column: 1;
     -ms-grid-column-span: 14;
         grid-column: 1 / 15;
-    margin: 54px 0;
+    margin: 72px 0;
   }
 }
 
@@ -1323,6 +1316,24 @@ main {
     font-size: 21px;
     letter-spacing: .09em;
   }
+}
+
+.text-content p {
+  margin: 18px 0;
+}
+
+@media (min-width: 700px) {
+  .text-content p {
+    margin: 36px 0;
+  }
+}
+
+.text-content p:first-child {
+  margin-top: 0;
+}
+
+.text-content p:last-child {
+  margin-bottom: 0;
 }
 
 .text-content blockquote {
