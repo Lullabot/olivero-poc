@@ -36,7 +36,7 @@
   @media (--nav) {
     position: relative;
     width: var(--content-left);
-    padding: var(--sp8) 0;
+    padding: calc(11 * var(--sp)) 0;
 
     &.js-fixed {
       position: fixed;

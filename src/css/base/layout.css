@@ -3,6 +3,11 @@
   padding-right: var(--sp);
   width: 100%;
   max-width: var(--max-width);
+
+  @media (--nav) {
+    padding-left: var(--sp2);
+    padding-right: var(--sp2);
+  }
 }
 
 .grid-full {

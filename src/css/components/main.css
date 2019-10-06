@@ -23,7 +23,7 @@ main {
   .lead {
     font-weight: bold;
     color: #0D1214;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
     line-height: var(--sp1-5);
 
     @media (--md) {

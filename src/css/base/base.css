@@ -1,3 +1,13 @@
+/* .mock {
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  z-index: 50;
+  opacity: 0.5;
+  pointer-events: none;
+  filter: invert(10%);
+} */
+
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -32,7 +42,7 @@ h1 {
   font-weight: bold;
   font-size: 24px;
   line-height: var(--sp1-5);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   color: #0D1214;
 
   @media (--md) {

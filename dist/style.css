@@ -87,6 +87,16 @@
   *//* Approximate width of a scrollbar. Doesn't have to be perfect. *//* Column counts at various breakpoints. *//* Count of grid-gaps at various breakpoints. *//* Width of the entire grid at various breakpoints. *//* Width of a grid column at various breakpoints *//* Layout helpers *//* Named colors. *//* Header */
 }
 
+/* .mock {
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  z-index: 50;
+  opacity: 0.5;
+  pointer-events: none;
+  filter: invert(10%);
+} */
+
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -121,7 +131,7 @@ h1 {
   font-weight: bold;
   font-size: 24px;
   line-height: 27px;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   color: #0d1214;
 }
 
@@ -154,6 +164,13 @@ h1 {
   padding-right: 18px;
   width: 100%;
   max-width: 1350px;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    padding-left: 36px;
+    padding-right: 36px;
+  }
 }
 
 .grid-full {
@@ -306,15 +323,15 @@ figure.pull-right {
 
 @media (min-width: 1200px) {
   figure.pull-right {
-    width: calc(4*(100vw - 375px)/14 + 54px);
-    margin-right: calc(-3*((100vw - 375px)/14 + 18px));
+    width: calc(4*(100vw - 411px)/14 + 54px);
+    margin-right: calc(-3*((100vw - 411px)/14 + 18px));
   }
 }
 
 @media (min-width: 1440px) {
   figure.pull-right {
-    width: 362.57144px;
-    margin-right: -285.42858px;
+    width: 352.28572px;
+    margin-right: -277.71429px;
   }
 }
 
@@ -413,10 +430,11 @@ figcaption {
   .site-branding {
     -ms-grid-column-span: 2;
     grid-column: span 2;
-    width: calc(100% + 36px);
-    margin-left: -18px;
+    width: calc(100% + 54px);
+    margin-left: -36px;
     margin-right: -18px;
     padding-top: 72px;
+    padding-left: 36px;
     padding-bottom: 0;
     font-size: 32px;
     line-height: 36px;
@@ -1061,9 +1079,15 @@ figcaption {
   }
 }
 
+.secondary-nav {
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  font-size: 14px;
+}
+
 @media (min-width: 1200px) {
   .secondary-nav {
-    margin-left: 36px;
+    margin-left: 27px;
     padding-left: 36px;
     border-left: solid 2px #d7e1e8;
   }
@@ -1088,10 +1112,7 @@ figcaption {
   padding: 0 18px;
   background-color: #0d7ab8;
   color: white;
-  letter-spacing: .07em;
-  text-transform: uppercase;
   font-weight: bold;
-  font-size: 14px;
   line-height: 36px;
   white-space: nowrap;
 }
@@ -1103,7 +1124,7 @@ figcaption {
 @media (min-width: 1200px) {
   .secondary-nav li:not(:last-child) {
     margin-right: 0;
-    margin-left: 27px;
+    margin-left: 36px;
   }
 }
 
@@ -1227,7 +1248,7 @@ figcaption {
   .social-container__inner {
     position: relative;
     width: 90px;
-    padding: 144px 0;
+    padding: 198px 0;
   }
 
   .social-container__inner.js-fixed {
@@ -1289,7 +1310,7 @@ main {
 .text-content .lead {
   font-weight: bold;
   color: #0d1214;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   line-height: 27px;
 }
 
@@ -1370,13 +1391,13 @@ main {
 
 @media (min-width: 1200px) {
   .text-content blockquote {
-    width: calc(10*(100vw - 375px)/14 + 162px);
+    width: calc(10*(100vw - 411px)/14 + 162px);
   }
 }
 
 @media (min-width: 1440px) {
   .text-content blockquote {
-    width: 933.4286px;
+    width: 907.7143px;
   }
 }
 
@@ -1403,13 +1424,13 @@ main {
 
 @media (min-width: 1200px) {
   .text-content blockquote:before {
-    left: calc(-1*((100vw - 375px)/14 + 18px));
+    left: calc(-1*((100vw - 411px)/14 + 18px));
   }
 }
 
 @media (min-width: 1440px) {
   .text-content blockquote:before {
-    left: -95.14286px;
+    left: -92.57143px;
   }
 }
 
@@ -1441,13 +1462,13 @@ main {
 
 @media (min-width: 1200px) {
   .text-content blockquote:after {
-    left: calc(-1*((100vw - 375px)/14 + 18px));
+    left: calc(-1*((100vw - 411px)/14 + 18px));
   }
 }
 
 @media (min-width: 1440px) {
   .text-content blockquote:after {
-    left: -95.14286px;
+    left: -92.57143px;
   }
 }
 

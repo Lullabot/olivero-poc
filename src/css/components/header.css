@@ -66,10 +66,11 @@
 
   @media (--nav) {
     grid-column: span 2;
-    width: calc(100% + var(--sp2));
-    margin-left: calc(-1 * var(--sp));
-    margin-right: calc(-1 * var(--sp));
+    width: calc(100% + var(--sp2) + var(--grid-gap));
+    margin-left: calc(-2 * var(--sp));
+    margin-right: calc(-1 * var(--grid-gap));
     padding-top: var(--sp4);
+    padding-left: var(--sp2);
     padding-bottom: 0;
     font-size: 32px;
     line-height: var(--sp2);

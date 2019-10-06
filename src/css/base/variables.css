@@ -63,8 +63,8 @@
   --grid-full-width:        calc(100vw - var(--sp2));
   --grid-full-width--md:    var(--grid-full-width);
   --grid-full-width--lg:    calc(var(--grid-full-width) - var(--scrollbar-width));
-  --grid-full-width--nav:   calc(100vw - var(--scrollbar-width) - var(--content-left) - var(--sp2));
-  --grid-full-width--max:   calc(var(--max-width) - var(--sp2));
+  --grid-full-width--nav:   calc(100vw - var(--scrollbar-width) - var(--content-left) - var(--sp4));
+  --grid-full-width--max:   calc(var(--max-width) - var(--sp4));
 
   /* Width of a grid column at various breakpoints */
   --grid-col-width:         calc((var(--grid-full-width) - (var(--grid-gap-count) * var(--grid-gap))) / var(--grid-col-count));

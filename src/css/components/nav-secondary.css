@@ -9,8 +9,12 @@
 }
 
 .secondary-nav {
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-size: 14px;
+
   @media (--nav) {
-    margin-left: var(--sp2);
+    margin-left: var(--sp1-5);
     padding-left: var(--sp2);
     border-left: solid 2px #D7E1E8;
   }
@@ -32,10 +36,7 @@
     padding: 0 var(--sp);
     background-color: var(--blue-dark);
     color: white;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
     font-weight: bold;
-    font-size: 14px;
     line-height: var(--sp2);
     white-space: nowrap;
   }
@@ -45,7 +46,7 @@
 
     @media (--nav) {
       margin-right: 0;
-      margin-left: var(--sp1-5);
+      margin-left: var(--sp2);
     }
   }
 }
