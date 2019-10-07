@@ -27,13 +27,13 @@
       <!-- Gets fixed by JS at wide widths -->
       <div class="site-header__fixable fixable">
         <div class="header__left">
-          <button class="nav-primary__button" aria-label="Toggle navigation">
+          <button class="nav-primary__button" aria-controls="site-header__inner" aria-label="Toggle navigation">
             <span class="nav-primary__icon"></span>
           </button>
         </div>
 
         <!-- Needs to extend full width so box shadow will also extend -->
-        <div class="site-header__inner">
+        <div id="site-header__inner" class="site-header__inner">
           <div class="container">
             <div class="grid-full">
               <div class="site-branding">
