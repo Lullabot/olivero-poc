@@ -18,6 +18,7 @@
 
   @media (--grid-md) {
     grid-template-columns: repeat(var(--grid-col-count--md), 1fr);
+    grid-column-gap: var(--grid-gap--md);
   }
 }
 

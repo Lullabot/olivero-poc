@@ -66,14 +66,15 @@
 
   @media (--nav) {
     grid-column: span 2;
-    width: calc(100% + var(--sp2) + var(--grid-gap));
-    margin-left: calc(-2 * var(--sp));
-    margin-right: calc(-1 * var(--grid-gap));
+    width: calc(100% + 2 * var(--grid-gap--md));
+    margin-left: calc(-1 * var(--grid-gap--md));
+    margin-right: calc(-1 * var(--grid-gap--md));
     padding-top: var(--sp4);
     padding-left: var(--sp2);
     padding-bottom: 0;
     font-size: 32px;
     line-height: var(--sp2);
+    letter-spacing: 0.02em;
     box-shadow: calc(-1 * var(--content-left)) 0 0 var(--blue);
 
     .site-branding__inner {

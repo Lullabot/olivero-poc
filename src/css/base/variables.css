@@ -43,7 +43,13 @@
   */
 
   --scrollbar-width: 15px; /* Approximate width of a scrollbar. Doesn't have to be perfect. */
-  --grid-gap: var(--sp);
+
+  /* Grid gap across various breakpoints. */
+  --grid-gap:               var(--sp);
+  --grid-gap--md:           var(--sp2);
+  --grid-gap--lg:           var(--grid-gap--md);
+  --grid-gap--nav:          var(--grid-gap--md);
+  --grid-gap--max:          var(--grid-gap--md);
 
   /* Column counts at various breakpoints. */
   --grid-col-count:         6;
@@ -68,10 +74,10 @@
 
   /* Width of a grid column at various breakpoints */
   --grid-col-width:         calc((var(--grid-full-width) - (var(--grid-gap-count) * var(--grid-gap))) / var(--grid-col-count));
-  --grid-col-width--md:     calc((var(--grid-full-width--md) - (var(--grid-gap-count--md) * var(--grid-gap))) / var(--grid-col-count--md));
-  --grid-col-width--lg:     calc((var(--grid-full-width--lg) - (var(--grid-gap-count--lg) * var(--grid-gap))) / var(--grid-col-count--lg));
-  --grid-col-width--nav:    calc((var(--grid-full-width--nav) - (var(--grid-gap-count--nav) * var(--grid-gap))) / var(--grid-col-count--nav));
-  --grid-col-width--max:    calc((var(--grid-full-width--max) - (var(--grid-gap-count--max) * var(--grid-gap))) / var(--grid-col-count--max));
+  --grid-col-width--md:     calc((var(--grid-full-width--md) - (var(--grid-gap-count--md) * var(--grid-gap--md))) / var(--grid-col-count--md));
+  --grid-col-width--lg:     calc((var(--grid-full-width--lg) - (var(--grid-gap-count--lg) * var(--grid-gap--lg))) / var(--grid-col-count--lg));
+  --grid-col-width--nav:    calc((var(--grid-full-width--nav) - (var(--grid-gap-count--nav) * var(--grid-gap--nav))) / var(--grid-col-count--nav));
+  --grid-col-width--max:    calc((var(--grid-full-width--max) - (var(--grid-gap-count--max) * var(--grid-gap--max))) / var(--grid-col-count--max));
 
   /* Layout helpers */
   --sp0-5: calc(0.5 * var(--sp));

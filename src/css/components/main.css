@@ -77,26 +77,26 @@ main {
       margin-top: var(--sp3);
       margin-bottom: var(--sp3);
       /* Negative margin-right's are necessary for FF to not stretch the grid. */
-      margin-right: calc(-5 * (var(--grid-col-width--lg) + var(--grid-gap)));
-      width: calc(10 * var(--grid-col-width--md) + 9 * var(--grid-gap));
+      margin-right: calc(-5 * (var(--grid-col-width--lg) + var(--grid-gap--md)));
+      width: calc(10 * var(--grid-col-width--md) + 9 * var(--grid-gap--md));
       padding: 0;
       font-size: 32px;
       line-height: var(--sp3);
     }
 
     @media (--lg) {
-      width: calc(10 * var(--grid-col-width--lg) + 9 * var(--grid-gap));
-      margin-right: calc(-5 * (var(--grid-col-width--lg) + var(--grid-gap)));
+      width: calc(10 * var(--grid-col-width--lg) + 9 * var(--grid-gap--lg));
+      margin-right: calc(-5 * (var(--grid-col-width--lg) + var(--grid-gap--lg)));
       font-size: 48px;
       line-height: var(--sp4);
     }
 
     @media (--nav) {
-      width: calc(10 * var(--grid-col-width--nav) + 9 * var(--grid-gap));
+      width: calc(10 * var(--grid-col-width--nav) + 9 * var(--grid-gap--nav));
     }
 
     @media (--grid-max) {
-      width: calc(10 * var(--grid-col-width--max) + 9 * var(--grid-gap));
+      width: calc(10 * var(--grid-col-width--max) + 9 * var(--grid-gap--max));
     }
 
     &:before {
@@ -108,19 +108,19 @@ main {
       font-size: 54px;
 
       @media (--grid-md) {
-        left: calc(-1 * (var(--grid-col-width--md) + var(--grid-gap)));
+        left: calc(-1 * (var(--grid-col-width--md) + var(--grid-gap--md)));
       }
 
       @media (--lg) {
-        left: calc(-1 * (var(--grid-col-width--lg) + var(--grid-gap)));
+        left: calc(-1 * (var(--grid-col-width--lg) + var(--grid-gap--lg)));
       }
 
       @media (--nav) {
-        left: calc(-1 * (var(--grid-col-width--nav) + var(--grid-gap)));
+        left: calc(-1 * (var(--grid-col-width--nav) + var(--grid-gap--nav)));
       }
 
       @media (--grid-max) {
-        left: calc(-1 * (var(--grid-col-width--max) + var(--grid-gap)));
+        left: calc(-1 * (var(--grid-col-width--max) + var(--grid-gap--max)));
       }
     }
 
@@ -135,22 +135,22 @@ main {
       margin-left: 4px;
 
       @media (--grid-md) {
-        left: calc(-1 * (var(--grid-col-width--md) + var(--grid-gap)));
+        left: calc(-1 * (var(--grid-col-width--md) + var(--grid-gap--md)));
         width: var(--sp);
         height: calc(100% - 45px);
         margin-left: 2px;
       }
 
       @media (--lg) {
-        left: calc(-1 * (var(--grid-col-width--lg) + var(--grid-gap)));
+        left: calc(-1 * (var(--grid-col-width--lg) + var(--grid-gap--lg)));
       }
 
       @media (--nav) {
-        left: calc(-1 * (var(--grid-col-width--nav) + var(--grid-gap)));
+        left: calc(-1 * (var(--grid-col-width--nav) + var(--grid-gap--nav)));
       }
 
       @media (--grid-max) {
-        left: calc(-1 * (var(--grid-col-width--max) + var(--grid-gap)));
+        left: calc(-1 * (var(--grid-col-width--max) + var(--grid-gap--max)));
       }
     }
   }

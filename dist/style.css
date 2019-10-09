@@ -1,3 +1,17 @@
+/* .mock {
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  z-index: 50;
+  opacity: 0.5;
+  pointer-events: none;
+  filter: invert(10%);
+}
+
+.site-branding {
+  background: red !important;
+} */
+
 @font-face {
   font-family: 'metropolis';
   font-weight: normal;
@@ -84,18 +98,8 @@
     Note we cannot change the values of these custom properties within media queries,
     as they are processed by postcss/postcss-custom-properties, which does not support
     that functionality.
-  *//* Approximate width of a scrollbar. Doesn't have to be perfect. *//* Column counts at various breakpoints. *//* Count of grid-gaps at various breakpoints. *//* Width of the entire grid at various breakpoints. *//* Width of a grid column at various breakpoints *//* Layout helpers *//* Named colors. *//* Header */
+  *//* Approximate width of a scrollbar. Doesn't have to be perfect. *//* Grid gap across various breakpoints. *//* Column counts at various breakpoints. *//* Count of grid-gaps at various breakpoints. *//* Width of the entire grid at various breakpoints. *//* Width of a grid column at various breakpoints *//* Layout helpers *//* Named colors. *//* Header */
 }
-
-/* .mock {
-  position: absolute;
-  left: 1px;
-  top: 1px;
-  z-index: 50;
-  opacity: 0.5;
-  pointer-events: none;
-  filter: invert(10%);
-} */
 
 *, *:before, *:after {
   box-sizing: border-box;
@@ -207,6 +211,7 @@ h1 {
   .grid-full {
     -ms-grid-columns: (1fr)[14];
     grid-template-columns: repeat(14, 1fr);
+    grid-column-gap: 36px;
   }
 }
 
@@ -328,30 +333,30 @@ figure.pull-right {
 @media (min-width: 700px) {
   figure.pull-right {
     float: right;
-    width: calc(5*(100vw - 270px)/14 + 72px);
-    margin-right: calc(-2*((100vw - 270px)/14 + 18px));
+    width: calc(5*(100vw - 504px)/14 + 144px);
+    margin-right: calc(-2*((100vw - 504px)/14 + 36px));
     margin-left: 18px;
   }
 }
 
 @media (min-width: 1000px) {
   figure.pull-right {
-    width: calc(5*(100vw - 285px)/14 + 72px);
-    margin-right: calc(-2*((100vw - 285px)/14 + 18px));
+    width: calc(5*(100vw - 519px)/14 + 144px);
+    margin-right: calc(-2*((100vw - 519px)/14 + 36px));
   }
 }
 
 @media (min-width: 1200px) {
   figure.pull-right {
-    width: calc(4*(100vw - 411px)/14 + 54px);
-    margin-right: calc(-3*((100vw - 411px)/14 + 18px));
+    width: calc(4*(100vw - 645px)/14 + 108px);
+    margin-right: calc(-3*((100vw - 645px)/14 + 36px));
   }
 }
 
 @media (min-width: 1440px) {
   figure.pull-right {
-    width: 352.28572px;
-    margin-right: -277.71429px;
+    width: 339.42856px;
+    margin-right: -281.57142px;
   }
 }
 
@@ -450,14 +455,15 @@ figcaption {
   .site-branding {
     -ms-grid-column-span: 2;
     grid-column: span 2;
-    width: calc(100% + 54px);
+    width: calc(100% + 72px);
     margin-left: -36px;
-    margin-right: -18px;
+    margin-right: -36px;
     padding-top: 72px;
     padding-left: 36px;
     padding-bottom: 0;
     font-size: 32px;
     line-height: 36px;
+    letter-spacing: .02em;
     box-shadow: -90px 0 0 #2494db;
   }
 
@@ -1176,6 +1182,7 @@ figcaption {
 @media (min-width: 1200px) {
   .header-nav__search-button {
     display: block;
+    margin-left: 27px;
   }
 }
 
@@ -1408,8 +1415,8 @@ main {
     margin-top: 54px;
     margin-bottom: 54px;
     /* Negative margin-right's are necessary for FF to not stretch the grid. */
-    margin-right: calc(-5*((100vw - 285px)/14 + 18px));
-    width: calc(10*(100vw - 270px)/14 + 162px);
+    margin-right: calc(-5*((100vw - 519px)/14 + 36px));
+    width: calc(10*(100vw - 504px)/14 + 324px);
     padding: 0;
     font-size: 32px;
     line-height: 54px;
@@ -1418,8 +1425,8 @@ main {
 
 @media (min-width: 1000px) {
   .text-content blockquote {
-    width: calc(10*(100vw - 285px)/14 + 162px);
-    margin-right: calc(-5*((100vw - 285px)/14 + 18px));
+    width: calc(10*(100vw - 519px)/14 + 324px);
+    margin-right: calc(-5*((100vw - 519px)/14 + 36px));
     font-size: 48px;
     line-height: 72px;
   }
@@ -1427,13 +1434,13 @@ main {
 
 @media (min-width: 1200px) {
   .text-content blockquote {
-    width: calc(10*(100vw - 411px)/14 + 162px);
+    width: calc(10*(100vw - 645px)/14 + 324px);
   }
 }
 
 @media (min-width: 1440px) {
   .text-content blockquote {
-    width: 907.7143px;
+    width: 902.5714px;
   }
 }
 
@@ -1448,25 +1455,25 @@ main {
 
 @media (min-width: 700px) {
   .text-content blockquote:before {
-    left: calc(-1*((100vw - 270px)/14 + 18px));
+    left: calc(-1*((100vw - 504px)/14 + 36px));
   }
 }
 
 @media (min-width: 1000px) {
   .text-content blockquote:before {
-    left: calc(-1*((100vw - 285px)/14 + 18px));
+    left: calc(-1*((100vw - 519px)/14 + 36px));
   }
 }
 
 @media (min-width: 1200px) {
   .text-content blockquote:before {
-    left: calc(-1*((100vw - 411px)/14 + 18px));
+    left: calc(-1*((100vw - 645px)/14 + 36px));
   }
 }
 
 @media (min-width: 1440px) {
   .text-content blockquote:before {
-    left: -92.57143px;
+    left: -93.85714px;
   }
 }
 
@@ -1483,7 +1490,7 @@ main {
 
 @media (min-width: 700px) {
   .text-content blockquote:after {
-    left: calc(-1*((100vw - 270px)/14 + 18px));
+    left: calc(-1*((100vw - 504px)/14 + 36px));
     width: 18px;
     height: calc(100% - 45px);
     margin-left: 2px;
@@ -1492,19 +1499,19 @@ main {
 
 @media (min-width: 1000px) {
   .text-content blockquote:after {
-    left: calc(-1*((100vw - 285px)/14 + 18px));
+    left: calc(-1*((100vw - 519px)/14 + 36px));
   }
 }
 
 @media (min-width: 1200px) {
   .text-content blockquote:after {
-    left: calc(-1*((100vw - 411px)/14 + 18px));
+    left: calc(-1*((100vw - 645px)/14 + 36px));
   }
 }
 
 @media (min-width: 1440px) {
   .text-content blockquote:after {
-    left: -92.57143px;
+    left: -93.85714px;
   }
 }
 

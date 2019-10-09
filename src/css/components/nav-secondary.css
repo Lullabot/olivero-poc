@@ -79,5 +79,6 @@
 
   @media (--nav) {
     display: block;
+    margin-left: var(--sp1-5);
   }
 }
