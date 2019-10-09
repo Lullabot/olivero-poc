@@ -159,6 +159,26 @@ h1 {
   display: block;
 }
 
+.button--primary {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 18px;
+  background-color: #0d7ab8;
+  color: white;
+  font-weight: bold;
+  height: 36px;
+  border-radius: 2px;
+  transition: background-color .2s;
+}
+
+.button--primary:focus, .button--primary:hover {
+  background-color: #2494db;
+}
+
+.button--primary:active {
+  background-color: #0d7ab8;
+}
+
 .container {
   padding-left: 18px;
   padding-right: 18px;
@@ -1107,16 +1127,6 @@ figcaption {
   }
 }
 
-.secondary-nav .button--primary {
-  display: inline-block;
-  padding: 0 18px;
-  background-color: #0d7ab8;
-  color: white;
-  font-weight: bold;
-  line-height: 36px;
-  white-space: nowrap;
-}
-
 .secondary-nav li:not(:last-child) {
   margin-right: 27px;
 }
@@ -1126,6 +1136,32 @@ figcaption {
     margin-right: 0;
     margin-left: 36px;
   }
+}
+
+.secondary-nav a:not(.button--primary) {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+}
+
+.secondary-nav a:not(.button--primary):after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  opacity: 0;
+  transform: translatey(5px);
+  transition: opacity .2s, transform .2s;
+}
+
+.secondary-nav a:not(.button--primary):focus:after,
+.secondary-nav a:not(.button--primary):hover:after {
+  opacity: .8;
+  transform: translatey(0);
 }
 
 .header-nav__search-button {
