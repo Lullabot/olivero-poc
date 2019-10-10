@@ -120,15 +120,77 @@
         </div>
         <div class="grid-full">
           <div class="text-content">
-            <p class="lead">If you thought opening paragraphs were amazing, wait till you begin writing blog posts with leads! They’ll blow your mind. They draw your readers into an article.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est numquam tempora consequatur, fugit, facere exercitationem neque impedit quidem fugiat quos nemo magni rerum, aperiam nostrum quisquam non eligendi eius commodi.</p>
+            <p class="lead">Welcome to the proof-of-concept HTML for the new Drupal Olivero theme! The
+              intention of this webpage is to validate the user interactions, design,
+              architecture, accessibility, and technology that will be used to create the
+              theme. </p>
+            <h2 id="aboutthisproofofconcept">About this proof-of-concept</h2>
+            <p>This proof of concept was created in static HTML. The repository is <a href="https://github.com/Lullabot/olivero-poc">hosted on
+              GitHub</a>, and the webpage is hosted on Netlify. </p>
+            <p>We created this proof-of-concept to validate the look and feel of the
+              scrolling interactions, and moved on to work to make the nav-bar accessible.
+              This includes ensuring that the menu items are exposed to the accessibility
+              tree, and activating the nav-bar when it gains focus (this is done through the
+              focusin event listener). </p>
+            <h2 id="commitmenttoaccessibility">Commitment to accessibility</h2>
+            <p>To add this theme to Drupal core, we must meet Drupal’s stringent
+              accessibility standards which stipulate compliance with <a
+                href="http://www.w3.org/WAI/intro/wcag">Web Content Accessibility Guidelines
+                (WCAG) 2.0 AA</a>.</p>
+            <p>Throughout the design process, we have been designing with accessibility in
+              mind. We have been continuously testing the design against contrast
+              requirements, and adjusting the design based on this.</p>
+              <figure class="pull-right">
+                <img src="/images/pull-1.jpg" alt="DrupalCon Vienna Group Photo">
+                <figcaption>DrupalCon Vienna group photo. Photo by Dominik Kiss on behalf of
+                  the Drupal Assocation. Creative Commons.</figcaption>
+              </figure>
+            <p>Expanding / collapsing HTML elements within the theme will be either properly
+              removed / added from the accessibility tree, or will become visible when they
+              gain focus. Elements will be styled against the appropriate ARIA attributes to
+              ensure that it becomes immediately apparent when the toggling of attributes is
+              not working correctly.</p>
+            <h2 id="browsersupport">Browser support</h2>
+            <p>Because this theme is intended to go into Drupal core, we need to <a
+                href="https://www.drupal.org/node/3079238">support all browsers that core
+                does</a>. </p>
+            <p>Currently this browser is tested and working on the following:</p>
+            <ul>
+              <li>Chrome</li>
+              <li>Firefox</li>
+              <li>Safari</li>
+              <li>Mobile Safari</li>
+              <li>Internet Explorer 11 (some bugs present!)</li>
+            </ul>
+            <p>We have not yet tested this on the following:</p>
+            <ul>
+              <li>Edge</li>
+              <li>UC browser</li>
+              <li>Opera</li>
+              <li>Opera Mini</li>
+              <li>Samsung</li>
+            </ul>
+            <h2 id="progressiveenhancement">Progressive enhancement</h2>
+            <p>We make use of several modern front-end web development technologies
+              including <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid">CSS
+                Grid</a>, and <a
+                href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API">Intersection
+                Observer</a>.</p>
+            <p>Internet Explorer does have CSS Grid support, but the syntax is old and
+              invalid. Fortunately, the Autoprefixer plugin will automatically add this
+              support. We can do this because <a
+                href="https://www.drupal.org/project/drupal/issues/3060153">Drupal core can
+                now use PostCSS</a> (huge thanks to the Claro team for getting this in)!</p>
+            <p>Internet Explorer also does not support the new Intersection Observer API. To
+              work around this, we check to ensure that the API exists before invoking it.
+              This ensures that the menus are fully accessible, and do not generate console
+              errors — but the fancy scroll interactions will not be available to IE11
+              users.</p>
+
             <h2>Subheadings are the best!</h2>
             <p>Delectus, doloremque deserunt saepe incidunt, molestias excepturi neque distinctio quos deleniti cum maxime doloribus in dolor exercitationem autem voluptatem quo vero aliquid quia. Enim quidem earum consectetur at, sed placeat?</p>
             <p>Nostrum magni ipsa illo quae! Dolores laborum vel sapiente doloremque perspiciatis ab provident voluptas obcaecati ullam, fuga exercitationem laboriosam ad dolor animi totam nesciunt explicabo est natus iure. Aliquid, qui?</p>
-            <figure class="pull-right">
-              <img src="/images/pull-1.jpg" alt="DrupalCon Vienna Group Photo">
-              <figcaption>DrupalCon Vienna group photo. Photo by Dominik Kiss on behalf of the Drupal Assocation. Creative Commons.</figcaption>
-            </figure>
+
             <p>Incidunt sint eos perferendis rerum officiis reiciendis veritatis deleniti nisi et reprehenderit. Expedita, exercitationem! Animi temporibus laudantium sed dolorem. Itaque dignissimos animi natus. Praesentium dolor culpa corporis, qui blanditiis impedit!</p>
             <p>Dicta dolores nisi tenetur eos non. Hic recusandae repellendus provident sequi vel necessitatibus, quidem autem unde consectetur quas illo possimus cupiditate veniam commodi. Quo ut amet, nisi reprehenderit asperiores vel!</p>
             <p>Deleniti dignissimos tempore vero doloribus laboriosam itaque sint nam, eveniet veritatis non, illo fuga ipsam quaerat dolore. Quidem consectetur expedita iste aliquam laboriosam maxime laborum sunt. Ullam veritatis accusamus quidem?</p>
@@ -140,6 +202,11 @@
             <p>Doloribus adipisci repellat eius soluta numquam iusto aut corrupti earum impedit error maiores quis vel, rem dignissimos dolorum sapiente nostrum optio ducimus eveniet vitae, eligendi exercitationem. Cumque ullam optio ipsum!</p>
             <p>Sint provident, accusamus iure ut inventore numquam id fugit placeat ad ratione quae repellat obcaecati animi voluptatibus necessitatibus maxime fuga commodi dicta aperiam, sunt culpa veniam corporis alias sed. Praesentium.</p>
             <p>Eaque dolorum ratione commodi in ipsum dolore nihil odio iste itaque. Recusandae dolorem ipsum, libero facere dolorum autem quam esse labore laboriosam atque facilis. Similique aspernatur beatae iste aut vitae.</p>
+            <figure class="pull-left">
+              <img src="/images/pull-1.jpg" alt="DrupalCon Vienna Group Photo">
+              <figcaption>DrupalCon Vienna group photo. Photo by Dominik Kiss on behalf of
+                the Drupal Assocation. Creative Commons.</figcaption>
+            </figure>
             <p>Ducimus adipisci placeat excepturi, doloremque praesentium aspernatur laudantium nostrum minima deserunt, ab blanditiis provident? Mollitia minima sapiente eaque voluptatibus rerum dolores aut natus, labore assumenda esse cupiditate eveniet quam nulla.</p>
             <p>Neque inventore illum illo voluptatum ipsum iste beatae nulla nemo consequatur? Accusantium aperiam fugit repellendus, blanditiis vitae earum nam eligendi ipsa labore culpa quisquam ratione, iure voluptate eius sunt veniam?</p>
             <p>Voluptates maiores reiciendis, incidunt aut quaerat labore voluptas iure illo delectus ullam, quis assumenda dolor laudantium necessitatibus ut. Neque eum sit deleniti impedit natus dolorem quaerat, eaque veniam libero quod?</p>

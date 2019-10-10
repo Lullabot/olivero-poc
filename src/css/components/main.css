@@ -48,6 +48,37 @@ main {
     }
   }
 
+  /*
+    @todo
+
+    text-decoration-thickness is supported by FF & Safari
+    text-underline-offset is supported by Safari
+
+    text-decoration-color supported by Chrome, FF, & Safari
+  */
+
+  a {
+    color: var(--blue);
+    text-decoration: underline;
+    text-decoration-color: var(--blue);
+    text-decoration-width: 2px;
+    text-decoration-thickness: 2px;
+
+    @supports (box-shadow: none) {
+      text-decoration: none;
+      box-shadow: inset 0 -2px 0 0 var(--blue);
+      transition: box-shadow .3s cubic-bezier(.55,.085,0,.99);
+
+      &:hover,
+      &:focus {
+        box-shadow: inset 0 -30px 0 0 #d9ecfa;
+        color: black;
+        text-decoration: underline;
+        text-decoration-color: #d9ecfa;
+      }
+    }
+  }
+
   p {
     margin: var(--sp) 0;
 
