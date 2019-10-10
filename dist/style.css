@@ -179,6 +179,11 @@ h1 {
   background-color: #2494db;
 }
 
+.button--primary:focus {
+  outline: 2px solid #53b0eb;
+  outline-offset: 1px;
+}
+
 .button--primary:active {
   background-color: #0d7ab8;
 }

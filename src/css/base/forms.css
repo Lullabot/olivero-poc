@@ -14,6 +14,11 @@
       background-color: #2494DB;
     }
 
+    &:focus {
+      outline: 2px solid var(--blue-light);
+      outline-offset: 1px;
+    }
+
     &:active {
       background-color: #0D7AB8;
     }
