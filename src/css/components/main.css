@@ -58,9 +58,9 @@ main {
   */
 
   a {
-    color: var(--blue);
+    color: var(--blue-dark);
     text-decoration: underline;
-    text-decoration-color: var(--blue);
+    text-decoration-color: var(--blue-dark);
     text-decoration-width: 2px;
     text-decoration-thickness: 2px;
 

@@ -307,7 +307,7 @@ h1 {
 }
 
 .breadcrumb a {
-  color: #2494db;
+  color: #0d7ab8;
 }
 
 .hero__byline {
@@ -1429,10 +1429,10 @@ main {
   */
 
 .text-content a {
-  color: #2494db;
+  color: #0d7ab8;
   text-decoration: underline;
-  -webkit-text-decoration-color: #2494db;
-          text-decoration-color: #2494db;
+  -webkit-text-decoration-color: #0d7ab8;
+          text-decoration-color: #0d7ab8;
   text-decoration-width: 2px;
   text-decoration-thickness: 2px;
 }

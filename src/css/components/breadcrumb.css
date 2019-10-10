@@ -20,6 +20,6 @@
   }
 
   a {
-    color: #2494DB;
+    color: var(--blue-dark);
   }
 }
