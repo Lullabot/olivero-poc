@@ -1157,7 +1157,7 @@ figcaption {
   .secondary-nav {
     position: relative;
     display: flex;
-    margin-left: 27px;
+    margin-left: 9px;
     padding-left: 36px;
   }
 
@@ -1231,19 +1231,39 @@ figcaption {
   background: transparent;
   margin-left: 36px;
   height: 108px;
+  width: 54px;
   background: black;
   cursor: pointer;
 }
 
 @media (min-width: 1200px) {
   .header-nav__search-button {
+    position: relative;
     display: block;
-    margin-left: 27px;
+    margin-left: 9px;
   }
 }
 
 .header-nav__search-button img {
-  background: white;
+  display: none;
+}
+
+.header-nav__search-button:before, .header-nav__search-button:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 27px;
+  height: 2px;
+  background-color: white;
+}
+
+.header-nav__search-button:before {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.header-nav__search-button:after {
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .mobile-buttons {

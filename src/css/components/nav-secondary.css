@@ -16,7 +16,7 @@
   @media (--nav) {
     position: relative;
     display: flex;
-    margin-left: var(--sp1-5);
+    margin-left: var(--sp0-5);
     padding-left: var(--sp2);
 
     &:before {
@@ -88,15 +88,36 @@
   background: transparent;
   margin-left: var(--sp2);
   height: var(--sp6);
+  width: var(--sp3);
   background: black;
   cursor: pointer;
 
   @media (--nav) {
+    position: relative;
     display: block;
-    margin-left: var(--sp1-5);
+    margin-left: var(--sp0-5);
   }
 
   img {
-    background: white;
+    display: none;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--sp1-5);
+    height: 2px;
+    background-color: white;
+  }
+
+  &:before {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  &:after {
+    transform: translate(-50%, -50%) rotate(45deg);
   }
 }
