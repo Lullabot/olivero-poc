@@ -97,7 +97,7 @@
 
     Note we cannot change the values of these custom properties within media queries,
     as they are processed by postcss/postcss-custom-properties, which does not support
-    that functionality.
+    that functionality. Therefore, we need a separate custom property for each breakpoint.
   *//* Approximate width of a scrollbar. Doesn't have to be perfect. *//* Grid gap across various breakpoints. *//* Column counts at various breakpoints. *//* Count of grid-gaps at various breakpoints. *//* Width of the entire grid at various breakpoints. *//* Width of a grid column at various breakpoints *//* Layout helpers *//* Named colors. *//* Header */
 }
 
@@ -1155,9 +1155,21 @@ figcaption {
 
 @media (min-width: 1200px) {
   .secondary-nav {
+    position: relative;
+    display: flex;
     margin-left: 27px;
     padding-left: 36px;
-    border-left: solid 2px #d7e1e8;
+  }
+
+  .secondary-nav:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translatey(-50%);
+    height: 36px;
+    width: 2px;
+    background-color: #d7e1e8;
   }
 }
 
@@ -1218,6 +1230,8 @@ figcaption {
   border: 0;
   background: transparent;
   margin-left: 36px;
+  height: 108px;
+  background: black;
   cursor: pointer;
 }
 
@@ -1226,6 +1240,10 @@ figcaption {
     display: block;
     margin-left: 27px;
   }
+}
+
+.header-nav__search-button img {
+  background: white;
 }
 
 .mobile-buttons {
@@ -1287,7 +1305,13 @@ figcaption {
 
 @media (min-width: 1200px) {
   .search-wrapper {
-    display: none;
+    position: fixed;
+    display: block;
+    width: 100%;
+    left: 0;
+    top: 180px;
+    background: black;
+    padding: 72px;
   }
 }
 
