@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>issue</title>
+
+  <style>
+    body {
+      max-width: 620px;
+      margin: 20px auto;
+      font-family: "Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
+      color: #222222;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    h3 {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: bold;
+    font-size: 1.231em;
+    line-height: 1.6875em;
+    margin: 0 0 0.5625em;
+    }
+  </style>
+</head>
+<body>
+  <h2 id="summary">Summary</h2>
+
+  <p>This issue is proposing a new design for the default frontend theme for
+    Drupal 9 (targeted for inclusion in Drupal 9.1). Note this is separate from
+    the <a href="https://www.drupal.org/project/drupal/issues/3079738">new
+      administration theme, Claro</a>, which was just committed to core several
+    days ago.</p>
+
+  <p>This new frontend theme will have a modern look and feel based on adjectives
+    and principles that were identified during the design process (more on this
+    below). It will be <a
+      href="https://www.w3.org/WAI/standards-guidelines/wcag">WCAG AA compliant</a>, support
+    updated functionality in Drupal, and is intended to feel modern going into the
+    future. The theme is named “Olivero” after <a
+      href="https://www.drupal.org/forum/general/community-spotlight/2019-02-22/remembering-rachel-olivero">Rachel
+      Olivero</a>, who was an advocate for accessibility and a Drupal community
+    member (more on that below).</p>
+
+  <h2 id="need">Need</h2>
+
+  <p>The design of the current default theme (<a
+      href="https://www.drupal.org/docs/8/core/themes/bartik-theme">Bartik</a>)
+    has not changed since the release of Drupal 7 in January of 2011. While Bartik
+    has proved itself to be versatile over the years, its design has aged with the
+    years and fails to showcase Drupal’s state-of-the-art power and functionality.
+  </p>
+
+  <h2 id="goals">Goals</h2>
+
+  <ul>
+    <li><strong>Updated modern design:</strong> Our intention is to design a theme
+      that feels modern and ages well. Design elements such as drop shadows, and
+      gradients are used sparingly while typography, animation and color palettes
+      have been thought out.</li>
+
+    <li><strong>Functionality that supports new features:</strong> We want the
+      theme to include support for recent commonly used Drupal functionality such
+      as second-level navigation, embedded media, layout builder, and more.</li>
+
+    <li><strong>WCAG AA Compliance:</strong> The theme will be WCAG AA compliant.
+      We will be working closely with accessibility experts and the Drupal
+      Accessibility team to ensure that the theme passes <a
+        href="https://www.drupal.org/node/464500">Drupal’s stringent accessibility standards</a> with
+      flying colors.</li>
+  </ul>
+
+  <p>We will work with the community to help ensure that the new theme is aligned
+    with the above goals in order to create a successful theme.</p>
+
+  <h2 id="designprocess">Design Process</h2>
+
+  <p>The first step was to solicit community feedback within the Drupal Core ideas
+    queue: [#3064880]. This issue confirmed that the idea to add a new theme is
+    sought after by the community.</p>
+
+  <h3 id="initialstakeholders">Initial Stakeholders</h3>
+
+  <p>Once we knew our idea was valid and sought after by the community, we moved
+    to identify the stakeholders for the design process that we deemed essential
+    for the theme to be successful, and to help guide us throughout the process.
+    The following community members were identified:</p>
+
+  <ul>
+    <li><a href="https://www.drupal.org/u/dries">Dries Buytaert</a>: Creator and
+      project lead for Drupal</li>
+
+    <li><a href="https://www.drupal.org/u/webchick">Ang</a><a
+        href="https://www.drupal.org/u/webchick">ie</a> <a
+        href="https://www.drupal.org/u/webchick">Byron</a>: Drupal core committer
+      and product manager</li>
+
+    <li><a href="https://www.drupal.org/u/lauriii">Lauri Eskola</a>: Drupal core
+      committer and frontend framework manager</li>
+
+    <li><a href="https://www.drupal.org/u/ckrina">Cristina Chumillas</a>: Drupal
+      usability maintainer</li>
+
+    <li><a href="https://www.drupal.org/u/g%C3%A1bor-hojtsy">G</a><a
+        href="https://www.drupal.org/u/g%C3%A1bor-hojtsy">á</a><a
+        href="https://www.drupal.org/u/g%C3%A1bor-hojtsy">bor Hojtsy</a>: Drupal
+      core committer, product manager and initiative coordinator coordinator</li>
+  </ul>
+
+  <h3 id="firststepstakeholdersurvey">First step: Stakeholder Survey</h3>
+
+  <p>During the research phase, we worked with stakeholders to identify adjectives
+    to help guide the visual design. We created a sliding scale exercise <a
+      href="https://www.dropbox.com/s/uw0irdudq873qk1/sliding_scale.jpg?dl=0"></a>where
+    stakeholders could add a points across several tone spectrums. Some of these
+    were clearly one adjective or the other (“Formal” not “Casual”) while others
+    highlight the importance of a balance (“Approachable” and “Official”).</p>
+
+  <p><img src="olivero__sliding-scale.jpg" alt="Sliding Scale Survey showing various terms (Formal, casual) with dots placed between them." /></p>
+
+  <h3 id="voiceandtoneofolivero">Voice and tone of Olivero</h3>
+
+  <p>The below are keywords that were identified and will serve as the <em>voice
+      and tone</em> of the new theme:</p>
+
+  <ul>
+    <li>Formal</li>
+
+    <li>Light &amp; Bright (vs dark &amp; impactful)</li>
+
+    <li>Contemporary</li>
+
+    <li>Approachable and Official</li>
+
+    <li>Novel (with some constraint)</li>
+
+    <li>Cool</li>
+
+    <li>High contrast with some restraint</li>
+
+    <li>Light (and not heavy)</li>
+  </ul>
+
+  <h3 id="designprinciples">Design Principles</h3>
+
+  <p>The following principles were established through research and collaboration,
+    and are useful for guiding future additions and feedback for changes.</p>
+
+  <ul>
+    <li><strong>Accessible:</strong> WCAG AA compliance is a top
+      priority for the design. The layout, colors and functionality should provide
+      an accessible theme that can be enjoyed by everyone.</li>
+
+    <li><strong>Simple:</strong> Avoid unnecessary visual elements, colors,
+      effects, and complexity.</li>
+
+    <li><strong>Modern:</strong> Take advantage of the capabilities and strengths
+      of modern browsers and interaction patterns.</li>
+
+    <li><strong>Focused:</strong> Embrace high contrast, saturated color, and
+      negative space to draw the eye to what’s most important. Design defaults for
+      the 80%.</li>
+
+    <li><strong>Flexible:</strong> Provide options and overrides to account for
+      varied needs and preferences.</li>
+  </ul>
+
+  <h3 id="themeetingfeedbackloop">The Meeting / Feedback Loop</h3>
+
+  <p>Once the design principles and the voice &amp; tone were established, we then
+    created 3 separate <a
+      href="https://www.lullabot.com/articles/zoom-mocks-bridging-the-divide-between-styles-and-page-design">zoom
+      mocks</a> to explore how those styles could apply to pages and components.
+    These were then presented to the stakeholders, who choose a design to move
+    forward with.</p>
+
+  <p><img src="olivero__3-choices.jpg" alt="3 designs for the new theme. Left one is more traditional, center is 😍, and the right one is kinda weird." /></p>
+
+  <p>The chosen design was iterated upon, and once again brought in front of the
+    stakeholders, who then provided additional feedback.</p>
+
+  <p>The design process continued with the addition of internal accessibility
+    testing, which highlighted several contrast deficiencies that were
+    subsequently fixed.</p>
+
+  <p>We then brought the designs to one of the Drupal core accessibility
+    maintainers (thank you <a href="https://www.drupal.org/u/rainbreaw">Rain</a>!)
+    to validate accessibility, give additional accessibility feedback, and answer
+    some lingering questions.</p>
+
+  <h2 id="thedesignsystem">The Design System</h2>
+
+  <p>The goal is to create a design system that helps provide efficiency and
+    flexibility while empowering team members from varied disciplines to maintain,
+    extend and iterate on the design of the theme into the future.</p>
+
+  <p>Note that the design system is still a work in progress. We will continue to
+    adapt and define the system to meet the needs of the community and software
+    well into the development process.</p>
+
+  <h3 id="responsivegrids">Responsive Grids</h3>
+
+  <p>What follows are the rules and guidelines that define the responsive grid for
+    the design system.</p>
+
+  <p><img src="olivero__grid.jpg" alt="Theme design with a uniform grid overlayed" /></p>
+
+  <h3 id="verticalrhythm">Vertical Rhythm</h3>
+
+  <p>"<a href="https://24ways.org/2006/compose-to-a-vertical-rhythm">Vertical
+      Rhythm</a>" describes the visual rhythm of elements as a user scrolls down a
+    page based on things like type size, line height and the margins between
+    paragraphs and headings (and other page elements). We establish vertical
+    rhythm by setting a target height for a VRU (vertical rhythm unit) and then
+    leveraging that proportionally to guide things like line height, paragraph and
+    heading margins, and sectional spacing. We also employ incremental leading
+    when necessary to maintain the proper feel within varied type sizes.</p>
+
+  <ul>
+    <li>Throughout the design system, <strong>1 VRU = 9px</strong></li>
+  </ul>
+
+  <h3 id="spacing">Spacing</h3>
+
+  <p>Spacing such as padding and margin will be tied to the VRUs, and the grid
+    system to help create a well balanced design that is predictable and easy to
+    scale.</p>
+
+  <h3 id="typography">Typography</h3>
+
+  <p>Typography is based on a scale to help keep type sizing, line-height and
+    spacing consistent throughout the design. The base font used for body copy is
+    18px. From there, we created sizes for headers, metadata, quotations, and
+    various ui elements. The font size is adjusted for smaller screen sizes.</p>
+
+  <p>Fonts utilized in this design are licensed under <a
+      href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;id=OFL_web">SIL
+      Open font License 1.1</a>. This license is compatible with the <a
+      href="https://www.drupal.org/node/1475972">Drupal.org distribution packaging
+      requirements</a>.</p>
+
+  <p><img src="olivero__typography.jpg"
+      alt="Typography for the design showing headings, etc" /></p>
+
+  <h3 id="colorpalette">Color Palette</h3>
+
+  <p>The color palette created uses a bright blue as a base color and introduces
+    neutral grays to help balance out the layout and design elements. The colors
+    chosen help create a modern, bright feel while also bringing in some of the
+    Drupal branding. Darker colors were introduced to help with accessibility
+    while lighter colors are used for supporting design elements throughout the
+    layout.</p>
+
+  <p><img src="olivero__colors.jpg" alt="Colors used for the design" /></p>
+
+  <h3 id="uipatterns">UI Patterns</h3>
+
+  <p><strong>Header &amp; Navigation</strong>
+    The header has been designed to accommodate the versatility of text titles or
+    logos. Different versions of the header will display depending on what the
+    user chooses to enable as their site identity (more on this below).</p>
+
+  <p>On scroll down, the header will collapse into a hamburger-button menu,
+    allowing the user to always be able to access the menu on longer pages.</p>
+
+  <p><img src="olivero__desktop-nav.jpg"
+      alt="Desktop nav collapsing into a button when scrolled down. Also shows menu is open after button is clicked." />
+  </p>
+
+  <p>The theme will have an option toggle to turn on hamburger-button based
+    navigation at wide widths. This will be useful in the case where the website
+    has many long first-level navigation items.</p>
+
+  <p><img src="olivero-desktop-hamburger.jpg"
+      alt="Theme at wide widths showing button menu" /></p>
+
+  <p><img src="olivero-desktop-hamburger--open.jpg"
+      alt="Theme at wide widths showing button menu open" /></p>
+
+  <p>Olivero will also support secondary dropdown menus!</p>
+
+  <p><img src="olivero-drop-menu.jpg"
+      alt="Theme showing dropdown secondary menu" /></p>
+
+  <p><strong>Site branding variations</strong></p>
+
+  <p>Theme settings will exist to change the background-color and width (if
+    necessary) of the site-branding to support a wide range of logos and long
+    text.</p>
+
+  <p><img src="olivero__site-branding-white.jpg"
+      alt="Site branding block variation with white background" /></p>
+
+  <p><img src="olivero__site-branding-gray.jpg"
+      alt="Site branding block variation with gray background" /></p>
+
+  <p><img src="olivero__site-branding-logo.jpg"
+      alt="Site branding block variation with logo" /></p>
+
+  <p><img src="olivero__site-branding-gray-logo.jpg"
+      alt="Site branding block variation gray with logo" /></p>
+
+  <p><img src="olivero__site-branding-blue-logo.jpg"
+      alt="Site branding block variation blue with logo" /></p>
+
+  <p><strong>Buttons</strong>
+    The goal for buttons is for users to easily recognize a clickable action. For
+    the theme, we designed a primary button style that’s filled, and a secondary
+    button style that’s an outlined version of the button.</p>
+
+  <p><img src="olivero__buttons.jpg"
+      alt="Button variations and states. Focus states have extra outline." /></p>
+
+  <p><strong>Forms</strong>
+    Form inputs are kept simple, yet modern. The goal is to have form elements
+    feel part of the design, while still being recognizable, usable and
+    accessible. The left color bar signals the form element, and labels are placed
+    above the form field to help avoid any confusion. Form fields all have a
+    similar look to help establish that they are a form element. States such as
+    focus, disabled and errors have also been accounted for.</p>
+
+  <p><img src="olivero__forms.jpg"
+      alt="Form element styles showing variations and states. Text variations have extra left border." />
+  </p>
+
+  <p><strong>Tables</strong>
+    Table divider lines are kept at a minimum to help with readability. The theme
+    will support responsive table features of Drupal.</p>
+
+  <p><strong>Sidebar</strong>
+    The new default theme supports a single sidebar region that allows content
+    creators to showcase related posts and other types of utility blocks. This
+    region will float next to the primary content. We eliminate the previous
+    adaptation of having two sidebars so that the content stands out in a rich and
+    meaningful way without having to compete for space.</p>
+
+  <p><img src="olivero__sidebar.jpg"
+      alt="Sidebar floating to the right of the body text" /></p>
+
+  <p><strong>RTL Support</strong>
+    The theme will fully support right-to-left languages as required by Drupal
+    core.</p>
+
+  <p><img src="olivero__rtl.jpg"
+      alt="Design is flipped with a right to left language (showing arabic)." /></p>
+
+  <p><strong>Messages</strong>
+    Messages are used to inform the user of an action that they may need to take,
+    important information that they may need to know, or provide feedback on an
+    action already taken. Messages are clear and easily notable. Messages have
+    been designed in a way where bright color is used to highlight the message,
+    but doesn’t interfere with the readability of the message itself. Icons are
+    used to support the type of message that the theme is displaying.</p>
+
+  <p><img src="olivero__messages.jpg"
+      alt="Messages block variations have a gray background and icon. They are dismissable." />
+  </p>
+
+  <p><strong>Breadcrumbs</strong>
+    The placement of breadcrumbs near the top of the page above the page title is
+    a familiar location where users can instantly identify them as breadcrumbs.
+    Breadcrumb links will be displayed in the link color used throughout the
+    design. On smaller devices, breadcrumbs will displayed left to right or right
+    to left, spilling off the edge of the screen. A visual cue will let users know
+    that there’s more breadcrumbs to see, and they can access those breadcrumbs by
+    swiping left to right or right to left.</p>
+
+  <p><img src="olivero__breadcrumbs.jpg"
+      alt="Breadcrumb links at desktop. There's a border bottom, and they are separated by chevrons." />
+  </p>
+
+  <p>At smaller widths, the breadcrumbs will have a horizontal overflow scroll
+    functionality if the length goes beyond the width of its container. This is a
+    common approach for providing access to the full breadcrumb trail on narrow
+    screens.</p>
+
+  <p><img src="olivero__breadcrumbs--small.jpg"
+      alt="Breadcrumbs at small widths. Text is cut off with indicator showing that it is horizontally scrollable." />
+  </p>
+
+  <h2 id="whatwillnotmakemvp">What will not make MVP</h2>
+
+  <p>We will not be supporting the Color module within the initial release, but
+    this or similar functionality may be included later. We’re tracking this as a
+    feature request in [#3086514].</p>
+
+  <h2 id="proofofconcepthtml">Proof of Concept HTML</h2>
+
+  <p>Throughout the process, we’ve been building a prototype in static HTML, CSS,
+    and JavaScript. The intention of this is to validate the scroll / header
+    interactions, and ensure they can be made accessible. In addition, we’re
+    validating the use of CSS grid and overall front-end architecture to ensure it
+    can be made to be accessible, as well as work with Internet Explorer 11 (as
+    well as other core supported browsers).</p>
+
+  <p>This proof of concept is not yet <em>fully</em> accessible, although it will
+    eventually be made to be. At that point we plan on getting a full sign-off
+    from the Drupal accessibility team, which will hopefully alleviate last minute
+    time-crunches when the patch is submitted to Drupal core.</p>
+
+  <p>The proof of concept is at <a href="https://olivero-poc.netlify.com">https://olivero-poc.netlify.com</a>, and the git
+    repository for this is at <a href="https://github.com/Lullabot/olivero-poc">https://github.com/Lullabot/olivero-poc</a>.</p>
+
+  <h2 id="themename">Theme Name</h2>
+
+  <p>Drupal’s current theme, Bartik, was named after <a
+      href="https://en.wikipedia.org/wiki/Jean_Bartik">Jean Bartik</a>, one of the
+    original programmers for the ENIAC computer. We wanted to continue in that
+    spirit and name this theme after a pioneering female programmer. Earlier this
+    year, <a
+      href="https://www.drupal.org/forum/general/community-spotlight/2019-02-22/remembering-rachel-olivero">the
+      Drupal community mourned the passing of Rachel Olivero</a>, and we have
+    named this new theme in her honor. Rachel touched many people in both the
+    Drupal and accessibility communities. She worked at the United States National
+    Federation of the Blind and she was committed to making technology accessible
+    to ALL people. We chose the name Olivero not just because we have made
+    accessibility a top priority, but also because we aspire to develop this theme
+    in our community in a manner that is consistent with the qualities that Rachel
+    embodied, including patience, generosity, and inclusivity.</p>
+
+  <h2 id="contributorstothedesign">Contributors to the design</h2>
+
+  <p>Below is the initial team that worked through the designs (alphabetical)</p>
+
+  <ul>
+    <li><a href="https://www.drupal.org/u/jwitkowski79">Jen Witkowski</a> -
+      Primary Designer</li>
+
+    <li><a href="https://www.drupal.org/u/jponch">Jared Ponchot</a> - Primary
+      Designer</li>
+
+    <li><a href="https://www.drupal.org/u/katannshaw">Kat Shaw</a> - Accessibility
+      and front-end development</li>
+
+    <li><a href="https://www.drupal.org/u/mtift">Matthew Tift</a> - Community
+      interaction, documentation, and cat wrangling</li>
+
+    <li><a href="https://www.drupal.org/u/mherchel">Mike Herchel</a> - Community
+      coordination, project management, front-end development</li>
+
+    <li><a href="https://www.drupal.org/u/proeung">Putra Bonaccorsi</a> -
+      Front-end development</li>
+  </ul>
+
+  <h2 id="feedback">Feedback</h2>
+
+  <p>Our team would love for this to be a wider community effort, and we welcome
+    feedback and thoughts around the style and design system. We have worked
+    iteratively with the stakeholders to come to this point, and will continue to
+    work iteratively with the community to ensure that we complete the best theme
+    possible for Drupal.</p>
+
+  <p>We are especially looking for feedback related to the accessibility of the
+    design, and we also want to ensure that the system is flexible with the
+    capabilities of Drupal. This is a volunteer effort, and we will work hard to
+    ensure all comments will be addressed in a thoughtful approach. You can <a
+      href="https://www.figma.com/file/x5zBLbvoW1jsvyAOt4Gp9I/Olivero-Theme---Public">review
+      the Figma here</a>. Please refrain from adding comments directly in Figma.
+  </p>
+
+  <p>Feedback will be time-boxed to Friday, November 8th, 2019. We want to keep
+    all feedback and comments in this issue. Please do not leave comments in
+    Figma. If you are interested in having a conversation or want to help out, you
+    can join the Drupal #d9-theme slack channel.</p>
+
+  <h2 id="links">Links</h2>
+
+  <ul>
+    <li>Olivero theme project page: <a href="https://www.drupal.org/project/olivero">https://www.drupal.org/project/olivero</a></li>
+
+    <li>Figma design:
+      <a href="https://www.figma.com/proto/x5zBLbvoW1jsvyAOt4Gp9I/Olivero-Theme-Public">https://www.figma.com/proto/x5zBLbvoW1jsvyAOt4Gp9I/Olivero-Theme-Public</a></li>
+
+    <li>Proof of concept page: <a href="https://olivero-poc.netlify.com">https://olivero-poc.netlify.com</a></li>
+
+    <li>Drupal ideas issue to create new default front-end theme:
+      <a href="https://www.drupal.org/project/ideas/issues/3064880">https://www.drupal.org/project/ideas/issues/3064880</a></li>
+
+    <li>Community Spotlight on Rachel Olivero:
+      <a href="https://www.drupal.org/forum/general/community-spotlight/2019-02-22/remembering-rachel-olivero">https://www.drupal.org/forum/general/community-spotlight/2019-02-22/remembering-rachel-olivero</a></li>
+  </ul>
+
+</body>
+</html>
