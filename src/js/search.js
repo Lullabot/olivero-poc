@@ -7,6 +7,19 @@
     searchButton.setAttribute('aria-expanded', visibility == true);
     searchWrapper.setAttribute('aria-expanded', visibility == true);
     siteHeader.classList.toggle('js-search-active');
+
+    searchWrapper.addEventListener('transitionend', handleFocus, { once: true });
+  }
+
+  function handleFocus() {
+    if (searchIsVisible()) {
+      const input = searchWrapper.querySelector('input[type="search"]');
+      console.log(input);
+      input.focus();
+    }
+    else {
+      searchButton.focus();
+    }
   }
 
   function searchIsVisible() {
@@ -14,4 +27,10 @@
   }
 
   searchButton.addEventListener('click', () => toggleSearchWrapper(!searchIsVisible()));
+
+  document.addEventListener('keyup', e => {
+    if (e.keyCode === 27) {
+      toggleSearchWrapper(false);
+    }
+  })
 })();
