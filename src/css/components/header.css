@@ -1,11 +1,16 @@
 /* Header */
 .site-header {
   position: relative;
+  /* transition: margin 0.2s; */
 
   @media (--nav) {
     /* Necessary to keep the content from jumping up when header transitions to fixed. */
     min-height: var(--sp10);
   }
+
+  /* &.js-search-active {
+    margin-bottom: 216px;
+  } */
 }
 
 .header__left {
