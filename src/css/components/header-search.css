@@ -8,9 +8,9 @@
     max-height: 0;
     overflow: hidden;
     left: 0;
-    top: 180px;
+    top: 100%;
     background: black;
-    border-left: solid 90px #333;
+    border-left: solid var(--content-left) #333;
     padding: 0;
     z-index: -1;
     transition: all 0.2s;

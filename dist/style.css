@@ -1285,7 +1285,7 @@ figcaption {
     max-height: 0;
     overflow: hidden;
     left: 0;
-    top: 180px;
+    top: 100%;
     background: black;
     border-left: solid 90px #333;
     padding: 0;
