@@ -13,9 +13,7 @@
 
   function handleFocus() {
     if (searchIsVisible()) {
-      const input = searchWrapper.querySelector('input[type="search"]');
-      console.log(input);
-      input.focus();
+      searchWrapper.querySelector('input[type="search"]').focus();
     }
     else {
       searchButton.focus();
@@ -26,7 +24,14 @@
     return searchWrapper.getAttribute('aria-expanded') === 'true';
   }
 
-  searchButton.addEventListener('click', () => toggleSearchWrapper(!searchIsVisible()));
+  document.addEventListener('click', e => {
+    if (e.target.matches('.header-nav__search-button, .header-nav__search-button *')) {
+      toggleSearchWrapper(!searchIsVisible());
+    }
+    else if (!e.target.matches('.search-wrapper, .search-wrapper *')) {
+      toggleSearchWrapper(false);
+    }
+  });
 
   document.addEventListener('keyup', e => {
     if (e.keyCode === 27) {
