@@ -1299,12 +1299,6 @@ figcaption {
   }
 }
 
-.search-wrapper form {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 6;
-      grid-column: 1 / 7;
-}
-
 @media (min-width: 1200px) {
   .search-wrapper form {
     position: relative;
@@ -1353,6 +1347,16 @@ figcaption {
   background-repeat: no-repeat;
   text-indent: -999px;
   cursor: pointer;
+}
+
+@media (min-width: 1200px) {
+  .search-grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[14];
+    grid-template-columns: repeat(14, 1fr);
+    grid-column-gap: 36px;
+  }
 }
 
 .header-nav__search-button {

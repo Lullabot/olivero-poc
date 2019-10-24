@@ -22,8 +22,6 @@
   }
 
   form {
-    grid-column: 1 / 7;
-
     @media (--nav) {
       position: relative;
       display: flex;
@@ -68,6 +66,14 @@
     background-repeat: no-repeat;
     text-indent: -999px;
     cursor: pointer;
+  }
+}
+
+.search-grid {
+  @media (--nav) {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-col-count--md), 1fr);
+    grid-column-gap: var(--grid-gap--md);
   }
 }
 
