@@ -1280,14 +1280,14 @@ figcaption {
     position: absolute;
     visibility: hidden;
     width: 100vw;
-    height: 180px;
+    height: 144px;
     max-width: 1570px;
     max-height: 0;
     overflow: hidden;
     left: 0;
     top: 100%;
     background: black;
-    border-left: solid 90px #333;
+    border-left: solid 90px #313637;
     padding: 0;
     z-index: -1;
     transition: all .2s;
@@ -1295,7 +1295,18 @@ figcaption {
 
   .search-wrapper[aria-expanded="true"] {
     visibility: visible;
-    max-height: 180px;
+    max-height: 144px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .search-wrapper form {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 1224px;
   }
 }
 
@@ -1324,8 +1335,27 @@ figcaption {
     padding: 72px 72px 72px 234px;
     background-color: black;
     color: white;
-    font-size: 28px;
+    font-size: 32px;
   }
+
+  .search-wrapper input[type="search"]:focus {
+    outline: 0; /* Input will not show *unless* it is in focus. */
+  }
+}
+
+.search-wrapper input[type="submit"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100%;
+  background-color: transparent;
+  border: 0;
+  background-image: url('/images/search--white.svg');
+  background-position: center right;
+  background-repeat: no-repeat;
+  text-indent: -999px;
+  cursor: pointer;
 }
 
 .header-nav__search-button {
