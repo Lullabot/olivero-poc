@@ -16,14 +16,3 @@
     display: none;
   }
 }
-
-.mobile-buttons__divider {
-  display: none;
-  width: 2px;
-  background-color: #D7E1E8;
-
-  @media (--nav-md) {
-    display: block;
-    margin-left: var(--sp0-5);
-  }
-}

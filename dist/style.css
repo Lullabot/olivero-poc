@@ -172,6 +172,7 @@ h1 {
   font-weight: bold;
   height: 36px;
   border-radius: 2px;
+  white-space: nowrap;
   transition: background-color .2s;
 }
 
@@ -1259,19 +1260,6 @@ figcaption {
 @media (min-width: 1200px) {
   .mobile-buttons {
     display: none;
-  }
-}
-
-.mobile-buttons__divider {
-  display: none;
-  width: 2px;
-  background-color: #d7e1e8;
-}
-
-@media (min-width: 500px) {
-  .mobile-buttons__divider {
-    display: block;
-    margin-left: 9px;
   }
 }
 

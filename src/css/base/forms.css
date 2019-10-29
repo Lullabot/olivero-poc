@@ -7,6 +7,7 @@
   font-weight: bold;
   height: var(--sp2);
   border-radius: 2px;
+  white-space: nowrap;
   transition: background-color 0.2s;
 
   &:focus,
