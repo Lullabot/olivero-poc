@@ -1275,6 +1275,22 @@ figcaption {
   }
 }
 
+.search-wrapper {
+  margin-bottom: 36px;
+  margin-left: -18px;
+  margin-right: -18px;
+  background: black;
+}
+
+/* 500px is the width of the primary nav at mobile. */
+
+@media (min-width: 500px) {
+  .search-wrapper {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
 @media (min-width: 1200px) {
   .search-wrapper {
     position: absolute;
@@ -1283,10 +1299,10 @@ figcaption {
     height: 144px;
     max-width: 1570px;
     max-height: 0;
+    margin: 0;
     overflow: hidden;
     left: 0;
     top: 100%;
-    background: black;
     border-left: solid 90px #313637;
     padding: 0;
     z-index: -1;
@@ -1299,10 +1315,13 @@ figcaption {
   }
 }
 
+.search-wrapper form {
+  display: flex;
+}
+
 @media (min-width: 1200px) {
   .search-wrapper form {
-    position: relative;
-    display: flex;
+    /* position: relative; */
     -ms-grid-column: 1;
     -ms-grid-column-span: 13;
         grid-column: 1 / 14;
@@ -1310,43 +1329,62 @@ figcaption {
 }
 
 .search-wrapper input[type="search"] {
+  flex-grow: 1;
   -webkit-appearance: none;
   border: 0;
-  background-color: #f1f4f7;
-  margin-left: -18px;
-  margin-right: -18px;
-  margin-bottom: 36px;
+  background-color: transparent;
   width: calc(100% + 36px);
   height: 54px;
-  padding: 36px;
+  padding: 0 18px;
   font-family: serif;
   font-size: 16px;
+  color: white;
+}
+
+@media (min-width: 700px) {
+  .search-wrapper input[type="search"] {
+    padding: 36px;
+  }
 }
 
 @media (min-width: 1200px) {
   .search-wrapper input[type="search"] {
-    flex-grow: 1;
-    margin: 0;
     padding: 72px 72px 72px 180px;
-    background-color: transparent;
-    color: white;
     font-size: 32px;
-  }
-
-  .search-wrapper input[type="search"]:focus {
-    outline: 0; /* Input will not show *unless* it is in focus. */
   }
 }
 
 .search-wrapper input[type="submit"] {
-  width: 100px;
+  width: 54px;
   background-color: transparent;
   border: 0;
   background-image: url('/images/search--white.svg');
-  background-position: center right;
+  background-position: center;
   background-repeat: no-repeat;
+  background-size: 20px;
   text-indent: -999px;
   cursor: pointer;
+}
+
+@media (min-width: 700px) {
+  .search-wrapper input[type="submit"] {
+    width: 100px;
+    background-size: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .search-wrapper input[type="submit"] {
+    width: 100px;
+    background-position: center right;
+  }
+}
+
+@media (min-width: 1200px) {
+  .search-container {
+    padding-left: 36px;
+    padding-right: 36px;
+  }
 }
 
 @media (min-width: 1200px) {
