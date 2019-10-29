@@ -29,9 +29,6 @@
 
 .content {
   @media (--nav) {
-    /* position: relative;
-    background: white;
-    z-index: 5; */
     display: flex;
     flex-direction: row-reverse;
   }

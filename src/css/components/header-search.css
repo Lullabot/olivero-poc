@@ -36,7 +36,6 @@
     display: flex;
 
     @media (--nav) {
-      /* position: relative; */
       grid-column: 1 / 14;
     }
   }
