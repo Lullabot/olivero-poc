@@ -1288,7 +1288,7 @@ figcaption {
     top: 100%;
     border-left: solid 90px #313637;
     padding: 0;
-    z-index: -1;
+    z-index: 1; /* Ensure left border shows above social region in IE11. */
     transition: all .2s;
   }
 
@@ -1332,9 +1332,15 @@ figcaption {
 
 @media (min-width: 1200px) {
   .search-wrapper input[type="search"] {
-    padding: 72px 72px 72px 180px;
+    padding: 0 72px 0 180px;
     font-size: 32px;
+    height: 144px;
   }
+}
+
+.search-wrapper input[type="search"]::-ms-clear {
+  width: 40px;
+  opacity: .5;
 }
 
 .search-wrapper input[type="submit"] {
@@ -1365,6 +1371,7 @@ figcaption {
 
 @media (min-width: 1200px) {
   .search-container {
+    max-width: 1350px;
     padding-left: 36px;
     padding-right: 36px;
   }

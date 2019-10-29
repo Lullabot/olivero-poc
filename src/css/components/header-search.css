@@ -23,7 +23,7 @@
     top: 100%;
     border-left: solid var(--content-left) #313637;
     padding: 0;
-    z-index: -1;
+    z-index: 1; /* Ensure left border shows above social region in IE11. */
     transition: all 0.2s;
 
     &[aria-expanded="true"] {
@@ -58,8 +58,14 @@
     }
 
     @media (--nav) {
-      padding: var(--sp4) var(--sp4) var(--sp4) var(--sp10);
+      padding: 0 var(--sp4) 0 var(--sp10);
       font-size: 32px;
+      height: var(--sp8);
+    }
+
+    &::-ms-clear {
+      width: 40px;
+      opacity: 0.5;
     }
   }
 
@@ -88,6 +94,7 @@
 
 .search-container {
   @media (--nav) {
+    max-width: var(--max-width);
     padding-left: var(--sp2);
     padding-right: var(--sp2);
   }
