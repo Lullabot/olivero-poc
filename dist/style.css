@@ -97,7 +97,7 @@
 
     Note we cannot change the values of these custom properties within media queries,
     as they are processed by postcss/postcss-custom-properties, which does not support
-    that functionality.
+    that functionality. Therefore, we need a separate custom property for each breakpoint.
   *//* Approximate width of a scrollbar. Doesn't have to be perfect. *//* Grid gap across various breakpoints. *//* Column counts at various breakpoints. *//* Count of grid-gaps at various breakpoints. *//* Width of the entire grid at various breakpoints. *//* Width of a grid column at various breakpoints *//* Layout helpers *//* Named colors. *//* Header */
 }
 
@@ -172,6 +172,7 @@ h1 {
   font-weight: bold;
   height: 36px;
   border-radius: 2px;
+  white-space: nowrap;
   transition: background-color .2s;
 }
 
@@ -1155,9 +1156,21 @@ figcaption {
 
 @media (min-width: 1200px) {
   .secondary-nav {
-    margin-left: 27px;
+    position: relative;
+    display: flex;
+    margin-left: 9px;
     padding-left: 36px;
-    border-left: solid 2px #d7e1e8;
+  }
+
+  .secondary-nav:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translatey(-50%);
+    height: 36px;
+    width: 2px;
+    background-color: #d7e1e8;
   }
 }
 
@@ -1212,22 +1225,6 @@ figcaption {
   transform: translatey(0);
 }
 
-.header-nav__search-button {
-  display: none;
-  -webkit-appearance: none;
-  border: 0;
-  background: transparent;
-  margin-left: 36px;
-  cursor: pointer;
-}
-
-@media (min-width: 1200px) {
-  .header-nav__search-button {
-    display: block;
-    margin-left: 27px;
-  }
-}
-
 .mobile-buttons {
   -ms-grid-column: 4;
   -ms-grid-column-span: 3;
@@ -1258,36 +1255,185 @@ figcaption {
   }
 }
 
-.mobile-buttons__divider {
-  display: none;
-  width: 2px;
-  background-color: #d7e1e8;
-}
-
-@media (min-width: 500px) {
-  .mobile-buttons__divider {
-    display: block;
-    margin-left: 9px;
-  }
-}
-
-.search-wrapper input[type="search"] {
-  -webkit-appearance: none;
-  border: 0;
-  background-color: #f1f4f7;
+.search-wrapper {
+  margin-bottom: 36px;
   margin-left: -18px;
   margin-right: -18px;
-  margin-bottom: 36px;
-  width: calc(100% + 36px);
-  height: 54px;
-  padding: 36px;
-  font-family: serif;
-  font-size: 16px;
+  background: black;
+}
+
+/* 500px is the width of the primary nav at mobile. */
+
+@media (min-width: 500px) {
+  .search-wrapper {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 @media (min-width: 1200px) {
   .search-wrapper {
+    position: absolute;
+    visibility: hidden;
+    width: 100vw;
+    height: 144px;
+    max-width: 1570px;
+    max-height: 0;
+    margin: 0;
+    overflow: hidden;
+    left: 0;
+    top: 100%;
+    border-left: solid 90px #313637;
+    padding: 0;
+    z-index: 1; /* Ensure left border shows above social region in IE11. */
+    transition: all .2s;
+  }
+
+  .search-wrapper[aria-expanded="true"] {
+    visibility: visible;
+    max-height: 144px;
+  }
+}
+
+.search-wrapper form {
+  display: flex;
+}
+
+@media (min-width: 1200px) {
+  .search-wrapper form {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 13;
+        grid-column: 1 / 14;
+  }
+}
+
+.search-wrapper input[type="search"] {
+  flex-grow: 1;
+  -webkit-appearance: none;
+  border: 0;
+  background-color: transparent;
+  width: calc(100% + 36px);
+  height: 54px;
+  padding: 0 18px;
+  font-family: serif;
+  font-size: 16px;
+  color: white;
+}
+
+@media (min-width: 700px) {
+  .search-wrapper input[type="search"] {
+    padding: 36px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .search-wrapper input[type="search"] {
+    padding: 0 72px 0 180px;
+    font-size: 32px;
+    height: 144px;
+  }
+}
+
+.search-wrapper input[type="search"]::-ms-clear {
+  width: 40px;
+  opacity: .5;
+}
+
+.search-wrapper input[type="submit"] {
+  width: 54px;
+  background-color: transparent;
+  border: 0;
+  background-image: url('/images/search--white.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  text-indent: -999px;
+  cursor: pointer;
+}
+
+@media (min-width: 700px) {
+  .search-wrapper input[type="submit"] {
+    width: 100px;
+    background-size: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .search-wrapper input[type="submit"] {
+    width: 100px;
+    background-position: center right;
+  }
+}
+
+@media (min-width: 1200px) {
+  .search-container {
+    max-width: 1350px;
+    padding-left: 36px;
+    padding-right: 36px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .search-grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[14];
+    grid-template-columns: repeat(14, 1fr);
+    grid-column-gap: 36px;
+  }
+}
+
+.header-nav__search-button {
+  display: none;
+  -webkit-appearance: none;
+  border: 0;
+  background: transparent;
+  margin-left: 36px;
+  height: 108px;
+  width: 54px;
+  cursor: pointer;
+}
+
+@media (min-width: 1200px) {
+  .header-nav__search-button {
+    position: relative;
+    display: block;
+    margin-left: 9px;
+  }
+
+  .header-nav__search-button:focus {
+    outline: 0;
+  }
+
+  .header-nav__search-button[aria-expanded="true"] {
+    background: black;
+  }
+
+  .header-nav__search-button[aria-expanded="true"]:before,
+  .header-nav__search-button[aria-expanded="true"]:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 27px;
+    height: 2px;
+    background-color: white;
+  }
+
+  .header-nav__search-button[aria-expanded="true"]:before {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  .header-nav__search-button[aria-expanded="true"]:after {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .header-nav__search-button[aria-expanded="true"] img {
     display: none;
+  }
+
+  .header-nav__search-button img {
+    margin: 0 auto;
   }
 }
 

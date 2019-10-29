@@ -39,7 +39,7 @@
 
     Note we cannot change the values of these custom properties within media queries,
     as they are processed by postcss/postcss-custom-properties, which does not support
-    that functionality.
+    that functionality. Therefore, we need a separate custom property for each breakpoint.
   */
 
   --scrollbar-width: 15px; /* Approximate width of a scrollbar. Doesn't have to be perfect. */
@@ -61,9 +61,9 @@
   /* Count of grid-gaps at various breakpoints. */
   --grid-gap-count:         calc(var(--grid-col-count) - 1);
   --grid-gap-count--md:     calc(var(--grid-col-count--md) - 1);
-  --grid-gap-count--lg:     calc(var(--grid-col-count--lg) - 1);
-  --grid-gap-count--nav:    var(--grid-gap-count--lg);
-  --grid-gap-count--max:    var(--grid-gap-count--lg);
+  --grid-gap-count--lg:     var(--grid-gap-count--md);
+  --grid-gap-count--nav:    var(--grid-gap-count--md);
+  --grid-gap-count--max:    var(--grid-gap-count--md);
 
   /* Width of the entire grid at various breakpoints. */
   --grid-full-width:        calc(100vw - var(--sp2));

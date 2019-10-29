@@ -1,25 +1,26 @@
 .button--primary {
-    display: inline-flex;
-    align-items: center;
-    padding: 0 18px;
-    background-color: #0d7ab8;
-    color: white;
-    font-weight: bold;
-    height: var(--sp2);
-    border-radius: 2px;
-    transition: background-color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 18px;
+  background-color: #0d7ab8;
+  color: white;
+  font-weight: bold;
+  height: var(--sp2);
+  border-radius: 2px;
+  white-space: nowrap;
+  transition: background-color 0.2s;
 
-    &:focus,
-    &:hover {
-      background-color: #2494DB;
-    }
+  &:focus,
+  &:hover {
+    background-color: #2494DB;
+  }
 
-    &:focus {
-      outline: 2px solid var(--blue-light);
-      outline-offset: 1px;
-    }
+  &:focus {
+    outline: 2px solid var(--blue-light);
+    outline-offset: 1px;
+  }
 
-    &:active {
-      background-color: #0D7AB8;
-    }
+  &:active {
+    background-color: #0D7AB8;
+  }
 }
