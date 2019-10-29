@@ -37,5 +37,5 @@
     if (e.keyCode === 27) {
       toggleSearchWrapper(false);
     }
-  })
+  });
 })();

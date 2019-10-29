@@ -425,12 +425,7 @@ figcaption {
 
 .site-header {
   position: relative;
-  /* &.js-search-active {
-    margin-bottom: 216px;
-  } */
 }
-
-/* transition: margin 0.2s; */
 
 @media (min-width: 1200px) {
   .site-header {
