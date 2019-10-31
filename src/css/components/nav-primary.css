@@ -10,7 +10,7 @@
       margin-bottom: 0;
     }
 
-    &.has-children {
+    &[aria-haspopup="true"] {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
