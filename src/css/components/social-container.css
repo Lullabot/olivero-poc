@@ -12,7 +12,6 @@
   justify-content: flex-end;
 
   @media (--nav) {
-    justify-content: flex-end;
     width: 50vh;
     transform: translatex(calc(-100% + var(--content-left) / 2)) rotate(-90deg) translatey(-50%);
     transform-origin: top right;

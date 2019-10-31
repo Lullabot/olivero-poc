@@ -1453,7 +1453,6 @@ figcaption {
 
 @media (min-width: 1200px) {
   .rotate {
-    justify-content: flex-end;
     width: 50vh;
     transform: translatex(calc(-100% + 45px)) rotate(-90deg) translatey(-50%);
     transform-origin: top right;
