@@ -120,7 +120,8 @@
   @media (--nav) {
     position: relative;
     display: block;
-    margin-left: var(--sp0-5);
+    margin-left: var(--sp);
+    margin-right: var(--sp0-5);
 
     &:focus {
       outline: 0;
