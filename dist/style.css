@@ -451,6 +451,7 @@ figcaption {
   z-index: 2; /* Appear above body content that is position: relative */
   top: -72px;
   width: 100%;
+  max-width: 1570px;
 }
 
 .site-header__inner {
@@ -1453,10 +1454,9 @@ figcaption {
 
 @media (min-width: 1200px) {
   .rotate {
-    justify-content: flex-start;
-    width: 100%;
-    margin: 18px auto;
-    transform: rotate(-90deg);
+    width: 50vh;
+    transform: translatex(calc(-100% + 45px)) rotate(-90deg) translatey(-50%);
+    transform-origin: top right;
     white-space: nowrap;
   }
 }
@@ -1467,7 +1467,7 @@ figcaption {
   font-size: 12px;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: #98abb9;
+  color: #5d7585;
 }
 
 .social-container__inner {
@@ -1479,7 +1479,7 @@ figcaption {
   .social-container__inner {
     position: relative;
     width: 90px;
-    padding: 198px 0;
+    padding: 162px 0;
   }
 
   .social-container__inner.js-fixed {
