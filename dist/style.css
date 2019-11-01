@@ -451,6 +451,7 @@ figcaption {
   z-index: 2; /* Appear above body content that is position: relative */
   top: -72px;
   width: 100%;
+  max-width: 1570px;
 }
 
 .site-header__inner {
