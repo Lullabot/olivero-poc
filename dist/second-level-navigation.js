@@ -1,7 +1,7 @@
 "use strict";
 
 (function () {
-  var secondLevelNavMenus = document.querySelectorAll('.has-children'); // Insert a button after the <a> element that will control the visibility
+  var secondLevelNavMenus = document.querySelectorAll('.primary-nav--level-1 [aria-haspopup="true"]'); // Insert a button after the <a> element that will control the visibility
   // of the second-level navigation.
 
   secondLevelNavMenus.forEach(function (el) {

@@ -878,25 +878,25 @@ figcaption {
   margin-bottom: 0;
 }
 
-.primary-nav li.has-children {
+.primary-nav li[aria-haspopup="true"] {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
 @media (min-width: 1200px) {
-  .primary-nav li.has-children {
+  .primary-nav li[aria-haspopup="true"] {
     /*
           If the list item has a submenu, the hover effect, is super noticable,
           so we remove it.
         */
   }
 
-  .primary-nav li.has-children > a {
+  .primary-nav li[aria-haspopup="true"] > a {
     display: block;
   }
 
-  .primary-nav li.has-children > a span:after {
+  .primary-nav li[aria-haspopup="true"] > a span:after {
     content: none;
   }
 }
