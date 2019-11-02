@@ -109,9 +109,9 @@
           left: 0;
           bottom: 0;
           width: 100%;
-          height: var(--sp0-5);
+          height: 0;
           transform: scalex(0);
-          background: var(--color--blue-50);
+          border-top: solid var(--sp0-5) var(--color--blue-50);
           transition: transform 0.2s;
         }
       }
