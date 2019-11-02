@@ -12,16 +12,22 @@
   justify-content: flex-end;
 
   @media (--nav) {
-    width: 50vh;
-    transform: translatex(calc(-100% + var(--content-left) / 2)) rotate(-90deg) translatey(-50%);
-    transform-origin: top right;
-    white-space: nowrap;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    width: var(--content-left);
+    text-align: right; /* IE11 */
+
+    img {
+      margin: 10px 5px 10px 10px; /* IE11 */
+
+      @supports (display: block) { /* Override IE11 values. */
+        margin: 10px;
+      }
+    }
   }
 }
 
 .social-label {
-  margin-right: var(--sp);
-  margin-top: -2px;
   font-size: 12px;
   letter-spacing: 4px;
   text-transform: uppercase;
