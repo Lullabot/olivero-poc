@@ -1,5 +1,5 @@
 figure {
-  background: #F1F5F8;
+  background: var(--color--gray-95);
 }
 
 figcaption {
@@ -8,7 +8,7 @@ figcaption {
   font-size: 14px;
   font-style: italic;;
   line-height: var(--sp);
-  color: #455057;
+  color: var(--color--gray-10);
 
   @media (--sm) {
     padding: var(--sp);

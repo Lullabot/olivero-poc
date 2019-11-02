@@ -19,7 +19,7 @@
 
 .powered-by {
   grid-column: 1 / -1;
-  color: #8497A4;
+  color: var(--color--gray-40);
   letter-spacing: 0.02em;
   line-height: var(--sp);
   font-size: 14px;

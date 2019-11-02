@@ -93,13 +93,25 @@
   --sp9: calc(9 * var(--sp));
   --sp10: calc(10 * var(--sp));
 
-  /* Named colors. */
-  --blue-light: #53B0EB;
-  --blue: #2494DB;
-  --blue-dark: #0D7AB8;
-  --gray-light: #F7F9FA;
-  --gray: #DFE7ED;
-  --black-1: #0D1214;
+  --color--gray-0: #0D1214; /* Black */
+  --color--gray-10:#313637; /* Black 2 */
+  --color--gray-20: #6E7172; /* Black 3 */
+  --color--gray-25: #5D7585; /* Gray Dark */
+  --color--gray-30: #7E96A7; /* Gray medium */
+  --color--gray-40: #98ABB9; /* Gray medium 1 */
+  --color--gray-50: #9EA0A1; /* Black 4 */
+  --color--gray-70: #D7E1E8; /* Gray light */
+  --color--gray-80: #E7EDF1; /* Gray light 1 */
+  --color--gray-95: #F7F9FA; /* Gray light 2 */
+
+  --color--blue-20: #0D77B5; /* Blue dark */
+  --color--blue-30: #3D92C4; /* Blue dark 2 */
+  --color--blue-50: #2494DB; /* Blue medium */
+  --color--blue-70: #53B0EB; /* Blue bright */
+  --color--blue-90: #DDEFFB; /* Blue bright 5 */
+
+  --color--red: #E33F1E; /* Red */
+  --color--gold: #FDCA40; /* Gold */
 
   /* Header */
   --header-height-wide-when-fixed: calc(6 * var(--sp));

@@ -8,7 +8,7 @@ main {
   padding-bottom: var(--sp3);
   line-height: var(--sp1-5);
   font-family: var(--font-serif);
-  color: #313637;
+  color: var(--color--gray-10);
 
   @media (--grid-md) {
     grid-column: 3 / 13;
@@ -22,7 +22,7 @@ main {
 
   .lead {
     font-weight: bold;
-    color: #0D1214;
+    color: var(--color--gray-0);
     letter-spacing: -0.02em;
     line-height: var(--sp1-5);
 
@@ -58,15 +58,15 @@ main {
   */
 
   a {
-    color: var(--blue-dark);
+    color: var(--color--blue-20);
     text-decoration: underline;
-    text-decoration-color: var(--blue-dark);
+    text-decoration-color: var(--color--blue-20);
     text-decoration-width: 2px;
     text-decoration-thickness: 2px;
 
     @supports (box-shadow: none) {
       text-decoration: none;
-      box-shadow: inset 0 -2px 0 0 var(--blue);
+      box-shadow: inset 0 -2px 0 0 var(--color--blue-50);
       transition: box-shadow .3s cubic-bezier(.55,.085,0,.99);
 
       &:hover,
@@ -135,7 +135,7 @@ main {
       position: absolute;
       top: 0;
       left: 0;
-      color: #53B0EB;
+      color: var(--color--blue-70);
       font-size: 54px;
 
       @media (--grid-md) {
@@ -160,7 +160,7 @@ main {
       position: absolute;
       bottom: 0;
       left: 0;
-      background: #F7F9FA;
+      background: var(--color--gray-95);
       width: var(--sp0-5);
       height: calc(100% - 30px);
       margin-left: 4px;

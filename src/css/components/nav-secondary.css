@@ -27,7 +27,7 @@
       transform: translatey(-50%);
       height: var(--sp2);
       width: 2px;
-      background-color: #D7E1E8;
+      background-color: var(--color--gray-70);
     }
   }
 

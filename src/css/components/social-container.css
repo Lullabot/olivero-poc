@@ -2,7 +2,7 @@
   @media (--nav) {
     width: var(--content-left);
     flex-shrink: 0;
-    background-color: #F7F9FA;
+    background-color: var(--color--gray-95);
   }
 }
 
@@ -25,12 +25,12 @@
   font-size: 12px;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: #5D7585;
+  color: var(--color--gray-25);
 }
 
 .social-container__inner {
   padding: var(--sp0-5) var(--sp);
-  background-color: #F7F9FA;
+  background-color: var(--color--gray-95);
 
   @media (--nav) {
     position: relative;

@@ -14,7 +14,7 @@
   align-self: stretch;
   display: flex;
   align-items: flex-end;
-  background-color: var(--blue);
+  background-color: var(--color--blue-50);
 }
 
 .site-header__fixable {
@@ -49,11 +49,11 @@
 .site-branding {
   grid-column: span 3;
   padding: var(--sp);
-  background-image: linear-gradient(160deg, var(--blue) 0%, #0D7AB8 78.66%);
+  background-image: linear-gradient(160deg, var(--color--blue-50) 0%, #0D7AB8 78.66%);
   color: white;
   font-size: 18px;
   font-weight: bold;
-  box-shadow: calc(-1 * var(--sp)) 0 0 var(--blue);
+  box-shadow: calc(-1 * var(--sp)) 0 0 var(--color--blue-50);
 
   @media (--sm) {
     padding-top: var(--sp2);
@@ -76,7 +76,7 @@
     font-size: 32px;
     line-height: var(--sp2);
     letter-spacing: 0.02em;
-    box-shadow: calc(-1 * var(--content-left)) 0 0 var(--blue);
+    box-shadow: calc(-1 * var(--content-left)) 0 0 var(--color--blue-50);
 
     .site-branding__inner {
       display: flex;

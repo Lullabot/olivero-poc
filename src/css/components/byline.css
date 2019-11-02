@@ -1,5 +1,5 @@
 .hero__byline {
-  color: #6E7172;
+  color: var(--color--gray-20);
   font-size: 14px;
   line-height: var(--sp);
 

@@ -21,7 +21,7 @@
     overflow: hidden;
     left: 0;
     top: 100%;
-    border-left: solid var(--content-left) #313637;
+    border-left: solid var(--content-left) var(--color--gray-10);
     padding: 0;
     z-index: 1; /* Ensure left border shows above social region in IE11. */
     transition: all 0.2s;

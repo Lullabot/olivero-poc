@@ -13,7 +13,7 @@
     height: calc(6 * var(--sp));
     border: 0;
     cursor: pointer;
-    background-color: var(--blue);
+    background-color: var(--color--blue-50);
     outline: 0;
 
     .js-fixed & {

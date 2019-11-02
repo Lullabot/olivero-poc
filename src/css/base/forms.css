@@ -16,7 +16,7 @@
   }
 
   &:focus {
-    outline: 2px solid var(--blue-light);
+    outline: 2px solid var(--color--blue-70);
     outline-offset: 1px;
   }
 
