@@ -206,8 +206,8 @@
         padding: var(--sp0-5) 0;
 
         &:after {
+          border-top-width: 3px;
           transform-origin: left;
-          height: 3px;
         }
       }
     }
