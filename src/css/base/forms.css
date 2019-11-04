@@ -2,7 +2,7 @@
   display: inline-flex;
   align-items: center;
   padding: 0 18px;
-  background-color: #0d7ab8;
+  background-color: var(--color--blue-20);
   color: white;
   font-weight: bold;
   height: var(--sp2);
@@ -12,7 +12,7 @@
 
   &:focus,
   &:hover {
-    background-color: #2494DB;
+    background-color: var(--color--blue-50);
   }
 
   &:focus {
@@ -21,6 +21,6 @@
   }
 
   &:active {
-    background-color: #0D7AB8;
+    background-color: var(--color--blue-20);
   }
 }
