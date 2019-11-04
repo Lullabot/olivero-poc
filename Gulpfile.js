@@ -26,6 +26,7 @@ gulp.task('js', () => {
 gulp.task('css', () => {
   const autoprefixer = require('autoprefixer')
   const postcss = require('gulp-postcss');
+  const rtl = require("postcss-rtl");
   const nested = require('postcss-nested');
   const calc = require('postcss-calc');
   const atImport = require('postcss-import');
@@ -34,7 +35,7 @@ gulp.task('css', () => {
   const postcssCustomProperties = require('postcss-custom-properties');
 
 
-   return gulp.src('./src/css/style.css')
+  return gulp.src('./src/css/style.css')
     .pipe(sourcemaps.init())
     .pipe(postcss([
       atImport(),
@@ -49,7 +50,8 @@ gulp.task('css', () => {
       }),
       perfectionist({
         indentSize: 2
-      })
+      }),
+      rtl(),
     ]))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./dist/'))
