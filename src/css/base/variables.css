@@ -85,7 +85,6 @@
   --sp2: calc(2 * var(--sp));
   --sp2-5: calc(2.5 * var(--sp));
   --sp3: calc(3 * var(--sp));
-  --sp3-5: calc(3.5 * var(--sp));
   --sp4: calc(4 * var(--sp));
   --sp5: calc(5 * var(--sp));
   --sp6: calc(6 * var(--sp));
