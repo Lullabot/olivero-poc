@@ -1,14 +1,26 @@
 .js-overlay-active .mobile-buttons {
   position: fixed;
   top: 1rem;
-  right: 1rem;
+  right: 0;
   z-index: 10;
   left: 0;
-  right: 0;
   background: white;
   height: var(--sp3);
   top: 0;
   padding-right: 1rem;
+  @media (--md) {
+    top: 0;
+    height: 108px;
+    left: initial;
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+.js-overlay-active .mobile-nav-button {
+  @media (--md) {
+    margin-top: var(--sp4);
+  }
 }
 
 .mobile-buttons {
@@ -16,7 +28,7 @@
   -ms-grid-column-align: end;
   margin-left: auto;
   display: flex;
-
+  transition: all 0.2s;
   @media (--sm) {
     align-self: end;
   }
