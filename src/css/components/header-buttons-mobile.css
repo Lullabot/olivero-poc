@@ -10,7 +10,7 @@
   @media (--sm) {
     height: var(--sp6);
     width: 100%;
-    max-width: 500px;
+    max-width: var(--sm); /* set to max-width of .header-nav on header.css */
   }
 }
 
