@@ -125,6 +125,7 @@
     margin-top: auto;
     align-items: center;
     justify-content: flex-end;
+    border-top: 0;
     transition: transform 0.2s;
     box-shadow: none;
   }
