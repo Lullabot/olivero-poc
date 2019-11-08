@@ -28,13 +28,13 @@
     if (e.target.matches('.header-nav__search-button, .header-nav__search-button *')) {
       toggleSearchWrapper(!searchIsVisible());
     }
-    else if (!e.target.matches('.search-wrapper, .search-wrapper *')) {
+    else if (searchIsVisible() && !e.target.matches('.search-wrapper, .search-wrapper *')) {
       toggleSearchWrapper(false);
     }
   });
 
   document.addEventListener('keyup', e => {
-    if (e.keyCode === 27) {
+    if (searchIsVisible() && e.keyCode === 27) {
       toggleSearchWrapper(false);
     }
   });
