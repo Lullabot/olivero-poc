@@ -37,7 +37,7 @@
     opacity: 1;
   }
 
-  [aria-pressed="true"] & {
+  [aria-expanded="true"] & {
     background-color: transparent;
 
     &:before {
