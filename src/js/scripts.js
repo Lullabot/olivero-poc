@@ -51,7 +51,7 @@
     const siteHeaderToggleElement = document.querySelector('.site-header__inner');
 
     function wideNavIsOpen() {
-      return wideNavButton.getAttribute('aria-pressed') === 'true';
+      return wideNavButton.getAttribute('aria-expanded') === 'true';
     }
 
     wideNavButton.addEventListener('click', () => {
@@ -65,16 +65,16 @@
 
     function showWideNav() {
       if (isDesktopNav()) {
-        wideNavButton.setAttribute('aria-pressed', 'true');
-        siteHeaderToggleElement.setAttribute('aria-expanded', 'true');
+        wideNavButton.setAttribute('aria-expanded', 'true');
+        siteHeaderToggleElement.setAttribute('data-menu-open', 'true');
       }
     }
 
     // Resets the wide nav button to be closed (it's default state).
     function hideWideNav() {
       if (isDesktopNav()) {
-        wideNavButton.setAttribute('aria-pressed', 'false');
-        siteHeaderToggleElement.setAttribute('aria-expanded', 'false');
+        wideNavButton.setAttribute('aria-expanded', 'false');
+        siteHeaderToggleElement.setAttribute('data-menu-open', 'false');
       }
     }
 

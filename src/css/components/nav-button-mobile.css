@@ -75,7 +75,7 @@
     transition: all 0.2s;
   }
 
-  .mobile-nav-button[aria-pressed="true"] & {
+  .mobile-nav-button[aria-expanded="true"] & {
     background-color: transparent;
 
     &:before {

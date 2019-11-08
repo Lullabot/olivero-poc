@@ -40,7 +40,7 @@
     box-shadow: -36px 1px 36px rgba(0, 0, 0, 0.08);
   }
 
-  .site-header__fixable.js-fixed &:not([aria-expanded="true"]) {
+  .site-header__fixable.js-fixed &:not([data-menu-open="true"]) {
     transform: translatex(-101%);
     opacity: 0;
   }
@@ -134,7 +134,7 @@
     grid-column: 5 / 14;
   }
 
-  &[aria-expanded="true"] {
+  &[data-menu-open="true"] {
     visibility: visible;
     transform: translatex(0);
   }
