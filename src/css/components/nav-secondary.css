@@ -1,5 +1,6 @@
 .secondary-nav__wrapper {
   display: flex;
+  justify-content: flex-end;
   margin: var(--sp2) 0;
 
   @media (--nav) {
@@ -37,19 +38,13 @@
     padding: 0;
     display: flex;
     align-items: center;
-    flex-direction: row-reverse;
-
-    @media (--nav) {
-      flex-direction: row;
-    }
   }
 
-  li:last-child {
+  li:first-child {
     margin-right: var(--sp1-5);
 
     @media (--nav) {
-      margin-right: 0;
-      margin-left: var(--sp2);
+      margin-right: var(--sp2);
     }
   }
 
