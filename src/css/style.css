@@ -8,6 +8,7 @@
 
 /* Components */
 @import 'components/breadcrumb.css';
+@import 'components/messages.css';
 @import 'components/byline.css';
 @import 'components/embedded-media.css';
 @import 'components/header.css';
