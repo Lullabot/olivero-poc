@@ -62,12 +62,12 @@
   mobileNavWrapper.addEventListener('keydown', function(e) {
     if (e.key === 'Tab' || e.keyCode === 9) {
       if ( e.shiftKey ) /* shift + tab */ {
-        if (document.activeElement === firstFocusableEl) {
+        if (document.activeElement === firstFocusableEl && mobileNavButton.offsetParent !== null) {
           mobileNavButton.focus();
           e.preventDefault();
         }
       } else /* tab */ {
-        if (document.activeElement === lastFocusableEl) {
+        if (document.activeElement === lastFocusableEl && mobileNavButton.offsetParent !== null) {
           mobileNavButton.focus();
           e.preventDefault();
         }
