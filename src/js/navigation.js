@@ -74,4 +74,13 @@
       }
     }
   });
+
+  // Remove overlays when browser is resized and desktop nav appears.
+  // @todo Use core/drupal.debounce library to throttle when we move into theming.
+  window.addEventListener('resize', () => {
+    if (drupalSettings.olivero.isDesktopNav) {
+      toggleMobileNav(false);
+      body.classList.remove('js-overlay-active', 'js-fixed');
+    }
+  })
 })()
