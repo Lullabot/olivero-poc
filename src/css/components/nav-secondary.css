@@ -1,6 +1,5 @@
 .secondary-nav__wrapper {
   display: flex;
-  justify-content: flex-end;
   margin: var(--sp2) 0;
 
   @media (--nav) {
