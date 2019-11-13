@@ -34,16 +34,16 @@ table {
         /* Left and right scroll shadows */
 				radial-gradient(
 					farthest-side at 0% 50%,
-					rgba(0,0,0,.2),
+					rgba(0,0,0,0.2),
 					rgba(0,0,0,0)
 				),
 				radial-gradient(
 					farthest-side at 100% 50%,
-					rgba(0,0,0,.2),
+					rgba(0,0,0,0.2),
 					rgba(0,0,0,0)
 				) 100% 0%;
 			background-repeat: no-repeat;
-			background-color: #fff;
+			background-color: white;
 			background-size: 100px 100%, 100px 100%, 14px 100%, 14px 100%;
 			background-attachment: local, local, scroll, scroll;
 
