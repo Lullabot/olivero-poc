@@ -2,7 +2,7 @@
  * @file
  * Styles for Olivero's tables.
  */
- 
+
 table {
   width: fit-content;
   max-width: 100%;
@@ -17,7 +17,7 @@ table {
   color: var(--color--gray-10);
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  
+
   background:
         /* Left start and right start 'inside' container colors (they overlap the shadows) */
 				linear-gradient(90deg, white 0%, rgba(255,255,255,0)),
@@ -110,12 +110,31 @@ table {
       }
     }
   }
+
+  .content-bleed & {
+    width: 100%;
+  }
 }
 
 /* When a table is placed in the body/text content area */
 .content-bleed {
+  @media (--grid-md) {
+    width: calc(10 * var(--grid-col-width--md) + 9 * var(--grid-gap--md));
+    margin-right: calc(-2 * ((var(--grid-col-width--md) + var(--grid-gap--md))));
+  }
 
-  @media (--xl) {
-    width: calc(10 * var(--grid-col-width--lg) + 4 * var(--grid-gap--lg));
+  @media (--lg) {
+    width: calc(10 * var(--grid-col-width--lg) + 9 * var(--grid-gap--lg));
+    margin-right: calc(-2 * ((var(--grid-col-width--lg) + var(--grid-gap--lg))));
+  }
+
+  @media (--nav) {
+    width: calc(10 * var(--grid-col-width--nav) + 9 * var(--grid-gap--nav));
+    margin-right: calc(-2 * ((var(--grid-col-width--nav) + var(--grid-gap--nav))));
+  }
+
+  @media (--grid-max) {
+    width: calc(10 * var(--grid-col-width--max) + 9 * var(--grid-gap--max));
+    margin-right: calc(-2 * ((var(--grid-col-width--max) + var(--grid-gap--max))));
   }
 }
