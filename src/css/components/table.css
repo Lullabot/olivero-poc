@@ -17,15 +17,6 @@ table {
   color: var(--color--gray-10);
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-
-  /* Hide scrollbar */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-
-  &:-webkit-scrollbar { /* WebKit */
-    width: 0;
-    height: 0;
-  }
   
   background:
         /* Left start and right start 'inside' container colors (they overlap the shadows) */
@@ -62,7 +53,6 @@ table {
     td,
     th {
       padding: var(--sp1-5) var(--sp1-5) var(--sp1-5) 0;
-      text-align: left; /* LTR */
     }
 
     th {
@@ -74,6 +64,7 @@ table {
       font-family: var(--font-sans);
       font-size: 14px;
       color: var(--color--gray-0);
+      text-align: left;
 
       a {
         color: var(--color--blue-20);
@@ -121,20 +112,10 @@ table {
   }
 }
 
-/* RTL text alignment */
-[dir="rtl"] tr td,
-[dir="rtl"] tr th {
-  text-align: right;
-}
-
-/* When a table is placed in the body/text content area, set min width to 900px */
+/* When a table is placed in the body/text content area */
 .content-bleed {
 
-  @media (--lg) {
-    min-width: 700px;
-  }
-
   @media (--xl) {
-    min-width: 900px;
+    width: calc(10 * var(--grid-col-width--lg) + 4 * var(--grid-gap--lg));
   }
 }
