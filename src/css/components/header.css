@@ -86,7 +86,8 @@
   }
 }
 
-.header-nav {
+// Styles to be displayed if JS is not present
+.js-header-nav {
   visibility: hidden;
   position: fixed;
   right: 0;
@@ -130,9 +131,9 @@
   @media (--lg) {
     grid-column: 5 / 14;
   }
+}
 
-  &[aria-expanded="true"] {
-    visibility: visible;
-    transform: translatex(0);
-  }
+.header-nav--visible {
+  visibility: visible;
+  transform: translatex(0);
 }
