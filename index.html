@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,12 +18,13 @@
   <script defer src="dist/second-level-navigation.js"></script>
   <script defer src="dist/search.js"></script>
 </head>
+
 <body>
-<!-- <img class="mock" src="/mock.jpg" alt=""> -->
+  <!-- <img class="mock" src="/mock.jpg" alt=""> -->
 
   <div class="page-wrapper">
     <a href="#main-content" class="skip-link visually-hidden focusable">Skip to main content</a>
-  <!-- Header (at wide widths) has height specified so content will not jump -->
+    <!-- Header (at wide widths) has height specified so content will not jump -->
     <header class="site-header">
 
       <!-- Gets fixed by JS at wide widths -->
@@ -36,17 +38,13 @@
         <!-- Needs to extend full width so box shadow will also extend -->
         <div id="site-header__inner" class="site-header__inner">
           <div class="container">
-            <div class="grid-full">
+            <div class="grid-full grid-full-no-js">
               <div class="site-branding">
                 <div class="site-branding__inner">
                   <a href="">olivero</a>
                 </div>
               </div>
               <div class="mobile-buttons">
-                <button class="mobile-nav-button">
-                  <div class="mobile-nav-button__label">Menu</div>
-                  <div class="mobile-nav-button__icon"></div>
-                </button>
               </div>
               <div id="header-nav" class="header-nav">
                 <div class="search-wrapper">
@@ -63,9 +61,9 @@
                 <nav class="primary-nav">
                   <ul class="primary-nav--level-1">
                     <li><a href="#"><span>Home</span></a></li>
-                    <li aria-haspopup="true">
+                    <li aria-expanded="false">
                       <a href="#"><span>Products</span></a>
-                      <ul class="primary-nav--level-2">
+                      <ul class="primary-nav--level-2 primary-nav--level-2--visible">
                         <li><a href="#"><span>Black & White Photos</span></a></li>
                         <li><a href="#"><span>Stone Statues</span></a></li>
                         <li><a href="#"><span>Antiques & Artifacts</span></a></li>
@@ -128,8 +126,9 @@
               architecture, accessibility, and technology that will be used to create the
               theme. </p>
             <h2 id="aboutthisproofofconcept">About this proof-of-concept</h2>
-            <p>This proof of concept was created in static HTML. The repository is <a href="https://github.com/Lullabot/olivero-poc">hosted on
-              GitHub</a>, and the webpage is hosted on Netlify. </p>
+            <p>This proof of concept was created in static HTML. The repository is <a
+                href="https://github.com/Lullabot/olivero-poc">hosted on
+                GitHub</a>, and the webpage is hosted on Netlify. </p>
             <p>We created this proof-of-concept to validate the look and feel of the
               scrolling interactions, and moved on to work to make the nav-bar accessible.
               This includes ensuring that the menu items are exposed to the accessibility
@@ -137,17 +136,17 @@
               focusin event listener). </p>
             <h2 id="commitmenttoaccessibility">Commitment to accessibility</h2>
             <p>To add this theme to Drupal core, we must meet Drupal’s stringent
-              accessibility standards which stipulate compliance with <a
-                href="http://www.w3.org/WAI/intro/wcag">Web Content Accessibility Guidelines
+              accessibility standards which stipulate compliance with <a href="http://www.w3.org/WAI/intro/wcag">Web
+                Content Accessibility Guidelines
                 (WCAG) 2.0 AA</a>.</p>
             <p>Throughout the design process, we have been designing with accessibility in
               mind. We have been continuously testing the design against contrast
               requirements, and adjusting the design based on this.</p>
-              <figure class="pull-right">
-                <img src="/images/pull-1.jpg" alt="DrupalCon Vienna Group Photo">
-                <figcaption>DrupalCon Vienna group photo. Photo by Dominik Kiss on behalf of
-                  the Drupal Assocation. Creative Commons.</figcaption>
-              </figure>
+            <figure class="pull-right">
+              <img src="/images/pull-1.jpg" alt="DrupalCon Vienna Group Photo">
+              <figcaption>DrupalCon Vienna group photo. Photo by Dominik Kiss on behalf of
+                the Drupal Assocation. Creative Commons.</figcaption>
+            </figure>
             <p>Expanding / collapsing HTML elements within the theme will be either properly
               removed / added from the accessibility tree, or will become visible when they
               gain focus. Elements will be styled against the appropriate ARIA attributes to
@@ -181,8 +180,8 @@
                 Observer</a>.</p>
             <p>Internet Explorer does have CSS Grid support, but the syntax is old and
               invalid. Fortunately, the Autoprefixer plugin will automatically add this
-              support. We can do this because <a
-                href="https://www.drupal.org/project/drupal/issues/3060153">Drupal core can
+              support. We can do this because <a href="https://www.drupal.org/project/drupal/issues/3060153">Drupal core
+                can
                 now use PostCSS</a> (huge thanks to the Claro team for getting this in)!</p>
             <p>Internet Explorer also does not support the new Intersection Observer API. To
               work around this, we check to ensure that the API exists before invoking it.
@@ -191,39 +190,86 @@
               users.</p>
 
             <h2>Subheadings are the best!</h2>
-            <p>Delectus, doloremque deserunt saepe incidunt, molestias excepturi neque distinctio quos deleniti cum maxime doloribus in dolor exercitationem autem voluptatem quo vero aliquid quia. Enim quidem earum consectetur at, sed placeat?</p>
-            <p>Nostrum magni ipsa illo quae! Dolores laborum vel sapiente doloremque perspiciatis ab provident voluptas obcaecati ullam, fuga exercitationem laboriosam ad dolor animi totam nesciunt explicabo est natus iure. Aliquid, qui?</p>
+            <p>Delectus, doloremque deserunt saepe incidunt, molestias excepturi neque distinctio quos deleniti cum
+              maxime doloribus in dolor exercitationem autem voluptatem quo vero aliquid quia. Enim quidem earum
+              consectetur at, sed placeat?</p>
+            <p>Nostrum magni ipsa illo quae! Dolores laborum vel sapiente doloremque perspiciatis ab provident voluptas
+              obcaecati ullam, fuga exercitationem laboriosam ad dolor animi totam nesciunt explicabo est natus iure.
+              Aliquid, qui?</p>
 
-            <p>Incidunt sint eos perferendis rerum officiis reiciendis veritatis deleniti nisi et reprehenderit. Expedita, exercitationem! Animi temporibus laudantium sed dolorem. Itaque dignissimos animi natus. Praesentium dolor culpa corporis, qui blanditiis impedit!</p>
-            <p>Dicta dolores nisi tenetur eos non. Hic recusandae repellendus provident sequi vel necessitatibus, quidem autem unde consectetur quas illo possimus cupiditate veniam commodi. Quo ut amet, nisi reprehenderit asperiores vel!</p>
-            <p>Deleniti dignissimos tempore vero doloribus laboriosam itaque sint nam, eveniet veritatis non, illo fuga ipsam quaerat dolore. Quidem consectetur expedita iste aliquam laboriosam maxime laborum sunt. Ullam veritatis accusamus quidem?</p>
+            <p>Incidunt sint eos perferendis rerum officiis reiciendis veritatis deleniti nisi et reprehenderit.
+              Expedita, exercitationem! Animi temporibus laudantium sed dolorem. Itaque dignissimos animi natus.
+              Praesentium dolor culpa corporis, qui blanditiis impedit!</p>
+            <p>Dicta dolores nisi tenetur eos non. Hic recusandae repellendus provident sequi vel necessitatibus, quidem
+              autem unde consectetur quas illo possimus cupiditate veniam commodi. Quo ut amet, nisi reprehenderit
+              asperiores vel!</p>
+            <p>Deleniti dignissimos tempore vero doloribus laboriosam itaque sint nam, eveniet veritatis non, illo fuga
+              ipsam quaerat dolore. Quidem consectetur expedita iste aliquam laboriosam maxime laborum sunt. Ullam
+              veritatis accusamus quidem?</p>
             <blockquote>Oh, and if you thought people pay attention to subheadings, just
               wait till you
               try leveraging some sweet pull quotes!</blockquote>
-            <p>Cum veritatis autem deserunt at ad dicta pariatur eum. Sed magni distinctio temporibus similique sapiente molestias accusamus quidem odit, consequuntur sint laborum esse suscipit! Itaque quasi distinctio eligendi nisi. Eligendi.</p>
-            <p>Nobis voluptates dolorum explicabo nihil culpa veniam. Accusantium, fugiat possimus? Quaerat, totam? Nobis in sed minus odio, corrupti nihil quisquam veniam pariatur veritatis illum, explicabo sunt vel rerum soluta dolore.</p>
-            <p>Doloribus adipisci repellat eius soluta numquam iusto aut corrupti earum impedit error maiores quis vel, rem dignissimos dolorum sapiente nostrum optio ducimus eveniet vitae, eligendi exercitationem. Cumque ullam optio ipsum!</p>
-            <p>Sint provident, accusamus iure ut inventore numquam id fugit placeat ad ratione quae repellat obcaecati animi voluptatibus necessitatibus maxime fuga commodi dicta aperiam, sunt culpa veniam corporis alias sed. Praesentium.</p>
-            <p>Eaque dolorum ratione commodi in ipsum dolore nihil odio iste itaque. Recusandae dolorem ipsum, libero facere dolorum autem quam esse labore laboriosam atque facilis. Similique aspernatur beatae iste aut vitae.</p>
+            <p>Cum veritatis autem deserunt at ad dicta pariatur eum. Sed magni distinctio temporibus similique sapiente
+              molestias accusamus quidem odit, consequuntur sint laborum esse suscipit! Itaque quasi distinctio eligendi
+              nisi. Eligendi.</p>
+            <p>Nobis voluptates dolorum explicabo nihil culpa veniam. Accusantium, fugiat possimus? Quaerat, totam?
+              Nobis in sed minus odio, corrupti nihil quisquam veniam pariatur veritatis illum, explicabo sunt vel rerum
+              soluta dolore.</p>
+            <p>Doloribus adipisci repellat eius soluta numquam iusto aut corrupti earum impedit error maiores quis vel,
+              rem dignissimos dolorum sapiente nostrum optio ducimus eveniet vitae, eligendi exercitationem. Cumque
+              ullam optio ipsum!</p>
+            <p>Sint provident, accusamus iure ut inventore numquam id fugit placeat ad ratione quae repellat obcaecati
+              animi voluptatibus necessitatibus maxime fuga commodi dicta aperiam, sunt culpa veniam corporis alias sed.
+              Praesentium.</p>
+            <p>Eaque dolorum ratione commodi in ipsum dolore nihil odio iste itaque. Recusandae dolorem ipsum, libero
+              facere dolorum autem quam esse labore laboriosam atque facilis. Similique aspernatur beatae iste aut
+              vitae.</p>
             <figure class="pull-left">
               <img src="/images/pull-1.jpg" alt="DrupalCon Vienna Group Photo">
               <figcaption>DrupalCon Vienna group photo. Photo by Dominik Kiss on behalf of
                 the Drupal Assocation. Creative Commons.</figcaption>
             </figure>
-            <p>Ducimus adipisci placeat excepturi, doloremque praesentium aspernatur laudantium nostrum minima deserunt, ab blanditiis provident? Mollitia minima sapiente eaque voluptatibus rerum dolores aut natus, labore assumenda esse cupiditate eveniet quam nulla.</p>
-            <p>Neque inventore illum illo voluptatum ipsum iste beatae nulla nemo consequatur? Accusantium aperiam fugit repellendus, blanditiis vitae earum nam eligendi ipsa labore culpa quisquam ratione, iure voluptate eius sunt veniam?</p>
-            <p>Voluptates maiores reiciendis, incidunt aut quaerat labore voluptas iure illo delectus ullam, quis assumenda dolor laudantium necessitatibus ut. Neque eum sit deleniti impedit natus dolorem quaerat, eaque veniam libero quod?</p>
-            <p>Fuga numquam laudantium sunt dolorum obcaecati cumque porro quo maiores ab. Adipisci atque modi nobis quaerat quisquam laboriosam doloremque illo consequatur impedit veniam! Accusantium, porro quod quasi vitae amet facere.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque placeat esse libero perspiciatis, rerum quia deleniti cupiditate fuga ipsam molestiae. Quos qui officiis modi quae laborum saepe harum commodi sit?</p>
-            <p>Ipsa, perferendis, commodi repellendus libero, deleniti corrupti expedita eveniet iure fugit ducimus doloribus ipsam amet unde dolores porro ut. Dolorem enim id nulla maiores vel, hic animi ipsum! Molestias, maiores!</p>
-            <p>Perspiciatis ea molestiae minima hic veritatis ad in dignissimos harum. Odio praesentium nihil, officiis ad nulla cum iusto, et temporibus illum at sint ipsam dolorum quam autem quidem harum quis.</p>
-            <p>Consequatur fuga consectetur eveniet recusandae sequi possimus maiores. Possimus eveniet nemo excepturi fugit quam reprehenderit pariatur consequuntur, ipsum ipsam quis, dolor aut, necessitatibus praesentium blanditiis veniam ex exercitationem. Commodi, fuga?</p>
-            <p>Corrupti nobis ratione distinctio dignissimos itaque pariatur aspernatur saepe modi deleniti, voluptatem illo animi quisquam architecto? A animi tempore qui facere, nemo esse voluptate ipsum ipsa, nam quia voluptatem fugit.</p>
-            <p>Dignissimos ex porro omnis officia eius nobis rerum harum architecto ducimus quam quo sit nihil, soluta amet dolorum reiciendis nemo praesentium voluptatem placeat perspiciatis voluptatum. Nihil illo vitae sint nam!</p>
-            <p>Delectus animi maiores repellendus illo rem, eum exercitationem est ipsum dignissimos fuga, et voluptate rerum ratione eos eveniet repudiandae. Harum quos, maxime quasi consectetur eveniet sapiente officia aut corrupti commodi.</p>
-            <p>Est dolorum tenetur ratione illo incidunt culpa nesciunt earum, deleniti accusamus veritatis ut asperiores blanditiis accusantium nulla impedit, labore laborum voluptate ipsam facere dolorem quis eligendi? Veniam atque voluptate qui.</p>
-            <p>Cupiditate in, at iure veniam nemo explicabo blanditiis omnis a temporibus, dicta rem culpa? Consequatur tempora dolorem perferendis aliquid fugiat, reprehenderit, veniam assumenda quasi magnam quo labore repudiandae nobis explicabo!</p>
-            <p>Culpa iste excepturi iure, unde quibusdam, modi animi nesciunt natus repellat, cum beatae maiores earum dolor placeat tempore impedit obcaecati fugit perspiciatis dolorum. Non rerum error tempora necessitatibus dolore voluptate.</p>
+            <p>Ducimus adipisci placeat excepturi, doloremque praesentium aspernatur laudantium nostrum minima deserunt,
+              ab blanditiis provident? Mollitia minima sapiente eaque voluptatibus rerum dolores aut natus, labore
+              assumenda esse cupiditate eveniet quam nulla.</p>
+            <p>Neque inventore illum illo voluptatum ipsum iste beatae nulla nemo consequatur? Accusantium aperiam fugit
+              repellendus, blanditiis vitae earum nam eligendi ipsa labore culpa quisquam ratione, iure voluptate eius
+              sunt veniam?</p>
+            <p>Voluptates maiores reiciendis, incidunt aut quaerat labore voluptas iure illo delectus ullam, quis
+              assumenda dolor laudantium necessitatibus ut. Neque eum sit deleniti impedit natus dolorem quaerat, eaque
+              veniam libero quod?</p>
+            <p>Fuga numquam laudantium sunt dolorum obcaecati cumque porro quo maiores ab. Adipisci atque modi nobis
+              quaerat quisquam laboriosam doloremque illo consequatur impedit veniam! Accusantium, porro quod quasi
+              vitae amet facere.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque placeat esse libero perspiciatis, rerum
+              quia deleniti cupiditate fuga ipsam molestiae. Quos qui officiis modi quae laborum saepe harum commodi
+              sit?</p>
+            <p>Ipsa, perferendis, commodi repellendus libero, deleniti corrupti expedita eveniet iure fugit ducimus
+              doloribus ipsam amet unde dolores porro ut. Dolorem enim id nulla maiores vel, hic animi ipsum! Molestias,
+              maiores!</p>
+            <p>Perspiciatis ea molestiae minima hic veritatis ad in dignissimos harum. Odio praesentium nihil, officiis
+              ad nulla cum iusto, et temporibus illum at sint ipsam dolorum quam autem quidem harum quis.</p>
+            <p>Consequatur fuga consectetur eveniet recusandae sequi possimus maiores. Possimus eveniet nemo excepturi
+              fugit quam reprehenderit pariatur consequuntur, ipsum ipsam quis, dolor aut, necessitatibus praesentium
+              blanditiis veniam ex exercitationem. Commodi, fuga?</p>
+            <p>Corrupti nobis ratione distinctio dignissimos itaque pariatur aspernatur saepe modi deleniti, voluptatem
+              illo animi quisquam architecto? A animi tempore qui facere, nemo esse voluptate ipsum ipsa, nam quia
+              voluptatem fugit.</p>
+            <p>Dignissimos ex porro omnis officia eius nobis rerum harum architecto ducimus quam quo sit nihil, soluta
+              amet dolorum reiciendis nemo praesentium voluptatem placeat perspiciatis voluptatum. Nihil illo vitae sint
+              nam!</p>
+            <p>Delectus animi maiores repellendus illo rem, eum exercitationem est ipsum dignissimos fuga, et voluptate
+              rerum ratione eos eveniet repudiandae. Harum quos, maxime quasi consectetur eveniet sapiente officia aut
+              corrupti commodi.</p>
+            <p>Est dolorum tenetur ratione illo incidunt culpa nesciunt earum, deleniti accusamus veritatis ut
+              asperiores blanditiis accusantium nulla impedit, labore laborum voluptate ipsam facere dolorem quis
+              eligendi? Veniam atque voluptate qui.</p>
+            <p>Cupiditate in, at iure veniam nemo explicabo blanditiis omnis a temporibus, dicta rem culpa? Consequatur
+              tempora dolorem perferendis aliquid fugiat, reprehenderit, veniam assumenda quasi magnam quo labore
+              repudiandae nobis explicabo!</p>
+            <p>Culpa iste excepturi iure, unde quibusdam, modi animi nesciunt natus repellat, cum beatae maiores earum
+              dolor placeat tempore impedit obcaecati fugit perspiciatis dolorum. Non rerum error tempora necessitatibus
+              dolore voluptate.</p>
           </div>
         </div>
       </main>
@@ -251,4 +297,5 @@
     <div class="overlay"></div>
   </div>
 </body>
+
 </html>
