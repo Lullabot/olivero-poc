@@ -74,9 +74,10 @@
     background-color: var(--color--blue-50);
     transition: all 0.2s;
   }
+}
 
-  .mobile-nav-button[aria-pressed="true"] & {
-    background-color: transparent;
+.mobile-nav-button__icon--active {
+  background-color: transparent;
 
     &:before {
       top: 0;
@@ -87,5 +88,5 @@
       top: 0;
       transform: rotate(45deg);
     }
-  }
 }
+
