@@ -10,7 +10,7 @@
       margin-bottom: 0;
     }
 
-    &[aria-haspopup="true"] {
+    &[aria-expanded="false"] {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
@@ -120,6 +120,7 @@
 }
 
 /* Dropdown nav */
+
 .primary-nav--level-2 {
   flex-basis: 100%;
   padding-left: var(--sp2-5);
@@ -129,7 +130,14 @@
   overflow: hidden;
   opacity: 0;
   transition: opacity 0.2s;
-
+  
+  &.primary-nav--level-2--visible {
+    max-height: 100%;
+    opacity: 1;
+    overflow:  auto;
+    margin-top: var(--sp1-5);
+  }
+    
   @media (--md) {
     margin-left: calc(-1 * var(--sp3));
     padding-left: var(--sp3);
