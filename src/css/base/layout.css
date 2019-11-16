@@ -22,6 +22,10 @@
   }
 }
 
+.grid-full-no-js > * {
+  grid-column: 1 / -1;
+}
+
 .page-wrapper {
   max-width: var(--max-bg-color);
   background: white;
