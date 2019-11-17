@@ -1,38 +1,51 @@
+
 (function () {
-  const secondLevelNavMenus = document.querySelectorAll('.primary-nav--level-1 [aria-expanded="false"]');
+  const secondLevelNavMenus = document.querySelectorAll('.primary-nav--level-1 .has-children ul');
   const subMenu = document.querySelector('.primary-nav--level-2');
+  //Add button to expand sub-menu
+  const subNavButton = document.createElement('button');
 
   // Insert a button after the <a> element that will control the visibility
-  // of the second-level navigation.
-  secondLevelNavMenus.forEach(el => {
-    const button = document.createElement('button');
-    const subMenu = el.querySelector('.primary-nav--level-2');
+  // of the second-level navigation at mobile widths.
+  // @todo Should we move this into PHP?
 
-    button.classList.add('primary-nav__button-expand');
-    button.textContent = 'Expand sub-navigation';
-    button.setAttribute('aria-expanded', 'false');
-    button.addEventListener('click', expandSubNav);
-    el.insertBefore(button, subMenu);
+  function setButton() {
+
+    //Set button attributes and append it before the <ul> 
+    subNavButton.innerHTML = 'Toggle sub-navigation';
+    subNavButton.classList.add('primary-nav__button-toggle');
+    subNavButton.setAttribute('aria-controls', 'product-submenu');
+    subNavButton.setAttribute('aria-expanded', 'false');
+
+    secondLevelNavMenus.forEach(el => {
+      el.parentNode.insertBefore(subNavButton, el);
+    });
+
+  }
+
+  setButton();
+
+  subNavButton.addEventListener('click', () => {
+    expandSubNav();
   });
 
-  function expandSubNav(e) {
-    const button = e.target;
+  function expandSubNav() {
 
-    if (!isButtonPressed(button)) {
-      button.setAttribute('aria-pressed', 'true');
-      button.setAttribute('aria-expanded', 'true');
+    if (!isButtonPressed(subNavButton)) {
+      subNavButton.setAttribute('aria-pressed', 'true');
+      subNavButton.setAttribute('aria-expanded', 'true');
       subMenu.classList.add('primary-nav--level-2--visible');
     }
     else {
-      button.setAttribute('aria-pressed', 'false');
-      button.setAttribute('aria-expanded', 'false');
+      subNavButton.setAttribute('aria-pressed', 'false');
+      subNavButton.setAttribute('aria-expanded', 'false');
       subMenu.classList.remove('primary-nav--level-2--visible');
     }
 
   }
 
   function isButtonPressed(el) {
-    return el.getAttribute('aria-pressed') === 'true';
+    return el.getAttribute('aria-expanded') === 'true';
   }
 
   function init() {

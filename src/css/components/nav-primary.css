@@ -10,7 +10,7 @@
       margin-bottom: 0;
     }
 
-    &[aria-expanded="false"] {
+    &.has-children {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
@@ -192,7 +192,7 @@
     }
   }
 
-  &[aria-expanded="true"] {
+  &.is-active {
     margin-top: var(--sp1-5);
     max-height: none;
     opacity: 1;
@@ -226,7 +226,7 @@
   Is inserted via JavaScript.
   Expands second level nav at mobile
 */
-.primary-nav__button-expand {
+.primary-nav__button-toggle {
   -webkit-appearance: none;
   border: 0;
   background: transparent;
@@ -258,7 +258,7 @@
     transition: opacity 0.2s;
   }
 
-  &[aria-pressed="true"] {
+  &[aria-expanded="true"] {
     &:after {
       opacity: 0;
     }
