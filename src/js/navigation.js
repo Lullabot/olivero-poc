@@ -25,7 +25,6 @@
     mobileNavButton.setAttribute('aria-expanded', 'false');
     mobileNavWrapper.classList.add('js-header-nav');
     navGridHolder.classList.remove('grid-full-no-js');
-    document.querySelector('.primary-nav--level-2').classList.add('js-primary-nav--level-2');
     mobileNavButtonIcon = document.querySelector('.mobile-nav-button__icon');
   }
 

@@ -49,8 +49,12 @@
   }
 
   function init() {
-    //Removes via JS hardcoded class to be shown by default
-    subMenu.classList.remove('primary-nav--level-2--visible');
+    // Add JS class for behaviour and remove visible class for each subnav item
+    secondLevelNavMenus.forEach(el => {
+      el.classList.add('js-primary-nav--level-2');
+      el.classList.remove('primary-nav--level-2--visible');
+    })
+
   }
 
   init();
