@@ -81,6 +81,7 @@
 
   /* Layout helpers */
   --sp0-5: calc(0.5 * var(--sp));
+  --sp1: calc(1 * var(--sp));
   --sp1-5: calc(1.5 * var(--sp));
   --sp2: calc(2 * var(--sp));
   --sp2-5: calc(2.5 * var(--sp));

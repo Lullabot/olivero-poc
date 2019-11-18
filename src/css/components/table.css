@@ -20,23 +20,41 @@ table {
 
   background:
         /* Left start and right start 'inside' container colors (they overlap the shadows) */
-				linear-gradient(90deg, white 0%, rgba(255,255,255,0)),
+        linear-gradient(90deg, white 0%, rgba(255,255,255,0)),
         linear-gradient(-90deg, white 0%, rgba(255,255,255,0)) 100% 0,
         /* Left and right scroll shadows */
-				radial-gradient(
-					farthest-side at 0% 50%,
-					rgba(0,0,0,0.2),
-					rgba(0,0,0,0)
-				),
-				radial-gradient(
-					farthest-side at 100% 50%,
-					rgba(0,0,0,0.2),
-					rgba(0,0,0,0)
-				) 100% 0%;
-			background-repeat: no-repeat;
-			background-color: white;
-			background-size: 100px 100%, 100px 100%, 14px 100%, 14px 100%;
-			background-attachment: local, local, scroll, scroll;
+        radial-gradient(
+          farthest-side at 0% 50%,
+          rgba(0,0,0,0.2),
+          rgba(0,0,0,0)
+        ),
+        radial-gradient(
+          farthest-side at 100% 50%,
+          rgba(0,0,0,0.2),
+          rgba(0,0,0,0)
+        ) 100% 0%;
+  background-repeat: no-repeat;
+  background-color: white;
+  background-size: 100px 100%, 100px 100%, 14px 100%, 14px 100%;
+  background-attachment: local, local, scroll, scroll;
+
+  caption {
+    text-align: left;
+    font-weight: bold;
+    margin: var(--sp2) 0 var(--sp1-5);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    line-height: var(--sp1-5);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    color: black;
+
+    @media (--md) {
+      margin: var(--sp2) 0 var(--sp2);
+      font-size: 21px;
+      letter-spacing: 0.09em;
+    }
+  }
 
   thead {
     tr {
@@ -52,11 +70,10 @@ table {
 
     td,
     th {
-      padding: var(--sp1-5) var(--sp1-5) var(--sp1-5) 0;
+      padding: var(--sp1) var(--sp1) var(--sp1) 0;
     }
 
     th {
-      background: white;
       margin: 0;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -119,7 +136,7 @@ table {
 /* When a table is placed in the body/text content area */
 .content-bleed {
   @media (--grid-md) {
-    width: calc(10 * var(--grid-col-width--md) + 9 * var(--grid-gap--md));
+    width: calc(12 * var(--grid-col-width--md) + 9 * var(--grid-gap--md));
     margin-right: calc(-2 * ((var(--grid-col-width--md) + var(--grid-gap--md))));
   }
 
