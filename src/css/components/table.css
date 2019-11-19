@@ -40,20 +40,12 @@ table {
 
   caption {
     text-align: left;
-    font-weight: bold;
-    margin: var(--sp2) 0 var(--sp1-5);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    line-height: var(--sp1-5);
-    font-family: var(--font-sans);
-    font-size: 16px;
-    color: black;
-
-    @media (--md) {
-      margin: var(--sp2) 0 var(--sp2);
-      font-size: 21px;
-      letter-spacing: 0.09em;
-    }
+    font-family: var(--font-serif);
+    font-size: 14px;
+    font-style: italic;;
+    line-height: var(--sp);
+    color: var(--color--gray-10);
+    margin-bottom: var(--sp1);
   }
 
   thead {
