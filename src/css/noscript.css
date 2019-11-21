@@ -1,0 +1,24 @@
+html:not(.js) .site-header__inner .grid-full > *  {
+    grid-column: 1 / -1;
+  @media (--lg) {
+    grid-column: span 2;
+  }
+}
+
+html:not(.js) .site-header__inner .site-branding {
+  @media (--lg) {
+    grid-column: span 2;
+  }
+}
+
+html:not(.js) .site-header__inner .header-nav {
+  @media (--lg) {
+    grid-column: 5 / 14;
+    display: flex;
+    align-self: end;
+  }
+}
+
+html:not(.js) .site-branding {
+  margin-right: -1rem;
+}
