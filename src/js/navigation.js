@@ -6,7 +6,6 @@
   const mobileNavButtonWrapper = document.querySelector('.mobile-buttons');
   const mobileNavWrapperId = 'header-nav';
   const mobileNavWrapper = document.getElementById(mobileNavWrapperId);
-  const navGridHolder = document.querySelector('.grid-full-no-js');
   const body = document.querySelector('body');
   const overlay = document.querySelector('.overlay');
   let mobileNavButtonIcon;
@@ -24,7 +23,6 @@
     mobileNavButton.setAttribute('aria-controls', 'header-nav');
     mobileNavButton.setAttribute('aria-expanded', 'false');
     mobileNavWrapper.classList.add('js-header-nav');
-    navGridHolder.classList.remove('grid-full-no-js');
     mobileNavButtonIcon = document.querySelector('.mobile-nav-button__icon');
   }
 
