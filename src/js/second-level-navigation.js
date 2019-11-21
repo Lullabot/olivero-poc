@@ -25,19 +25,15 @@
 
   setButton();
 
-  subNavButton.addEventListener('click', () => {
-    expandSubNav();
-  });
+  subNavButton.addEventListener('click', expandSubNav);
 
   function expandSubNav() {
 
     if (!isButtonPressed(subNavButton)) {
-      subNavButton.setAttribute('aria-pressed', 'true');
       subNavButton.setAttribute('aria-expanded', 'true');
       subMenu.classList.add('primary-nav--level-2--visible');
     }
     else {
-      subNavButton.setAttribute('aria-pressed', 'false');
       subNavButton.setAttribute('aria-expanded', 'false');
       subMenu.classList.remove('primary-nav--level-2--visible');
     }
