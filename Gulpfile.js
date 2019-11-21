@@ -34,7 +34,7 @@ gulp.task('css', () => {
   const postcssCustomProperties = require('postcss-custom-properties');
 
 
-   return gulp.src('./src/css/style.css')
+  return gulp.src(['./src/css/style.css', './src/css/noscript.css'])
     .pipe(sourcemaps.init())
     .pipe(postcss([
       atImport(),
