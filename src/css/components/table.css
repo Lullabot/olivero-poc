@@ -4,10 +4,8 @@
  */
 
 table {
-  width: fit-content;
   max-width: 100%;
   border-collapse: collapse;
-  display: block;
   margin: var(--sp2) 0;
   border-spacing: 0;
   border: 0;
@@ -15,28 +13,6 @@ table {
   line-height: var(--sp1-5);
   font-size: 16px;
   color: var(--color--gray-10);
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-
-  background:
-        /* Left start and right start 'inside' container colors (they overlap the shadows) */
-        linear-gradient(90deg, white 0%, rgba(255,255,255,0)),
-        linear-gradient(-90deg, white 0%, rgba(255,255,255,0)) 100% 0,
-        /* Left and right scroll shadows */
-        radial-gradient(
-          farthest-side at 0% 50%,
-          rgba(0,0,0,0.2),
-          rgba(0,0,0,0)
-        ),
-        radial-gradient(
-          farthest-side at 100% 50%,
-          rgba(0,0,0,0.2),
-          rgba(0,0,0,0)
-        ) 100% 0%;
-  background-repeat: no-repeat;
-  background-color: white;
-  background-size: 100px 100%, 100px 100%, 14px 100%, 14px 100%;
-  background-attachment: local, local, scroll, scroll;
 
   caption {
     text-align: left;
@@ -127,6 +103,29 @@ table {
 
 /* When a table is placed in the body/text content area */
 .content-bleed {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  background:
+        /* Left start and right start 'inside' container colors (they overlap the shadows) */
+        linear-gradient(90deg, white 0%, rgba(255,255,255,0)),
+        linear-gradient(-90deg, white 0%, rgba(255,255,255,0)) 100% 0,
+        /* Left and right scroll shadows */
+        radial-gradient(
+          farthest-side at 0% 50%,
+          rgba(0,0,0,0.2),
+          rgba(0,0,0,0)
+        ),
+        radial-gradient(
+          farthest-side at 100% 50%,
+          rgba(0,0,0,0.2),
+          rgba(0,0,0,0)
+        ) 100% 0%;
+  background-repeat: no-repeat;
+  background-color: white;
+  background-size: 100px 100%, 100px 100%, 14px 100%, 14px 100%;
+  background-attachment: local, local, scroll, scroll;
+
   @media (--grid-md) {
     width: calc(12 * var(--grid-col-width--md) + 9 * var(--grid-gap--md));
     margin-right: calc(-2 * ((var(--grid-col-width--md) + var(--grid-gap--md))));
