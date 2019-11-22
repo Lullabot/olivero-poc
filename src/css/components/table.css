@@ -4,9 +4,8 @@
  */
 
 table {
-  max-width: 100%;
-  border-collapse: collapse;
   margin: var(--sp2) 0;
+  border-collapse: collapse;
   border-spacing: 0;
   border: 0;
   font-family: var(--font-sans);
@@ -14,90 +13,47 @@ table {
   font-size: 16px;
   color: var(--color--gray-10);
 
+  .content-bleed & {
+    width: 100%;
+  }
+
   caption {
+    margin-bottom: var(--sp1);
     text-align: left;
     font-family: var(--font-serif);
     font-size: 14px;
     font-style: italic;;
     line-height: var(--sp);
     color: var(--color--gray-10);
-    margin-bottom: var(--sp1);
-  }
-
-  thead {
-    tr {
-      th {
-        border-bottom: 2px solid var(--color--blue-50);
-      }
-    }
   }
 
   tr {
-    white-space: nowrap;
-    background: transparent;
-
-    td,
-    th {
-      padding: var(--sp1) var(--sp1) var(--sp1) 0;
-    }
-
-    th {
-      margin: 0;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      line-height: var(--sp1-5);
-      font-family: var(--font-sans);
-      font-size: 14px;
-      color: var(--color--gray-0);
-      text-align: left;
-
-      a {
-        color: var(--color--blue-20);
-        text-decoration: underline;
-        text-decoration-color: var(--color--blue-20);
-        text-decoration-width: 2px;
-        text-decoration-thickness: 2px;
-
-        @supports (box-shadow: none) {
-          text-decoration: none;
-          box-shadow: inset 0 -2px 0 0 var(--color--blue-50);
-          transition: box-shadow .3s cubic-bezier(.55,.085,0,.99);
-
-          &:hover,
-          &:focus {
-            box-shadow: inset 0 -30px 0 0 #d9ecfa;
-            color: black;
-            text-decoration: underline;
-            text-decoration-color: #d9ecfa;
-          }
-        }
-      }
-    }
-
-    td {
-      white-space: normal;
-      vertical-align: top;
-      min-width: 250px;
-      border-bottom: 2px solid var(--color--gray-40);
-    }
-  }
-
-  tbody {
-    tr {
-      th {
-        vertical-align: top;
-      }
-
-      &:last-child {
-        td {
-          border-bottom: 0;
-        }
+    &:last-child {
+      td {
+        border-bottom: 0;
       }
     }
   }
 
-  .content-bleed & {
-    width: 100%;
+  td,
+  th {
+    padding: var(--sp1) var(--sp1) var(--sp1) 0;
+    vertical-align: top;
+  }
+
+  th {
+    border-bottom: 2px solid var(--color--blue-50);
+    margin: 0;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    color: var(--color--gray-0);
+    text-align: left;
+  }
+
+  td {
+    border-bottom: 2px solid var(--color--gray-40);
   }
 }
 
@@ -105,6 +61,7 @@ table {
 .content-bleed {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  border: solid 1px transparent; /* Will show up in Windows high contrast mode. */
 
   background:
         /* Left start and right start 'inside' container colors (they overlap the shadows) */
