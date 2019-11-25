@@ -18,26 +18,6 @@ table {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 
-  background:
-        /* Left start and right start 'inside' container colors (they overlap the shadows) */
-        linear-gradient(90deg, white 0%, rgba(255,255,255,0)),
-        linear-gradient(-90deg, white 0%, rgba(255,255,255,0)) 100% 0,
-        /* Left and right scroll shadows */
-        radial-gradient(
-          farthest-side at 0% 50%,
-          rgba(0,0,0,0.2),
-          rgba(0,0,0,0)
-        ),
-        radial-gradient(
-          farthest-side at 100% 50%,
-          rgba(0,0,0,0.2),
-          rgba(0,0,0,0)
-        ) 100% 0%;
-  background-repeat: no-repeat;
-  background-color: white;
-  background-size: 100px 100%, 100px 100%, 14px 100%, 14px 100%;
-  background-attachment: local, local, scroll, scroll;
-
   .content-bleed & {
     width: 100%;
   }
@@ -104,5 +84,56 @@ table {
   @media (--grid-max) {
     width: calc(10 * var(--grid-col-width--max) + 9 * var(--grid-gap--max));
     margin-right: calc(-2 * ((var(--grid-col-width--max) + var(--grid-gap--max))));
+  }
+}
+
+/* Set Horzontal Scroll gradient direction based on lanuage direction.  */
+[dir=ltr] {
+  table {
+    background:
+        /* Left start and right start 'inside' container colors (they overlap the shadows). */
+        linear-gradient(90deg, white 0%, rgba(255,255,255,0)),
+        linear-gradient(-90deg, white 0%, rgba(255,255,255,0)) 100% 0,
+        /* Left and right scroll shadows. */
+        radial-gradient(
+          farthest-side at 0% 50%,
+          rgba(0,0,0,0.2),
+          rgba(0,0,0,0)
+        ),
+        radial-gradient(
+          farthest-side at 100% 50%,
+          rgba(0,0,0,0.2),
+          rgba(0,0,0,0)
+        ) 100% 0%;
+  }
+}
+
+[dir=rtl] {
+  table {
+    background:
+        /* Right start and Left start 'inside' container colors (they overlap the shadows). */
+        linear-gradient(-90deg, white 0%, rgba(255,255,255,0)),
+        linear-gradient(90deg, white 0%, rgba(255,255,255,0)) 0 100%,
+        /* Right and Left scroll shadows. */
+        radial-gradient(
+          farthest-side at 0% 50%,
+          rgba(0,0,0,0.2),
+          rgba(0,0,0,0)
+        ),
+        radial-gradient(
+          farthest-side at 100% 50%,
+          rgba(0,0,0,0.2),
+          rgba(0,0,0,0)
+        ) 100% 0%;
+  }
+}
+
+[dir=ltr],
+[dir=rtl] {
+  table {
+    background-repeat: no-repeat;
+    background-color: white;
+    background-attachment: local, local, scroll, scroll;
+    background-size: 100px 100%, 100px 100%, 14px 100%, 14px 100%;
   }
 }
