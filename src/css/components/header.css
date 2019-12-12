@@ -131,7 +131,7 @@
   }
 
   @media (--lg) {
-    grid-column: 5 / 14;
+    grid-column: 4 / 14;
   }
 
   &[data-menu-open="true"] {

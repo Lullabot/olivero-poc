@@ -43,6 +43,12 @@
       letter-spacing: 0.02em;
     }
   }
+
+  @media (--nav) {
+    max-width: 500px;
+    overflow: hidden;
+    overflow-x: auto;
+  }
 }
 
 .primary-nav--level-1 {
@@ -60,7 +66,13 @@
       margin: 0;
 
       &:not(:last-child) {
-        margin-right: var(--sp2);
+        margin-right: var(--sp1-5);
+      }
+      
+      @media (--xl) {
+        &:not(:last-child) {
+          margin-right: var(--sp2);
+        }
       }
 
       &:hover {
@@ -102,6 +114,7 @@
         display: inline-flex;
         align-items: center;
         padding: var(--sp2) 0;
+        white-space: nowrap;
 
         &:after {
           content: '';
