@@ -6,6 +6,10 @@
     /* Necessary to keep the content from jumping up when header transitions to fixed. */
     min-height: var(--sp10);
   }
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .header__left {
