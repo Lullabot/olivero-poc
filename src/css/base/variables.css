@@ -80,6 +80,7 @@
   --grid-col-width--max:    calc((var(--grid-full-width--max) - (var(--grid-gap-count--max) * var(--grid-gap--max))) / var(--grid-col-count--max));
 
   /* Layout helpers */
+  --sp0-33: calc(var(--sp) / 3);
   --sp0-5: calc(0.5 * var(--sp));
   --sp1: calc(1 * var(--sp));
   --sp1-5: calc(1.5 * var(--sp));

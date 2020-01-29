@@ -5,11 +5,18 @@
   // of the second-level navigation at mobile widths.
   // @todo Should we move this into PHP?
   secondLevelNavMenus.forEach(el => {
-    const button = el.querySelector('.primary-nav__button-toggle');
+    // const button = el.querySelector('.primary-nav__button-toggle');
+    const toggleButton = document.createElement('button');
+    toggleButton.classList.add('primary-nav__button-toggle');
+    toggleButton.innerHTML = 'Toggle sub-navigation';
+    el.appendChild(toggleButton);
+
+    const subMenu = el.querySelector('.primary-nav--level-2');
+    subMenu.classList.add('js-primary-nav--level-2');
 
     // Add focusin event to open nav when there's a focus event for IE11
     el.addEventListener('focusin', toggleNavVisibility);
-    button.addEventListener('click', expandSubNav);
+    toggleButton.addEventListener('click', expandSubNav);
   });
 
   function expandSubNav(e) {

@@ -2,7 +2,18 @@
 
   const isDesktopNav = drupalSettings.olivero.isDesktopNav;
 
-  const mobileNavButton = document.querySelector('.mobile-nav-button');
+  const mobileNavButton = document.createElement('button');
+  mobileNavButton.classList.add('mobile-nav-button');
+  const mobileNavButtonText = document.createElement('div');
+  mobileNavButtonText.classList.add('mobile-nav-button__label');
+  mobileNavButtonText.innerHTML = 'Menu';
+  const mobileNavButtonIcon = document.createElement('div');
+  mobileNavButtonIcon.classList.add('mobile-nav-button__icon');
+  mobileNavButton.appendChild(mobileNavButtonText);
+  mobileNavButton.appendChild(mobileNavButtonIcon);
+  const mobileNavButtonWrapper = document.querySelector('.mobile-buttons');
+  mobileNavButtonWrapper.appendChild(mobileNavButton);
+
   const mobileNavWrapperId = 'header-nav';
   const mobileNavWrapper = document.getElementById(mobileNavWrapperId);
   const body = document.querySelector('body');
@@ -15,6 +26,7 @@
   function init() {
     mobileNavButton.setAttribute('aria-controls', mobileNavWrapperId);
     mobileNavWrapper.setAttribute('data-menu-open', "false");
+    mobileNavWrapper.classList.add('js-header-nav');
     mobileNavButton.setAttribute('aria-expanded', "false");
   }
 

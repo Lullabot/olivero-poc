@@ -1,5 +1,15 @@
 main {
   padding-top: var(--sp5);
+
+  @media (--nav) {
+    padding-top: calc(var(--sp5) + var(--sp8));
+  }
+
+  html.js & {
+    @media (--nav) {
+      padding-top: var(--sp5);
+    }
+  }
 }
 
 .text-content {

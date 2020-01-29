@@ -1,4 +1,6 @@
 .primary-nav {
+  z-index: 1;
+
   ul {
     list-style: none;
   }
@@ -11,9 +13,14 @@
     }
 
     &.has-children {
+      position: relative;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+
+      > a {
+        margin-right: var(--sp2);
+      }
 
       @media (--nav) {
         /*
@@ -22,6 +29,7 @@
         */
         > a {
           display: block;
+          margin-right: 0;
 
           span:after {
             content: none;
@@ -52,6 +60,7 @@
   @media (--nav) {
     display: flex;
     align-items: center;
+    margin-right: var(--sp);
 
     > li {
       position: relative; /* Anchor secondary menu */
@@ -124,10 +133,8 @@
   flex-basis: 100%;
   padding-left: var(--sp2-5);
   border-left: solid var(--sp) var(--color--blue-50);
+  margin-top: var(--sp1-5);
   margin-left: calc(-1 * var(--sp));
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
   transition: opacity 0.2s;
 
   @media (--md) {
@@ -214,6 +221,17 @@
   }
 }
 
+.js-primary-nav--level-2 {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin-top: 0;
+
+  @media (--nav) {
+    max-height: none;
+  }
+}
+
 /*
   Is inserted via JavaScript.
   Expands second level nav at mobile
@@ -222,7 +240,8 @@
   -webkit-appearance: none;
   border: 0;
   background: transparent;
-  position: relative;
+  position: absolute;
+  right: 0;
   width: var(--sp2);
   height: var(--sp2);
   text-indent: -999px;

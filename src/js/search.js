@@ -1,6 +1,7 @@
 (function() {
   const searchButton = document.querySelector('.header-nav__search-button');
   const searchWrapper = document.querySelector('.search-wrapper');
+  searchWrapper.classList.add('js-search-wrapper');
   const siteHeader = document.querySelector('.site-header');
 
   function toggleSearchWrapper(visibility) {

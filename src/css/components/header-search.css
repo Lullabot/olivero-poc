@@ -12,11 +12,9 @@
 
   @media (--nav) {
     position: absolute;
-    visibility: hidden;
     width: 100vw;
     height: var(--sp8);
     max-width: var(--max-bg-color);
-    max-height: 0;
     margin: 0;
     overflow: hidden;
     left: 0;
@@ -91,6 +89,14 @@
   }
 }
 
+.js-search-wrapper {
+
+  @media (--nav) {
+    visibility: hidden;
+    max-height: 0;
+  }
+}
+
 .search-container {
   @media (--nav) {
     max-width: var(--max-width);
@@ -112,16 +118,17 @@
   -webkit-appearance: none;
   border: 0;
   background: transparent;
-  margin-left: var(--sp2);
+  margin-right: var(--sp0-5);
   height: var(--sp6);
   width: var(--sp3);
   cursor: pointer;
 
   @media (--nav) {
     position: relative;
-    display: block;
-    margin-left: var(--sp);
-    margin-right: var(--sp0-5);
+
+    html.js & {
+      display: block;
+    }
 
     &:focus {
       outline: 0;
