@@ -179,6 +179,7 @@
 }
 
 .header-nav__search-button[aria-expanded="true"] ~ .search-wrapper--desktop {
+  display: block;
   visibility: visible;
   max-height: var(--sp8);
 }
