@@ -183,6 +183,13 @@
   max-height: var(--sp8);
 }
 
+.search-wrapper--desktop {
+  @media (--nav-md) {
+    display: none;
+    -webkit-appearance: none;
+  }
+}
+
 .search-wrapper--mobile {
   display: none;
   -webkit-appearance: none;
