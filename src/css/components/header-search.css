@@ -25,11 +25,6 @@
     padding: 0;
     z-index: 1; /* Ensure left border shows above social region in IE11. */
     transition: all 0.2s;
-
-    &[aria-expanded="true"] {
-      visibility: visible;
-      max-height: var(--sp8);
-    }
   }
 
   form {
@@ -183,20 +178,16 @@
   }
 }
 
+.header-nav__search-button[aria-expanded="true"] ~ .search-wrapper--desktop {
+  visibility: visible;
+  max-height: var(--sp8);
+}
+
 .search-wrapper--mobile {
   display: none;
   -webkit-appearance: none;
 
   @media (--nav-md) {
     display: block;
-  }
-}
-
-.search-wrapper--desktop {
-  display: block;
-
-  @media (--nav-md) {
-    display: none;
-    -webkit-appearance: none;
   }
 }
