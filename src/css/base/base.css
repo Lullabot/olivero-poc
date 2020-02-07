@@ -57,3 +57,12 @@ h1 {
     display: block;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    -webkit-animation: none !important;
+    transition: none !important;
+    -webkit-transformation: none !important;
+  }
+}
