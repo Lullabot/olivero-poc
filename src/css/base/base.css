@@ -59,10 +59,15 @@ h1 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
-    -webkit-animation: none !important;
-    transition: none !important;
-    -webkit-transformation: none !important;
+  *, *:before, *:after {
+    animation-duration: 0.001s !important;
+    -webkit-animation-duration: 0.001s !important;
+    -moz-animation-duration: 0.001s !important;
+    -o-animation-duration: 0.001s !important;
+    transition-duration: 0.001s !important;
+    -webkit-transition-duration: 0.001s !important;
+    -moz-transition-duration: 0.001s !important;
+    -ms-transition-duration: 0.001s !important;
+    -o-transition-duration: 0.001s !important;
   }
 }
