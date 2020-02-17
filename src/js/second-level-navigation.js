@@ -43,4 +43,13 @@
       topLevelMenuITem.querySelector('.primary-nav--level-2').classList.remove('is-active');
     }
   }
+
+  // Ensure that submenus close when ESC key is pressed.
+  document.addEventListener('keyup', e => {
+    if (e.keyCode === 27) {
+      secondLevelNavMenus.forEach(el => {
+        toggleSubNav(el, false);
+      });
+    }
+  });
 })();

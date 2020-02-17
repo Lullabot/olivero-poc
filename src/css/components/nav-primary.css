@@ -14,20 +14,6 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-
-      @media (--nav) {
-        /*
-          If the list item has a submenu, the hover effect, is super noticable,
-          so we remove it.
-        */
-        > a {
-          display: block;
-
-          span:after {
-            content: none;
-          }
-        }
-      }
     }
   }
 

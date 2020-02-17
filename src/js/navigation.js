@@ -82,5 +82,6 @@
       toggleMobileNav(false);
       body.classList.remove('js-overlay-active', 'js-fixed');
     }
-  })
+  });
+
 })()
