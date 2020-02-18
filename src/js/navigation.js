@@ -14,8 +14,8 @@
 
   function init() {
     mobileNavButton.setAttribute('aria-controls', mobileNavWrapperId);
-    mobileNavWrapper.setAttribute('data-menu-open', "false");
-    mobileNavButton.setAttribute('aria-expanded', "false");
+    mobileNavWrapper.setAttribute('data-menu-open', 'false');
+    mobileNavButton.setAttribute('aria-expanded', 'false');
   }
 
   function isMobileNavOpen() {
@@ -82,5 +82,6 @@
       toggleMobileNav(false);
       body.classList.remove('js-overlay-active', 'js-fixed');
     }
-  })
+  });
+
 })()

@@ -3,6 +3,9 @@
   window.drupalSettings = {};
   window.drupalSettings.olivero = {};
 
+  // Replicates Druapl's addition of adding a `js` class onto HTML element.
+  document.documentElement.classList.add('js');
+
   // Only enable scroll effects if the browser supports Intersection Observer.
   // @see https://github.com/w3c/IntersectionObserver/blob/master/polyfill/intersection-observer.js#L19-L21
   if ('IntersectionObserver' in window &&

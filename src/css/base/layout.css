@@ -12,12 +12,12 @@
 
 .grid-full {
   display: grid;
-  grid-template-columns: repeat(var(--grid-col-count), 1fr);
+  grid-template-columns: repeat(var(--grid-col-count), minmax(0, 1fr));
   grid-template-rows: 1fr;
   grid-column-gap: var(--grid-gap);
 
   @media (--grid-md) {
-    grid-template-columns: repeat(var(--grid-col-count--md), 1fr);
+    grid-template-columns: repeat(var(--grid-col-count--md), minmax(0, 1fr));
     grid-column-gap: var(--grid-gap--md);
   }
 }
