@@ -32,7 +32,7 @@
    */
   function toggleSubNav(topLevelMenuITem, toState) {
     const button = topLevelMenuITem.querySelector('.primary-nav__button-toggle');
-    const state = toState || button.getAttribute('aria-expanded') != 'true';
+    const state = toState != undefined ? toState : button.getAttribute('aria-expanded') != 'true';
 
     if (state) {
       button.setAttribute('aria-expanded', 'true');
