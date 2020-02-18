@@ -14,20 +14,6 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-
-      @media (--nav) {
-        /*
-          If the list item has a submenu, the hover effect, is super noticable,
-          so we remove it.
-        */
-        > a {
-          display: block;
-
-          span:after {
-            content: none;
-          }
-        }
-      }
     }
   }
 
@@ -63,7 +49,7 @@
         margin-right: var(--sp2);
       }
 
-      &:hover {
+      html:not(.js) &:hover {
         .primary-nav--level-2 {
           visibility: visible;
           opacity: 1;
@@ -75,7 +61,7 @@
         Cannot combine the focus-within pseudoselector with other selectors,
         because it will break IE11 and MS Edge.
       */
-      &:focus-within {
+       html:not(.js) &:focus-within {
         .primary-nav--level-2 {
           visibility: visible;
           opacity: 1;
@@ -168,6 +154,12 @@
       border-right: solid 10px transparent;
       border-bottom: solid 10px var(--color--blue-50);
     }
+
+    &.is-active {
+      visibility: visible;
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
   }
 
   /*
@@ -215,7 +207,6 @@
 }
 
 /*
-  Is inserted via JavaScript.
   Expands second level nav at mobile
 */
 .primary-nav__button-toggle {
@@ -228,10 +219,6 @@
   text-indent: -999px;
   overflow: hidden;
   cursor: pointer;
-
-  @media (--nav) {
-    display: none;
-  }
 
   &:before,
   &:after {
@@ -254,5 +241,9 @@
     &:after {
       opacity: 0;
     }
+  }
+
+  html:not(.js) & {
+    display: none; /* Hide if JS is disabled */
   }
 }

@@ -1,36 +1,55 @@
 (function() {
+
+  const isDesktopNav = drupalSettings.olivero.isDesktopNav;
   const secondLevelNavMenus = document.querySelectorAll('.primary-nav--level-1 .has-children');
 
-  // Insert a button after the <a> element that will control the visibility
-  // of the second-level navigation at mobile widths.
-  // @todo Should we move this into PHP?
+  // Add event listeners onto each subnav expand button
   secondLevelNavMenus.forEach(el => {
     const button = el.querySelector('.primary-nav__button-toggle');
+    button.addEventListener('click', e => {
+      const topLevelMenuITem = e.currentTarget.parentNode;
+      toggleSubNav(topLevelMenuITem);
+    });
 
-    // Add focusin event to open nav when there's a focus event for IE11
-    el.addEventListener('focusin', toggleNavVisibility);
-    button.addEventListener('click', expandSubNav);
+    el.addEventListener('mouseover', e => {
+      if (isDesktopNav()) {
+        toggleSubNav(e.currentTarget, true);
+      }
+    });
+
+    el.addEventListener('mouseout', e => {
+      if (isDesktopNav()) {
+        toggleSubNav(e.currentTarget, false);
+      }
+    });
   });
 
-  function expandSubNav(e) {
-    const button = e.target;
-    const subMenu = button.parentNode.querySelector('.primary-nav--level-2');
+  /**
+   * Shows and hides the second level submenu.
+   *
+   * @param {element} topLevelMenuITem - the <li> element that is the container for the menu and submenus.
+   * @param {boolean} [toState] - Optional state where we want the submenu to end up.
+   */
+  function toggleSubNav(topLevelMenuITem, toState) {
+    const button = topLevelMenuITem.querySelector('.primary-nav__button-toggle');
+    const state = toState || button.getAttribute('aria-expanded') != 'true';
 
-    if (!isButtonPressed(button)) {
+    if (state) {
       button.setAttribute('aria-expanded', 'true');
-      subMenu.classList.add('is-active');
+      topLevelMenuITem.querySelector('.primary-nav--level-2').classList.add('is-active');
     }
     else {
       button.setAttribute('aria-expanded', 'false');
-      subMenu.classList.remove('is-active');
+      topLevelMenuITem.querySelector('.primary-nav--level-2').classList.remove('is-active');
     }
   }
 
-  function isButtonPressed(el) {
-    return el.getAttribute('aria-expanded') === 'true';
-  }
-
-  function toggleNavVisibility() {
-
-  }
+  // Ensure that submenus close when ESC key is pressed.
+  document.addEventListener('keyup', e => {
+    if (e.keyCode === 27) {
+      secondLevelNavMenus.forEach(el => {
+        toggleSubNav(el, false);
+      });
+    }
+  });
 })();
