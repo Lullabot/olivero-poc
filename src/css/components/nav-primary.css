@@ -226,14 +226,14 @@
   cursor: pointer;
 
   @media (--nav) {
-    width: 10px;
-    height: 8px;
+    width: 12px;
+    height: 12px;
     margin-left: 0.5em;
     padding: 0;
 
     &:focus {
       &:after {
-        border-top-color: var(--color--blue-50);
+        border-color: var(--color--blue-50);
       }
     }
   }
@@ -260,14 +260,12 @@
 
     @media (--nav) {
       content: '';
-      left: 0;
       top: 0;
-      height: 0;
-      width: 0;
-      border-top: solid 8px currentColor;
-      border-left: solid 5px transparent;
-      border-right: solid 5px transparent;
-      transform: none;
+      height: 8px;
+      width: 8px;
+      border-right: solid 2px currentColor;
+      border-bottom: solid 2px currentColor;
+      transform: translatex(-50%) rotate(45deg);
       background: transparent;
       opacity: 0.8;
     }
