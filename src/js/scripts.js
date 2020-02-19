@@ -83,9 +83,20 @@
 
     siteHeaderToggleElement.addEventListener('focusin', showWideNav);
 
+    // If skip link is clicked, ensure that the wide navigation closes so the header will not be covered up.
+    document.querySelector('.skip-link').addEventListener('click', function() {
+      hideWideNav();
+    });
+
     document.addEventListener('keyup', e => {
       if (e.keyCode === 27) {
         hideWideNav();
+
+        // if (search is open, close it)
+
+        // else if wide nav is open, close it
+
+
       }
     });
   }
