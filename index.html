@@ -43,7 +43,7 @@
                 </div>
               </div>
               <div class="mobile-buttons">
-                <button class="mobile-nav-button">
+                <button class="mobile-nav-button" aria-label="Toggle Main Menu">
                   <div class="mobile-nav-button__label">Menu</div>
                   <div class="mobile-nav-button__icon"></div>
                 </button>
@@ -60,7 +60,8 @@
                     </div>
                   </div>
                 </div>
-                <nav class="primary-nav">
+                <nav class="primary-nav" aria-labelledby="main-menu-description">
+                  <span id="main-menu-description" class="visually-hidden">Main Menu</span>
                   <ul class="primary-nav--level-1">
                     <li><a href="#"><span>Home</span></a></li>
                     <li class="has-children">
@@ -83,7 +84,8 @@
                     <img src="images/search.svg" alt="Toggle Search Form">
                     <div class="header-nav__search-button__close"></div>
                   </button>
-                  <nav class="secondary-nav">
+                  <nav class="secondary-nav" aria-labelledby="secondary-menu-description">
+                    <span id="secondary-menu-description" class="visually-hidden">Secondary Menu</span>
                     <ul>
                       <li><a href="#">Login</a></li>
                       <li><a class="button--primary" href="#">Sign Up</a></li>
