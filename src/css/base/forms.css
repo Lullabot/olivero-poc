@@ -9,6 +9,7 @@
   border-radius: 2px;
   white-space: nowrap;
   transition: background-color 0.2s;
+  text-decoration: none;
 
   &:focus,
   &:hover {

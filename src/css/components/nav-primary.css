@@ -27,6 +27,7 @@
     line-height: var(--sp2);
     letter-spacing: -1px;
     color: var(--black-1);
+    text-decoration: none;
 
     @media (--nav) {
       font-size: 16px;
