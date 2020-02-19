@@ -225,6 +225,19 @@
   overflow: hidden;
   cursor: pointer;
 
+  @media (--nav) {
+    width: 12px;
+    height: 12px;
+    margin-left: 0.5em;
+    padding: 0;
+
+    &:focus {
+      &:after {
+        border-color: var(--color--blue-50);
+      }
+    }
+  }
+
   &:before,
   &:after {
     content: '';
@@ -235,16 +248,36 @@
     width: var(--sp);
     height: 3px;
     background: var(--color--blue-50);
+
+    @media (--nav) {
+      content: none;
+    }
   }
 
   &:after {
     transform: translate(-50%, -50%) rotate(90deg);
     transition: opacity 0.2s;
+
+    @media (--nav) {
+      content: '';
+      top: 0;
+      height: 8px;
+      width: 8px;
+      border-right: solid 2px currentColor;
+      border-bottom: solid 2px currentColor;
+      transform: translatex(-50%) rotate(45deg);
+      background: transparent;
+      opacity: 0.8;
+    }
   }
 
   &[aria-expanded="true"] {
     &:after {
       opacity: 0;
+
+      @media (--nav) {
+        opacity: 0.8;
+      }
     }
   }
 
