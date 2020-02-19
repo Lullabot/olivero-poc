@@ -12,7 +12,12 @@
 
     &.has-children {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
+
+      @media (--nav) {
+        flex-wrap: nowrap; /* Ensure that button doesn't wrap underneath link. */
+      }
     }
   }
 
