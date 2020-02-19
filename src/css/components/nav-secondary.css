@@ -52,6 +52,7 @@
     display: inline-flex;
     align-items: center;
     height: var(--sp2);
+    text-decoration: none;
 
     &:after {
       content: '';

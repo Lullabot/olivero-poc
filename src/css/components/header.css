@@ -90,6 +90,10 @@
       height: var(--header-height-wide-when-fixed);
     }
   }
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .header-nav {

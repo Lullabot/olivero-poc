@@ -59,7 +59,6 @@ main {
 
   a {
     color: var(--color--blue-20);
-    text-decoration: underline;
     text-decoration-color: var(--color--blue-20);
     text-decoration-width: 2px;
     text-decoration-thickness: 2px;
