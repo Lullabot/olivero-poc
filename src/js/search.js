@@ -3,13 +3,15 @@
   const searchWrapper = document.querySelector('.search-wrapper');
   const siteHeader = document.querySelector('.site-header');
 
-  function toggleSearchWrapper(visibility) {
+  function toggleSearchVisibility(visibility) {
     searchButton.setAttribute('aria-expanded', visibility == true);
     searchWrapper.setAttribute('aria-expanded', visibility == true);
     siteHeader.classList.toggle('js-search-active');
 
     searchWrapper.addEventListener('transitionend', handleFocus, { once: true });
   }
+
+  drupalSettings.olivero.toggleSearchVisibility = toggleSearchVisibility;
 
   function handleFocus() {
     if (searchIsVisible()) {
@@ -23,19 +25,14 @@
   function searchIsVisible() {
     return searchWrapper.getAttribute('aria-expanded') === 'true';
   }
+  drupalSettings.olivero.searchIsVisible = searchIsVisible;
 
   document.addEventListener('click', e => {
     if (e.target.matches('.header-nav__search-button, .header-nav__search-button *')) {
-      toggleSearchWrapper(!searchIsVisible());
+      toggleSearchVisibility(!searchIsVisible());
     }
     else if (searchIsVisible() && !e.target.matches('.search-wrapper, .search-wrapper *')) {
-      toggleSearchWrapper(false);
-    }
-  });
-
-  document.addEventListener('keyup', e => {
-    if (searchIsVisible() && e.keyCode === 27) {
-      toggleSearchWrapper(false);
+      toggleSearchVisibility(false);
     }
   });
 })();

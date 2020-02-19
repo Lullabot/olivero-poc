@@ -90,13 +90,12 @@
 
     document.addEventListener('keyup', e => {
       if (e.keyCode === 27) {
-        hideWideNav();
-
-        // if (search is open, close it)
-
-        // else if wide nav is open, close it
-
-
+        if ('toggleSearchVisibility' in drupalSettings.olivero && 'searchIsVisible' in drupalSettings.olivero && drupalSettings.olivero.searchIsVisible()) {
+          drupalSettings.olivero.toggleSearchVisibility(false);
+        }
+        else {
+          hideWideNav();
+        }
       }
     });
   }
