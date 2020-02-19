@@ -212,7 +212,7 @@
 }
 
 /*
-  Expands second level nav at mobile
+  Button that expands second level nav at mobile
 */
 .primary-nav__button-toggle {
   -webkit-appearance: none;
@@ -226,12 +226,17 @@
   cursor: pointer;
 
   @media (--nav) {
-    width: 12px;
-    height: 12px;
-    margin-left: 0.5em;
+    align-self: stretch;
+    width: calc(12px + 0.5em);
+    height: auto;
+    padding-left: 0.5em;
+    padding-right: var(--sp2);
+    margin-right: calc(-1 * var(--sp2));
     padding: 0;
 
     &:focus {
+      outline: 0;
+
       &:after {
         border-color: var(--color--blue-50);
       }
@@ -260,12 +265,13 @@
 
     @media (--nav) {
       content: '';
-      top: 0;
+      top: calc(50% - 2px);
+      left: 0.5em; /* Matches the padding-left of the parent button. */
       height: 8px;
       width: 8px;
       border-right: solid 2px currentColor;
       border-bottom: solid 2px currentColor;
-      transform: translatex(-50%) rotate(45deg);
+      transform: translatey(-50%) rotate(45deg);
       background: transparent;
       opacity: 0.8;
     }
