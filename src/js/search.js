@@ -1,29 +1,29 @@
 (function() {
-  const searchButton = document.querySelector('.header-nav__search-button');
-  const searchWrapper = document.querySelector('.search-wrapper');
+  const searchWideButton = document.querySelector('.header-nav__search-button');
+  const searchWideWrapper = document.querySelector('.search-wide__wrapper');
   const siteHeader = document.querySelector('.site-header');
 
   function toggleSearchVisibility(visibility) {
-    searchButton.setAttribute('aria-expanded', visibility == true);
-    searchWrapper.setAttribute('aria-expanded', visibility == true);
+    searchWideButton.setAttribute('aria-expanded', visibility == true);
+    searchWideWrapper.setAttribute('aria-expanded', visibility == true);
     siteHeader.classList.toggle('js-search-active');
 
-    searchWrapper.addEventListener('transitionend', handleFocus, { once: true });
+    searchWideWrapper.addEventListener('transitionend', handleFocus, { once: true });
   }
 
   drupalSettings.olivero.toggleSearchVisibility = toggleSearchVisibility;
 
   function handleFocus() {
     if (searchIsVisible()) {
-      searchWrapper.querySelector('input[type="search"]').focus();
+      searchWideWrapper.querySelector('input[type="search"]').focus();
     }
     else {
-      searchButton.focus();
+      searchWideButton.focus();
     }
   }
 
   function searchIsVisible() {
-    return searchWrapper.getAttribute('aria-expanded') === 'true';
+    return searchWideWrapper.getAttribute('aria-expanded') === 'true';
   }
   drupalSettings.olivero.searchIsVisible = searchIsVisible;
 
@@ -31,7 +31,7 @@
     if (e.target.matches('.header-nav__search-button, .header-nav__search-button *')) {
       toggleSearchVisibility(!searchIsVisible());
     }
-    else if (searchIsVisible() && !e.target.matches('.search-wrapper, .search-wrapper *')) {
+    else if (searchIsVisible() && !e.target.matches('.search-wide__wrapper, .search-wide__wrapper *')) {
       toggleSearchVisibility(false);
     }
   });
