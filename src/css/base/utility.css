@@ -20,6 +20,7 @@
 .skip-link {
   z-index: 1; /* Appear above header */
   outline: 0;
+  text-decoration: none;
 
   @media (--nav) {
     margin-left: var(--content-left);
