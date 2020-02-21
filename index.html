@@ -49,12 +49,12 @@
                 </button>
               </div>
               <div id="header-nav" class="header-nav">
-                <div class="search-wrapper">
-                  <div class="search-container">
-                    <div class="search-grid">
+                <div class="search-narrow__wrapper">
+                  <div class="search-narrow__container">
+                    <div class="search-narrow__grid">
                       <form role="search" action="">
-                        <label class="visually-hidden" for="search-input">Search</label>
-                        <input id="search-input" type="search" placeholder="Search by keyword or phrase.">
+                        <label class="visually-hidden" for="search-narrow-input">Search</label>
+                        <input id="search-narrow-input" type="search" placeholder="Search by keyword or phrase.">
                         <input type="submit" value="Search">
                       </form>
                     </div>
@@ -84,6 +84,18 @@
                     <img src="images/search.svg" alt="Toggle Search Form">
                     <div class="header-nav__search-button__close"></div>
                   </button>
+                  <div class="search-wide__wrapper">
+                    <div class="search-wide__container">
+                      <div class="search-wide__grid">
+                        <form role="search" action="">
+                          <label class="visually-hidden" for="search-wide-input">Search</label>
+                          <input id="search-wide-input" type="search"
+                            placeholder="Search by keyword or phrase.">
+                          <input type="submit" value="Search">
+                        </form>
+                      </div>
+                    </div>
+                  </div>
                   <nav class="secondary-nav" aria-labelledby="secondary-menu-description">
                     <span id="secondary-menu-description" class="visually-hidden">Secondary Menu</span>
                     <ul>

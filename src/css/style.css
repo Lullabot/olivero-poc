@@ -18,7 +18,8 @@
 @import 'components/nav-primary.css';
 @import 'components/nav-secondary.css';
 @import 'components/header-buttons-mobile.css';
-@import 'components/header-search.css';
+@import 'components/header-search-narrow.css';
+@import 'components/header-search-wide.css';
 @import 'components/social-container.css';
 @import 'components/search-button-mobile.css';
 @import 'components/main.css';
