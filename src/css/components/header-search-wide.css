@@ -16,7 +16,7 @@
   z-index: 1; /* Ensure left border shows above social region in IE11. */
   transition: all 0.2s;
 
-  &[aria-expanded="true"] {
+  &.is-active {
     visibility: visible;
     max-height: var(--sp8);
   }

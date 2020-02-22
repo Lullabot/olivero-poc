@@ -5,9 +5,7 @@
 
   function toggleSearchVisibility(visibility) {
     searchWideButton.setAttribute('aria-expanded', visibility == true);
-    searchWideWrapper.setAttribute('aria-expanded', visibility == true);
-    siteHeader.classList.toggle('js-search-active');
-
+    searchWideWrapper.classList.toggle('is-active', visibility == true);
     searchWideWrapper.addEventListener('transitionend', handleFocus, { once: true });
   }
 
@@ -23,7 +21,7 @@
   }
 
   function searchIsVisible() {
-    return searchWideWrapper.getAttribute('aria-expanded') === 'true';
+    return searchWideWrapper.classList.contains('is-active');
   }
   drupalSettings.olivero.searchIsVisible = searchIsVisible;
 
