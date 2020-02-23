@@ -93,6 +93,8 @@
   --sp8: calc(8 * var(--sp));
   --sp9: calc(9 * var(--sp));
   --sp10: calc(10 * var(--sp));
+  --sp11: calc(11 * var(--sp));
+  --sp12: calc(12 * var(--sp));
 
   --color--gray-0: #0D1214; /* Black */
   --color--gray-10:#313637; /* Black 2 */
