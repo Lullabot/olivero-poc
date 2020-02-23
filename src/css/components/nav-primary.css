@@ -128,6 +128,7 @@
 
   @media (--nav) {
     position: absolute;
+    z-index: 5; /* Appear above search container. */
     top: calc(100% - (0.5 * var(--sp)));
     left: 50%;
     transform: translate(-50%, -20px);
