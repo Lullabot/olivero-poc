@@ -68,3 +68,12 @@
   width: var(--sp3);
   cursor: pointer;
 }
+
+.mobile-nav {
+  @media (--nav) {
+    .search-narrow__wrapper {
+      display: block;
+      width: 100%;
+    }
+  }
+}

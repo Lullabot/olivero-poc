@@ -197,6 +197,17 @@
       /* Possibly redundant */
       padding: 0 var(--sp3) var(--sp3);
       border-top-width: var(--sp7);
+
+      &[data-menu-open="true"] {
+        visibility: visible;
+        transform: translatex(0);
+      }
+
+      /* Temporary brute force */
+      .primary-nav,
+      .secondary-nav__wrapper {
+        display: none;
+      }
     }
   }
 }
