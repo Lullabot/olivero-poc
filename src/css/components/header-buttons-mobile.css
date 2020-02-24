@@ -16,3 +16,11 @@
     display: none;
   }
 }
+
+.mobile-nav {
+  @media (--nav) { /* Should this wrap the entire mobile class? */
+    .mobile-buttons {
+      display: flex;
+    }
+  }
+}

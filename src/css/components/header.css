@@ -149,3 +149,54 @@
     transform: translatex(0);
   }
 }
+
+.mobile-nav {
+  @media (--nav) { /* Should this wrap the entire mobile class? */
+    .site-header {
+      min-height: auto; /* auto? */
+
+      .nav-primary__icon {
+        display: none;
+      }
+    }
+
+    .site-branding {
+      grid-column: span 3;
+      padding: var(--sp);
+      background-image: linear-gradient(160deg, var(--color--blue-50) 0%, #0D7AB8 78.66%);
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      box-shadow: calc(-1 * var(--sp)) 0 0 var(--color--blue-50);
+      /* Possibly redundant */
+      grid-column: span 4;
+      padding-top: var(--sp4);
+      font-size: 28px;
+
+      .site-branding__inner {
+        display: block;
+        height: auto; /* auto? */
+      }
+    }
+    .header-nav {
+      visibility: hidden;
+      position: fixed;
+      right: 0;
+      top: 0;
+      z-index: 5; /* appear above overlay */
+      transform: translatex(101%);
+      width: 100%;
+      height: 100%;
+      padding: 0 var(--sp) var(--sp);
+      overflow: auto;
+      max-width: 500px;
+      background-color: white;
+      border-top: solid white var(--sp3); /* Create room for the "close" button. */
+      transition: all 0.2s;
+      box-shadow: 0px 0px 72px rgba(0, 0, 0, 0.1);
+      /* Possibly redundant */
+      padding: 0 var(--sp3) var(--sp3);
+      border-top-width: var(--sp7);
+    }
+  }
+}
