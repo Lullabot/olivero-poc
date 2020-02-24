@@ -6,6 +6,14 @@
   // Replicates Druapl's addition of adding a `js` class onto HTML element.
   document.documentElement.classList.add('js');
 
+  function isDesktopNav() {
+    const navButtons = document.querySelector('.mobile-buttons');
+    return window.getComputedStyle(navButtons).getPropertyValue('display') === 'none';
+  }
+
+  drupalSettings.olivero.isDesktopNav = isDesktopNav;
+
+
   // Only enable scroll effects if the browser supports Intersection Observer.
   // @see https://github.com/w3c/IntersectionObserver/blob/master/polyfill/intersection-observer.js#L19-L21
   if ('IntersectionObserver' in window &&
@@ -39,13 +47,6 @@
         }
       });
     }
-
-    function isDesktopNav() {
-      const navButtons = document.querySelector('.mobile-buttons');
-      return window.getComputedStyle(navButtons).getPropertyValue('display') === 'none';
-    }
-
-    drupalSettings.olivero.isDesktopNav = isDesktopNav;
 
     monitorNavPosition();
 
