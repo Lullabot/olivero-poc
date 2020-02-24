@@ -136,7 +136,9 @@
     padding: calc(3 * var(--sp)) var(--sp2);
     background: white;
     border-top: solid var(--color--blue-50) var(--sp0-5);
-    border-left: 0;
+    border-right: solid 1px transparent; /* Transparent borders useful for Windows High Contrast mode. */
+    border-bottom: solid 1px transparent;
+    border-left: solid 1px transparent;
     margin-top: 0;
     margin-left: 0;
     border-radius: 0px 0px 2px 2px;

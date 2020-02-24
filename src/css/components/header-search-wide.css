@@ -35,7 +35,7 @@
     height: var(--sp8);
     padding: 0 0 0 var(--sp12);
     -webkit-appearance: none;
-    border: 0;
+    border: solid 1px transparent;
     background-color: transparent;
     background-image: linear-gradient(var(--color--blue-50));
     background-size: 0% 10px;
@@ -61,7 +61,7 @@
   input[type="submit"] {
     width: 100px;
     background-color: transparent;
-    border: 0;
+    border-color: transparent;
     background-image: url('/images/search--white.svg'), linear-gradient(var(--color--blue-50));
     background-position: center right, bottom left 60px;
     background-repeat: no-repeat;
@@ -69,6 +69,10 @@
     transition: background-size 0.2s;
     text-indent: -999px;
     cursor: pointer;
+
+    @media screen and (-ms-high-contrast: active) {
+      text-indent: 0; /* High contrast show will not show the background image. */
+    }
 
     &:focus {
       outline: 0;
@@ -135,9 +139,8 @@
         top: 50%;
         left: 50%;
         width: var(--sp1-5);
-        height: 2px;
-        background-color: white;
-        border: 0;
+        height: 0;
+        border-top: solid 2px white;
       }
 
       &:before {
@@ -149,12 +152,18 @@
       }
     }
 
-    img {
+    svg {
       display: none;
     }
   }
 
-  img {
+  svg {
     margin: 0 auto;
+
+    @media screen and (-ms-high-contrast: active) {
+      * {
+        fill: white;
+      }
+    }
   }
 }
