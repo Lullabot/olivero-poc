@@ -16,6 +16,10 @@
     background-color: var(--color--blue-50);
     outline: 0;
 
+    &:focus {
+      border: solid 1px transparent; /* Will show in IE/Edge high contrast mode. */
+    }
+
     .js-fixed & {
       visibility: visible;
     }
@@ -25,8 +29,7 @@
 .nav-primary__icon {
   position: relative;
   width: var(--sp2);
-  height: 3px;
-  background-color: white;
+  height: 21px;
   pointer-events: none;
   transform-style: preserve-3d;
   transition: transform 1s;
@@ -38,39 +41,54 @@
   }
 
   [aria-expanded="true"] & {
-    background-color: transparent;
-
-    &:before {
-      top: 0;
+    > div:nth-child(1) {
+      top: 9px;
       transform: rotate(-45deg);
     }
 
-    &:after {
-      top: 0;
+    > div:nth-child(2) {
+      opacity: 0;
+    }
+
+    > div:nth-child(3) {
+      top: 9px;
       transform: rotate(45deg);
     }
   }
 
-  &:before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: white;
-    transition: all 0.2s;
-  }
+  > div {
+    height: 0;
+    border-top: solid 3px white;
 
-  &:after {
-    content: '';
-    position: absolute;
-    top: auto;
-    left: 0;
-    bottom: -8px;
-    height: 100%;
-    width: 100%;
-    background-color: white;
-    transition: all 0.2s;
+    &:nth-child(1)  {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 0;
+      width: 100%;
+      background-color: white;
+      transition: all 0.2s;
+    }
+
+    &:nth-child(2) {
+      position: absolute;
+      top: 9px;
+      left: 0;
+      height: 0;
+      width: 100%;
+      background-color: white;
+      transition: opacity 0.2s;
+    }
+
+    &:nth-child(3) {
+      position: absolute;
+      top: auto;
+      left: 0;
+      bottom: 0;
+      height: 0;
+      width: 100%;
+      background-color: white;
+      transition: all 0.2s;
+    }
   }
 }
