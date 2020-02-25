@@ -240,6 +240,13 @@
     &:focus {
       outline: 0;
 
+      /*
+        Add a transparent border and adjust width for Windows High Contrast mode,
+        where transparent borders become visible.
+      */
+      width: calc(10px + 0.5em);
+      border: solid 1px transparent;
+
       &:after {
         border-color: var(--color--blue-50);
       }
