@@ -55,6 +55,10 @@
     &:focus {
       outline: 0;
       background-size: 100% var(--sp0-5);
+
+      @media screen and (-ms-high-contrast: active) {
+        border-width: 4px;
+      }
     }
   }
 
@@ -71,12 +75,17 @@
     cursor: pointer;
 
     @media screen and (-ms-high-contrast: active) {
-      text-indent: 0; /* High contrast show will not show the background image. */
+      text-indent: 0; /* IE11's high contrast show will not show the background image. */
+      background-image: none;; /* Edge's high contrast does show the background image, so we hide it. */
     }
 
     &:focus {
       outline: 0;
       background-size: auto, 30px var(--sp0-5);
+
+      @media screen and (-ms-high-contrast: active) {
+        border-width: 4px;
+      }
     }
   }
 }
