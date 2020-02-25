@@ -16,7 +16,7 @@
       justify-content: space-between;
 
       @media (--nav) {
-        flex-wrap: nowrap; /* Ensure that button doesn't wrap underneath link. */
+        flex-wrap: nowrap; /* Ensure that subnav toggle button doesn't wrap underneath link. */
       }
     }
   }
@@ -230,10 +230,8 @@
 
   @media (--nav) {
     align-self: stretch;
-    width: calc(12px + 0.5em);
+    width: calc(var(--sp2) + 8px);
     height: auto;
-    padding-left: 0.5em;
-    padding-right: var(--sp2);
     margin-right: calc(-1 * var(--sp2));
     padding: 0;
 
@@ -244,11 +242,11 @@
         Add a transparent border and adjust width for Windows High Contrast mode,
         where transparent borders become visible.
       */
-      width: calc(10px + 0.5em);
       border: solid 1px transparent;
 
       &:after {
         border-color: var(--color--blue-50);
+        left: 7px; /* Account for the 1px transparent border that gets added to the button at focus. */
       }
     }
   }
@@ -276,7 +274,7 @@
     @media (--nav) {
       content: '';
       top: calc(50% - 2px);
-      left: 0.5em; /* Matches the padding-left of the parent button. */
+      left: 8px;
       height: 8px;
       width: 8px;
       border-right: solid 2px currentColor;
