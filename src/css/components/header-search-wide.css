@@ -37,7 +37,7 @@
     -webkit-appearance: none;
     border: solid 1px transparent;
     background-color: transparent;
-    background-image: linear-gradient(var(--color--blue-50));
+    background-image: linear-gradient(var(--color--blue-50), var(--color--blue-50)); /* Two values are needed for IE11 support. */
     background-size: 0% 10px;
     background-repeat: no-repeat;
     background-position: bottom left;
@@ -66,7 +66,7 @@
     width: 100px;
     background-color: transparent;
     border-color: transparent;
-    background-image: url('/images/search--white.svg'), linear-gradient(var(--color--blue-50));
+    background-image: url('/images/search--white.svg'), linear-gradient(var(--color--blue-50), var(--color--blue-50)); /* Two values are needed for IE11 support. */
     background-position: center right, bottom left 60px;
     background-repeat: no-repeat;
     background-size: auto, 0% 10px;
