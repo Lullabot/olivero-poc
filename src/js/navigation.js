@@ -14,17 +14,16 @@
 
   function init() {
     mobileNavButton.setAttribute('aria-controls', mobileNavWrapperId);
-    mobileNavWrapper.setAttribute('data-menu-open', 'false');
     mobileNavButton.setAttribute('aria-expanded', 'false');
   }
 
   function isMobileNavOpen() {
-    return mobileNavWrapper.getAttribute('data-menu-open') === 'true';
+    return mobileNavWrapper.classList.contains('is-active');
   }
 
   function toggleMobileNav(state) {
     const value = state ? 'true' : 'false';
-    mobileNavWrapper.setAttribute('data-menu-open', value);
+    mobileNavWrapper.classList.toggle('is-active', value); // @todo Will this work in IE11?
     mobileNavButton.setAttribute('aria-expanded', value);
 
     // Overlay

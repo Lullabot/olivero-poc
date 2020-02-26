@@ -70,7 +70,7 @@
     function showWideNav() {
       if (isDesktopNav()) {
         wideNavButton.setAttribute('aria-expanded', 'true');
-        siteHeaderToggleElement.setAttribute('data-menu-open', 'true');
+        siteHeaderToggleElement.classList.add('is-active');
       }
     }
 
@@ -78,7 +78,7 @@
     function hideWideNav() {
       if (isDesktopNav()) {
         wideNavButton.setAttribute('aria-expanded', 'false');
-        siteHeaderToggleElement.setAttribute('data-menu-open', 'false');
+        siteHeaderToggleElement.classList.remove('is-active');
       }
     }
 

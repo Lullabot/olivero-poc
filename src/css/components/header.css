@@ -45,7 +45,8 @@
     }
   }
 
-  .site-header__fixable.js-fixed &:not([data-menu-open="true"]) {
+  /* Hide the nav when it's fixed and not active. */
+  .site-header__fixable.js-fixed &:not(.is-active) {
     @media (--nav) {
       transform: translatex(-101%);
       opacity: 0;
@@ -145,7 +146,7 @@
     grid-column: 5 / 14;
   }
 
-  &[data-menu-open="true"] {
+  &.is-active {
     visibility: visible;
     transform: translatex(0);
   }
