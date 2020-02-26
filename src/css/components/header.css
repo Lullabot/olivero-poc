@@ -5,6 +5,7 @@
   @media (--nav) {
     /* Necessary to keep the content from jumping up when header transitions to fixed. */
     min-height: var(--sp10);
+    border-bottom: solid 1px transparent; /* Will show in Windows high contrast mode. */
   }
 }
 
