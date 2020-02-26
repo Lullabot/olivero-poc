@@ -22,7 +22,7 @@
   }
 
   function toggleMobileNav(state) {
-    const value = state ? 'true' : 'false';
+    const value = state ? true : false;
     mobileNavWrapper.classList.toggle('is-active', value); // @todo Will this work in IE11?
     mobileNavButton.setAttribute('aria-expanded', value);
 
