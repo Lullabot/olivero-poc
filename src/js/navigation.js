@@ -21,17 +21,22 @@
     return mobileNavWrapper.classList.contains('is-active');
   }
 
+  /**
+   * Opens or closes the mobile navigation.
+   * @param {boolean} state - State which to transition the mobile navigation menu into.
+   */
   function toggleMobileNav(state) {
     const value = state ? true : false;
-    mobileNavWrapper.classList.toggle('is-active', value); // @todo Will this work in IE11?
     mobileNavButton.setAttribute('aria-expanded', value);
 
     // Overlay
-    if (state) {
+    if (value) {
       body.classList.add('js-overlay-active', 'js-fixed');
+      mobileNavWrapper.classList.add('is-active');
     }
     else {
       body.classList.remove('js-overlay-active', 'js-fixed');
+      mobileNavWrapper.classList.remove('is-active');
     }
   }
 

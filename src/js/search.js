@@ -5,8 +5,14 @@
 
   function toggleSearchVisibility(visibility) {
     searchWideButton.setAttribute('aria-expanded', visibility == true);
-    searchWideWrapper.classList.toggle('is-active', visibility == true);
     searchWideWrapper.addEventListener('transitionend', handleFocus, { once: true });
+
+    if (visibility == true) {
+      searchWideWrapper.classList.add('is-active');
+    }
+    else {
+      searchWideWrapper.classList.remove('is-active');
+    }
   }
 
   drupalSettings.olivero.toggleSearchVisibility = toggleSearchVisibility;
