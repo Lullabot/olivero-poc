@@ -1,3 +1,14 @@
-<svg width="27" height="28" viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M21.8528 11.9264C21.8528 17.4086 17.4086 21.8528 11.9264 21.8528C6.44419 21.8528 2 17.4086 2 11.9264C2 6.44419 6.44419 2 11.9264 2C17.4086 2 21.8528 6.44419 21.8528 11.9264ZM18.9554 21.5623C16.9843 23.0026 14.5546 23.8528 11.9264 23.8528C5.33962 23.8528 0 18.5131 0 11.9264C0 5.33962 5.33962 0 11.9264 0C18.5131 0 23.8528 5.33962 23.8528 11.9264C23.8528 15.1634 22.5632 18.0992 20.4697 20.2481L25.7525 25.5309C26.143 25.9214 26.143 26.5546 25.7525 26.9451C25.362 27.3356 24.7288 27.3356 24.3383 26.9451L18.9554 21.5623Z" fill="white"/>
+<svg width="24px" height="25px" viewBox="0 0 24 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Search Icon</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group">
+            <!-- Opaque background added for accessibility. Firefox and MS Edge / IE11
+                 will not change the fill color of the icon when in high contrast.
+                  Therefore, the background-color cannot be transparent. -->
+            <rect id="Rectangle" fill="#000000" x="0" y="0" width="24" height="25"></rect>
+            <g id="search" transform="translate(1.000000, 1.000000)" fill="#FFFFFF">
+                <path d="M18,10 C18,14.4183 14.4183,18 10,18 C5.58172,18 2,14.4183 2,10 C2,5.58172 5.58172,2 10,2 C14.4183,2 18,5.58172 18,10 Z M15.7608,18.175 C14.1323,19.3246 12.145,20 10,20 C4.47715,20 0,15.5228 0,10 C0,4.47715 4.47715,0 10,0 C15.5228,0 20,4.47715 20,10 C20,12.6561 18.9645,15.0703 17.2752,16.8609 L21.7071,21.2929 C22.0976,21.6834 22.0976,22.3166 21.7071,22.7071 C21.3166,23.0976 20.6834,23.0976 20.2929,22.7071 L15.7608,18.175 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
 </svg>

@@ -76,7 +76,7 @@
 
     @media screen and (-ms-high-contrast: active) {
       text-indent: 0; /* IE11's high contrast show will not show the background image. */
-      background-image: none;; /* Edge's high contrast does show the background image, so we hide it. */
+      background-image: none; /* Edge's high contrast does show the background image, so we hide it. */
     }
 
     &:focus {
@@ -168,11 +168,5 @@
 
   svg {
     margin: 0 auto;
-
-    @media screen and (-ms-high-contrast: active) {
-      * {
-        fill: white;
-      }
-    }
   }
 }
