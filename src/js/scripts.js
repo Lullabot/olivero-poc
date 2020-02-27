@@ -88,16 +88,16 @@
     document.querySelector('.skip-link').addEventListener('click', function() {
       hideWideNav();
     });
-
-    document.addEventListener('keyup', e => {
-      if (e.keyCode === 27) {
-        if ('toggleSearchVisibility' in drupalSettings.olivero && 'searchIsVisible' in drupalSettings.olivero && drupalSettings.olivero.searchIsVisible()) {
-          drupalSettings.olivero.toggleSearchVisibility(false);
-        }
-        else {
-          hideWideNav();
-        }
-      }
-    });
   }
+
+  document.addEventListener('keyup', e => {
+    if (e.keyCode === 27) {
+      if ('toggleSearchVisibility' in drupalSettings.olivero && 'searchIsVisible' in drupalSettings.olivero && drupalSettings.olivero.searchIsVisible()) {
+        drupalSettings.olivero.toggleSearchVisibility(false);
+      }
+      else {
+        hideWideNav();
+      }
+    }
+  });
 })();
