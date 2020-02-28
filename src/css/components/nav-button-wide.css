@@ -4,24 +4,26 @@
   display: none;
 
   @media (--nav) {
-    visibility: hidden;
-    display: flex;
-    flex-shrink: 0;
-    align-items: center;
-    justify-content: center;
-    width: var(--content-left);
-    height: calc(6 * var(--sp));
-    border: 0;
-    cursor: pointer;
-    background-color: var(--color--blue-50);
-    outline: 0;
+    body:not(.is-always-mobile-nav) & {
+      visibility: hidden;
+      display: flex;
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: center;
+      width: var(--content-left);
+      height: calc(6 * var(--sp));
+      border: 0;
+      cursor: pointer;
+      background-color: var(--color--blue-50);
+      outline: 0;
 
-    &:focus {
-      border: solid 1px transparent; /* Will show in IE/Edge high contrast mode. */
-    }
+      &:focus {
+        border: solid 1px transparent; /* Will show in IE/Edge high contrast mode. */
+      }
 
-    .js-fixed & {
-      visibility: visible;
+      .js-fixed & {
+        visibility: visible;
+      }
     }
   }
 }

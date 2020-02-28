@@ -23,11 +23,13 @@
   text-decoration: none;
 
   @media (--nav) {
-    margin-left: var(--content-left);
-    padding: var(--sp);
-    color: white;
-    font-size: 14px;
-    font-weight: bold;
+    body:not(.is-always-mobile-nav) & {
+      margin-left: var(--content-left);
+      padding: var(--sp);
+      color: white;
+      font-size: 14px;
+      font-weight: bold;
+    }
   }
 
   &:after {

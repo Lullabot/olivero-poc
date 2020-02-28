@@ -13,6 +13,8 @@
   }
 
   @media (--nav) {
-    display: none;
+    body:not(.is-always-mobile-nav) & {
+      display: none;
+    }
   }
 }
