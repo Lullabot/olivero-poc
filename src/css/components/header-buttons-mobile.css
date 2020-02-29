@@ -18,3 +18,14 @@
     }
   }
 }
+
+.is-always-mobile-nav {
+  .mobile-nav-button[aria-expanded="true"] {
+    @media (--grid-max) {
+      position: fixed;
+      top: var(--sp4);
+      right: var(--sp);
+      z-index: 10;
+    }
+  }
+}
