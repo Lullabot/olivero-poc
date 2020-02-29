@@ -34,12 +34,13 @@
   /*
     Grid helpers.
 
-    These variables help authors apply negative margins to break items out of the grid,
-    while still conforming to the larger grid system.
+    These variables help authors apply widths and negative margins to break items out of
+    the grid, while still conforming to the larger grid system.
 
     Note we cannot change the values of these custom properties within media queries,
-    as they are processed by postcss/postcss-custom-properties, which does not support
-    that functionality. Therefore, we need a separate custom property for each breakpoint.
+    as they are processed by postcss/postcss-custom-properties (for IE11 compatibility),
+    which does not support that functionality. Therefore, we need a separate custom
+    property for each breakpoint. 😭
   */
 
   --scrollbar-width: 15px; /* Approximate width of a scrollbar. Doesn't have to be perfect. */
