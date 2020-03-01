@@ -90,7 +90,6 @@
       background-position: center;
       background-repeat: no-repeat;
       background-size: auto;
-      text-indent: -999px;
       pointer-events: none;
 
       &:after {

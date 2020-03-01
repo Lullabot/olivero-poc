@@ -215,7 +215,7 @@
 }
 
 /*
-  Button that expands second level nav at mobile
+  Button that expands second level nav when clicked.
 */
 .primary-nav__button-toggle {
   -webkit-appearance: none;
