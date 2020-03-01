@@ -5,8 +5,10 @@
   max-width: var(--max-width);
 
   @media (--nav) {
-    padding-left: var(--sp2);
-    padding-right: var(--sp2);
+    body:not(.is-always-mobile-nav) & {
+      padding-left: var(--sp2);
+      padding-right: var(--sp2);
+    }
   }
 }
 
@@ -29,13 +31,17 @@
 
 .content {
   @media (--nav) {
-    display: flex;
-    flex-direction: row-reverse;
+    body:not(.is-always-mobile-nav) & {
+      display: flex;
+      flex-direction: row-reverse;
+    }
   }
 }
 
 main {
   @media (--nav) {
-    margin-right: auto;
+    body:not(.is-always-mobile-nav) & {
+      margin-right: auto;
+    }
   }
 }

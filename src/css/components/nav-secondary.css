@@ -3,8 +3,10 @@
   margin: var(--sp2) 0;
 
   @media (--nav) {
-    justify-content: flex-end;
-    margin: 0;
+    body:not(.is-always-mobile-nav) & {
+      justify-content: flex-end;
+      margin: 0;
+    }
   }
 }
 
@@ -14,20 +16,22 @@
   font-size: 14px;
 
   @media (--nav) {
-    position: relative;
-    display: flex;
-    margin-left: var(--sp0-5);
-    padding-left: var(--sp2);
+    body:not(.is-always-mobile-nav) & {
+      position: relative;
+      display: flex;
+      margin-left: var(--sp0-5);
+      padding-left: var(--sp2);
 
-    &:before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translatey(-50%);
-      height: var(--sp2);
-      width: 2px;
-      background-color: var(--color--gray-70);
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translatey(-50%);
+        height: var(--sp2);
+        width: 2px;
+        background-color: var(--color--gray-70);
+      }
     }
   }
 
@@ -43,7 +47,9 @@
     margin-right: var(--sp1-5);
 
     @media (--nav) {
-      margin-right: var(--sp2);
+      body:not(.is-always-mobile-nav) & {
+        margin-right: var(--sp2);
+      }
     }
   }
 

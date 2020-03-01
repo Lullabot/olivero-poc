@@ -16,7 +16,9 @@
       justify-content: space-between;
 
       @media (--nav) {
-        flex-wrap: nowrap; /* Ensure that subnav toggle button doesn't wrap underneath link. */
+        body:not(.is-always-mobile-nav) & {
+          flex-wrap: nowrap; /* Ensure that subnav toggle button doesn't wrap underneath link. */
+        }
       }
     }
   }
@@ -30,8 +32,10 @@
     text-decoration: none;
 
     @media (--nav) {
-      font-size: 16px;
-      letter-spacing: 0.02em;
+      body:not(.is-always-mobile-nav) & {
+        font-size: 16px;
+        letter-spacing: 0.02em;
+      }
     }
   }
 }
@@ -41,69 +45,71 @@
   padding: 0;
 
   @media (--nav) {
-    display: flex;
-    align-items: center;
-
-    > li {
-      position: relative; /* Anchor secondary menu */
+    body:not(.is-always-mobile-nav) & {
       display: flex;
       align-items: center;
-      margin: 0;
 
-      &:not(:last-child) {
-        margin-right: var(--sp2);
-      }
-
-      html:not(.js) &:hover {
-        .primary-nav--level-2 {
-          visibility: visible;
-          opacity: 1;
-          transform: translate(-50%, 0);
-        }
-      }
-
-      /*
-        Cannot combine the focus-within pseudoselector with other selectors,
-        because it will break IE11 and MS Edge.
-      */
-       html:not(.js) &:focus-within {
-        .primary-nav--level-2 {
-          visibility: visible;
-          opacity: 1;
-          transform: translate(-50%, 0);
-        }
-      }
-    }
-
-    a {
-      position: relative;
-      display: flex;
-
-      &:hover,
-      &:focus {
-        outline: 0;
-
-        span:after {
-          transform: scalex(1);
-        }
-      }
-
-      span {
-        position: relative;
-        display: inline-flex;
+      > li {
+        position: relative; /* Anchor secondary menu */
+        display: flex;
         align-items: center;
-        padding: var(--sp2) 0;
+        margin: 0;
 
-        &:after {
-          content: '';
-          position: absolute;
-          left: 0;
-          bottom: 0;
-          width: 100%;
-          height: 0;
-          transform: scalex(0);
-          border-top: solid var(--sp0-5) var(--color--blue-50);
-          transition: transform 0.2s;
+        &:not(:last-child) {
+          margin-right: var(--sp2);
+        }
+
+        html:not(.js) &:hover {
+          .primary-nav--level-2 {
+            visibility: visible;
+            opacity: 1;
+            transform: translate(-50%, 0);
+          }
+        }
+
+        /*
+          Cannot combine the focus-within pseudoselector with other selectors,
+          because it will break IE11 and MS Edge.
+        */
+        html:not(.js) &:focus-within {
+          .primary-nav--level-2 {
+            visibility: visible;
+            opacity: 1;
+            transform: translate(-50%, 0);
+          }
+        }
+      }
+
+      a {
+        position: relative;
+        display: flex;
+
+        &:hover,
+        &:focus {
+          outline: 0;
+
+          span:after {
+            transform: scalex(1);
+          }
+        }
+
+        span {
+          position: relative;
+          display: inline-flex;
+          align-items: center;
+          padding: var(--sp2) 0;
+
+          &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 0;
+            transform: scalex(0);
+            border-top: solid var(--sp0-5) var(--color--blue-50);
+            transition: transform 0.2s;
+          }
         }
       }
     }
@@ -127,46 +133,48 @@
   }
 
   @media (--nav) {
-    position: absolute;
-    z-index: 5; /* Appear above search container. */
-    top: calc(100% - (0.5 * var(--sp)));
-    left: 50%;
-    transform: translate(-50%, -20px);
-    visibility: hidden;
-    padding: calc(3 * var(--sp)) var(--sp2);
-    background: white;
-    border-top: solid var(--color--blue-50) var(--sp0-5);
-    border-right: solid 1px transparent; /* Transparent borders useful for Windows High Contrast mode. */
-    border-bottom: solid 1px transparent;
-    border-left: solid 1px transparent;
-    margin-top: 0;
-    margin-left: 0;
-    border-radius: 0px 0px 2px 2px;
-    width: 250px;
-    box-shadow: 0 1px 36px rgba(0, 0, 0, 0.08);
-    opacity: 0;
-    transition: all 0.2s;
-    max-height: none;
-    overflow: visible;
-
-    /* Arrow */
-    &:after {
-      content: '';
+    body:not(.is-always-mobile-nav) & {
       position: absolute;
-      bottom: calc(100% + (0.5 * var(--sp)));
+      z-index: 5; /* Appear above search container. */
+      top: calc(100% - (0.5 * var(--sp)));
       left: 50%;
-      transform: translatex(-50%);
-      height: 0;
-      width: 0;
-      border-left: solid 10px transparent;
-      border-right: solid 10px transparent;
-      border-bottom: solid 10px var(--color--blue-50);
-    }
+      transform: translate(-50%, -20px);
+      visibility: hidden;
+      padding: calc(3 * var(--sp)) var(--sp2);
+      background: white;
+      border-top: solid var(--color--blue-50) var(--sp0-5);
+      border-right: solid 1px transparent; /* Transparent borders useful for Windows High Contrast mode. */
+      border-bottom: solid 1px transparent;
+      border-left: solid 1px transparent;
+      margin-top: 0;
+      margin-left: 0;
+      border-radius: 0px 0px 2px 2px;
+      width: 250px;
+      box-shadow: 0 1px 36px rgba(0, 0, 0, 0.08);
+      opacity: 0;
+      transition: all 0.2s;
+      max-height: none;
+      overflow: visible;
 
-    &.is-active {
-      visibility: visible;
-      opacity: 1;
-      transform: translate(-50%, 0);
+      /* Arrow */
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: calc(100% + (0.5 * var(--sp)));
+        left: 50%;
+        transform: translatex(-50%);
+        height: 0;
+        width: 0;
+        border-left: solid 10px transparent;
+        border-right: solid 10px transparent;
+        border-bottom: solid 10px var(--color--blue-50);
+      }
+
+      &.is-active {
+        visibility: visible;
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
     }
   }
 
@@ -180,7 +188,9 @@
     opacity: 1;
 
     @media (--nav) {
-      margin-top: 0;
+      body:not(.is-always-mobile-nav) & {
+        margin-top: 0;
+      }
     }
   }
 
@@ -190,7 +200,9 @@
     opacity: 1;
 
     @media (--nav) {
-      margin-top: 0;
+      body:not(.is-always-mobile-nav) & {
+        margin-top: 0;
+      }
     }
   }
 
@@ -200,14 +212,16 @@
     font-weight: normal;
 
     @media (--nav) {
-      display: block;
+      body:not(.is-always-mobile-nav) & {
+        display: block;
 
-      span {
-        padding: var(--sp0-5) 0;
+        span {
+          padding: var(--sp0-5) 0;
 
-        &:after {
-          border-top-width: 3px;
-          transform-origin: left;
+          &:after {
+            border-top-width: 3px;
+            transform-origin: left;
+          }
         }
       }
     }
@@ -229,24 +243,26 @@
   cursor: pointer;
 
   @media (--nav) {
-    align-self: stretch;
-    width: calc(var(--sp2) + 8px);
-    height: auto;
-    margin-right: calc(-1 * var(--sp2));
-    padding: 0;
+    body:not(.is-always-mobile-nav) & {
+      align-self: stretch;
+      width: calc(var(--sp2) + 8px);
+      height: auto;
+      margin-right: calc(-1 * var(--sp2));
+      padding: 0;
 
-    &:focus {
-      outline: 0;
+      &:focus {
+        outline: 0;
 
-      /*
-        Add a transparent border and adjust width for Windows High Contrast mode,
-        where transparent borders become visible.
-      */
-      border: solid 1px transparent;
+        /*
+          Add a transparent border and adjust width for Windows High Contrast mode,
+          where transparent borders become visible.
+        */
+        border: solid 1px transparent;
 
-      &:after {
-        border-color: var(--color--blue-50);
-        left: 7px; /* Account for the 1px transparent border that gets added to the button at focus. */
+        &:after {
+          border-color: var(--color--blue-50);
+          left: 7px; /* Account for the 1px transparent border that gets added to the button at focus. */
+        }
       }
     }
   }
@@ -263,7 +279,9 @@
     background: var(--color--blue-50);
 
     @media (--nav) {
-      content: none;
+      body:not(.is-always-mobile-nav) & {
+        content: none;
+      }
     }
   }
 
@@ -272,16 +290,18 @@
     transition: opacity 0.2s;
 
     @media (--nav) {
-      content: '';
-      top: calc(50% - 2px);
-      left: 8px;
-      height: 8px;
-      width: 8px;
-      border-right: solid 2px currentColor;
-      border-bottom: solid 2px currentColor;
-      transform: translatey(-50%) rotate(45deg);
-      background: transparent;
-      opacity: 0.8;
+      body:not(.is-always-mobile-nav) & {
+        content: '';
+        top: calc(50% - 2px);
+        left: 8px;
+        height: 8px;
+        width: 8px;
+        border-right: solid 2px currentColor;
+        border-bottom: solid 2px currentColor;
+        transform: translatey(-50%) rotate(45deg);
+        background: transparent;
+        opacity: 0.8;
+      }
     }
   }
 
@@ -290,7 +310,9 @@
       opacity: 0;
 
       @media (--nav) {
-        opacity: 0.8;
+        body:not(.is-always-mobile-nav) & {
+          opacity: 0.8;
+        }
       }
     }
   }

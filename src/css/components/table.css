@@ -75,7 +75,9 @@ table {
   }
 
   @media (--nav) {
-    width: calc(10 * var(--grid-col-width--nav) + 9 * var(--grid-gap--nav));
+    body:not(.is-always-mobile-nav) & {
+      width: calc(10 * var(--grid-col-width--nav) + 9 * var(--grid-gap--nav));
+    }
   }
 
   @media (--grid-max) {
