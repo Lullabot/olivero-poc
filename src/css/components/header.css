@@ -3,11 +3,11 @@
   position: relative;
 
   @media (--nav) {
-    body:not(.is-always-mobile-nav) & {
+    /* body:not(.is-always-mobile-nav) & { */
       /* Necessary to keep the content from jumping up when header transitions to fixed. */
       min-height: var(--sp10);
       border-bottom: solid 1px transparent; /* Will show in Windows high contrast mode. */
-    }
+    /* } */
   }
 }
 
@@ -44,14 +44,14 @@
 
   .site-header__fixable.js-fixed & {
     @media (--nav) {
-      body:not(.is-always-mobile-nav) & {
+      /* body:not(.is-always-mobile-nav) & { */
         background: white;
         box-shadow: -36px 1px 36px rgba(0, 0, 0, 0.08);
-      }
+      /* } */
     }
   }
 
-  /* Hide the nav when it's fixed and not active. */
+  /* Hide the desktop nav when it's fixed and not active. */
   .site-header__fixable.js-fixed &:not(.is-active) {
     @media (--nav) {
       body:not(.is-always-mobile-nav) & {
@@ -82,7 +82,7 @@
   }
 
   @media (--nav) {
-    body:not(.is-always-mobile-nav) & {
+    /* body:not(.is-always-mobile-nav) & { */
       grid-column: span 2;
       width: calc(100% + 2 * var(--grid-gap--md));
       margin-left: calc(-1 * var(--grid-gap--md));
@@ -100,7 +100,7 @@
         align-items: center;
         height: var(--header-height-wide-when-fixed);
       }
-    }
+    /* } */
   }
 
   a {
@@ -151,6 +151,10 @@
       border-top: 0;
       transition: transform 0.2s;
       box-shadow: none;
+    }
+
+    body.is-always-mobile-nav & {
+      border-top-width: var(--sp11);
     }
   }
 
