@@ -3,7 +3,9 @@
   background: black;
 
   @media (--nav) {
-    padding-left: var(--content-left);
+    body:not(.is-always-mobile-nav) & {
+      padding-left: var(--content-left);
+    }
   }
 }
 
@@ -12,8 +14,10 @@
   background: linear-gradient(180deg, #0C0D0E 0%, #171E23 100%);
 
   @media (--nav) {
-    padding-top: var(--sp4);
-    padding-bottom: calc(13 * var(--sp));
+    body:not(.is-always-mobile-nav) & {
+      padding-top: var(--sp4);
+      padding-bottom: calc(13 * var(--sp));
+    }
   }
 }
 
@@ -25,7 +29,9 @@
   font-size: 14px;
 
   @media(--nav) {
-    grid-column-start: 3;
+    body:not(.is-always-mobile-nav) & {
+      grid-column-start: 3;
+    }
   }
 
   a {

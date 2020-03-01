@@ -22,7 +22,9 @@
   }
 
   @media (--nav) {
-    display: block;
+    body:not(.is-always-mobile-nav) & {
+      display: block;
+    }
   }
 
   form {
@@ -165,7 +167,9 @@
   cursor: pointer;
 
   @media (--nav) {
-    display: block;
+    body:not(.is-always-mobile-nav) & {
+      display: block;
+    }
   }
 
   &:focus {
