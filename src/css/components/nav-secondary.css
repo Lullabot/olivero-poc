@@ -43,7 +43,7 @@
     align-items: center;
   }
 
-  li:first-child {
+  li:not(:last-child) {
     margin-right: var(--sp1-5);
 
     @media (--nav) {

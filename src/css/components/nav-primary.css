@@ -229,7 +229,7 @@
 }
 
 /*
-  Button that expands second level nav at mobile
+  Button that expands second level nav when clicked.
 */
 .primary-nav__button-toggle {
   -webkit-appearance: none;
@@ -238,6 +238,7 @@
   position: relative;
   width: var(--sp2);
   height: var(--sp2);
+  padding: 0;
   text-indent: -999px;
   overflow: hidden;
   cursor: pointer;
@@ -248,65 +249,83 @@
       width: calc(var(--sp2) + 8px);
       height: auto;
       margin-right: calc(-1 * var(--sp2));
-      padding: 0;
 
       &:focus {
         outline: 0;
+        border: 0;
 
-        /*
-          Add a transparent border and adjust width for Windows High Contrast mode,
-          where transparent borders become visible.
-        */
-        border: solid 1px transparent;
+        .icon--menu-toggle {
+          border: solid 1px transparent;
+          background-color: var(--color--gray-50);
 
-        &:after {
-          border-color: var(--color--blue-50);
-          left: 7px; /* Account for the 1px transparent border that gets added to the button at focus. */
+          &:after {
+            border-color: white;
+          }
         }
       }
     }
   }
 
-  &:before,
-  &:after {
-    content: '';
+  .icon--menu-toggle {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: var(--sp);
-    height: 3px;
-    background: var(--color--blue-50);
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    transition: background-color 0.2s;
 
     @media (--nav) {
       body:not(.is-always-mobile-nav) & {
-        content: none;
+        left: 3px;
+        transform: translatey(-50%);
+      }
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: var(--sp);
+      height: 0;
+      border-top: solid 3px var(--color--blue-50);
+
+      @media (--nav) {
+        body:not(.is-always-mobile-nav) & {
+          content: none;
+        }
+      }
+    }
+
+    &:after {
+      transform: translate(-50%, -50%) rotate(90deg);
+      transition: opacity 0.2s;
+
+      @media (--nav) {
+        body:not(.is-always-mobile-nav) & {
+          content: '';
+          top: calc(50% - 2px);
+          left: 3px;
+          height: 8px;
+          width: 8px;
+          border-right: solid 2px currentColor;
+          border-bottom: solid 2px currentColor;
+          border-top: none;
+          transform: translatey(-50%) rotate(45deg);
+          background: transparent;
+          opacity: 0.8;
+        }
       }
     }
   }
 
-  &:after {
-    transform: translate(-50%, -50%) rotate(90deg);
-    transition: opacity 0.2s;
-
-    @media (--nav) {
-      body:not(.is-always-mobile-nav) & {
-        content: '';
-        top: calc(50% - 2px);
-        left: 8px;
-        height: 8px;
-        width: 8px;
-        border-right: solid 2px currentColor;
-        border-bottom: solid 2px currentColor;
-        transform: translatey(-50%) rotate(45deg);
-        background: transparent;
-        opacity: 0.8;
-      }
-    }
-  }
 
   &[aria-expanded="true"] {
-    &:after {
+    .icon--menu-toggle:after {
       opacity: 0;
 
       @media (--nav) {
