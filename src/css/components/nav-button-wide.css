@@ -8,7 +8,7 @@
       visibility: visible;
     }
 
-    body:not(.is-always-mobile-nav) & { /*body:not(.is-always-mobile-nav) .nav-primary__button */
+    body:not(.is-always-mobile-nav) & {
       visibility: hidden;
       display: flex;
       flex-shrink: 0;
