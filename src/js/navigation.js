@@ -79,6 +79,28 @@
     }
   });
 
+  // If site branding and primary nav collide, force mobile nav
+  if ("IntersectionObserver" in window) {
+    const observerConfig = {
+      root: document.querySelector('.site-header'),
+      rootMargin: '0px -75% 0px 0px'
+    };
+
+    const siteBrandingObserver = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.intersectionRatio !== 0) {
+            body.classList.add('is-always-mobile-nav');
+          }
+        });
+      },
+      observerConfig
+    );
+
+    const primaryNav = document.querySelector('.primary-nav');
+    siteBrandingObserver.observe(primaryNav);
+  }
+
   // Remove overlays when browser is resized and desktop nav appears.
   // @todo Use core/drupal.debounce library to throttle when we move into theming.
   window.addEventListener('resize', () => {
