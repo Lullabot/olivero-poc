@@ -4,7 +4,11 @@
   display: none;
 
   @media (--nav) {
-    body:not(.is-always-mobile-nav) & {
+    body:not(.is-always-mobile-nav) .js-fixed &  {
+      visibility: visible;
+    }
+
+    body:not(.is-always-mobile-nav) & { /*body:not(.is-always-mobile-nav) .nav-primary__button */
       visibility: hidden;
       display: flex;
       flex-shrink: 0;
@@ -19,10 +23,6 @@
 
       &:focus {
         border: solid 1px transparent; /* Will show in IE/Edge high contrast mode. */
-      }
-
-      .js-fixed & {
-        visibility: visible;
       }
     }
   }
