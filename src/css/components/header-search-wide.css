@@ -58,35 +58,86 @@
       outline: 0;
       background-size: 100% var(--sp0-5);
 
+      /*
+        We normally indicate focus by animating background-image width. This isn't
+        available in IE11 when in Windows high contrast mode.
+      */
       @media screen and (-ms-high-contrast: active) {
-        border-width: 4px;
+        border-bottom-width: var(--sp0-5);
       }
     }
   }
 
-  input[type="submit"] {
+  button {
+    position: relative;
     width: 100px;
+    overflow: hidden;
+    padding: 0;
     background-color: transparent;
     border-color: transparent;
-    background-image: url('/images/search--white.svg'), linear-gradient(var(--color--blue-50), var(--color--blue-50)); /* Two values are needed for IE11 support. */
-    background-position: center right, bottom left 60px;
-    background-repeat: no-repeat;
-    background-size: auto, 0% 10px;
-    transition: background-size 0.2s;
-    text-indent: -999px;
     cursor: pointer;
 
+    /*
+      When in Windows high contrast mode, FF will will not output either background
+      images or SVGs that are nested directly within a <button> element, so we add a <span>.
+    */
+    .icon--search {
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: block;
+      height: 100%;
+      width: 24px; /* Width of the SVG background image. */
+      background-image: url('/images/search--white.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: auto;
+      pointer-events: none;
+
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 0;
+        transform: scalex(0);
+        border-top: solid var(--sp0-5) var(--color--blue-50);
+        transition: transform 0.2s;
+      }
+    }
+
+
     @media screen and (-ms-high-contrast: active) {
-      text-indent: 0; /* IE11's high contrast show will not show the background image. */
-      background-image: none; /* Edge's high contrast does show the background image, so we hide it. */
+      /* IE11's high contrast show will not show the background image, so we show the text. */
+      .visually-hidden {
+        position: static;
+        clip: auto;
+        overflow: visible;
+        height: auto;
+        width: auto;
+        text-align: center;
+      }
+
+      /* Edge's high contrast does show the background image, so we hide it. */
+      .icon--search {
+        display: none;
+      }
     }
 
     &:focus {
       outline: 0;
-      background-size: auto, 30px var(--sp0-5);
 
       @media screen and (-ms-high-contrast: active) {
-        border-width: 4px;
+        border-bottom-width: var(--sp0-5);
+
+        span:after {
+          content: none;
+        }
+      }
+
+      span:after {
+        transform: scalex(1);
       }
     }
   }
