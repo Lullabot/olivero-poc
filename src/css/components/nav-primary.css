@@ -256,7 +256,7 @@
 
         .icon--menu-toggle {
           border: solid 1px transparent;
-          background-color: var(--color--gray-50);
+          background-color: var(--color--blue-50);
 
           &:after {
             border-color: white;
