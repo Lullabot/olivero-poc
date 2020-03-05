@@ -4,7 +4,11 @@
   display: none;
 
   @media (--nav) {
-    /* body:not(.is-always-mobile-nav) & { */
+    body:not(.is-always-mobile-nav) .js-fixed &  {
+      visibility: visible;
+    }
+
+    body:not(.is-always-mobile-nav) & {
       visibility: hidden;
       display: flex;
       flex-shrink: 0;
@@ -28,7 +32,7 @@
       body.is-always-mobile-nav & {
         visibility: hidden;
       }
-    /* } */
+    }
   }
 }
 
