@@ -151,15 +151,24 @@
       border-top-width: var(--sp11);
       left: 100vw;
       right: auto;
-      overflow: visible;
+      overflow: auto;
       transition: transform 0.2s, visibility 0.2s;
       padding-right: var(--sp);
 
       &.is-active {
-        transform: translatex(-100%);
-        width: calc(100vw - (var(--max-width) + var(--content-left)) + var(--mobile-nav-width));
+        width: var(--mobile-nav-width);
         max-width: none;
-        padding-right: calc(100vw - (var(--max-width) + var(--content-left) - var(--sp)));
+        transform: translatex(-100%);
+        padding-right: var(--sp);
+      }
+    }
+  }
+
+  @media (--grid-max) {
+    body.is-always-mobile-nav & {
+      &.is-active {
+        width: calc(100vw - var(--max-width) + var(--content-left) + var(--mobile-nav-width));
+        padding-right: calc(100vw - var(--max-width) + var(--content-left) - var(--sp));
       }
     }
   }
