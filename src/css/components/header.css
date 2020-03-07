@@ -119,7 +119,7 @@
   height: 100%;
   padding: 0 var(--sp) var(--sp);
   overflow: auto;
-  max-width: 500px;
+  max-width: var(--mobile-nav-width);
   background-color: white;
   border-top: solid white var(--sp3); /* Create room for the "close" button. */
   transition: all 0.2s;
@@ -155,6 +155,18 @@
 
     body.is-always-mobile-nav & {
       border-top-width: var(--sp11);
+      left: 100vw;
+      right: auto;
+      overflow: visible;
+      transition: transform 0.2s, visibility 0.2s;
+      padding-right: var(--sp);
+
+      &.is-active {
+        transform: translatex(-100%);
+        width: calc(100vw - (var(--max-width) + var(--content-left)) + var(--mobile-nav-width));
+        max-width: none;
+        padding-right: calc(100vw - (var(--max-width) + var(--content-left) - var(--sp)));
+      }
     }
   }
 

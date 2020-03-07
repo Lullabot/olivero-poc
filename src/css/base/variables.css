@@ -119,4 +119,7 @@
 
   /* Header */
   --header-height-wide-when-fixed: calc(6 * var(--sp));
+
+  /* Width of slide out navigation */
+  --mobile-nav-width: 500px;
 }
