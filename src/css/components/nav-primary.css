@@ -130,16 +130,17 @@
   }
 }
 
-/* Dropdown nav */
+/* Dropdown nav <ul> */
 .primary-nav--level-2 {
   flex-basis: 100%;
+  visibility: hidden;
+  max-height: 0;
+  margin-left: calc(-1 * var(--sp));
   padding-left: var(--sp2-5);
   border-left: solid var(--sp) var(--color--blue-50);
-  margin-left: calc(-1 * var(--sp));
-  max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: opacity 0.2s;
+  transition: opacity 0.2s, visibility 0.2s, max-height 0.2s;
 
   @media (--md) {
     margin-left: calc(-1 * var(--sp3));
@@ -192,26 +193,17 @@
     }
   }
 
-  /*
-    Cannot combine the focus-within pseudoselector with other selectors,
-    because it will break IE11 and MS Edge.
-  */
-  &:focus-within {
-    margin-top: var(--sp1-5);
-    max-height: none;
+  html:not(.js) & {
+    visibility: visible;
     opacity: 1;
-
-    @media (--nav) {
-      body:not(.is-always-mobile-nav) & {
-        margin-top: 0;
-      }
-    }
+    max-height: none;
   }
 
   &.is-active {
     margin-top: var(--sp1-5);
     max-height: none;
     opacity: 1;
+    visibility: visible;
 
     @media (--nav) {
       body:not(.is-always-mobile-nav) & {
