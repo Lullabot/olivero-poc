@@ -31,11 +31,13 @@
 
     // Overlay
     if (value) {
-      body.classList.add('js-overlay-active', 'js-fixed');
+      body.classList.add('js-overlay-active');
+      body.classList.add('js-fixed');
       mobileNavWrapper.classList.add('is-active');
     }
     else {
-      body.classList.remove('js-overlay-active', 'js-fixed');
+      body.classList.remove('js-overlay-active');
+      body.classList.remove('js-fixed');
       mobileNavWrapper.classList.remove('is-active');
     }
   }
