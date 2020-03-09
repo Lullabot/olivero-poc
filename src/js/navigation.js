@@ -52,6 +52,7 @@
 
   document.addEventListener('keyup', e => {
     if (e.keyCode === 27) {
+      // @todo check if submenu is open, and toggle that closed first.
       toggleMobileNav(false);
     }
   });
