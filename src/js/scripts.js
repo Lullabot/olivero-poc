@@ -3,15 +3,38 @@
   window.drupalSettings = {};
   window.drupalSettings.olivero = {};
 
-  // Replicates Druapl's addition of adding a `js` class onto HTML element.
+  // Replicates Drupal's addition of adding a `js` class onto HTML element.
   document.documentElement.classList.add('js');
 
   function isDesktopNav() {
+    // @todo, I'm not sure we even need the .mobile-buttons container anymore.
     const navButtons = document.querySelector('.mobile-buttons');
     return window.getComputedStyle(navButtons).getPropertyValue('display') === 'none';
   }
 
   drupalSettings.olivero.isDesktopNav = isDesktopNav;
+
+  const wideNavButton = document.querySelector('.nav-primary__button');
+  const siteHeaderToggleElement = document.querySelector('.site-header__inner');
+
+  function wideNavIsOpen() {
+    return wideNavButton.getAttribute('aria-expanded') === 'true';
+  }
+
+  function showWideNav() {
+    if (isDesktopNav()) {
+      wideNavButton.setAttribute('aria-expanded', 'true');
+      siteHeaderToggleElement.classList.add('is-active');
+    }
+  }
+
+  // Resets the wide nav button to be closed (it's default state).
+  function hideWideNav() {
+    if (isDesktopNav()) {
+      wideNavButton.setAttribute('aria-expanded', 'false');
+      siteHeaderToggleElement.classList.remove('is-active');
+    }
+  }
 
 
   // Only enable scroll effects if the browser supports Intersection Observer.
@@ -48,16 +71,6 @@
       });
     }
 
-    monitorNavPosition();
-
-    // Toggle desktop nav visibility when scrolled down.
-    const wideNavButton = document.querySelector('.nav-primary__button');
-    const siteHeaderToggleElement = document.querySelector('.site-header__inner');
-
-    function wideNavIsOpen() {
-      return wideNavButton.getAttribute('aria-expanded') === 'true';
-    }
-
     wideNavButton.addEventListener('click', () => {
       if (!wideNavIsOpen()) {
         showWideNav();
@@ -67,34 +80,23 @@
       }
     });
 
-    function showWideNav() {
-      if (isDesktopNav()) {
-        wideNavButton.setAttribute('aria-expanded', 'true');
-        siteHeaderToggleElement.classList.add('is-active');
-      }
-    }
-
-    // Resets the wide nav button to be closed (it's default state).
-    function hideWideNav() {
-      if (isDesktopNav()) {
-        wideNavButton.setAttribute('aria-expanded', 'false');
-        siteHeaderToggleElement.classList.remove('is-active');
-      }
-    }
-
     siteHeaderToggleElement.addEventListener('focusin', showWideNav);
 
     // If skip link is clicked, ensure that the wide navigation closes so the header will not be covered up.
-    document.querySelector('.skip-link').addEventListener('click', function() {
+    document.querySelector('.skip-link').addEventListener('click', function () {
       hideWideNav();
     });
+
+    monitorNavPosition();
   }
 
   document.addEventListener('keyup', e => {
     if (e.keyCode === 27) {
+      // Close the search form.
       if ('toggleSearchVisibility' in drupalSettings.olivero && 'searchIsVisible' in drupalSettings.olivero && drupalSettings.olivero.searchIsVisible()) {
         drupalSettings.olivero.toggleSearchVisibility(false);
       }
+      // Close the wide nav.
       else {
         hideWideNav();
       }

@@ -165,6 +165,17 @@
         transform: translatex(-100%);
       }
     }
+
+    /* html:not(.js) & {
+      visibility: visible;
+      position: static;
+      padding: 0;
+      grid-column: 1 / -1;
+      transform: none;
+      border: 0;
+      max-width: none;
+      padding: var(--sp);
+    } */
   }
 
   @media (--grid-max) {

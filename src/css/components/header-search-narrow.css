@@ -22,15 +22,20 @@
 
   input[type="search"] {
     flex-grow: 1;
-    -webkit-appearance: none;
-    border: 0;
-    background-color: transparent;
-    width: calc(100% + 2 * var(--sp));
     height: calc(3 * var(--sp));
+    -webkit-appearance: none;
     padding: 0 var(--sp);
+    border: solid 1px transparent;
+    background-color: transparent;
+    background-image: linear-gradient(var(--color--blue-50), var(--color--blue-50)); /* Two values are needed for IE11 support. */
+    background-size: 0% 5px;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    transition: background-size 0.4s;
+    width: calc(100% + var(--sp2));
     font-family: serif;
-    font-size: 16px;
     color: white;
+    font-size: 16px;
 
     @media (--md) {
       padding: var(--sp2);
@@ -40,33 +45,97 @@
       width: 40px;
       opacity: 0.5;
     }
+
+    &:focus {
+      outline: 0;
+      background-size: 100% 5px;
+
+      /*
+        We normally indicate focus by animating background-image width. This isn't
+        available in IE11 when in Windows high contrast mode.
+      */
+      @media screen and (-ms-high-contrast: active) {
+        border-bottom-width: 5px;
+      }
+    }
   }
 
-  input[type="submit"] {
+  button {
+    position: relative;
     width: var(--sp3);
+    overflow: hidden;
+    padding: 0;
     background-color: transparent;
-    border: 0;
-    background-image: url('/images/search--white.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 20px;
-    text-indent: -999px;
+    border-color: transparent;
     cursor: pointer;
 
     @media (--md) {
-      width: 100px;
+      width: 80px;
+    }
+
+    /*
+      When in Windows high contrast mode, FF will will not output either background
+      images or SVGs that are nested directly within a <button> element, so we add a <span>.
+    */
+    .icon--search {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: block;
+      height: 100%;
+      width: 100%; /* Width of the SVG background image. */
+      background-image: url('/images/search--white.svg');
+      background-position: center;
+      background-repeat: no-repeat;
       background-size: auto;
+      pointer-events: none;
+
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 0;
+        transform: scalex(0);
+        transform-origin: left;
+        border-top: solid 5px var(--color--blue-50);
+        transition: transform 0.2s;
+      }
+    }
+
+
+    @media screen and (-ms-high-contrast: active) {
+      /* IE11's high contrast show will not show the background image, so we show the text. */
+      .visually-hidden {
+        position: static;
+        clip: auto;
+        overflow: visible;
+        height: auto;
+        width: auto;
+        text-align: center;
+      }
+
+      /* Edge's high contrast does show the background image, so we hide it. */
+      .icon--search {
+        display: none;
+      }
+    }
+
+    &:focus {
+      outline: 0;
+
+      @media screen and (-ms-high-contrast: active) {
+        border-bottom-width: var(--sp0-5);
+
+        span:after {
+          content: none;
+        }
+      }
+
+      span:after {
+        transform: scalex(1);
+      }
     }
   }
-}
-
-.header-nav__search-button {
-  display: none;
-  -webkit-appearance: none;
-  border: 0;
-  background: transparent;
-  margin-left: var(--sp2);
-  height: var(--sp6);
-  width: var(--sp3);
-  cursor: pointer;
 }

@@ -3,7 +3,7 @@
   const isDesktopNav = drupalSettings.olivero.isDesktopNav;
   const secondLevelNavMenus = document.querySelectorAll('.primary-nav--level-1 .has-children');
 
-  // Add event listeners onto each subnav expand button
+  // Add hover and click event listeners onto each subnav parent and it's button.
   secondLevelNavMenus.forEach(el => {
     const button = el.querySelector('.primary-nav__button-toggle');
     button.addEventListener('click', e => {
@@ -25,7 +25,39 @@
   });
 
   /**
-   * Shows and hides the second level submenu.
+   * Close all second level subnav menus.
+   */
+  function closeAllSubNav() {
+    secondLevelNavMenus.forEach(el => {
+      toggleSubNav(el, false);
+    });
+  }
+
+  drupalSettings.olivero.closeAllSubNav = closeAllSubNav;
+
+  /**
+   * Checks if any subnavigation items are currently active.
+   * @returns {boolean}
+   */
+  function areAnySubnavsOpen() {
+    let subNavsAreOpen = false;
+
+    secondLevelNavMenus.forEach(el => {
+      const button = el.querySelector('.primary-nav__button-toggle');
+      const state = button.getAttribute('aria-expanded') === 'true';
+
+      if (state) {
+        subNavsAreOpen = true;
+      }
+    });
+
+    return subNavsAreOpen;
+  }
+
+  drupalSettings.olivero.areAnySubnavsOpen = areAnySubnavsOpen;
+
+  /**
+   * Shows and hides the specified menu item's second level submenu.
    *
    * @param {element} topLevelMenuITem - the <li> element that is the container for the menu and submenus.
    * @param {boolean} [toState] - Optional state where we want the submenu to end up.
@@ -44,12 +76,12 @@
     }
   }
 
-  // Ensure that submenus close when ESC key is pressed.
+  drupalSettings.olivero.toggleSubNav = toggleSubNav;
+
+  // Ensure that desktop submenus close when ESC key is pressed.
   document.addEventListener('keyup', e => {
-    if (e.keyCode === 27) {
-      secondLevelNavMenus.forEach(el => {
-        toggleSubNav(el, false);
-      });
+    if (e.keyCode === 27 && isDesktopNav()) {
+      closeAllSubNav();
     }
   });
 })();
