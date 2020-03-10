@@ -12,8 +12,9 @@
   const firstFocusableEl = focusableNavElements[0];
   const lastFocusableEl = focusableNavElements[focusableNavElements.length - 1];
 
+  const isDefaultMobileNav = body.classList.contains('is-always-mobile-nav');
   const observerConfig = {
-    root: siteHeader,
+    root: document.querySelector('.site-header'),
     rootMargin: '0px -75% 0px 0px'
   };
   let navCollisionWidth = 0;
@@ -90,25 +91,26 @@
   // If site branding and primary nav collide, force mobile nav
   // TODO - IE / Polyfill and then possibly remove this if.
   if ("IntersectionObserver" in window) {
-    // TODO - if always on mobile nav on load, do nothing.
-    const siteBrandingObserver = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          // Checking boundingClientRect.x > 0 prevents this from being
-          // triggered by site-header__fixable.js-fixed
-          if (entry.intersectionRatio !== 0 && entry.boundingClientRect.x > 0) {
-            // Save collision width (plus a little padding) so we can later
-            // determine if nav once again has enough room to display.
-            navCollisionWidth = window.innerWidth + 50;
-            body.classList.add('is-always-mobile-nav');
-          }
-        });
-      },
-      observerConfig
-    );
+    if (!isDefaultMobileNav) {
+      const siteBrandingObserver = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            // Checking boundingClientRect.x > 0 prevents this from being
+            // triggered by site-header__fixable.js-fixed
+            if (entry.intersectionRatio !== 0 && entry.boundingClientRect.x > 0) {
+              // Save collision width (plus a little padding) so we can later
+              // determine if nav once again has enough room to display.
+              navCollisionWidth = window.innerWidth + 50;
+              body.classList.add('is-always-mobile-nav');
+            }
+          });
+        },
+        observerConfig
+      );
 
-    const primaryNav = document.querySelector('.primary-nav');
-    siteBrandingObserver.observe(primaryNav);
+      const primaryNav = document.querySelector('.primary-nav');
+      siteBrandingObserver.observe(primaryNav);
+    }
   }
 
   // Remove overlays when browser is resized and desktop nav appears.
@@ -119,7 +121,10 @@
       body.classList.remove('js-overlay-active', 'js-fixed');
     }
     // If nav no longer collides, don't force mobile nav
-    if (navCollisionWidth !== 0 && window.innerWidth > navCollisionWidth) {
+    if (!isDefaultMobileNav
+      && navCollisionWidth !== 0
+      && window.innerWidth > navCollisionWidth
+    ) {
       body.classList.remove('is-always-mobile-nav');
     }
   });
