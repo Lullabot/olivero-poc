@@ -12,6 +12,12 @@
   const firstFocusableEl = focusableNavElements[0];
   const lastFocusableEl = focusableNavElements[focusableNavElements.length - 1];
 
+  const observerConfig = {
+    root: siteHeader,
+    rootMargin: '0px -75% 0px 0px'
+  };
+  let navCollisionWidth = 0;
+
   function init() {
     mobileNavButton.setAttribute('aria-controls', mobileNavWrapperId);
     mobileNavButton.setAttribute('aria-expanded', 'false');
@@ -82,16 +88,18 @@
   });
 
   // If site branding and primary nav collide, force mobile nav
+  // TODO - IE / Polyfill and then possibly remove this if.
   if ("IntersectionObserver" in window) {
-    const observerConfig = {
-      root: document.querySelector('.site-header'),
-      rootMargin: '0px -75% 0px 0px'
-    };
-
+    // TODO - if always on mobile nav on load, do nothing.
     const siteBrandingObserver = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
-          if (entry.intersectionRatio !== 0) {
+          // Checking boundingClientRect.x > 0 prevents this from being
+          // triggered by site-header__fixable.js-fixed
+          if (entry.intersectionRatio !== 0 && entry.boundingClientRect.x > 0) {
+            // Save collision width (plus a little padding) so we can later
+            // determine if nav once again has enough room to display.
+            navCollisionWidth = window.innerWidth + 50;
             body.classList.add('is-always-mobile-nav');
           }
         });
@@ -109,6 +117,10 @@
     if (drupalSettings.olivero.isDesktopNav) {
       toggleMobileNav(false);
       body.classList.remove('js-overlay-active', 'js-fixed');
+    }
+    // If nav no longer collides, don't force mobile nav
+    if (navCollisionWidth !== 0 && window.innerWidth > navCollisionWidth) {
+      body.classList.remove('is-always-mobile-nav');
     }
   });
 
