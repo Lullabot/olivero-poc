@@ -89,7 +89,6 @@
   });
 
   // If site branding and primary nav collide, force mobile nav
-  // TODO - IE / Polyfill and then possibly remove this if.
   if ("IntersectionObserver" in window) {
     if (!isDefaultMobileNav) {
       const siteBrandingObserver = new IntersectionObserver(
