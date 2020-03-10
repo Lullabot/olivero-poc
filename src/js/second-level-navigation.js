@@ -25,6 +25,38 @@
   });
 
   /**
+   * Close all second level subnav menus.
+   */
+  function closeAllSubNav() {
+    secondLevelNavMenus.forEach(el => {
+      toggleSubNav(el, false);
+    });
+  }
+
+  drupalSettings.olivero.closeAllSubNav = closeAllSubNav;
+
+  /**
+   * Checks if any subnavigation items are currently active.
+   * @returns {boolean}
+   */
+  function areAnySubnavsOpen() {
+    let subNavsAreOpen = false;
+
+    secondLevelNavMenus.forEach(el => {
+      const button = el.querySelector('.primary-nav__button-toggle');
+      const state = button.getAttribute('aria-expanded') === 'true';
+
+      if (state) {
+        subNavsAreOpen = true;
+      }
+    });
+
+    return subNavsAreOpen;
+  }
+
+  drupalSettings.olivero.areAnySubnavsOpen = areAnySubnavsOpen;
+
+  /**
    * Shows and hides the specified menu item's second level submenu.
    *
    * @param {element} topLevelMenuITem - the <li> element that is the container for the menu and submenus.
@@ -49,9 +81,7 @@
   // Ensure that desktop submenus close when ESC key is pressed.
   document.addEventListener('keyup', e => {
     if (e.keyCode === 27 && isDesktopNav()) {
-      secondLevelNavMenus.forEach(el => {
-        toggleSubNav(el, false);
-      });
+      closeAllSubNav();
     }
   });
 })();

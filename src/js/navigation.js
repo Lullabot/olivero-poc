@@ -29,7 +29,6 @@
     const value = state ? true : false;
     mobileNavButton.setAttribute('aria-expanded', value);
 
-    // Overlay
     if (value) {
       body.classList.add('js-overlay-active');
       body.classList.add('js-fixed');
@@ -50,10 +49,15 @@
     toggleMobileNav(!isMobileNavOpen());
   });
 
+  // Closes any open subnavigation first, then close mobile navigation slideout.
   document.addEventListener('keyup', e => {
     if (e.keyCode === 27) {
-      // @todo check if submenu is open, and toggle that closed first.
-      toggleMobileNav(false);
+      if (drupalSettings.olivero.areAnySubnavsOpen()) {
+        drupalSettings.olivero.closeAllSubNav();
+      }
+      else {
+        toggleMobileNav(false);
+      }
     }
   });
 
